@@ -209,6 +209,8 @@ section{ margin-top: 56px; scroll-margin-top: 76px; }
 .hbar-baseline{ position:absolute; top:-4px; bottom:-4px; width:1px; background: var(--muted); opacity:.5; }
 .hbar-tip{ position:absolute; top: 50%; transform: translateY(-50%); font-size:12px; font-weight:600; white-space:nowrap; }
 .hbar-marker{ position:absolute; top:-3px; width:2px; height:30px; border-radius:1px; z-index: 1; }
+.hbar-range{ position:absolute; top:8px; height:8px; border-radius:4px; background: rgba(120,120,120,.28); border:1px solid rgba(90,90,90,.45); z-index:1; }
+.hbar-range-cap{ position:absolute; top:2px; width:2px; height:20px; background: rgba(90,90,90,.7); border-radius:1px; z-index:1; }
 .hbar-legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 14px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color: var(--ink-soft); }
 .hbar-legend-item{ display:flex; align-items:center; gap:6px; }
 .swatch{ width:11px; height:11px; border-radius:3px; flex:none; }
@@ -334,14 +336,15 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       <div>
         <span class="section-num">02 — Production vs. use</span>
         <h2>Self-sufficiency by food group</h2>
-        <p class="section-desc">Production ÷ domestic use, at today's output. 100% is the break-even line: right of it, Estonia produces more than it uses; left of it, the gap is filled by imports. Toggle between today's diet, a fully TAI-recommended one, and the EAT-Lancet Planetary Health Diet — an international reference diet, population-scaled to Estonia's own energy needs.</p>
+        <p class="section-desc">Production ÷ domestic use, at today's output. 100% is the break-even line: right of it, Estonia produces more than it uses; left of it, the gap is filled by imports. Toggle between today's diet, a fully TAI-recommended one, and two editions of the EAT-Lancet Planetary Health Diet (the original 2019 diet, and a revised 2025 edition) — both international reference diets, population-scaled to Estonia's own energy needs.</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="scenario-toggle" role="group" aria-label="Scenario">
         <button data-scenario="A" aria-pressed="true">Scenario A — status quo</button>
         <button data-scenario="B" aria-pressed="false">Scenario B — TAI-recommended diet</button>
-        <button data-scenario="C" aria-pressed="false">Scenario C — EAT-Lancet diet</button>
+        <button data-scenario="C" aria-pressed="false">Scenario C — EAT-Lancet 2019 diet</button>
+        <button data-scenario="C2" aria-pressed="false">Scenario C.2 — EAT-Lancet 2025 diet</button>
       </div>
       <span class="filter-hint" id="scenario-hint"></span>
     </div>
@@ -352,6 +355,7 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>50–99% — import-dependent</span>
         <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>&lt;50% — critical dependency</span>
         <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>feed-adjusted lower bound (where computed)</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>independent cross-check range (FAOSTAT vs. project estimate, where available)</span>
       </div>
       <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">View as table</button></div>
       <div class="table-scroll" id="ss-table" hidden></div>
@@ -361,7 +365,7 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <section id="critical">
     <div class="section-head">
       <div><span class="section-num">03 — Where it matters most</span><h2>Critical dependencies</h2>
-      <p class="section-desc">Flagged where self-sufficiency falls below 50% today, where a feed-adjusted sensitivity extends below 50%, or where no reliable figure exists at all. A plain 50% threshold, checked three ways — see methodology. (Shifting to Scenario B or C can create additional, hypothetical dependencies of their own that don't exist today — see section 05.)</p></div>
+      <p class="section-desc">Flagged where self-sufficiency falls below 50% today, where a feed-adjusted sensitivity extends below 50%, or where no reliable figure exists at all. A plain 50% threshold, checked three ways — see methodology. (Shifting to Scenario B, C, or C.2 can create additional, hypothetical dependencies of their own that don't exist today — see section 05.)</p></div>
     </div>
     <div class="callout-grid" id="callout-grid"></div>
   </section>
@@ -395,13 +399,14 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       <div>
         <span class="section-num">05 — The diet-shift tension</span>
         <h2>What a shifted diet would do to self-sufficiency</h2>
-        <p class="section-desc">Percentage-point change in self-sufficiency vs. Scenario A (status quo), production held fixed. Toggle between the TAI-recommended diet and the EAT-Lancet Planetary Health Diet — both push demand toward categories Estonia isn't equally equipped to supply, but not the same ones, so "eating better" doesn't uniformly mean "more self-sufficient" under either.</p>
+        <p class="section-desc">Percentage-point change in self-sufficiency vs. Scenario A (status quo), production held fixed. Toggle between the TAI-recommended diet and either edition of the EAT-Lancet Planetary Health Diet — all three push demand toward categories Estonia isn't equally equipped to supply, but not the same ones, so "eating better" doesn't uniformly mean "more self-sufficient" under any of them.</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="delta-toggle" role="group" aria-label="Comparison">
         <button data-delta="B" aria-pressed="true">Scenario B vs. A</button>
         <button data-delta="C" aria-pressed="false">Scenario C vs. A</button>
+        <button data-delta="C2" aria-pressed="false">Scenario C.2 vs. A</button>
       </div>
       <span class="filter-hint" id="delta-hint"></span>
     </div>
@@ -521,23 +526,24 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
     }
   },
   "headline": {
-    "scenario_A_weighted_pct": 106.8,
-    "scenario_A_coverage_pct_of_tonnage": 77.4,
+    "scenario_A_weighted_pct": 106.4,
+    "scenario_A_coverage_pct_of_tonnage": 77.7,
     "scenario_A_included": [
       "Grain products & potatoes / High-fibre bread/baked goods",
       "Grain products & potatoes / Potato, sweet potato",
       "Vegetables, fruits & berries / Vegetables",
       "Vegetables, fruits & berries / Fruits+Berries (combined)",
       "Dairy products / (total)",
+      "Nuts, seeds, oils & fats / Nuts+Seeds,cocoa (combined)",
       "Nuts, seeds, oils & fats / Oils/fats/spreads (rapeseed, representative)",
       "Fish, eggs & meat / Fish & seafood",
       "Fish, eggs & meat / Eggs",
       "Fish, eggs & meat / Poultry",
-      "Fish, eggs & meat / Red meat"
+      "Fish, eggs & meat / Red meat",
+      "Sweets, snacks & discretionary / Honey"
     ],
     "scenario_A_excluded_from_average": [
       "Grain products & potatoes / Porridges/pasta/rice/grain products",
-      "Nuts, seeds, oils & fats / Nuts+Seeds,cocoa (combined)",
       "Sweets, snacks & discretionary / (total)"
     ],
     "scenario_A_no_tonnage_data": [
@@ -545,18 +551,23 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "Nuts, seeds, oils & fats / Oils/fats/spreads (sunflower, 0%)",
       "Nuts, seeds, oils & fats / Oils/fats/spreads (soy, 0%)"
     ],
-    "scenario_B_weighted_pct": 76.7,
-    "scenario_B_coverage_pct_of_tonnage": 77.4,
-    "scenario_C_weighted_pct": 156.4,
-    "scenario_C_coverage_pct_of_tonnage": 77.4,
+    "scenario_B_weighted_pct": 77.0,
+    "scenario_B_coverage_pct_of_tonnage": 77.7,
+    "scenario_C_weighted_pct": 157.0,
+    "scenario_C_coverage_pct_of_tonnage": 77.7,
     "scenario_C_excluded_from_average": [
       "Grain products & potatoes / Porridges/pasta/rice/grain products",
-      "Nuts, seeds, oils & fats / Nuts+Seeds,cocoa (combined)",
       "Sweets, snacks & discretionary / (total)"
     ],
-    "scenario_A_waste25_weighted_pct": 108.9,
-    "scenario_A_waste50_weighted_pct": 111.1,
-    "method_note": "Tonnage-weighted average of scenario_A_pct (or scenario_B_pct) across food groups with a resolved numeric self-sufficiency figure, weighted by each group's Scenario A recommended-demand tonnage. Excludes groups with no single point estimate (legumes, porridges/pasta/rice/grain products, sweets & discretionary) -- coverage_pct_of_tonnage states what share of total national food-group demand this average actually represents, so the headline number is never presented as more complete than it is. A further 3 items (legumes, and the two near-zero individual oil types) have no Scenario A demand tonnage available at all and so cannot even be excluded-with-visibility -- they simply carry no weight in this calculation; legumes in particular is a genuine, separately-flagged gap. Scenario C (EAT-Lancet Planetary Health Diet) uses the same weighting basis and the same exclusion logic -- see scenario_C_excluded_from_average for its own list, which differs slightly from A/B because EAT-Lancet leaves a different subset of categories unresolved."
+    "scenario_C2_weighted_pct": 156.8,
+    "scenario_C2_coverage_pct_of_tonnage": 77.7,
+    "scenario_C2_excluded_from_average": [
+      "Grain products & potatoes / Porridges/pasta/rice/grain products",
+      "Sweets, snacks & discretionary / (total)"
+    ],
+    "scenario_A_waste25_weighted_pct": 108.5,
+    "scenario_A_waste50_weighted_pct": 110.7,
+    "method_note": "Tonnage-weighted average of scenario_A_pct (or scenario_B_pct) across food groups with a resolved numeric self-sufficiency figure, weighted by each group's Scenario A recommended-demand tonnage. Excludes groups with no single point estimate (legumes, porridges/pasta/rice/grain products, sweets & discretionary) -- coverage_pct_of_tonnage states what share of total national food-group demand this average actually represents, so the headline number is never presented as more complete than it is. A further 3 items (legumes, and the two near-zero individual oil types) have no Scenario A demand tonnage available at all and so cannot even be excluded-with-visibility -- they simply carry no weight in this calculation; legumes in particular is a genuine, separately-flagged gap. Scenario C (EAT-Lancet Planetary Health Diet) uses the same weighting basis and the same exclusion logic -- see scenario_C_excluded_from_average for its own list, which differs slightly from A/B because EAT-Lancet leaves a different subset of categories unresolved. Scenario C.2 (the 2025 EAT-Lancet Commission's revised Planetary Health Diet, Phase 14) uses the same weighting basis and exclusion logic again -- see scenario_C2_excluded_from_average."
   },
   "food_groups": [
     {
@@ -568,14 +579,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "185.9",
       "scenario_C_pct": 353.0,
       "scenario_C_pct_display": "353.0",
+      "scenario_C2_pct": 374.4,
+      "scenario_C2_pct_display": "374.4",
       "demand_A_tonnes": 36024.5,
       "demand_B_tonnes": 64434.6,
       "demand_C_tonnes": 33932.3,
+      "demand_C2_tonnes": 31994.4,
       "demand_change_ratio": 1.789,
       "demand_change_ratio_C": 0.9419,
+      "demand_change_ratio_C2": 0.8881,
       "waste_lever_25_pct": 342.0,
       "waste_lever_50_pct": 352.0,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 322.1,
+      "cross_check_high_pct": 332.5,
+      "cross_check_basis": "Wheat+Rye combined (bread proxy) (FAOSTAT 2022: 322.1%)",
       "data_status": "derived",
       "note": "Direct match across requirement/consumption/self-sufficiency tables. TAI recommends more whole-grain bread than is currently eaten (demand rises under Scenario B), but grain self-sufficiency starts so high (332.5%) that even a ~1.8x demand increase leaves it comfortably self-sufficient.",
       "flags": {
@@ -583,6 +601,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -593,31 +613,40 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "pyramid_group": "Grain products & potatoes",
       "subitem": "Porridges/pasta/rice/grain products",
       "scenario_A_pct": null,
-      "scenario_A_pct_display": "0% - 178%+ (wide, unresolved -- see self_sufficiency_model.csv)",
+      "scenario_A_pct_display": "≤156.2% upper bound (porridge grains 210.4% x 74.2% weight + rice 0% x 25.8% weight; pasta ~0% assumed, unweighted -- see note)",
       "scenario_B_pct": null,
-      "scenario_B_pct_display": "proportionally lower than the Scenario A range (demand rises 2.08x) -- not stated as a number since the Scenario A range itself has no resolved point estimate to scale",
+      "scenario_B_pct_display": "proportionally lower than the Scenario A upper bound (demand rises 2.08x) -- still not stated as a single number since Scenario A itself is an upper bound, not a point estimate",
       "scenario_C_pct": null,
-      "scenario_C_pct_display": "proportionally different from the Scenario A range (see demand_change_ratio_C_over_A) -- not stated as a number since the Scenario A range itself has no resolved point estimate",
+      "scenario_C_pct_display": "proportionally different from the Scenario A upper bound (see demand_change_ratio_C_over_A) -- still not stated as a single number for the same reason",
+      "scenario_C2_pct": null,
+      "scenario_C2_pct_display": "proportionally different from the Scenario A upper bound (see demand_change_ratio_C2_over_A) -- still not stated as a single number for the same reason",
       "demand_A_tonnes": 61588.5,
       "demand_B_tonnes": 128109.1,
       "demand_C_tonnes": 67465.5,
+      "demand_C2_tonnes": 63612.4,
       "demand_change_ratio": 2.08,
       "demand_change_ratio_C": 1.0954,
+      "demand_change_ratio_C2": 1.0329,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
-      "data_status": "gap_range",
-      "note": "Self-sufficiency for this category is an unresolved 0%-178%+ range (barley porridge vs. imported rice/durum pasta, no consumption-mix weighting available -- see Phase 5). Recommended demand is ~2.1x actual, which would proportionally compress any point within that range, but forcing a scaled numeric range would imply more precision than the underlying data supports.",
+      "cross_check_low_pct": 0.0,
+      "cross_check_high_pct": 205.5,
+      "cross_check_basis": "Barley and products (FAOSTAT 2022: 205.5%); Rice and products (FAOSTAT 2022: 0.0%)",
+      "data_status": "gap_range (narrowed, Phase 12)",
+      "note": "Phase 12 update: FAOSTAT 2022 filled the oats gap (238.1% self-sufficient, previously blank) and gave real human-food consumption weights (kg/capita/yr: rice 4.77, barley 7.78, oats 5.97) to split this RTU011 category by consumption share -- rice 25.8%, oats+barley 'porridge grains' 74.2% -- the same per-capita-share splitting technique already used for the RTU011 poultry/red-meat split (Phase 3). Weighted blend of just those two parts: ~156.2%, presented as an UPPER BOUND (not the resolved category figure) because pasta (durum wheat, ~0% self-sufficient per PM20's 0% durum production) is still excluded for lack of a consumption weight -- FAOSTAT doesn't separate durum from bread wheat. Since pasta is very likely near 0% too, folding it in could only pull the true figure down, never above this bound. Narrowed from the prior 0%-178%+ span (128 points wide, effectively uninformative) to a single-sided 156.2% ceiling with a stated, real weighting behind it. See PHASE12_NOTES.md. Phase 13 verification: the user correctly pointed out Estonia produces pasta domestically (Tartu Mill) and grows its own wheat -- confirmed true (Tartu Mill's own product listing gives spaghetti ingredients as durum wheat flour and water; Wikipedia confirms Tartu Mill mills wheat/rye flour, semolina, pasta and feed). But the wheat Estonia grows in large surplus is common/soft wheat (bread and feed wheat), not the durum wheat pasta requires -- per PIKK.ee's agricultural extension guide, 'Estonia grows soft wheat varieties because durum needs a drier, more continental climate' than Estonia has, and per ERR/Novaator (2024), durum is only being trialled experimentally by a single farm (Põlgaste, two growing seasons as of the article), explicitly framed as an uncertain experiment dependent on finding a buyer -- not a tracked commercial crop. So pasta-MAKING is genuinely domestic (confirms the user's point), but it runs on imported durum wheat/semolina, the same way a country can roast imported coffee or process imported cocoa domestically without being self-sufficient in the raw crop. This replaces the earlier, unverified per-PM20 0%-durum-production claim (PM20 does not track durum separately) with sourced confirmation that pasta's raw-material self-sufficiency really is ~0%, so 156.2% remains a valid upper bound. See PHASE13_NOTES.md. Phase 14: Scenario C.2 (2025 EAT-Lancet, whole grains 210g/day vs 232g/day in 2019) demand computed and added as a ratio column; self-sufficiency stays unresolved for the same reason as Scenario C (no resolved Scenario A point estimate to scale).",
       "flags": {
         "below_50_scenario_A": "N/A",
         "below_50_scenario_B": "N/A",
         "below_50_scenario_C": "N/A",
         "scenario_C_worsens": "N/A",
+        "below_50_scenario_C2": "N/A",
+        "scenario_C2_worsens": "N/A",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N/A",
         "unresolved_data_gap": "Y"
       },
-      "flag_reason": "Self-sufficiency is not a resolved numeric figure for this item ('0% - 178%+ (wide, unresolved -- see self_sufficiency_model.csv)') -- flagged as a data gap/assumption per the crosswalk's match_quality convention, not as a measured dependency."
+      "flag_reason": "Phase 12 narrowed this from an unresolved 0%-178%+ span to a ~156.2% upper bound (rice 0% + porridge grains 210.4%, FAOSTAT-weighted; pasta still excluded, unweighted) -- still not a single resolved point estimate, so still flagged as a data gap, but a substantially tighter one. Phase 13 confirmed (rather than assumed) that pasta's raw material, durum wheat, is not commercially grown in Estonia (soft wheat only, per PIKK.ee; durum is experimental-only per ERR/Novaator 2024) even though pasta is manufactured domestically at Tartu Mill from imported durum. See PHASE12_NOTES.md and PHASE13_NOTES.md."
     },
     {
       "pyramid_group": "Grain products & potatoes",
@@ -628,14 +657,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "36.8",
       "scenario_C_pct": 146.3,
       "scenario_C_pct_display": "146.3",
+      "scenario_C2_pct": 140.5,
+      "scenario_C2_pct_display": "140.5",
       "demand_A_tonnes": 47804.0,
       "demand_B_tonnes": 86934.8,
       "demand_C_tonnes": 21853.0,
+      "demand_C2_tonnes": 22763.5,
       "demand_change_ratio": 1.819,
       "demand_change_ratio_C": 0.4571,
+      "demand_change_ratio_C2": 0.4762,
       "waste_lever_25_pct": 66.9,
       "waste_lever_50_pct": 66.9,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 65.8,
+      "cross_check_high_pct": 66.9,
+      "cross_check_basis": "Potatoes and products (FAOSTAT 2022: 65.8%)",
       "data_status": "derived+official_avg",
       "note": "Direct match. TAI recommends substantially more potato than is currently eaten (demand +82%), pulling self-sufficiency down from a comfortable 66.9% to a much tighter ~37% -- a critical-dependency signal that isn't visible from the status-quo figure alone.",
       "flags": {
@@ -643,6 +679,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -658,14 +696,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "13.0",
       "scenario_C_pct": 23.3,
       "scenario_C_pct_display": "23.3",
+      "scenario_C2_pct": 22.3,
+      "scenario_C2_pct_display": "22.3",
       "demand_A_tonnes": 66335.0,
       "demand_B_tonnes": 234434.0,
       "demand_C_tonnes": 131117.9,
+      "demand_C2_tonnes": 136581.2,
       "demand_change_ratio": 3.534,
       "demand_change_ratio_C": 1.9766,
+      "demand_change_ratio_C2": 2.059,
       "waste_lever_25_pct": 48.7,
       "waste_lever_50_pct": 51.8,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 9.2,
+      "cross_check_high_pct": 46.0,
+      "cross_check_basis": "Vegetables (aggregate: tomatoes+onions+other) (FAOSTAT 2022: 9.2%)",
       "data_status": "derived+official_preferred",
       "note": "Direct match. This is the headline tension the plan anticipated: TAI recommends ~3.5x current vegetable consumption, and vegetables are already the weakest major category (46% self-sufficient on the official basis) -- Scenario B would push the resource-based figure down toward the low teens.",
       "flags": {
@@ -673,6 +718,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "Y",
         "scenario_C_worsens": "Y",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "Y",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -688,14 +735,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "6.4",
       "scenario_C_pct": 9.5,
       "scenario_C_pct_display": "9.5",
+      "scenario_C2_pct": 9.1,
+      "scenario_C2_pct_display": "9.1",
       "demand_A_tonnes": 103699.9,
       "demand_B_tonnes": 129861.0,
       "demand_C_tonnes": 87411.9,
+      "demand_C2_tonnes": 91054.1,
       "demand_change_ratio": 1.252,
       "demand_change_ratio_C": 0.8429,
+      "demand_change_ratio_C2": 0.8781,
       "waste_lever_25_pct": 8.2,
       "waste_lever_50_pct": 8.4,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 6.5,
+      "cross_check_high_pct": 8.0,
+      "cross_check_basis": "Fruits - Excluding Wine (no berries) (FAOSTAT 2022: 6.5%)",
       "data_status": "derived_matches_official",
       "note": "Requirement-side tonnage is fruit+berries summed from separate pyramid rows (TAI portions fruit and berries separately; consumption and self-sufficiency data only exist combined). Already the single most import-dependent category (8%); recommended demand is only ~25% above actual, so Scenario B compresses it further but not as dramatically as vegetables.",
       "flags": {
@@ -703,6 +757,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "Y",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -718,14 +774,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "bimodal -- see note (Phase 8 FAOSTAT update)",
       "scenario_C_pct": null,
       "scenario_C_pct_display": "bimodal -- see note (Phase 8 FAOSTAT update)",
+      "scenario_C2_pct": null,
+      "scenario_C2_pct_display": "bimodal -- see note (Phase 8 FAOSTAT update)",
       "demand_A_tonnes": null,
       "demand_B_tonnes": 27913.5,
       "demand_C_tonnes": 32779.5,
+      "demand_C2_tonnes": 34145.3,
       "demand_change_ratio": null,
       "demand_change_ratio_C": null,
+      "demand_change_ratio_C2": null,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": null,
+      "cross_check_high_pct": null,
+      "cross_check_basis": null,
       "data_status": "derived_from_faostat (revised in Phase 8, was gap_assumed)",
       "note": "Phase 8 update (see self_sufficiency_model.csv and faostat_cross_check.csv): FAOSTAT 2022 shows Estonia's pulses aggregate is 332% self-sufficient (net exporter), but this is driven by field peas grown mostly for feed/export -- FAOSTAT's dry-beans line (closer to a human-food legume) is 0% domestically produced. No reliable single self-sufficiency point exists for the RTU011 'legumes' consumption category specifically, so no scenario-scaled figure is given here either -- still a data gap for scenario purposes, just a better-understood one than 'unknown - assumed low' was.",
       "flags": {
@@ -733,6 +796,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N/A",
         "below_50_scenario_C": "N/A",
         "scenario_C_worsens": "N/A",
+        "below_50_scenario_C2": "N/A",
+        "scenario_C2_worsens": "N/A",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N/A",
         "unresolved_data_gap": "Y"
@@ -748,14 +813,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "100.4",
       "scenario_C_pct": 220.2,
       "scenario_C_pct_display": "220.2",
+      "scenario_C2_pct": 211.4,
+      "scenario_C2_pct_display": "211.4",
       "demand_A_tonnes": 144941.6,
       "demand_B_tonnes": 239677.2,
       "demand_C_tonnes": 109264.9,
+      "demand_C2_tonnes": 113817.6,
       "demand_change_ratio": 1.6536,
       "demand_change_ratio_C": 0.7539,
+      "demand_change_ratio_C2": 0.7853,
       "waste_lever_25_pct": 168.5,
       "waste_lever_50_pct": 171.0,
       "feed_adjusted_low_bound_pct": 141.1,
+      "cross_check_low_pct": 139.0,
+      "cross_check_high_pct": 166.0,
+      "cross_check_basis": "Milk - Excluding Butter (FAOSTAT 2022: 139.0%)",
       "data_status": "derived+official_preferred",
       "note": "Direct match. TAI's dairy portion guidance is generous (recommended intake is ~1.65x current average consumption, per requirement_model_national.csv's g/day figure, corrected post-launch -- see docs/methodology.md Section 4.2) -- self-sufficiency falls from a very comfortable 166% surplus to roughly 100% under full TAI compliance, still a clear case of the plan's core tension (recommended change reduces headroom in a currently-strong category), though less severe than first computed.",
       "flags": {
@@ -763,6 +835,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -772,32 +846,41 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
     {
       "pyramid_group": "Nuts, seeds, oils & fats",
       "subitem": "Nuts+Seeds,cocoa (combined)",
-      "scenario_A_pct": null,
-      "scenario_A_pct_display": "~0% assumed",
-      "scenario_B_pct": null,
-      "scenario_B_pct_display": "~0% assumed",
-      "scenario_C_pct": null,
-      "scenario_C_pct_display": "~0% assumed",
+      "scenario_A_pct": 0.0,
+      "scenario_A_pct_display": "0.0",
+      "scenario_B_pct": 0.0,
+      "scenario_B_pct_display": "0.0",
+      "scenario_C_pct": 0.0,
+      "scenario_C_pct_display": "0.0",
+      "scenario_C2_pct": 0.0,
+      "scenario_C2_pct_display": "0.0",
       "demand_A_tonnes": 1612.9,
       "demand_B_tonnes": 18506.7,
       "demand_C_tonnes": null,
+      "demand_C2_tonnes": null,
       "demand_change_ratio": 11.474,
       "demand_change_ratio_C": null,
+      "demand_change_ratio_C2": null,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
-      "data_status": "gap_assumed",
-      "note": "Both sub-items (nuts; seeds/cocoa) are assumed near-zero self-sufficiency (no commercial production, no Statistikaamet table) -- scaling ~0% by any demand ratio still leaves ~0%, so this stays structurally import-dependent regardless of diet composition. TAI recommends ~11.5x current consumption of this group nationally.",
+      "cross_check_low_pct": 0.0,
+      "cross_check_high_pct": 0.0,
+      "cross_check_basis": "Nuts and products (FAOSTAT 2022: 0.0%)",
+      "data_status": "derived",
+      "note": "Phase 1 flagged this exact assumption for a Phase 3 double-check against trade data that never happened until Phase 12. FAOSTAT 2022 (Estonia, 'Nuts and products'): 0 t production vs. ~32kt domestic supply = exactly 0%, at every scenario since 0% scaled by any demand ratio is still 0%. Confirms rather than revises the prior assumption -- small-scale/garden hazelnut growing in Estonia is real (per user feedback) but doesn't register at national-statistics resolution. Upgraded from a text pill to a resolved number now that it's confirmed rather than merely assumed. See PHASE12_NOTES.md. Phase 14: Scenario C.2 (2025 EAT-Lancet) also gives tree nuts at 0% -- production is structurally 0 t regardless of any demand scenario, so this stays 0.0% under C.2 too.",
       "flags": {
-        "below_50_scenario_A": "N/A",
-        "below_50_scenario_B": "N/A",
-        "below_50_scenario_C": "N/A",
-        "scenario_C_worsens": "N/A",
+        "below_50_scenario_A": "Y",
+        "below_50_scenario_B": "Y",
+        "below_50_scenario_C": "Y",
+        "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
-        "scenario_B_worsens": "N/A",
-        "unresolved_data_gap": "Y"
+        "scenario_B_worsens": "N",
+        "unresolved_data_gap": "N"
       },
-      "flag_reason": "Self-sufficiency is not a resolved numeric figure for this item ('~0% assumed') -- flagged as a data gap/assumption per the crosswalk's match_quality convention, not as a measured dependency."
+      "flag_reason": "Now a confirmed (FAOSTAT 2022) 0% self-sufficiency across every scenario, not an unresolved assumption -- a genuine critical dependency (fully import-reliant), just no longer a data gap. Phase 12 update; see PHASE12_NOTES.md."
     },
     {
       "pyramid_group": "Nuts, seeds, oils & fats",
@@ -808,14 +891,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "60.8",
       "scenario_C_pct": 27.0,
       "scenario_C_pct_display": "27.0",
+      "scenario_C2_pct": 26.3,
+      "scenario_C2_pct_display": "26.3",
       "demand_A_tonnes": 8818.1,
       "demand_B_tonnes": 10050.2,
       "demand_C_tonnes": 22639.7,
+      "demand_C2_tonnes": 23218.8,
       "demand_change_ratio": 1.14,
       "demand_change_ratio_C": 2.5674,
+      "demand_change_ratio_C2": 2.6331,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 69.3,
+      "cross_check_high_pct": 265.2,
+      "cross_check_basis": "Rape and Mustardseed (raw) (FAOSTAT 2022: 141.3%); Rape and Mustard Oil (refined) (FAOSTAT 2022: 265.2%)",
       "data_status": "derived",
       "note": "Requirement/consumption tonnages are the combined oils/fats/spreads category (no breakdown by oil type exists in either source). Self-sufficiency uses rapeseed's 69.3% (Estonia's only real domestic oil crop) as an illustrative representative figure -- sunflower and soy oil are both 0% domestically produced and stay 0% under any scenario, so a true consumption-weighted blend would be lower than the rapeseed-only figure shown here. Treat scenario_B_self_sufficiency_pct as an upper-bound illustration, not a blended point estimate.",
       "flags": {
@@ -823,6 +913,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "Y",
         "scenario_C_worsens": "Y",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "Y",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -838,14 +930,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "0.0",
       "scenario_C_pct": 0.0,
       "scenario_C_pct_display": "0.0",
+      "scenario_C2_pct": 0.0,
+      "scenario_C2_pct_display": "0.0",
       "demand_A_tonnes": null,
       "demand_B_tonnes": null,
       "demand_C_tonnes": null,
+      "demand_C2_tonnes": null,
       "demand_change_ratio": null,
       "demand_change_ratio_C": null,
+      "demand_change_ratio_C2": null,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 0.0,
+      "cross_check_high_pct": 25.0,
+      "cross_check_basis": "Sunflowerseed Oil (FAOSTAT 2022: 25.0%)",
       "data_status": "derived",
       "note": "0t domestic production (PM37 2024); fully imported under any consumption scenario.",
       "flags": {
@@ -853,6 +952,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "Y",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N",
         "unresolved_data_gap": "N"
@@ -868,14 +969,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "0.0",
       "scenario_C_pct": 0.0,
       "scenario_C_pct_display": "0.0",
+      "scenario_C2_pct": 0.0,
+      "scenario_C2_pct_display": "0.0",
       "demand_A_tonnes": null,
       "demand_B_tonnes": null,
       "demand_C_tonnes": null,
+      "demand_C2_tonnes": null,
       "demand_change_ratio": null,
       "demand_change_ratio_C": null,
+      "demand_change_ratio_C2": null,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": null,
+      "cross_check_high_pct": null,
+      "cross_check_basis": null,
       "data_status": "derived",
       "note": "0t domestic production (PM37 2024); fully imported under any consumption scenario.",
       "flags": {
@@ -883,6 +991,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "Y",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "Y",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N",
         "unresolved_data_gap": "N"
@@ -898,14 +1008,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "88.6",
       "scenario_C_pct": 281.8,
       "scenario_C_pct_display": "281.8",
+      "scenario_C2_pct": 252.5,
+      "scenario_C2_pct_display": "252.5",
       "demand_A_tonnes": 11495.4,
       "demand_B_tonnes": 38922.9,
       "demand_C_tonnes": 12237.7,
+      "demand_C2_tonnes": 13658.1,
       "demand_change_ratio": 3.386,
       "demand_change_ratio_C": 1.0646,
+      "demand_change_ratio_C2": 1.1881,
       "waste_lever_25_pct": 304.7,
       "waste_lever_50_pct": 309.2,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 300.0,
+      "cross_check_high_pct": 303.4,
+      "cross_check_basis": "Fish, Seafood (FAOSTAT 2022: 303.4%)",
       "data_status": "derived+official_close",
       "note": "Direct match. Critical interpretive caveat carried from Phase 2/5: only ~15% of Estonia's fish production/catch stays domestic today (the rest is exported), so the 300% headline is a resource-basis figure, not a reflection of what's actually eaten domestically. TAI recommends ~3.4x current fish consumption -- Scenario B's drop to ~89% shows this is fundamentally a *reallocation* question (redirecting existing catch toward the domestic market), not a production-shortfall question the way vegetables/fruit are.",
       "flags": {
@@ -913,6 +1030,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "Y",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "Y",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -928,14 +1047,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "36.8",
       "scenario_C_pct": 95.0,
       "scenario_C_pct_display": "95.0",
+      "scenario_C2_pct": 79.0,
+      "scenario_C2_pct_display": "79.0",
       "demand_A_tonnes": 10066.5,
       "demand_B_tonnes": 14670.6,
       "demand_C_tonnes": 5681.8,
+      "demand_C2_tonnes": 6829.0,
       "demand_change_ratio": 1.457,
       "demand_change_ratio_C": 0.5644,
+      "demand_change_ratio_C2": 0.6784,
       "waste_lever_25_pct": 54.4,
       "waste_lever_50_pct": 55.3,
       "feed_adjusted_low_bound_pct": 37.5,
+      "cross_check_low_pct": 53.6,
+      "cross_check_high_pct": 57.9,
+      "cross_check_basis": "Eggs (FAOSTAT 2022: 57.9%)",
       "data_status": "derived+official_avg",
       "note": "Direct match. Feed-adjusted lower bound (Phase 6, illustrative): 37.5%.",
       "flags": {
@@ -943,6 +1069,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "Y",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "Y",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -958,14 +1086,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "55.4",
       "scenario_C_pct": 82.3,
       "scenario_C_pct_display": "82.3",
+      "scenario_C2_pct": 76.4,
+      "scenario_C2_pct_display": "76.4",
       "demand_A_tonnes": 18081.4,
       "demand_B_tonnes": 18825.8,
       "demand_C_tonnes": 12674.8,
+      "demand_C2_tonnes": 13658.1,
       "demand_change_ratio": 1.041,
       "demand_change_ratio_C": 0.701,
+      "demand_change_ratio_C2": 0.7554,
       "waste_lever_25_pct": 58.3,
       "waste_lever_50_pct": 58.9,
       "feed_adjusted_low_bound_pct": 40.4,
+      "cross_check_low_pct": 57.7,
+      "cross_check_high_pct": 79.3,
+      "cross_check_basis": "Poultry Meat (FAOSTAT 2022: 79.3%)",
       "data_status": "derived+official_avg",
       "note": "Direct match. Actual poultry consumption is already close to TAI's recommended level, so Scenario B barely moves the figure. Feed-adjusted lower bound (Phase 6, illustrative): 40.4%.",
       "flags": {
@@ -973,6 +1108,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "Y",
         "scenario_B_worsens": "Y",
         "unresolved_data_gap": "N"
@@ -988,14 +1125,21 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "274.1",
       "scenario_C_pct": 441.5,
       "scenario_C_pct_display": "441.5",
+      "scenario_C2_pct": 395.6,
+      "scenario_C2_pct_display": "395.6",
       "demand_A_tonnes": 34590.5,
       "demand_B_tonnes": 9854.3,
       "demand_C_tonnes": 6118.8,
+      "demand_C2_tonnes": 6829.0,
       "demand_change_ratio": 0.285,
       "demand_change_ratio_C": 0.1769,
+      "demand_change_ratio_C2": 0.1974,
       "waste_lever_25_pct": 78.9,
       "waste_lever_50_pct": 79.7,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": 72.0,
+      "cross_check_high_pct": 109.0,
+      "cross_check_basis": "Bovine Meat (beef) (FAOSTAT 2022: 75.0%); Pigmeat (pork) (FAOSTAT 2022: 78.2%); Offals (FAOSTAT 2022: 100.0%)",
       "data_status": "derived",
       "note": "Direct match. Red meat is currently over-consumed ~3.5x TAI's recommendation (matches Phase 4's independently-derived 3.5x figure almost exactly, a good cross-phase consistency check) -- Scenario B *improves* self-sufficiency sharply (to ~274%) since cutting to recommended levels needs far less meat overall. Feed-adjusted lower bounds exist per component in Phase 6 (pork 50.4%, beef 92.7%, sheep-goat 68.0%) but aren't blended into one aggregate figure here to avoid implying false precision.",
       "flags": {
@@ -1003,6 +1147,8 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         "below_50_scenario_B": "N",
         "below_50_scenario_C": "N",
         "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N",
         "unresolved_data_gap": "N"
@@ -1018,26 +1164,74 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "scenario_B_pct_display": "~0% (raw sugar) / not scoreable (manufactured) -- unchanged in kind, since Estonia's zero domestic sugar refining is structural, not a function of how much is eaten",
       "scenario_C_pct": null,
       "scenario_C_pct_display": "~0% (raw sugar) / not scoreable (manufactured)",
+      "scenario_C2_pct": null,
+      "scenario_C2_pct_display": "~0% (raw sugar) / not scoreable (manufactured)",
       "demand_A_tonnes": 77730.4,
       "demand_B_tonnes": 25136.6,
       "demand_C_tonnes": 13548.8,
+      "demand_C2_tonnes": 2731.6,
       "demand_change_ratio": 0.323,
       "demand_change_ratio_C": 0.1743,
+      "demand_change_ratio_C2": 0.0351,
       "waste_lever_25_pct": null,
       "waste_lever_50_pct": null,
       "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": null,
+      "cross_check_high_pct": null,
+      "cross_check_basis": null,
       "data_status": "gap_assumed",
-      "note": "Sweets/snacks are currently over-consumed ~3.1x TAI's recommendation (matches Phase 4's independently-derived 3.1x figure, another cross-phase consistency check). Moving to recommended levels would cut absolute import volume by roughly two-thirds (0.323x demand), but the self-sufficiency *percentage* stays pinned near zero either way -- Estonia has no domestic sugar-refining capacity at all, so this is a structural, not compositional, dependency.",
+      "note": "Sweets/snacks are currently over-consumed ~3.1x TAI's recommendation (matches Phase 4's independently-derived 3.1x figure, another cross-phase consistency check). Moving to recommended levels would cut absolute import volume by roughly two-thirds (0.323x demand), but the self-sufficiency *percentage* stays pinned near zero either way -- Estonia has no domestic sugar-refining capacity at all, so this is a structural, not compositional, dependency. Phase 14: Scenario C.2 (2025 EAT-Lancet) demand computed from the revised added-sugar target (6g/day, down from 31g/day in the 2019 diet) -- self-sufficiency percentage stays pinned at the same structural near-zero regardless, per the same reasoning as B/C.",
       "flags": {
         "below_50_scenario_A": "N/A",
         "below_50_scenario_B": "N/A",
         "below_50_scenario_C": "N/A",
         "scenario_C_worsens": "N/A",
+        "below_50_scenario_C2": "N/A",
+        "scenario_C2_worsens": "N/A",
         "feed_adjusted_extends_concern": "N/A",
         "scenario_B_worsens": "N/A",
         "unresolved_data_gap": "Y"
       },
       "flag_reason": "Self-sufficiency is not a resolved numeric figure for this item ('~0% (raw sugar) / not scoreable (manufactured)') -- flagged as a data gap/assumption per the crosswalk's match_quality convention, not as a measured dependency."
+    },
+    {
+      "pyramid_group": "Sweets, snacks & discretionary",
+      "subitem": "Honey",
+      "scenario_A_pct": 98.1,
+      "scenario_A_pct_display": "98.1",
+      "scenario_B_pct": 303.7,
+      "scenario_B_pct_display": "303.7",
+      "scenario_C_pct": 562.8,
+      "scenario_C_pct_display": "562.8",
+      "scenario_C2_pct": 2794.9,
+      "scenario_C2_pct_display": "2794.9",
+      "demand_A_tonnes": 1339.0,
+      "demand_B_tonnes": 432.5,
+      "demand_C_tonnes": 233.4,
+      "demand_C2_tonnes": 47.0,
+      "demand_change_ratio": 0.323,
+      "demand_change_ratio_C": 0.1743,
+      "demand_change_ratio_C2": 0.0351,
+      "waste_lever_25_pct": null,
+      "waste_lever_50_pct": null,
+      "feed_adjusted_low_bound_pct": null,
+      "cross_check_low_pct": null,
+      "cross_check_high_pct": null,
+      "cross_check_basis": null,
+      "data_status": "derived",
+      "note": "Statistikaamet's PM29 honey balance (production 1,313 t, human consumption 1,339 t, 2024) sat unused in data/raw/statistikaamet/ since Phase 1 -- wired in for the first time in Phase 12. TAI's Table 13 doesn't give honey its own recommended-portion count (it's only one of five equally-weighted items in Table 16's representative sweets gram-weight), so Scenario B/C honey demand is extrapolated using the whole 'Sweets, snacks & discretionary (total)' category's own demand-change ratios (0.323x for B, 0.1743x for C) -- an explicit assumption that honey's consumption share moves proportionally with the rest of sweets, not a TAI-specific honey figure. Production held fixed (no capacity-ceiling modelling, consistent with every other subitem). Net effect: moving toward recommended (lower) sweets consumption leaves Estonia even MORE comfortably honey-self-sufficient (>300% under Scenario B), since less consumption against fixed production only helps. See PHASE12_NOTES.md. Phase 14: Scenario C.2 (2025 EAT-Lancet) cuts added sugar far more sharply than the 2019 diet did (6g/day vs 31g/day), so the same proportional-extrapolation method used for B/C pushes honey's C.2 self-sufficiency to a striking ~2,795% -- not because honey production changes, but because the 2025 diet's much smaller sugar allowance shrinks the denominator dramatically. Read this as 'a diet that ate that little sugar would find Estonia's existing honey production trivially sufficient for its entire (much smaller) sweets allowance,' not as a claim about honey specifically improving.",
+      "flags": {
+        "below_50_scenario_A": "N",
+        "below_50_scenario_B": "N",
+        "below_50_scenario_C": "N",
+        "scenario_C_worsens": "N",
+        "below_50_scenario_C2": "N",
+        "scenario_C2_worsens": "N",
+        "feed_adjusted_extends_concern": "N/A",
+        "scenario_B_worsens": "N",
+        "unresolved_data_gap": "N"
+      },
+      "flag_reason": "Well above every self-sufficiency threshold in every scenario; production is fixed and recommended (lower) sweets consumption only strengthens this further. No critical dependency. Phase 12 addition; see PHASE12_NOTES.md."
     }
   ],
   "consumption_national": [
@@ -2163,6 +2357,22 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       "faostat_self_sufficiency_pct": 0.0,
       "project_self_sufficiency_pct": 0.0,
       "note": "Exact match: both sources confirm 0% domestic rice production, consistent with the project's existing assumption."
+    },
+    {
+      "pyramid_group": "Nuts, seeds, oils & fats",
+      "faostat_item": "Nuts and products",
+      "faostat_year": "2022",
+      "faostat_self_sufficiency_pct": 0.0,
+      "project_self_sufficiency_pct": 0.0,
+      "note": "CONFIRMS the existing assumption rather than revising it: FAOSTAT 2022 shows zero recorded tree-nut production against ~32kt domestic supply, i.e. exactly 0% -- Estonia's small-scale/garden hazelnut growing (real, per user feedback) doesn't register at national-statistics resolution. Phase 1's crosswalk had explicitly flagged this as needing a Phase 3 double-check against trade data that never happened until Phase 12; now confirmed rather than merely assumed."
+    },
+    {
+      "pyramid_group": "Grain products & potatoes",
+      "faostat_item": "Oats",
+      "faostat_year": "2022",
+      "faostat_self_sufficiency_pct": 238.1,
+      "project_self_sufficiency_pct": 238.1,
+      "note": "Fills a genuine data gap rather than cross-checking an existing figure: the Phase 1 Statistikaamet PM20 pull had oats production blank for 2024 (not published that year), so this project had no oats self-sufficiency figure at all until this FAOSTAT pull. Adopted directly as the project's own oats figure (238.1%, even stronger than barley's 205.5%) in the absence of any Estonian-source alternative. See PHASE12_NOTES.md for how this was combined with barley and rice."
     }
   ]
 }
@@ -2272,9 +2482,15 @@ function wireTableToggle(btnSelector, tableId){
       accent: false
     },
     {
-      label: "Scenario C — EAT-Lancet diet",
+      label: "Scenario C — EAT-Lancet 2019 diet",
       value: fmtPct(h.scenario_C_weighted_pct, 0),
-      note: "Same production, same weighting basis — demand shifted to the EAT-Lancet Planetary Health Diet, an international reference diet, population-scaled to Estonia's energy needs. Higher than Scenario A mainly because EAT-Lancet recommends markedly less dairy and meat than Estonia actually eats. See section 02.",
+      note: "Same production, same weighting basis — demand shifted to the original (2019) EAT-Lancet Planetary Health Diet, an international reference diet, population-scaled to Estonia's energy needs. Higher than Scenario A mainly because EAT-Lancet recommends markedly less dairy and meat than Estonia actually eats. See section 02.",
+      accent: false
+    },
+    {
+      label: "Scenario C.2 — EAT-Lancet 2025 diet",
+      value: fmtPct(h.scenario_C2_weighted_pct, 0),
+      note: "Same production, same weighting basis — demand shifted to the EAT-Lancet Commission's revised 2025 Planetary Health Diet, which keeps most 2019 targets but cuts added sugar sharply and nudges animal-protein categories up slightly. Nearly identical headline to Scenario C (" + fmtPct(h.scenario_C_weighted_pct, 0) + ") because the categories that shifted most (sugar, honey) sit outside this weighted average. See section 02.",
       accent: false
     },
     {
@@ -2306,8 +2522,10 @@ var currentScenario = "A";
 var SCEN_KEYS = {
   A: { pct: "scenario_A_pct", disp: "scenario_A_pct_display" },
   B: { pct: "scenario_B_pct", disp: "scenario_B_pct_display" },
-  C: { pct: "scenario_C_pct", disp: "scenario_C_pct_display" }
+  C: { pct: "scenario_C_pct", disp: "scenario_C_pct_display" },
+  C2: { pct: "scenario_C2_pct", disp: "scenario_C2_pct_display" }
 };
+var SCEN_LABEL = { A: "Scenario A", B: "Scenario B", C: "Scenario C", C2: "Scenario C.2" };
 function renderSSChart(){
   var container = document.getElementById('ss-chart');
   container.innerHTML = "";
@@ -2351,6 +2569,20 @@ function renderSSChart(){
       baseline.style.left = baselinePos + "%";
       track.appendChild(baseline);
 
+      if(r.cross_check_low_pct !== null && r.cross_check_high_pct !== null){
+        var ccLo = Math.min(r.cross_check_low_pct, r.cross_check_high_pct);
+        var ccHi = Math.max(r.cross_check_low_pct, r.cross_check_high_pct);
+        var ccLoPos = Math.min(ccLo/maxPct*100, 100);
+        var ccHiPos = Math.min(ccHi/maxPct*100, 100);
+        var ccRange = el('div','hbar-range');
+        ccRange.style.left = ccLoPos + "%";
+        ccRange.style.width = Math.max(ccHiPos - ccLoPos, 0.4) + "%";
+        ccRange.title = "Independent cross-check range: " + fmtPct(ccLo) + "\u2013" + fmtPct(ccHi);
+        track.appendChild(ccRange);
+        var ccCapLo = el('div','hbar-range-cap'); ccCapLo.style.left = ccLoPos + "%"; track.appendChild(ccCapLo);
+        var ccCapHi = el('div','hbar-range-cap'); ccCapHi.style.left = ccHiPos + "%"; track.appendChild(ccCapHi);
+      }
+
       var status = statusOf(pct);
       var fill = el('div','hbar-fill');
       var widthPct = Math.max(pct/maxPct*100, 0.6);
@@ -2372,8 +2604,9 @@ function renderSSChart(){
 
       var showTt = function(evt){
         var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
-          + ttRow('Scenario ' + currentScenario, fmtPct(pct))
+          + ttRow(SCEN_LABEL[currentScenario], fmtPct(pct))
           + (r.feed_adjusted_low_bound_pct !== null ? ttRow('Feed-adjusted lower bound', fmtPct(r.feed_adjusted_low_bound_pct)) : '')
+          + (r.cross_check_low_pct !== null ? ttRow('Independent cross-check range', fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : '')
           + ttRow('Status', statusLabel(status))
           + ttRow('Data status', r.data_status);
         showTooltip(evt, html);
@@ -2404,7 +2637,9 @@ function renderSSChart(){
     ? "Today's actual diet against today's production."
     : currentScenario === "B"
     ? "If everyone ate exactly as TAI recommends — production unchanged."
-    : "If everyone ate the EAT-Lancet Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged.";
+    : currentScenario === "C"
+    ? "If everyone ate the original (2019) EAT-Lancet Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged."
+    : "If everyone ate the EAT-Lancet Commission's revised 2025 Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged.";
 }
 
 function renderSSTable(rows, pctKey, dispKey){
@@ -2413,8 +2648,8 @@ function renderSSTable(rows, pctKey, dispKey){
   var table = el('table','data-table');
   var thead = el('thead');
   var htr = el('tr');
-  ["Food group","Item","Scenario A","Scenario B","Scenario C","Feed-adjusted bound","Data status"].forEach(function(h){
-    htr.appendChild(el('th', h.indexOf("Scenario")===0 || h==="Feed-adjusted bound" ? 'num' : '', h));
+  ["Food group","Item","Scenario A","Scenario B","Scenario C","Scenario C.2","Feed-adjusted bound","Cross-check range","Data status"].forEach(function(h){
+    htr.appendChild(el('th', h.indexOf("Scenario")===0 || h==="Feed-adjusted bound" || h==="Cross-check range" ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');
@@ -2425,7 +2660,9 @@ function renderSSTable(rows, pctKey, dispKey){
     tr.appendChild(el('td','num tnum', r.scenario_A_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_B_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_C_pct_display));
+    tr.appendChild(el('td','num tnum', r.scenario_C2_pct_display));
     tr.appendChild(el('td','num tnum', r.feed_adjusted_low_bound_pct !== null ? fmtPct(r.feed_adjusted_low_bound_pct) : "—"));
+    tr.appendChild(el('td','num tnum', r.cross_check_low_pct !== null ? (fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : "—"));
     tr.appendChild(el('td','', r.data_status));
     tbody.appendChild(tr);
   });
@@ -2592,11 +2829,12 @@ wireTableToggle(null,'cons-table');
    05 — scenario delta (diverging bar)
    --------------------------------------------------------------------- */
 var currentDelta = "B";
-var DELTA_LABEL = { B: "Scenario B", C: "Scenario C" };
+var DELTA_LABEL = { B: "Scenario B", C: "Scenario C", C2: "Scenario C.2" };
+var DELTA_PCT_KEY = { B: "scenario_B_pct", C: "scenario_C_pct", C2: "scenario_C2_pct" };
 function renderDeltaChart(){
   var container = document.getElementById('delta-chart');
   container.innerHTML = "";
-  var pctKey = currentDelta === "B" ? "scenario_B_pct" : "scenario_C_pct";
+  var pctKey = DELTA_PCT_KEY[currentDelta];
   var labelName = DELTA_LABEL[currentDelta];
   var rows = DATA.food_groups.filter(function(r){ return r.scenario_A_pct !== null && r[pctKey] !== null; })
     .map(function(r){ return { pyramid_group:r.pyramid_group, subitem:r.subitem, delta: r[pctKey] - r.scenario_A_pct, a:r.scenario_A_pct, b:r[pctKey] }; });
@@ -2653,7 +2891,9 @@ function renderDeltaChart(){
 
   document.getElementById('delta-hint').textContent = currentDelta === "B"
     ? "TAI recommends eating more of several categories Estonia is already worst at supplying domestically."
-    : "EAT-Lancet reduces demand for most animal products (raising self-sufficiency) but sharply raises demand for oils/fats — rapeseed drops from 69.3% to 27.0%, a new critical dependency that doesn't exist under Scenario A or B.";
+    : currentDelta === "C"
+    ? "The 2019 EAT-Lancet diet reduces demand for most animal products (raising self-sufficiency) but sharply raises demand for oils/fats — rapeseed drops from 69.3% to 27.0%, a new critical dependency that doesn't exist under Scenario A or B."
+    : "The 2025 EAT-Lancet revision tells much the same story as 2019 — rapeseed still drops to 26.3% — but honey's self-sufficiency figure becomes extreme (~2,795%) purely because the revised diet's added-sugar target is so much smaller, not because production changed; read that one figure with its note, not at face value.";
 }
 
 document.querySelectorAll('#delta-toggle button').forEach(function(btn){

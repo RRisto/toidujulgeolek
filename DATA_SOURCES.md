@@ -17,7 +17,7 @@ Direct PDF: https://www.tai.ee/sites/default/files/2025-01/tabelraamat_13.1.25.p
 This is the primary reference: energy and nutrient reference values and, importantly, recommended food-group amounts, broken out by life-stage/age group and sex (infants, children, adolescents, adults, elderly, pregnant, nursing) and by physical activity level. This is the table booklet a dietitian would use — it's the closest thing to raw reference data TAI publishes. **Needs to be downloaded and parsed (PDF table extraction) in Phase 1** — the exact age/sex/activity bins it uses will define the demographic grid for the whole model, rather than us inventing our own bins.
 
 **TAI toidupüramiid (food pyramid)** — https://www.tai.ee/et/valjaanded/toidupuramiid
-Defines TAI's own food-group taxonomy (5 core groups + 1 discretionary group — see Section 3 of PLAN.md) and gives portion-based daily targets at three energy levels (~1600 / 1800–2400 / 2400–3200 kcal, i.e. roughly inactive-elderly-women / adult-women / adult-men bands). Useful as a simplified, cross-checkable version of the Tabelraamat, and as the source for the group taxonomy itself.
+Defines TAI's own food-group taxonomy (5 core groups + 1 discretionary group — see Section 3 of plans/PLAN.md) and gives portion-based daily targets at three energy levels (~1600 / 1800–2400 / 2400–3200 kcal, i.e. roughly inactive-elderly-women / adult-women / adult-men bands). Useful as a simplified, cross-checkable version of the Tabelraamat, and as the source for the group taxonomy itself.
 
 ## 3. Actual consumption (what people currently eat)
 
@@ -106,7 +106,7 @@ Standardised production/import/export/feed/seed/waste/food-supply breakdown per 
 
 **Eurostat** — agricultural production and self-sufficiency-adjacent indicators (e.g. agri-environmental indicators, supply balance sheets for cereals/meat/milk) for EU cross-country comparison. To be pulled in Phase 1 if useful for context ("how does Estonia compare to other small/northern EU states").
 
-## 9. Phase 1 acquisition status (updated 2026-08-30 — see PHASE1_NOTES.md for the full write-up)
+## 9. Phase 1 acquisition status (updated 2026-08-30 — see plans/PHASE1_NOTES.md for the full write-up)
 
 | Source | Status | Where |
 |---|---|---|
@@ -116,8 +116,8 @@ Standardised production/import/export/feed/seed/waste/food-supply breakdown per 
 | Confirmed no newer national dietary survey exists | Confirmed directly with TAI's own page — next wave fields through May 2027 | noted in `data/raw/tai/README.md` |
 | Domestic production + trade + feed + loss balance sheets (cereals, potato, veg, fruit, meat, eggs, dairy) | Acquired for 2024 via the PM20/31/33/34/42/45/47 "ressurss ja kasutamine" series — a much better source than originally scoped, already includes imports/exports/feed-use/loss per item | `data/raw/statistikaamet/PM*_2024.csv`, validated against this section's official ratios (see that folder's README.md) |
 | Foreign trade at commodity level (separate from the above) | Superseded — the PM* balance tables above already carry the food-relevant import/export figures per item, so a separate pull wasn't needed except for the point below | — |
-| Feed-conversion / protein-feed import share | Still open — grain-specific feed use is now known directly (PM20), but the protein-feed/soy import share has no ready-made Estonian source; will need an assumption set in Phase 3 | flagged in PHASE1_NOTES.md |
-| Exact reference years behind the strategy document's "5-year average" | Confirmed NOT stated anywhere in the document (checked directly) — treat as an inference (~2018-2022, given 2023 publication), not a fact, wherever that table is cited | PHASE1_NOTES.md |
+| Feed-conversion / protein-feed import share | Still open — grain-specific feed use is now known directly (PM20), but the protein-feed/soy import share has no ready-made Estonian source; will need an assumption set in Phase 3 | flagged in plans/PHASE1_NOTES.md |
+| Exact reference years behind the strategy document's "5-year average" | Confirmed NOT stated anywhere in the document (checked directly) — treat as an inference (~2018-2022, given 2023 publication), not a fact, wherever that table is cited | plans/PHASE1_NOTES.md |
 | County-level (maakond) detail | Not pulled — deferred, not needed for the national-level question this project answers | — |
 
-Network-access note: both this session's sandboxed shells block the domains in this document outright; every pull above was done by driving an actual browser session (see PHASE1_NOTES.md) rather than shell `curl`. Anyone continuing this work from a different environment should check whether that restriction still applies before assuming shell-based pulls won't work.
+Network-access note: both this session's sandboxed shells block the domains in this document outright; every pull above was done by driving an actual browser session (see plans/PHASE1_NOTES.md) rather than shell `curl`. Anyone continuing this work from a different environment should check whether that restriction still applies before assuming shell-based pulls won't work.

@@ -15,7 +15,7 @@ Writes:
 Run this any time the underlying data, model, or dashboard source files
 change. It performs no computation of its own -- it is pure templating,
 so the model (Python) and the presentation (HTML/JS + static JSON) stay
-decoupled, per PLAN.md Section 6.
+decoupled, per plans/PLAN.md Section 6.
 
 Usage: python3 build_dashboard.py   (run from the project root)
 """

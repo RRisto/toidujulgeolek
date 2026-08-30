@@ -1,7 +1,7 @@
 """
 Phase 9: export all Phase 3-8 model outputs into a single consolidated JSON for the dashboard.
 Run from the project root. Reads data/processed/*.csv, writes output/dashboard_data.json.
-Kept separate from the HTML page per PLAN.md Section 6: re-run this any time the underlying
+Kept separate from the HTML page per plans/PLAN.md Section 6: re-run this any time the underlying
 model/data is updated, without touching the dashboard's presentation code.
 """
 import csv
@@ -30,6 +30,60 @@ scenario = read_csv("scenario_comparison.csv")
 flags = read_csv("critical_dependency_flags.csv")
 flags_by_key = {(r['pyramid_group'], r['subitem']): r for r in flags}
 
+# ---------------------------------------------------------------------------
+# 1b. FAOSTAT independent cross-check, collapsed into a low/high uncertainty
+#     band per (pyramid_group, subitem). Only faostat_cross_check.csv rows
+#     that carry a comparable project_self_sufficiency_pct are used -- pure
+#     FAOSTAT component rows with no project figure (e.g. "Wheat and
+#     products" alone, or "Meat, total") are excluded, since there is
+#     nothing to compare them against. The FAOSTAT-item -> subitem mapping
+#     is maintained by hand: FAOSTAT's item taxonomy doesn't align 1:1 with
+#     this project's pyramid taxonomy (e.g. beef/pork/offal are reported
+#     separately by FAOSTAT but rolled into a single "Red meat" subitem
+#     here), so it can't be joined automatically. See plans/PHASE11_NOTES.md.
+# ---------------------------------------------------------------------------
+FAOSTAT_ITEM_TO_SUBITEM = {
+    "Wheat+Rye combined (bread proxy)": ("Grain products & potatoes", "High-fibre bread/baked goods"),
+    "Barley and products": ("Grain products & potatoes", "Porridges/pasta/rice/grain products"),
+    "Rice and products": ("Grain products & potatoes", "Porridges/pasta/rice/grain products"),
+    "Potatoes and products": ("Grain products & potatoes", "Potato, sweet potato"),
+    "Vegetables (aggregate: tomatoes+onions+other)": ("Vegetables, fruits & berries", "Vegetables"),
+    "Fruits - Excluding Wine (no berries)": ("Vegetables, fruits & berries", "Fruits+Berries (combined)"),
+    "Bovine Meat (beef)": ("Fish, eggs & meat", "Red meat"),
+    "Pigmeat (pork)": ("Fish, eggs & meat", "Red meat"),
+    "Offals": ("Fish, eggs & meat", "Red meat"),
+    "Poultry Meat": ("Fish, eggs & meat", "Poultry"),
+    "Eggs": ("Fish, eggs & meat", "Eggs"),
+    "Fish, Seafood": ("Fish, eggs & meat", "Fish & seafood"),
+    "Milk - Excluding Butter": ("Dairy products", "(total)"),
+    "Rape and Mustardseed (raw)": ("Nuts, seeds, oils & fats", "Oils/fats/spreads (rapeseed, representative)"),
+    "Rape and Mustard Oil (refined)": ("Nuts, seeds, oils & fats", "Oils/fats/spreads (rapeseed, representative)"),
+    "Sunflowerseed Oil": ("Nuts, seeds, oils & fats", "Oils/fats/spreads (sunflower, 0%)"),
+    "Nuts and products": ("Nuts, seeds, oils & fats", "Nuts+Seeds,cocoa (combined)"),
+}
+
+faostat_raw = read_csv("faostat_cross_check.csv")
+
+cross_check_acc = {}
+for r in faostat_raw:
+    key = FAOSTAT_ITEM_TO_SUBITEM.get(r['faostat_item'])
+    proj_v = num(r['project_self_sufficiency_pct'])
+    fao_v = num(r['faostat_self_sufficiency_pct'])
+    if key is None or proj_v is None or fao_v is None:
+        continue
+    acc = cross_check_acc.setdefault(key, {"vals": [], "items": []})
+    acc["vals"].extend([proj_v, fao_v])
+    acc["items"].append(f"{r['faostat_item']} (FAOSTAT {r['faostat_year']}: {fao_v}%)")
+
+cross_check_by_key = {}
+for key, acc in cross_check_acc.items():
+    cross_check_by_key[key] = {
+        "low": round(min(acc["vals"]), 1),
+        "high": round(max(acc["vals"]), 1),
+        "basis": "; ".join(acc["items"]),
+        "n_sources": len(acc["items"]),
+    }
+
 food_groups = []
 for r in scenario:
     key = (r['pyramid_group'], r['subitem'])
@@ -37,6 +91,7 @@ for r in scenario:
     a_pct = num(r['scenario_A_self_sufficiency_pct'])
     b_pct = num(r['scenario_B_self_sufficiency_pct'])
     c_pct = num(r['scenario_C_self_sufficiency_pct'])
+    c2_pct = num(r['scenario_C2_self_sufficiency_pct'])
     food_groups.append({
         "pyramid_group": r['pyramid_group'],
         "subitem": r['subitem'],
@@ -46,14 +101,21 @@ for r in scenario:
         "scenario_B_pct_display": r['scenario_B_self_sufficiency_pct'],
         "scenario_C_pct": c_pct,
         "scenario_C_pct_display": r['scenario_C_self_sufficiency_pct'],
+        "scenario_C2_pct": c2_pct,
+        "scenario_C2_pct_display": r['scenario_C2_self_sufficiency_pct'],
         "demand_A_tonnes": num(r['scenario_A_demand_tonnes_per_year']),
         "demand_B_tonnes": num(r['scenario_B_demand_tonnes_per_year']),
         "demand_C_tonnes": num(r['scenario_C_demand_tonnes_per_year']),
+        "demand_C2_tonnes": num(r['scenario_C2_demand_tonnes_per_year']),
         "demand_change_ratio": num(r['demand_change_ratio_B_over_A']),
         "demand_change_ratio_C": num(r['demand_change_ratio_C_over_A']),
+        "demand_change_ratio_C2": num(r['demand_change_ratio_C2_over_A']),
         "waste_lever_25_pct": num(r['scenario_A_waste_lever_25pct_household_cut_pct']),
         "waste_lever_50_pct": num(r['scenario_A_waste_lever_50pct_household_cut_pct']),
         "feed_adjusted_low_bound_pct": num(fl.get('feed_adjusted_low_bound_pct', '')),
+        "cross_check_low_pct": cross_check_by_key.get(key, {}).get("low"),
+        "cross_check_high_pct": cross_check_by_key.get(key, {}).get("high"),
+        "cross_check_basis": cross_check_by_key.get(key, {}).get("basis"),
         "data_status": r['data_status'],
         "note": r['note'],
         "flags": {
@@ -61,6 +123,8 @@ for r in scenario:
             "below_50_scenario_B": fl.get('flag_below_50pct_scenario_B', 'N/A'),
             "below_50_scenario_C": fl.get('flag_below_50pct_scenario_C', 'N/A'),
             "scenario_C_worsens": fl.get('flag_scenario_C_worsens_dependency', 'N/A'),
+            "below_50_scenario_C2": fl.get('flag_below_50pct_scenario_C2', 'N/A'),
+            "scenario_C2_worsens": fl.get('flag_scenario_C2_worsens_dependency', 'N/A'),
             "feed_adjusted_extends_concern": fl.get('flag_feed_adjusted_extends_concern', 'N/A'),
             "scenario_B_worsens": fl.get('flag_scenario_B_worsens_dependency', 'N/A'),
             "unresolved_data_gap": fl.get('flag_unresolved_data_gap', 'N/A'),
@@ -96,6 +160,7 @@ def weighted_headline(pct_field, weight_field="demand_A_tonnes"):
 hl_A_pct, hl_A_cov, hl_A_incl, hl_A_excl = weighted_headline("scenario_A_pct")
 hl_B_pct, hl_B_cov, hl_B_incl, hl_B_excl = weighted_headline("scenario_B_pct")
 hl_C_pct, hl_C_cov, hl_C_incl, hl_C_excl = weighted_headline("scenario_C_pct")
+hl_C2_pct, hl_C2_cov, hl_C2_incl, hl_C2_excl = weighted_headline("scenario_C2_pct")
 
 hl_no_tonnage = [f"{g['pyramid_group']} / {g['subitem']}" for g in food_groups if g["demand_A_tonnes"] is None]
 
@@ -128,6 +193,9 @@ headline = {
     "scenario_C_weighted_pct": hl_C_pct,
     "scenario_C_coverage_pct_of_tonnage": hl_C_cov,
     "scenario_C_excluded_from_average": hl_C_excl,
+    "scenario_C2_weighted_pct": hl_C2_pct,
+    "scenario_C2_coverage_pct_of_tonnage": hl_C2_cov,
+    "scenario_C2_excluded_from_average": hl_C2_excl,
     "scenario_A_waste25_weighted_pct": hl_waste25_pct,
     "scenario_A_waste50_weighted_pct": hl_waste50_pct,
     "method_note": (
@@ -142,7 +210,9 @@ headline = {
         "this calculation; legumes in particular is a genuine, separately-flagged gap. Scenario C "
         "(EAT-Lancet Planetary Health Diet) uses the same weighting basis and the same exclusion "
         "logic -- see scenario_C_excluded_from_average for its own list, which differs slightly "
-        "from A/B because EAT-Lancet leaves a different subset of categories unresolved."
+        "from A/B because EAT-Lancet leaves a different subset of categories unresolved. Scenario "
+        "C.2 (the 2025 EAT-Lancet Commission's revised Planetary Health Diet, Phase 14) uses the "
+        "same weighting basis and exclusion logic again -- see scenario_C2_excluded_from_average."
     ),
 }
 
@@ -198,7 +268,7 @@ for r in waste_raw:
 # ---------------------------------------------------------------------------
 # 5. FAOSTAT cross-check (for the methodology appendix / validation callout)
 # ---------------------------------------------------------------------------
-faostat_raw = read_csv("faostat_cross_check.csv")
+# faostat_raw already loaded in section 1b above
 faostat = []
 for r in faostat_raw:
     faostat.append({
@@ -246,6 +316,7 @@ print(f"Wrote {out_path}")
 print(f"Headline Scenario A (weighted, {hl_A_cov}% tonnage coverage): {hl_A_pct}%")
 print(f"Headline Scenario B (weighted, {hl_B_cov}% tonnage coverage): {hl_B_pct}%")
 print(f"Headline Scenario C (weighted, {hl_C_cov}% tonnage coverage): {hl_C_pct}%")
+print(f"Headline Scenario C.2 (weighted, {hl_C2_cov}% tonnage coverage): {hl_C2_pct}%")
 print(f"Waste lever 25%: {hl_waste25_pct}%  |  50%: {hl_waste50_pct}%")
 print(f"Excluded from A average: {hl_A_excl}")
 print(f"food_groups: {len(food_groups)}, consumption_national: {len(consumption_national)}, "

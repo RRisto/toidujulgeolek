@@ -1,0 +1,12 @@
+area,area_code_m49,item,item_code_fbs,element,year,unit,value,flag
+Estonia,233,Nuts and products,S2551,Production,2022,1000 t,0,I
+Estonia,233,Nuts and products,S2551,Domestic supply quantity,2022,1000 t,32,I
+Estonia,233,Rice and products,S2807,Production,2022,1000 t,0,I
+Estonia,233,Rice and products,S2807,Domestic supply quantity,2022,1000 t,7,I
+Estonia,233,Rice and products,S2807,Food supply quantity (kg/capita/yr),2022,kg/cap,4.77,E
+Estonia,233,Barley and products,S2513,Production,2022,1000 t,489,I
+Estonia,233,Barley and products,S2513,Domestic supply quantity,2022,1000 t,238,I
+Estonia,233,Barley and products,S2513,Food supply quantity (kg/capita/yr),2022,kg/cap,7.78,E
+Estonia,233,Oats,S2516,Production,2022,1000 t,100,I
+Estonia,233,Oats,S2516,Domestic supply quantity,2022,1000 t,42,I
+Estonia,233,Oats,S2516,Food supply quantity (kg/capita/yr),2022,kg/cap,5.97,E

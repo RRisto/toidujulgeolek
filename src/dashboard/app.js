@@ -102,9 +102,15 @@ function wireTableToggle(btnSelector, tableId){
       accent: false
     },
     {
-      label: "Scenario C — EAT-Lancet diet",
+      label: "Scenario C — EAT-Lancet 2019 diet",
       value: fmtPct(h.scenario_C_weighted_pct, 0),
-      note: "Same production, same weighting basis — demand shifted to the EAT-Lancet Planetary Health Diet, an international reference diet, population-scaled to Estonia's energy needs. Higher than Scenario A mainly because EAT-Lancet recommends markedly less dairy and meat than Estonia actually eats. See section 02.",
+      note: "Same production, same weighting basis — demand shifted to the original (2019) EAT-Lancet Planetary Health Diet, an international reference diet, population-scaled to Estonia's energy needs. Higher than Scenario A mainly because EAT-Lancet recommends markedly less dairy and meat than Estonia actually eats. See section 02.",
+      accent: false
+    },
+    {
+      label: "Scenario C.2 — EAT-Lancet 2025 diet",
+      value: fmtPct(h.scenario_C2_weighted_pct, 0),
+      note: "Same production, same weighting basis — demand shifted to the EAT-Lancet Commission's revised 2025 Planetary Health Diet, which keeps most 2019 targets but cuts added sugar sharply and nudges animal-protein categories up slightly. Nearly identical headline to Scenario C (" + fmtPct(h.scenario_C_weighted_pct, 0) + ") because the categories that shifted most (sugar, honey) sit outside this weighted average. See section 02.",
       accent: false
     },
     {
@@ -136,8 +142,10 @@ var currentScenario = "A";
 var SCEN_KEYS = {
   A: { pct: "scenario_A_pct", disp: "scenario_A_pct_display" },
   B: { pct: "scenario_B_pct", disp: "scenario_B_pct_display" },
-  C: { pct: "scenario_C_pct", disp: "scenario_C_pct_display" }
+  C: { pct: "scenario_C_pct", disp: "scenario_C_pct_display" },
+  C2: { pct: "scenario_C2_pct", disp: "scenario_C2_pct_display" }
 };
+var SCEN_LABEL = { A: "Scenario A", B: "Scenario B", C: "Scenario C", C2: "Scenario C.2" };
 function renderSSChart(){
   var container = document.getElementById('ss-chart');
   container.innerHTML = "";
@@ -181,6 +189,20 @@ function renderSSChart(){
       baseline.style.left = baselinePos + "%";
       track.appendChild(baseline);
 
+      if(r.cross_check_low_pct !== null && r.cross_check_high_pct !== null){
+        var ccLo = Math.min(r.cross_check_low_pct, r.cross_check_high_pct);
+        var ccHi = Math.max(r.cross_check_low_pct, r.cross_check_high_pct);
+        var ccLoPos = Math.min(ccLo/maxPct*100, 100);
+        var ccHiPos = Math.min(ccHi/maxPct*100, 100);
+        var ccRange = el('div','hbar-range');
+        ccRange.style.left = ccLoPos + "%";
+        ccRange.style.width = Math.max(ccHiPos - ccLoPos, 0.4) + "%";
+        ccRange.title = "Independent cross-check range: " + fmtPct(ccLo) + "\u2013" + fmtPct(ccHi);
+        track.appendChild(ccRange);
+        var ccCapLo = el('div','hbar-range-cap'); ccCapLo.style.left = ccLoPos + "%"; track.appendChild(ccCapLo);
+        var ccCapHi = el('div','hbar-range-cap'); ccCapHi.style.left = ccHiPos + "%"; track.appendChild(ccCapHi);
+      }
+
       var status = statusOf(pct);
       var fill = el('div','hbar-fill');
       var widthPct = Math.max(pct/maxPct*100, 0.6);
@@ -202,8 +224,9 @@ function renderSSChart(){
 
       var showTt = function(evt){
         var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
-          + ttRow('Scenario ' + currentScenario, fmtPct(pct))
+          + ttRow(SCEN_LABEL[currentScenario], fmtPct(pct))
           + (r.feed_adjusted_low_bound_pct !== null ? ttRow('Feed-adjusted lower bound', fmtPct(r.feed_adjusted_low_bound_pct)) : '')
+          + (r.cross_check_low_pct !== null ? ttRow('Independent cross-check range', fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : '')
           + ttRow('Status', statusLabel(status))
           + ttRow('Data status', r.data_status);
         showTooltip(evt, html);
@@ -234,7 +257,9 @@ function renderSSChart(){
     ? "Today's actual diet against today's production."
     : currentScenario === "B"
     ? "If everyone ate exactly as TAI recommends — production unchanged."
-    : "If everyone ate the EAT-Lancet Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged.";
+    : currentScenario === "C"
+    ? "If everyone ate the original (2019) EAT-Lancet Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged."
+    : "If everyone ate the EAT-Lancet Commission's revised 2025 Planetary Health Diet, population-scaled to Estonia's energy needs — production unchanged.";
 }
 
 function renderSSTable(rows, pctKey, dispKey){
@@ -243,8 +268,8 @@ function renderSSTable(rows, pctKey, dispKey){
   var table = el('table','data-table');
   var thead = el('thead');
   var htr = el('tr');
-  ["Food group","Item","Scenario A","Scenario B","Scenario C","Feed-adjusted bound","Data status"].forEach(function(h){
-    htr.appendChild(el('th', h.indexOf("Scenario")===0 || h==="Feed-adjusted bound" ? 'num' : '', h));
+  ["Food group","Item","Scenario A","Scenario B","Scenario C","Scenario C.2","Feed-adjusted bound","Cross-check range","Data status"].forEach(function(h){
+    htr.appendChild(el('th', h.indexOf("Scenario")===0 || h==="Feed-adjusted bound" || h==="Cross-check range" ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');
@@ -255,7 +280,9 @@ function renderSSTable(rows, pctKey, dispKey){
     tr.appendChild(el('td','num tnum', r.scenario_A_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_B_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_C_pct_display));
+    tr.appendChild(el('td','num tnum', r.scenario_C2_pct_display));
     tr.appendChild(el('td','num tnum', r.feed_adjusted_low_bound_pct !== null ? fmtPct(r.feed_adjusted_low_bound_pct) : "—"));
+    tr.appendChild(el('td','num tnum', r.cross_check_low_pct !== null ? (fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : "—"));
     tr.appendChild(el('td','', r.data_status));
     tbody.appendChild(tr);
   });
@@ -422,11 +449,12 @@ wireTableToggle(null,'cons-table');
    05 — scenario delta (diverging bar)
    --------------------------------------------------------------------- */
 var currentDelta = "B";
-var DELTA_LABEL = { B: "Scenario B", C: "Scenario C" };
+var DELTA_LABEL = { B: "Scenario B", C: "Scenario C", C2: "Scenario C.2" };
+var DELTA_PCT_KEY = { B: "scenario_B_pct", C: "scenario_C_pct", C2: "scenario_C2_pct" };
 function renderDeltaChart(){
   var container = document.getElementById('delta-chart');
   container.innerHTML = "";
-  var pctKey = currentDelta === "B" ? "scenario_B_pct" : "scenario_C_pct";
+  var pctKey = DELTA_PCT_KEY[currentDelta];
   var labelName = DELTA_LABEL[currentDelta];
   var rows = DATA.food_groups.filter(function(r){ return r.scenario_A_pct !== null && r[pctKey] !== null; })
     .map(function(r){ return { pyramid_group:r.pyramid_group, subitem:r.subitem, delta: r[pctKey] - r.scenario_A_pct, a:r.scenario_A_pct, b:r[pctKey] }; });
@@ -483,7 +511,9 @@ function renderDeltaChart(){
 
   document.getElementById('delta-hint').textContent = currentDelta === "B"
     ? "TAI recommends eating more of several categories Estonia is already worst at supplying domestically."
-    : "EAT-Lancet reduces demand for most animal products (raising self-sufficiency) but sharply raises demand for oils/fats — rapeseed drops from 69.3% to 27.0%, a new critical dependency that doesn't exist under Scenario A or B.";
+    : currentDelta === "C"
+    ? "The 2019 EAT-Lancet diet reduces demand for most animal products (raising self-sufficiency) but sharply raises demand for oils/fats — rapeseed drops from 69.3% to 27.0%, a new critical dependency that doesn't exist under Scenario A or B."
+    : "The 2025 EAT-Lancet revision tells much the same story as 2019 — rapeseed still drops to 26.3% — but honey's self-sufficiency figure becomes extreme (~2,795%) purely because the revised diet's added-sugar target is so much smaller, not because production changed; read that one figure with its note, not at face value.";
 }
 
 document.querySelectorAll('#delta-toggle button').forEach(function(btn){

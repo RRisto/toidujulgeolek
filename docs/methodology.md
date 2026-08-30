@@ -1,8 +1,8 @@
 # Methodology — Estonian food self-sufficiency model
 
 This document consolidates every data source, method, and assumption used across Phases 1-8 of
-this project, for the eventual dashboard's methodology/sources appendix (PLAN.md Section 9).
-It is written to stand alone: a reader shouldn't need the eight PHASE*_NOTES.md files to
+this project, for the eventual dashboard's methodology/sources appendix (plans/PLAN.md Section 9).
+It is written to stand alone: a reader shouldn't need the plans/PHASE*_NOTES.md files to
 understand what a number in the dashboard means or how confident to be in it. Where a method or
 figure is Estonia-specific and measured, that's stated; where it's a generic assumption, an
 illustrative sensitivity, or an unresolved gap, that's stated just as clearly, right next to the
@@ -13,7 +13,7 @@ number.
 Could Estonia feed its population a nutritionally adequate diet from domestic production, and
 where are the critical dependencies? Scope: national aggregate, current-year production levels
 (not production potential), ages 2+ (infants 0-1 excluded — see Section 3), the 6-group TAI
-toidupüramiid framework. Full scope statement in `PLAN.md` Section 2; explicit out-of-scope list
+toidupüramiid framework. Full scope statement in `plans/PLAN.md` Section 2; explicit out-of-scope list
 in Section 10 (production-capacity modelling, seasonality/regional/shock resilience, a
 quantitative micronutrient model, a v2 candidate list).
 
@@ -26,7 +26,7 @@ quantitative micronutrient model, a v2 candidate list).
 | TAI Tabelraamat 2025 | Energy requirements (age/sex/PAL), macronutrient %E targets (Table 6), food-group portion counts by energy level (Table 13), gram weights per portion (Table 16) | 2025 publication | PDF text extraction (WebFetch) for most tables; Table 16 required a different method — see Section 2.2 |
 | TAI RTU011 (2014 consumption survey) | Actual food-group consumption, grams/day, by age band and sex | 2013-2015 fieldwork | Classic PxWeb UI, driven directly (no JSON API reachable) |
 | Estonia's 2023+ food/agriculture strategy document | Official pre-computed self-sufficiency ratios (5-year average, exact years unconfirmed) | ~2018-2022 inferred | PDF extraction |
-| SEI (Stockholm Environment Institute) 2021 Estonia food waste study | Waste tonnage and (in a second, more targeted extraction pass) category-level detail by supply-chain stage | 2021 | WebFetch, two passes (see PHASE6_NOTES.md — the second pass surfaced materially richer detail than the first) |
+| SEI (Stockholm Environment Institute) 2021 Estonia food waste study | Waste tonnage and (in a second, more targeted extraction pass) category-level detail by supply-chain stage | 2021 | WebFetch, two passes (see plans/PHASE6_NOTES.md — the second pass surfaced materially richer detail than the first) |
 | agri.ee 2026 fish consumption study | Fish production/catch vs. domestic human consumption, resolving the "high self-sufficiency but mostly exported" nuance | 2026 | WebFetch |
 | FAOSTAT Food Balance Sheets (New Food Balances, FBS domain) | Independent, internationally-standardised production/trade/utilization balance per commodity, for cross-checking | 2022 (latest available; FAOSTAT typically lags 1-2 years) | Live browser session, FAOSTAT's own "Report" builder (Estonia, 2022) — see Section 8 |
 | Eurostat | EU-context comparison indicators | — | Attempted (Section 8); not successfully retrieved via automated access this round, left as a documented gap, not a blocker (DATA_SOURCES.md already flagged this as "if useful," lower priority than FAOSTAT) |
@@ -401,6 +401,56 @@ low-priority gap rather than pursued further, consistent with DATA_SOURCES.md's 
 of Eurostat as "useful for EU-comparison context" rather than a required cross-check — FAOSTAT
 already provided the substantive independent validation this phase needed.
 
+**Dashboard surfacing (Phase 11)**: this section's cross-check numbers originally lived only in
+this document and in `data/processed/faostat_cross_check.csv`, as prose describing divergences.
+Phase 11 surfaced them directly on the self-sufficiency chart itself: for every subitem with a
+FAOSTAT figure comparable to a project point estimate (i.e. rows in `faostat_cross_check.csv`
+carrying both a `faostat_self_sufficiency_pct` and a `project_self_sufficiency_pct`), the
+dashboard now draws a shaded low-high band and end-caps behind the bar, spanning
+min/max(FAOSTAT figure, project figure), plus the same range in the hover tooltip and the table
+view. This is presented explicitly as an *independent cross-check range*, not a statistical
+confidence interval — there is no sampling distribution behind these numbers, just two
+differently-sourced point estimates for the same quantity. Full mapping and rationale in
+`plans/PHASE11_NOTES.md`.
+
+**Three follow-up checks (Phase 12)**: user feedback questioned three of this project's least-
+resolved figures directly — the "~0% assumed" nuts figure, the wholly-missing honey category, and
+the wide "0%-178%+" porridge/pasta/rice range — and asked for a better approach where one exists.
+All three turned out to already be self-flagged, unresolved to-dos in this project's own
+`data/crosswalk/food_group_crosswalk.csv` (nuts: "worth a Phase 3 double-check... that never
+happened"; porridge/rice: "needs splitting... no consumption-mix data"), plus one plain oversight
+(honey: Statistikaamet's PM29 balance table was pulled in Phase 1 and never wired into the model at
+all). Phase 12 ran the FAOSTAT double-check that was always pending for nuts (Estonia 2022, "Nuts
+and products": 0 t production vs. ~32kt domestic supply — confirms, not revises, the existing
+assumption), wired PM29's honey balance in as its own resolved subitem (98.1% self-sufficient), and
+used the same per-capita-consumption-share splitting technique already established for the RTU011
+poultry/red-meat split (Phase 3) to narrow the porridge/rice range to a ~156.2% upper bound (rice
+0%, oats+barley "porridge grains" 210.4%, FAOSTAT-weighted by human food consumption; pasta still
+excluded for lack of a comparable weight). Full detail in `plans/PHASE12_NOTES.md`.
+
+**Pasta / durum wheat verification (Phase 13)**: user feedback pushed back on the pasta assumption
+directly — Estonia does produce pasta domestically (Tartu Mill) and does grow its own wheat, so why
+treat pasta as ~0% self-sufficient? Both halves of that observation are true and neither was in
+dispute: the project's own PM20-based wheat figures already show Estonia comfortably
+self-sufficient in wheat overall (268-337%), and Tartu Mill's pasta line is real (confirmed via its
+own product listing and Wikipedia). The resolution is that "wheat" is not one crop for this
+purpose: pasta requires durum wheat (*Triticum durum*) specifically, not the common/soft wheat
+(*Triticum aestivum*) Estonia grows in surplus for bread and feed — confirmed directly from Tartu
+Mill's own spaghetti ingredient list ("durum wheat flour, water"). Two independent agricultural
+sources confirm Estonia does not commercially grow durum: PIKK.ee's extension guide states plainly
+that "Estonia grows soft wheat varieties because durum needs a drier, more continental climate"
+than Estonia has, and ERR/Novaator (2024) reports durum being trialled experimentally on a single
+farm (Põlgaste) for two growing seasons, explicitly framed as an uncertain experiment contingent on
+finding a buyer — not a tracked commercial crop, which is also why PM20 has no durum line to report
+(not, as an earlier note here imprecisely put it, because PM20 reports it at 0%). Net effect: pasta
+*manufacturing* is genuinely domestic, running on imported durum wheat/semolina, the same pattern
+as a country roasting imported coffee or processing imported cocoa without being self-sufficient in
+the raw crop — so the ~156.2% upper bound for this category (which already treated pasta as ~0% and
+excluded it from the weighted blend) stands, now confirmed rather than assumed. No figures changed;
+`food_group_crosswalk.csv`, `self_sufficiency_model.csv`, `scenario_comparison.csv`, and
+`critical_dependency_flags.csv` were updated to cite this sourcing and drop the earlier unverified
+PM20 claim. Full detail in `plans/PHASE13_NOTES.md`.
+
 ## 9. Nutritional-adequacy check (5.8, Phase 8)
 
 The calorie-level check was already done in Phase 3 (two independent derivations within 2%). A
@@ -505,6 +555,61 @@ fruit+berries, the two structurally-zero oil types) was already flagged under Sc
 `scenario_comparison.csv`; `scenario_C_self_sufficiency_pct`, `flag_below_50pct_scenario_C`, and
 `flag_scenario_C_worsens_dependency` columns added to `critical_dependency_flags.csv`.
 
+### 10.2 Scenario C.2: the 2025 EAT-Lancet revision (Phase 14, post-launch)
+
+A fourth demand scenario, added after a user question asked whether the EAT-Lancet diet used for
+Scenario C was still current. It wasn't the only version: the EAT-Lancet Commission published a
+Summary Report in 2025 that revises the Planetary Health Diet's own reference targets, not merely
+its framing. Read from that report's Figure 01 ("Dietary targets for a healthy reference diet...
+for adult population-average energy intake of roughly 2,400 kcal per day"), the 2025 diet keeps
+vegetables, fruit, legumes, nuts, dairy and starchy tubers unchanged from 2019, but lowers whole
+grains (232g -> 210g), sharply cuts added/free sugar (31g -> 6g, now tied explicitly to the WHO's
+under-10%-of-energy guideline), and nudges every animal-protein line up slightly (eggs 13g -> 15g,
+fish 28g -> 30g, poultry 29g -> 30g, red meat 14g -> 15g), against a lower reference calorie level
+(2,500 -> ~2,400 kcal/day). Same sourcing caveat as Scenario C's original numbers: read from the
+Commission's own public summary PDF, not independently cross-checked against the full peer-reviewed
+Lancet article (paywalled) -- re-verify against the primary source before citing these figures
+externally.
+
+Scenario C.2 follows the identical construction as Scenario C in every respect except the reference
+table: same scaling method (this project's own choice, not EAT-Lancet's prescription) --
+`scale_factor_2025 = 2,234.4 / 2,400 = 0.931` -- same bread:porridge split ratio, same combined
+oils/fats basis, same nuts-row gap (2025 still gives no separate seeds/cocoa figure), and the same
+re-scaling formula: `scenario_C2_self_sufficiency_pct = scenario_A_self_sufficiency_pct ×
+(scenario_A_demand_tonnes / scenario_C2_demand_tonnes)`. Two rows needed the same hand-patching
+Scenario C already required, since they fall outside `update_scenario_c2.py`'s generic branch
+logic: Nuts+Seeds,cocoa (combined) stays at a confirmed structural 0% regardless of scenario
+(`src/patch_scenario_c2_special_cases.py`), and Honey -- which no EAT-Lancet edition gives a
+gram target for -- has its demand extrapolated using the Sweets (total) category's own
+demand-change ratio, the same convention Phase 12 established for Scenario B/C.
+
+**Headline**: Scenario C.2's tonnage-weighted aggregate self-sufficiency is 156.8% -- nearly
+identical to Scenario C's 157.0%, on the same 77.7%-of-tonnage coverage basis. That similarity is
+somewhat coincidental rather than a sign that nothing changed: the categories that shifted most
+between the two EAT-Lancet editions (added sugar, and therefore Honey) sit outside this weighted
+average entirely (sweets/sugar has no resolved self-sufficiency percentage to weight; Honey isn't
+tonnage-significant enough to move the average even at its extreme value). Within individual
+categories, the picture does move: red meat falls from 441.5% (C) to 395.6% (C.2) as the red-meat
+target rises slightly; fish falls from 281.8% to 252.5%; eggs from 95.0% to 79.0%; poultry from
+82.3% to 76.4% -- all because 2025's animal-protein targets are higher than 2019's, raising demand
+and mechanically lowering the self-sufficiency ratio for a fixed production base. Rapeseed oil
+stays a critical dependency either way (27.0% under C, 26.3% under C.2). The one figure that moves
+dramatically is Honey, from 562.8% (C) to approximately 2,795% (C.2) -- not because honey
+production changed, but because the 2025 diet's added-sugar target is roughly five times smaller
+than 2019's, and Honey's demand (and therefore its self-sufficiency denominator) is modelled as
+scaling proportionally with the whole sweets category. This number is real given the model's own
+stated assumption, but reading it as "honey became five times more self-sufficient" would be a
+misinterpretation -- it says a diet with that little added sugar would find Estonia's *existing*
+honey production trivially sufficient for the *much smaller* honey-equivalent allowance implied,
+nothing about a change in domestic honey supply.
+
+**Output**: `data/crosswalk/eatlancet2025_crosswalk.csv`; `scenario_C2_demand_tonnes_per_year`,
+`demand_change_ratio_C2_over_A`, and `scenario_C2_self_sufficiency_pct` columns added to
+`scenario_comparison.csv`; `scenario_C2_self_sufficiency_pct`, `flag_below_50pct_scenario_C2`, and
+`flag_scenario_C2_worsens_dependency` columns added to `critical_dependency_flags.csv`; dashboard's
+scenario toggle (self-sufficiency chart), scenario-comparison table, and diet-shift delta chart
+(section 05) all extended with a fourth/third option respectively. See `plans/PHASE14_NOTES.md`.
+
 ## 11. Consolidated assumptions and limitations (stated up front, not buried)
 
 - Consumption baseline is a 2014 survey (RTU011) — the best available, cross-checked where
@@ -518,7 +623,7 @@ fruit+berries, the two structurally-zero oil types) was already flagged under Sc
   assumption-based, not Estonia-specific measured data — presented as labelled sensitivities, not
   point estimates.
 - No production-capacity-ceiling modelling in v1 — "self-sufficiency" means "at today's output,"
-  not "at Estonia's potential output" (see PLAN.md Section 10 for the v2 candidate).
+  not "at Estonia's potential output" (see plans/PLAN.md Section 10 for the v2 candidate).
 - National aggregate only — no seasonality, regional, or shock-resilience modelling.
 - Micronutrient adequacy is a qualitative flag (Section 9), not a quantitative model, in v1.
 - Reference-year mismatches propagate through every phase's ratios: RTU011 (2014), PM-series
@@ -561,4 +666,37 @@ fruit+berries, the two structurally-zero oil types) was already flagged under Sc
 | `data/processed/rtu011_topline_cross_check.csv` | post-launch | RTU011 raw-topline validation of the Phase 4 consumption model, all 16 categories |
 | `data/crosswalk/eatlancet_crosswalk.csv` | post-launch | EAT-Lancet Planetary Health Diet crosswalk to project taxonomy, Scenario C demand basis |
 | `docs/methodology.md` | 8 (revised post-launch, Scenario C added post-launch) | This file |
+| `data/crosswalk/eatlancet2025_crosswalk.csv` | 14 | 2025 EAT-Lancet revision crosswalk, Scenario C.2 demand basis |
+| `data/processed/land_reallocation_scenario.csv` | 15 | Feed-grain/cropland freed by scenario (Tier 1) and illustrative vegetable-output sketch (Tier 2) |
+| `output/secondary_effects.html` | 15 | Standalone second page presenting the Phase 15 analysis |
 
+## 13. Secondary effects: land freed by lower meat demand (Phase 15, exploratory)
+
+A deliberately bounded, deliberately separate exploration, prompted by a direct user question
+after the vegetables discussion above: if meat/egg demand fell under a diet scenario, and
+production followed it downward, what would that free up, and could it plausibly help vegetables?
+This crosses into territory `plans/PLAN.md` Section 10 explicitly scoped OUT of v1 (theoretical
+production-capacity and land-reallocation modelling) -- this section doesn't reverse that scoping
+decision, it takes one narrow, clearly-labelled step into it, kept structurally and visually
+separate from every measured result above.
+
+Two tiers, presented at genuinely different confidence levels rather than as one number: **Tier 1**
+converts a lower-demand scenario into feed grain no longer needed (using Phase 6's own
+feed-conversion figures) and then into hectares (using PM20's own 2024 barley yield), on one new,
+explicitly-flagged assumption this project doesn't make anywhere else -- that production follows
+demand downward, rather than staying fixed. **Tier 2** asks what that land could produce if
+switched to vegetables, using a generic EU-wide yield benchmark (Eurostat 2022, not
+Estonia-specific) with no check on soil, capital, labour, or market absorption -- read as "is the
+land arithmetic plausible," not a projection.
+
+**Headline, held at arm's length appropriately**: even the most conservative scenario would need
+only about 6% of its own freed land to close Estonia's entire current vegetable production/use gap,
+at this generic yield -- suggesting land arithmetic isn't the binding constraint on vegetable
+self-sufficiency, while real-world adoption, agronomic suitability, and capital/labour very
+plausibly are, none of which this sketch models. Full detail, including why this is explicitly NOT
+framed as "feed grain redirected to human food" (Estonia's barley is already a large net export
+crop), in `plans/PHASE15_NOTES.md`.
+
+**Output**: `data/processed/land_reallocation_scenario.csv`; `output/secondary_effects.html` (a
+genuinely separate second page, not merged into the main dashboard, with the two tiers visually
+distinguished -- solid card styling for Tier 1, a dashed-border amber-tinted card for Tier 2).

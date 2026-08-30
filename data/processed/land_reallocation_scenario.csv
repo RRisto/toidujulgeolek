@@ -1,0 +1,4 @@
+scenario,poultry_feed_freed_kt,eggs_feed_freed_kt,red_meat_feed_freed_kt,tier1_net_feed_freed_kt,tier1_cropland_no_longer_needed_ha,tier1_pct_of_2024_barley_sown_area,tier1_pct_of_total_utilised_agricultural_area,tier2_illustrative_vegetable_output_t,tier2_pct_of_current_vegetable_gap,tier2_pct_of_freed_land_needed_to_close_veg_gap
+Scenario B (TAI-recommended diet),-1.64,-11.88,153.51,140.0,42217.0,44.4,4.3,1262288.0,1557.1,6.4
+Scenario C (EAT-Lancet 2019 diet),11.96,11.33,176.72,200.0,60317.0,63.5,6.2,1803478.0,2224.6,4.5
+Scenario C.2 (EAT-Lancet 2025 diet),9.78,8.36,172.32,190.5,57437.0,60.4,5.9,1717366.0,2118.4,4.7

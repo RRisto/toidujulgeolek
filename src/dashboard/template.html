@@ -209,6 +209,8 @@ section{ margin-top: 56px; scroll-margin-top: 76px; }
 .hbar-baseline{ position:absolute; top:-4px; bottom:-4px; width:1px; background: var(--muted); opacity:.5; }
 .hbar-tip{ position:absolute; top: 50%; transform: translateY(-50%); font-size:12px; font-weight:600; white-space:nowrap; }
 .hbar-marker{ position:absolute; top:-3px; width:2px; height:30px; border-radius:1px; z-index: 1; }
+.hbar-range{ position:absolute; top:8px; height:8px; border-radius:4px; background: rgba(120,120,120,.28); border:1px solid rgba(90,90,90,.45); z-index:1; }
+.hbar-range-cap{ position:absolute; top:2px; width:2px; height:20px; background: rgba(90,90,90,.7); border-radius:1px; z-index:1; }
 .hbar-legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 14px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color: var(--ink-soft); }
 .hbar-legend-item{ display:flex; align-items:center; gap:6px; }
 .swatch{ width:11px; height:11px; border-radius:3px; flex:none; }
@@ -334,14 +336,15 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       <div>
         <span class="section-num">02 — Production vs. use</span>
         <h2>Self-sufficiency by food group</h2>
-        <p class="section-desc">Production ÷ domestic use, at today's output. 100% is the break-even line: right of it, Estonia produces more than it uses; left of it, the gap is filled by imports. Toggle between today's diet, a fully TAI-recommended one, and the EAT-Lancet Planetary Health Diet — an international reference diet, population-scaled to Estonia's own energy needs.</p>
+        <p class="section-desc">Production ÷ domestic use, at today's output. 100% is the break-even line: right of it, Estonia produces more than it uses; left of it, the gap is filled by imports. Toggle between today's diet, a fully TAI-recommended one, and two editions of the EAT-Lancet Planetary Health Diet (the original 2019 diet, and a revised 2025 edition) — both international reference diets, population-scaled to Estonia's own energy needs.</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="scenario-toggle" role="group" aria-label="Scenario">
         <button data-scenario="A" aria-pressed="true">Scenario A — status quo</button>
         <button data-scenario="B" aria-pressed="false">Scenario B — TAI-recommended diet</button>
-        <button data-scenario="C" aria-pressed="false">Scenario C — EAT-Lancet diet</button>
+        <button data-scenario="C" aria-pressed="false">Scenario C — EAT-Lancet 2019 diet</button>
+        <button data-scenario="C2" aria-pressed="false">Scenario C.2 — EAT-Lancet 2025 diet</button>
       </div>
       <span class="filter-hint" id="scenario-hint"></span>
     </div>
@@ -352,6 +355,7 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
         <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>50–99% — import-dependent</span>
         <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>&lt;50% — critical dependency</span>
         <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>feed-adjusted lower bound (where computed)</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>independent cross-check range (FAOSTAT vs. project estimate, where available)</span>
       </div>
       <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">View as table</button></div>
       <div class="table-scroll" id="ss-table" hidden></div>
@@ -361,7 +365,7 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <section id="critical">
     <div class="section-head">
       <div><span class="section-num">03 — Where it matters most</span><h2>Critical dependencies</h2>
-      <p class="section-desc">Flagged where self-sufficiency falls below 50% today, where a feed-adjusted sensitivity extends below 50%, or where no reliable figure exists at all. A plain 50% threshold, checked three ways — see methodology. (Shifting to Scenario B or C can create additional, hypothetical dependencies of their own that don't exist today — see section 05.)</p></div>
+      <p class="section-desc">Flagged where self-sufficiency falls below 50% today, where a feed-adjusted sensitivity extends below 50%, or where no reliable figure exists at all. A plain 50% threshold, checked three ways — see methodology. (Shifting to Scenario B, C, or C.2 can create additional, hypothetical dependencies of their own that don't exist today — see section 05.)</p></div>
     </div>
     <div class="callout-grid" id="callout-grid"></div>
   </section>
@@ -395,13 +399,14 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       <div>
         <span class="section-num">05 — The diet-shift tension</span>
         <h2>What a shifted diet would do to self-sufficiency</h2>
-        <p class="section-desc">Percentage-point change in self-sufficiency vs. Scenario A (status quo), production held fixed. Toggle between the TAI-recommended diet and the EAT-Lancet Planetary Health Diet — both push demand toward categories Estonia isn't equally equipped to supply, but not the same ones, so "eating better" doesn't uniformly mean "more self-sufficient" under either.</p>
+        <p class="section-desc">Percentage-point change in self-sufficiency vs. Scenario A (status quo), production held fixed. Toggle between the TAI-recommended diet and either edition of the EAT-Lancet Planetary Health Diet — all three push demand toward categories Estonia isn't equally equipped to supply, but not the same ones, so "eating better" doesn't uniformly mean "more self-sufficient" under any of them.</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="delta-toggle" role="group" aria-label="Comparison">
         <button data-delta="B" aria-pressed="true">Scenario B vs. A</button>
         <button data-delta="C" aria-pressed="false">Scenario C vs. A</button>
+        <button data-delta="C2" aria-pressed="false">Scenario C.2 vs. A</button>
       </div>
       <span class="filter-hint" id="delta-hint"></span>
     </div>
