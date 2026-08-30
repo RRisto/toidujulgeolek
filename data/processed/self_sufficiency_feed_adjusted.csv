@@ -1,0 +1,7 @@
+pyramid_group,subitem,headline_self_sufficiency_pct,feed_adjusted_low_bound_pct,adjustment_basis,note
+"Fish, eggs & meat",Poultry,57.7,40.4,"illustrative -30% haircut","Poultry is a concentrate-feed-heavy monogastric system with high reliance on imported protein (soybean meal - Estonia produces 0t soy, PM37 2024). Illustrative bound, not derived from a measured Estonian feed-protein-import share."
+"Fish, eggs & meat",Eggs,53.6,37.5,"illustrative -30% haircut","Same reasoning as poultry - layer hens are fed a similar concentrate/protein-heavy ration."
+"Fish, eggs & meat",Red meat (pork component: 72%),72.0,50.4,"illustrative -30% haircut","Pork is also a concentrate-feed-heavy monogastric system with high imported-protein reliance, same as poultry/eggs."
+"Fish, eggs & meat",Red meat (beef component: 109%),109.0,92.7,"illustrative -15% haircut","Cattle (beef) are substantially grass/forage-fed in typical Northern European systems, with proportionally less concentrate/imported-protein feed than pork or poultry - smaller haircut applied."
+"Fish, eggs & meat",Red meat (sheep-goat component: 80%),80.0,68.0,"illustrative -15% haircut","Sheep/goat are predominantly pasture-grazed - smaller haircut, same reasoning as beef."
+Dairy products,(total),166.0,141.1,"illustrative -15% haircut","Dairy cattle are predominantly grass/silage-fed with grain supplementation (a smaller share of the ration than pork/poultry) - smaller haircut, same reasoning as beef."

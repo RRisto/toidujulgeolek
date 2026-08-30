@@ -1,0 +1,14 @@
+table,year,type,indicator,value
+PM33,2024,fresh_vegetables,production_t,33229
+PM33,2024,fresh_vegetables,imports_t,83796
+PM33,2024,fresh_vegetables,imports_from_eu_t,77215
+PM33,2024,fresh_vegetables,exports_t,2728
+PM33,2024,fresh_vegetables,exports_to_eu_t,2690
+PM33,2024,fresh_vegetables,variation_of_stocks_t,
+PM33,2024,fresh_vegetables,domestic_use_t,114297
+PM33,2024,fresh_vegetables,used_as_seed_t,0
+PM33,2024,fresh_vegetables,loss_t,6873
+PM33,2024,fresh_vegetables,used_as_feed_t,0
+PM33,2024,fresh_vegetables,industrial_use_t,0
+PM33,2024,fresh_vegetables,human_consumption_t,
+PM33,2024,fresh_vegetables,human_consumption_per_capita_kg,

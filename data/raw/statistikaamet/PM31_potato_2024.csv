@@ -1,0 +1,17 @@
+table,year,type,indicator,value
+PM31,2024,potato,sown_area_ha,3176
+PM31,2024,potato,avg_yield_kg_per_ha,23510
+PM31,2024,potato,production_t,74668
+PM31,2024,potato,imports_t,58043
+PM31,2024,potato,imports_from_eu_t,56821
+PM31,2024,potato,exports_t,15428
+PM31,2024,potato,exports_to_eu_t,14661
+PM31,2024,potato,initial_stocks_t,
+PM31,2024,potato,final_stocks_t,
+PM31,2024,potato,domestic_use_t,117283
+PM31,2024,potato,used_as_seed_t,6653
+PM31,2024,potato,loss_t,2346
+PM31,2024,potato,used_as_feed_t,3890
+PM31,2024,potato,industrial_use_t,0
+PM31,2024,potato,human_consumption_t,104394
+PM31,2024,potato,human_consumption_per_capita_kg,76

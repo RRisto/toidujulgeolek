@@ -1,0 +1,13 @@
+table,year,type,indicator,value
+PM34,2024,fresh_fruit_berries,production_t,5819
+PM34,2024,fresh_fruit_berries,imports_t,71887
+PM34,2024,fresh_fruit_berries,imports_from_eu_t,69792
+PM34,2024,fresh_fruit_berries,exports_t,2865
+PM34,2024,fresh_fruit_berries,exports_to_eu_t,2468
+PM34,2024,fresh_fruit_berries,variation_of_stocks_t,
+PM34,2024,fresh_fruit_berries,domestic_use_t,74841
+PM34,2024,fresh_fruit_berries,loss_t,8751
+PM34,2024,fresh_fruit_berries,used_as_feed_t,0
+PM34,2024,fresh_fruit_berries,industrial_use_t,
+PM34,2024,fresh_fruit_berries,human_consumption_t,
+PM34,2024,fresh_fruit_berries,human_consumption_per_capita_kg,

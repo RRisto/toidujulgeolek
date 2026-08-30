@@ -1,0 +1,14 @@
+pyramid_group,subitem,project_g_per_capita_per_day,rtu011_raw_g_per_day,rtu011_raw_item,diff_pct,note
+Grain products & potatoes,High-fibre bread/baked goods,73.67,71,"leib, sepik, sai",3.76,Close agreement
+Grain products & potatoes,Porridges/pasta/rice/grain products,125.94,127,"pudrud, riis, makaronid",-0.83,Close agreement
+Grain products & potatoes,"Potato, sweet potato",97.75,97,kartul,0.77,Close agreement
+"Vegetables, fruits & berries",Vegetables,135.65,137,köögiviljad,-0.99,Close agreement
+Dairy products,(total),296.39,300,Piim ja piimatooted,-1.20,"Close agreement -- prompted this whole cross-check (user question about dairy)"
+"Fish, eggs & meat",Fish & seafood,23.51,23,kala ja kalatooted,2.22,Close agreement
+"Fish, eggs & meat",Eggs,20.59,21,muna ja munatooted,-1.95,Close agreement
+"Nuts, seeds, oils & fats",Oils/fats/spreads,18.03,18,"õliviljad, õlid, võiderasvad",0.17,Close agreement
+"Vegetables, fruits & berries",Fruits+Berries (combined),212.06,210,puuviljad ja marjad,0.98,Close agreement
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",3.30,3,"seemned, pähklid jm",10.00,"Largest relative gap but both figures sub-4g/day -- within survey rounding noise, not meaningful"
+"Fish, eggs & meat",Poultry + Red meat (summed),107.70,109,"liha, linnuliha (sh rupskid)",-1.19,"RTU011 doesn't publish this split -- Phase 4 divided it via PM42 production-side consumption shares (34.3%/65.7%); summing the two model figures back together reproduces RTU011's own bundled total within 1.2%, validating the split"
+"Sweets, snacks & discretionary",(total),158.95,167,"Suhkur, magusad ja soolased näksid",-4.79,"Largest outlier among substantive categories -- plausibly a crosswalk/RTU011 category-boundary mismatch, not investigated further; doesn't affect any threshold-crossing figure in the model"
+"Vegetables, fruits & berries",Legumes,,,,,"Not measured on either side -- RTU011 has no legumes category, consistent with the project's own documented data gap"

@@ -1,0 +1,4 @@
+pal_code,pal_label_et,pal_multiplier,usage_note
+sedentary,Istuv eluviis,1.4,"Lower bound of a sensitivity range; not used as the single national default."
+moderate,Mõõdukas kehaline aktiivsus,1.6,"Default PAL used for national-aggregate kcal requirement figures in this model, since no Estonian population-level activity-distribution survey was located (see demographic_grid.md). Every headline number in the dashboard should be read as 'assuming a moderately active population.'"
+active,Aktiivne eluviis,1.8,"Upper bound of a sensitivity range; not used as the single national default."

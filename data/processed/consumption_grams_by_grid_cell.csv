@@ -1,0 +1,449 @@
+pyramid_group,subitem,sex,age_band,g_per_capita_per_day,source_note
+Grain products & potatoes,High-fibre bread/baked goods,male,2-5,43.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,2-5,163.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,2-5,76.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,2-5,87.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,2-5,367.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,2-5,7.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,2-5,10.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,2-5,12.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,2-5,175.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,2-5,203.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,2-5,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,2-5,20.597014925373134,split from RTU011 combined meat figure (60.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,2-5,39.40298507462686,split from RTU011 combined meat figure (60.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,2-5,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,6-9,49.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,6-9,169.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,6-9,95.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,6-9,95.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,6-9,471.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,6-9,13.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,6-9,17.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,6-9,13.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,6-9,217.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,6-9,233.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,6-9,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,6-9,29.865671641791042,split from RTU011 combined meat figure (87.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,6-9,57.13432835820895,split from RTU011 combined meat figure (87.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,6-9,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,10-13,62.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,10-13,150.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,10-13,102.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,10-13,101.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,10-13,387.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,10-13,11.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,10-13,20.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,10-13,14.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,10-13,304.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,10-13,174.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,10-13,4.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,10-13,37.76119402985074,split from RTU011 combined meat figure (110.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,10-13,72.23880597014924,split from RTU011 combined meat figure (110.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,10-13,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,14-17,77.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,14-17,162.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,14-17,141.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,14-17,94.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,14-17,390.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,14-17,12.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,14-17,13.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,14-17,18.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,14-17,366.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,14-17,197.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,14-17,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,14-17,44.62686567164179,split from RTU011 combined meat figure (130.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,14-17,85.37313432835819,split from RTU011 combined meat figure (130.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,14-17,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,18-24,77.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,18-24,140.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,18-24,126.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,18-24,138.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,18-24,399.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,18-24,15.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,18-24,32.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,18-24,22.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,18-24,254.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,18-24,158.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,18-24,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,18-24,53.8955223880597,split from RTU011 combined meat figure (157.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,18-24,103.10447761194028,split from RTU011 combined meat figure (157.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,18-24,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,25-29,72.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,25-29,113.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,25-29,112.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,25-29,155.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,25-29,281.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,25-29,23.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,25-29,26.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,25-29,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,25-29,226.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,25-29,130.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,25-29,4.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,25-29,56.298507462686565,split from RTU011 combined meat figure (164.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,25-29,107.70149253731341,split from RTU011 combined meat figure (164.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,25-29,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,30-34,61.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,30-34,115.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,30-34,122.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,30-34,153.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,30-34,318.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,30-34,18.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,30-34,23.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,30-34,17.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,30-34,215.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,30-34,208.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,30-34,4.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,30-34,49.43283582089552,split from RTU011 combined meat figure (144.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,30-34,94.56716417910447,split from RTU011 combined meat figure (144.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,30-34,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,35-39,94.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,35-39,173.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,35-39,109.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,35-39,166.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,35-39,387.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,35-39,24.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,35-39,29.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,35-39,25.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,35-39,227.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,35-39,201.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,35-39,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,35-39,51.83582089552239,split from RTU011 combined meat figure (151.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,35-39,99.1641791044776,split from RTU011 combined meat figure (151.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,35-39,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,40-44,89.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,40-44,109.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,40-44,119.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,40-44,132.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,40-44,260.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,40-44,33.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,40-44,22.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,40-44,21.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,40-44,161.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,40-44,223.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,40-44,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,40-44,50.80597014925373,split from RTU011 combined meat figure (148.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,40-44,97.19402985074625,split from RTU011 combined meat figure (148.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,40-44,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,45-49,105.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,45-49,130.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,45-49,129.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,45-49,157.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,45-49,291.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,45-49,29.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,45-49,21.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,45-49,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,45-49,141.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,45-49,159.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,45-49,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,45-49,41.88059701492537,split from RTU011 combined meat figure (122.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,45-49,80.11940298507461,split from RTU011 combined meat figure (122.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,45-49,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,50-54,97.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,50-54,107.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,50-54,136.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,50-54,158.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,50-54,321.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,50-54,44.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,50-54,28.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,50-54,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,50-54,150.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,50-54,266.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,50-54,6.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,50-54,46.6865671641791,split from RTU011 combined meat figure (136.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,50-54,89.31343283582088,split from RTU011 combined meat figure (136.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,50-54,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,55-59,106.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,55-59,115.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,55-59,113.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,55-59,164.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,55-59,223.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,55-59,36.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,55-59,30.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,55-59,21.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,55-59,129.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,55-59,169.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,55-59,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,55-59,39.82089552238806,split from RTU011 combined meat figure (116.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,55-59,76.17910447761193,split from RTU011 combined meat figure (116.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,55-59,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,60-64,116.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,60-64,118.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,60-64,143.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,60-64,153.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,60-64,249.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,60-64,35.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,60-64,17.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,60-64,21.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,60-64,97.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,60-64,192.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,60-64,2.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,60-64,50.46268656716418,split from RTU011 combined meat figure (147.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,60-64,96.5373134328358,split from RTU011 combined meat figure (147.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,60-64,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,65-69,111.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,65-69,115.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,65-69,136.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,65-69,140.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,65-69,333.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,65-69,42.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,65-69,17.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,65-69,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,65-69,100.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,65-69,179.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,65-69,0.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,65-69,45.656716417910445,split from RTU011 combined meat figure (133.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,65-69,87.34328358208954,split from RTU011 combined meat figure (133.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,65-69,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,70-74,111.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,70-74,151.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",male,70-74,116.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,male,70-74,127.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),male,70-74,285.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,male,70-74,36.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,male,70-74,25.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,70-74,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),male,70-74,123.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,70-74,159.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,70-74,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,male,70-74,43.940298507462686,split from RTU011 combined meat figure (128.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,male,70-74,84.0597014925373,split from RTU011 combined meat figure (128.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,male,70-74,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,2-5,36.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,2-5,150.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,2-5,66.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,2-5,89.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,2-5,356.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,2-5,8.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,2-5,12.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,2-5,10.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,2-5,176.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,2-5,195.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,2-5,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,2-5,17.850746268656717,split from RTU011 combined meat figure (52.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,2-5,34.14925373134328,split from RTU011 combined meat figure (52.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,2-5,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,6-9,45.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,6-9,133.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,6-9,88.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,6-9,99.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,6-9,376.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,6-9,8.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,6-9,15.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,6-9,14.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,6-9,231.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,6-9,217.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,6-9,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,6-9,25.059701492537314,split from RTU011 combined meat figure (73.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,6-9,47.94029850746268,split from RTU011 combined meat figure (73.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,6-9,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,10-13,51.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,10-13,108.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,10-13,86.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,10-13,82.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,10-13,329.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,10-13,10.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,10-13,15.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,10-13,12.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,10-13,239.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,10-13,221.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,10-13,0.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,10-13,23.686567164179102,split from RTU011 combined meat figure (69.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,10-13,45.31343283582089,split from RTU011 combined meat figure (69.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,10-13,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,14-17,48.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,14-17,82.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,14-17,85.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,14-17,103.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,14-17,258.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,14-17,9.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,14-17,15.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,14-17,12.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,14-17,202.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,14-17,198.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,14-17,2.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,14-17,28.492537313432834,split from RTU011 combined meat figure (83.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,14-17,54.50746268656716,split from RTU011 combined meat figure (83.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,14-17,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,18-24,48.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,18-24,127.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,18-24,65.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,18-24,114.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,18-24,273.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,18-24,15.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,18-24,20.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,18-24,14.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,18-24,197.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,18-24,211.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,18-24,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,18-24,30.55223880597015,split from RTU011 combined meat figure (89.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,18-24,58.447761194029844,split from RTU011 combined meat figure (89.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,18-24,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,25-29,53.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,25-29,137.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,25-29,66.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,25-29,147.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,25-29,288.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,25-29,21.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,25-29,24.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,25-29,18.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,25-29,176.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,25-29,225.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,25-29,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,25-29,35.701492537313435,split from RTU011 combined meat figure (104.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,25-29,68.29850746268656,split from RTU011 combined meat figure (104.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,25-29,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,30-34,56.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,30-34,151.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,30-34,77.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,30-34,145.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,30-34,308.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,30-34,21.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,30-34,20.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,30-34,22.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,30-34,155.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,30-34,239.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,30-34,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,30-34,36.04477611940298,split from RTU011 combined meat figure (105.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,30-34,68.955223880597,split from RTU011 combined meat figure (105.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,30-34,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,35-39,64.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,35-39,130.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,35-39,75.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,35-39,145.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,35-39,291.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,35-39,21.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,35-39,20.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,35-39,16.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,35-39,145.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,35-39,229.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,35-39,8.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,35-39,32.95522388059702,split from RTU011 combined meat figure (96.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,35-39,63.044776119402975,split from RTU011 combined meat figure (96.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,35-39,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,40-44,62.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,40-44,109.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,40-44,81.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,40-44,141.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,40-44,248.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,40-44,21.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,40-44,21.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,40-44,16.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,40-44,132.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,40-44,242.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,40-44,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,40-44,28.492537313432834,split from RTU011 combined meat figure (83.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,40-44,54.50746268656716,split from RTU011 combined meat figure (83.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,40-44,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,45-49,60.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,45-49,89.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,45-49,84.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,45-49,159.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,45-49,242.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,45-49,24.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,45-49,18.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,45-49,15.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,45-49,116.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,45-49,237.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,45-49,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,45-49,28.83582089552239,split from RTU011 combined meat figure (84.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,45-49,55.164179104477604,split from RTU011 combined meat figure (84.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,45-49,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,50-54,55.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,50-54,113.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,50-54,72.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,50-54,153.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,50-54,244.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,50-54,27.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,50-54,21.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,50-54,18.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,50-54,111.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,50-54,250.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,50-54,5.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,50-54,27.119402985074625,split from RTU011 combined meat figure (79.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,50-54,51.880597014925364,split from RTU011 combined meat figure (79.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,50-54,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,55-59,67.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,55-59,123.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,55-59,85.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,55-59,156.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,55-59,252.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,55-59,26.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,55-59,24.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,55-59,17.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,55-59,97.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,55-59,252.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,55-59,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,55-59,31.238805970149254,split from RTU011 combined meat figure (91.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,55-59,59.761194029850735,split from RTU011 combined meat figure (91.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,55-59,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,60-64,66.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,60-64,119.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,60-64,85.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,60-64,134.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,60-64,235.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,60-64,30.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,60-64,16.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,60-64,18.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,60-64,86.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,60-64,230.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,60-64,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,60-64,31.238805970149254,split from RTU011 combined meat figure (91.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,60-64,59.761194029850735,split from RTU011 combined meat figure (91.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,60-64,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,65-69,78.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,65-69,127.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,65-69,78.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,65-69,142.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,65-69,265.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,65-69,29.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,65-69,15.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,65-69,18.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,65-69,102.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,65-69,225.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,65-69,2.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,65-69,29.865671641791042,split from RTU011 combined meat figure (87.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,65-69,57.13432835820895,split from RTU011 combined meat figure (87.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,65-69,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,female,70-74,71.0,"direct from RTU011 '..leib, sepik, sai'"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,70-74,107.0,"direct from RTU011 '..pudrud, riis, makaronid'"
+Grain products & potatoes,"Potato, sweet potato",female,70-74,78.0,direct from RTU011 '..kartul'
+"Vegetables, fruits & berries",Vegetables,female,70-74,134.0,direct from RTU011 '..köögiviljad'
+Dairy products,(total),female,70-74,245.0,direct from RTU011 'Piim ja piimatooted'
+"Fish, eggs & meat",Fish & seafood,female,70-74,21.0,direct from RTU011 '..kala ja kalatooted'
+"Fish, eggs & meat",Eggs,female,70-74,17.0,direct from RTU011 '..muna ja munatooted'
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,70-74,14.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad'"
+"Sweets, snacks & discretionary",(total),female,70-74,80.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid'"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,70-74,249.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,70-74,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target)"
+"Fish, eggs & meat",Poultry,female,70-74,28.149253731343283,split from RTU011 combined meat figure (82.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433
+"Fish, eggs & meat",Red meat,female,70-74,53.85074626865671,split from RTU011 combined meat figure (82.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567
+"Vegetables, fruits & berries",Legumes,female,70-74,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero
+Grain products & potatoes,High-fibre bread/baked goods,male,75+,111.0,"direct from RTU011 '..leib, sepik, sai' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+Grain products & potatoes,Porridges/pasta/rice/grain products,male,75+,151.0,"direct from RTU011 '..pudrud, riis, makaronid' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+Grain products & potatoes,"Potato, sweet potato",male,75+,116.0,direct from RTU011 '..kartul' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Vegetables, fruits & berries",Vegetables,male,75+,127.0,direct from RTU011 '..köögiviljad' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+Dairy products,(total),male,75+,285.0,direct from RTU011 'Piim ja piimatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Fish & seafood,male,75+,36.0,direct from RTU011 '..kala ja kalatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Eggs,male,75+,25.0,direct from RTU011 '..muna ja munatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Nuts, seeds, oils & fats",Oils/fats/spreads,male,75+,23.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Sweets, snacks & discretionary",(total),male,75+,123.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Vegetables, fruits & berries",Fruits+Berries (combined),male,75+,159.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target) | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",male,75+,1.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target) | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Fish, eggs & meat",Poultry,male,75+,43.940298507462686,split from RTU011 combined meat figure (128.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433 | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Red meat,male,75+,84.0597014925373,split from RTU011 combined meat figure (128.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567 | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Vegetables, fruits & berries",Legumes,male,75+,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+Grain products & potatoes,High-fibre bread/baked goods,female,75+,71.0,"direct from RTU011 '..leib, sepik, sai' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+Grain products & potatoes,Porridges/pasta/rice/grain products,female,75+,107.0,"direct from RTU011 '..pudrud, riis, makaronid' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+Grain products & potatoes,"Potato, sweet potato",female,75+,78.0,direct from RTU011 '..kartul' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Vegetables, fruits & berries",Vegetables,female,75+,134.0,direct from RTU011 '..köögiviljad' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+Dairy products,(total),female,75+,245.0,direct from RTU011 'Piim ja piimatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Fish & seafood,female,75+,21.0,direct from RTU011 '..kala ja kalatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Eggs,female,75+,17.0,direct from RTU011 '..muna ja munatooted' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Nuts, seeds, oils & fats",Oils/fats/spreads,female,75+,14.0,"direct from RTU011 '..õliviljad, õlid, võiderasvad' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Sweets, snacks & discretionary",(total),female,75+,80.0,"direct from RTU011 'Suhkur, magusad ja soolased näksid' | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Vegetables, fruits & berries",Fruits+Berries (combined),female,75+,249.0,direct from RTU011 '..puuviljad ja marjad' (RTU cannot split further; compare vs combined Phase-3 target) | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",female,75+,3.0,"direct from RTU011 '..seemned, pähklid jm' (RTU cannot split further; compare vs combined Phase-3 target) | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)"
+"Fish, eggs & meat",Poultry,female,75+,28.149253731343283,split from RTU011 combined meat figure (82.0g) using PM42 2024 per-capita share poultry/(beef+pork+sheep_goat+offals+poultry)=0.3433 | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Fish, eggs & meat",Red meat,female,75+,53.85074626865671,split from RTU011 combined meat figure (82.0g) using PM42 2024 per-capita share (beef+pork+sheep_goat+offals)/total=0.6567 | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)
+"Vegetables, fruits & berries",Legumes,female,75+,,NOT MEASURED: no RTU011 category covers legumes (see food_group_crosswalk.csv gap note); do not treat as zero | age 75+ uses the 70-74 value as a proxy (RTU011 has no data past 74; see demographic_grid.md)

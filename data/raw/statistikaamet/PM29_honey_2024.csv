@@ -1,0 +1,10 @@
+table,year,type,indicator,value
+PM29,2024,honey,bee_colonies_start_year_thousands,52
+PM29,2024,honey,avg_yield_per_colony_kg,25
+PM29,2024,honey,production_t,1313
+PM29,2024,honey,imports_t,86
+PM29,2024,honey,imports_from_eu_t,86
+PM29,2024,honey,exports_t,60
+PM29,2024,honey,exports_to_eu_t,1
+PM29,2024,honey,human_consumption_t,1339
+PM29,2024,honey,human_consumption_per_capita_kg,0.97

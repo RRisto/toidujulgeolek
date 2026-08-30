@@ -1,0 +1,46 @@
+<div class="meth-block">
+  <h3>What this model is</h3>
+  <p>A bottom-up comparison of two things, food group by food group: how much Estonia's population would need to eat to meet TAI (Tervise Arengu Instituut) nutritional recommendations, and how much of that Estonia actually produces. Built over nine phases — data acquisition, taxonomy reconciliation, a demographic requirement model, an actual-consumption model, a supply/self-sufficiency model, feed and waste adjustments, a two-scenario engine, independent validation, and this dashboard.</p>
+  <p>Scope: national aggregate, current production levels — this measures self-sufficiency <em>at today's output</em>, not at Estonia's potential output. No seasonality, regional, or shock-resilience modelling. Ages 2 and up (infants excluded — infant feeding doesn't fit the toidupüramiid framework this model is built around).</p>
+</div>
+
+<div class="meth-block">
+  <h3>Data sources</h3>
+  <div class="table-scroll">
+  <table class="data-table source-table">
+    <thead><tr><th>Source</th><th>What it provides</th><th>Vintage</th></tr></thead>
+    <tbody>
+      <tr><td class="strong">Statistikaamet RV021</td><td>Population by age and sex</td><td>2026</td></tr>
+      <tr><td class="strong">Statistikaamet PM-series</td><td>FAO-style production / import / export / feed / loss balance sheets — cereals, potato, vegetables, fruit &amp; berries, oilseeds, meat, eggs, dairy</td><td>2024</td></tr>
+      <tr><td class="strong">TAI Tabelraamat 2025</td><td>Energy requirements, macronutrient targets, food-group portion guidance</td><td>2025</td></tr>
+      <tr><td class="strong">TAI RTU011</td><td>Actual food-group consumption by age and sex — Estonia's most recent national dietary survey</td><td>2013–2015 fieldwork</td></tr>
+      <tr><td class="strong">Estonia's food security strategy</td><td>Official pre-computed self-sufficiency ratios, used as a calibration anchor</td><td>~2018–2022 (5yr avg, inferred)</td></tr>
+      <tr><td class="strong">SEI Estonia food waste study</td><td>Waste tonnage by supply-chain stage</td><td>2021</td></tr>
+      <tr><td class="strong">agri.ee fish consumption study</td><td>Fish production vs. domestic consumption — resolves the "high self-sufficiency, mostly exported" nuance</td><td>2026</td></tr>
+      <tr><td class="strong">FAOSTAT Food Balance Sheets</td><td>Independent international cross-check, commodity by commodity</td><td>2022</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="meth-block">
+  <h3>How the numbers are built</h3>
+  <p><b>Requirement model (recommended demand).</b> Population × age/sex-specific energy needs × TAI's portion-by-energy-level guidance = tonnes/year, if everyone ate exactly as recommended. Physical activity level has no Estonian population-distribution data, so a single "moderate" default is used nationally rather than an invented split.</p>
+  <p><b>Consumption model (actual demand).</b> The same demographic grid, weighted by RTU011's measured grams/day. RTU011 bundles poultry with red meat and offal into one figure — split using the production side's own per-capita consumption <i>shares</i>, not absolute levels. Fruit and berries, and nuts and seeds/cocoa, can only be measured combined in every Estonian source used.</p>
+  <p><b>Self-sufficiency (production ÷ domestic use).</b> Built bottom-up from the PM-series balance sheets, calibrated against the official strategy-document figures. When the two diverge by more than a few points, the official (multi-year) figure is used as the headline and the derived figure is kept for transparency, not discarded.</p>
+  <p><b>Feed dependency.</b> Animal products are only as domestic as their feed. Generic, published feed-conversion-ratio benchmarks (not Estonia-specific) against known domestic feed supply give roughly 82% aggregate feed coverage — with the important caveat that the shortfall concentrates in imported protein concentrates, not forage, which the aggregate figure alone hides. Feed-adjusted lower bounds use illustrative haircuts, shown as sensitivities, never as measurements.</p>
+  <p><b>Waste.</b> Estonia's 2021 national waste study, allocated to food groups. Losses before the household inflate how much needs to be produced for a given amount actually eaten; household waste specifically is modelled as a separate, cuttable lever that reduces need without requiring more production.</p>
+  <p><b>Scenario B.</b> Self-sufficiency is re-scaled by the ratio of Scenario A to Scenario B demand, production held fixed — an approximation that assumes proportional consistency between the two demand models, not a fully independent re-derived balance sheet. Flagged wherever it's used.</p>
+</div>
+
+<div class="meth-block">
+  <h3>Independent validation against FAOSTAT</h3>
+  <p>Estonia's 2022 FAOSTAT Food Balance Sheet (the latest year FAOSTAT publishes) was cross-checked commodity by commodity against this project's figures. Six categories agreed closely — wheat/rye, potato, fruit, eggs, fish, and pork — despite different years and methodologies, a meaningful corroboration of the overall approach. Four divergences were investigated and documented rather than resolved with false confidence: vegetables (a third disagreeing data point on an already-flagged gap), beef and poultry (plausibly real year-to-year shifts), and — most substantively — rapeseed, where FAOSTAT confirmed a fragility this project had already flagged: the "yield cancellation" shortcut used for oil self-sufficiency breaks down because Estonia crushes and re-exports a large share of its rapeseed oil directly, meaning the project's 69.3% oil figure likely <i>understates</i> true self-sufficiency. Legumes' long-standing "unknown" gap was revised to a bimodal finding: Estonia is a large net exporter of field peas (mostly feed and export use) but near-zero self-sufficient in the dry beans and lentils people actually eat.</p>
+  <div class="table-scroll" id="faostat-table-host"></div>
+</div>
+
+<div class="meth-block">
+  <h3>Assumptions &amp; limitations, stated plainly</h3>
+  <p>The consumption baseline is a 2014 survey — the best available, cross-checked where possible against fresher signals, and flagged as dated throughout. Self-sufficiency ratios lean on an official pre-computed average as calibration rather than a fully independent build for every category. Feed-conversion, feed-import-share, and waste-lever figures are generic, published benchmarks, not Estonia-specific measurements — always shown as labelled sensitivities. There is no production-capacity-ceiling modelling: "self-sufficiency" means at today's output, not Estonia's potential output. Micronutrient adequacy is a qualitative flag, not a quantitative model — vegetables, fruit and fish are simultaneously the weakest self-sufficiency categories and disproportionately important sources of vitamin C, folate, and omega-3/iodine, which strengthens rather than separates from the self-sufficiency story. Reference years don't line up exactly across sources (RTU011 2014, PM-series 2024, FAOSTAT 2022, SEI waste 2021, official strategy figures ~2018–2022) — genuinely part of why some cross-checks in this dashboard show the divergences they do.</p>
+  <p>Two genuine data gaps were reported as ranges or left unresolved rather than forced into false-precision points: porridge/pasta/rice/grain products (self-sufficiency somewhere between 0% and 178%+, no consumption-mix data to weight barley against rice and durum pasta), and legumes (bimodal — see above). Sweets and snacks' self-sufficiency is structurally near-zero for raw sugar (no domestic refining) and not scoreable on a like-for-like basis for manufactured goods.</p>
+</div>

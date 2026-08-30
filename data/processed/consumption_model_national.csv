@@ -1,0 +1,15 @@
+pyramid_group,subitem,national_kg_per_day,national_tonnes_per_year,avg_g_per_capita_per_day,data_status
+Grain products & potatoes,High-fibre bread/baked goods,98697.2,36024.46,73.67,measured
+Grain products & potatoes,Porridges/pasta/rice/grain products,168735.7,61588.54,125.94,measured
+Grain products & potatoes,"Potato, sweet potato",130969.9,47804.0,97.75,measured
+"Vegetables, fruits & berries",Vegetables,181739.8,66335.04,135.65,measured
+Dairy products,(total),397100.3,144941.59,296.39,measured
+"Fish, eggs & meat",Fish & seafood,31494.1,11495.36,23.51,measured
+"Fish, eggs & meat",Eggs,27579.6,10066.55,20.59,measured
+"Nuts, seeds, oils & fats",Oils/fats/spreads,24159.3,8818.15,18.03,measured
+"Sweets, snacks & discretionary",(total),212959.9,77730.36,158.95,measured
+"Vegetables, fruits & berries",Fruits+Berries (combined),284109.5,103699.95,212.06,measured
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",4419.0,1612.94,3.3,measured
+"Fish, eggs & meat",Poultry,49538.1,18081.41,36.97,measured
+"Fish, eggs & meat",Red meat,94768.6,34590.53,70.73,measured
+"Vegetables, fruits & berries",Legumes,,,,NOT MEASURED - no RTU011 data (see crosswalk gap)

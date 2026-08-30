@@ -1,0 +1,13 @@
+table,year,type,indicator,value
+PM45,2024,eggs,production_kt,11.8
+PM45,2024,eggs,imports_kt,12.7
+PM45,2024,eggs,exports_kt,2.3
+PM45,2024,eggs,changes_in_stocks_kt,-0.1
+PM45,2024,eggs,domestic_use_total_kt,22.3
+PM45,2024,eggs,eggs_for_hatching_kt,
+PM45,2024,eggs,loss_kt,0.1
+PM45,2024,eggs,used_as_feed_kt,
+PM45,2024,eggs,industrial_use_kt,
+PM45,2024,eggs,human_consumption_kt,22.2
+PM45,2024,eggs,human_consumption_per_capita_kg,16.2
+PM45,2024,eggs,human_consumption_per_capita_pieces,259

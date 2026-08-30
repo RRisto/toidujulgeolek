@@ -1,0 +1,33 @@
+age_band,sex,population,source_note
+2-5,male,25555.4,"prorated: 3/4 of RV 1-4 (ages 2-4) + 1/5 of RV 5-9 (age 5), uniform within-bin"
+2-5,female,24308.2,"prorated: 3/4 of RV 1-4 (ages 2-4) + 1/5 of RV 5-9 (age 5), uniform within-bin"
+6-9,male,30425.6,"prorated: 4/5 of RV 5-9 (ages 6-9), uniform within-bin"
+6-9,female,28688.8,"prorated: 4/5 of RV 5-9 (ages 6-9), uniform within-bin"
+10-13,male,30791.2,"prorated: 4/5 of RV 10-14 (ages 10-13), uniform within-bin"
+10-13,female,29453.6,"prorated: 4/5 of RV 10-14 (ages 10-13), uniform within-bin"
+14-17,male,32665.6,"prorated: 1/5 of RV 10-14 (age 14) + 3/5 of RV 15-19 (ages 15-17), uniform within-bin"
+14-17,female,30885.2,"prorated: 1/5 of RV 10-14 (age 14) + 3/5 of RV 15-19 (ages 15-17), uniform within-bin"
+18-24,male,52298.2,"prorated: 2/5 of RV 15-19 (ages 18-19) + all of RV 20-24, uniform within-bin"
+18-24,female,49970.2,"prorated: 2/5 of RV 15-19 (ages 18-19) + all of RV 20-24, uniform within-bin"
+25-29,male,34425.0,exact match to RV021 5-year band
+25-29,female,32378.0,exact match to RV021 5-year band
+30-34,male,42035.0,exact match to RV021 5-year band
+30-34,female,39222.0,exact match to RV021 5-year band
+35-39,male,56395.0,exact match to RV021 5-year band
+35-39,female,51383.0,exact match to RV021 5-year band
+40-44,male,52415.0,exact match to RV021 5-year band
+40-44,female,49009.0,exact match to RV021 5-year band
+45-49,male,48137.0,exact match to RV021 5-year band
+45-49,female,46152.0,exact match to RV021 5-year band
+50-54,male,46455.0,exact match to RV021 5-year band
+50-54,female,46371.0,exact match to RV021 5-year band
+55-59,male,41295.0,exact match to RV021 5-year band
+55-59,female,44065.0,exact match to RV021 5-year band
+60-64,male,38798.0,exact match to RV021 5-year band
+60-64,female,45264.0,exact match to RV021 5-year band
+65-69,male,35515.0,exact match to RV021 5-year band
+65-69,female,47522.0,exact match to RV021 5-year band
+70-74,male,28284.0,exact match to RV021 5-year band
+70-74,female,44008.0,exact match to RV021 5-year band
+75+,male,40481,"aggregated RV021 75-79 through 100+ (open-ended); consumption modeled as a proxy using RTU011 70-74 band, see demographic_grid.md"
+75+,female,95134,"aggregated RV021 75-79 through 100+ (open-ended); consumption modeled as a proxy using RTU011 70-74 band, see demographic_grid.md"

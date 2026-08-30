@@ -1,0 +1,1921 @@
+age_band,sex,pal,kcal_per_day,matched_kcal_level,pyramid_group,subitem,kcal_per_portion,portion_type,portion_low,portion_high,portion_point_estimate
+2-5,male,sedentary,1212.5,1200,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+2-5,male,sedentary,1212.5,1200,"Vegetables, fruits & berries",Vegetables,30,gte,2.0,,2.0
+2-5,male,sedentary,1212.5,1200,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,male,sedentary,1212.5,1200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,male,sedentary,1212.5,1200,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,male,sedentary,1212.5,1200,Grain products & potatoes,(total),,range,5.0,6.0,5.5
+2-5,male,sedentary,1212.5,1200,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+2-5,male,sedentary,1212.5,1200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,male,sedentary,1212.5,1200,Grain products & potatoes,"Potato, sweet potato",75,range,0.5,1.0,0.75
+2-5,male,sedentary,1212.5,1200,Dairy products,(total),110,range,1.0,2.0,1.5
+2-5,male,sedentary,1212.5,1200,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+2-5,male,sedentary,1212.5,1200,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+2-5,male,sedentary,1212.5,1200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+2-5,male,sedentary,1212.5,1200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+2-5,male,sedentary,1212.5,1200,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+2-5,male,sedentary,1212.5,1200,"Fish, eggs & meat",Fish & seafood,80,range,0.5,1.5,1.0
+2-5,male,sedentary,1212.5,1200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,male,sedentary,1212.5,1200,"Fish, eggs & meat",Poultry,80,exact,0.5,0.5,0.5
+2-5,male,sedentary,1212.5,1200,"Fish, eggs & meat",Red meat,80,exact,0.3,0.3,0.3
+2-5,male,sedentary,1212.5,1200,"Sweets, snacks & discretionary",(total),40,lte,,1.0,1.0
+2-5,male,moderate,1386.2,1400,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+2-5,male,moderate,1386.2,1400,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+2-5,male,moderate,1386.2,1400,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,male,moderate,1386.2,1400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,male,moderate,1386.2,1400,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,male,moderate,1386.2,1400,Grain products & potatoes,(total),,range,6.0,7.0,6.5
+2-5,male,moderate,1386.2,1400,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+2-5,male,moderate,1386.2,1400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,male,moderate,1386.2,1400,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+2-5,male,moderate,1386.2,1400,Dairy products,(total),110,exact,2.0,2.0,2.0
+2-5,male,moderate,1386.2,1400,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+2-5,male,moderate,1386.2,1400,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+2-5,male,moderate,1386.2,1400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+2-5,male,moderate,1386.2,1400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+2-5,male,moderate,1386.2,1400,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+2-5,male,moderate,1386.2,1400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+2-5,male,moderate,1386.2,1400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,male,moderate,1386.2,1400,"Fish, eggs & meat",Poultry,80,exact,0.6,0.6,0.6
+2-5,male,moderate,1386.2,1400,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+2-5,male,moderate,1386.2,1400,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+2-5,male,active,1561.2,1600,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+2-5,male,active,1561.2,1600,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+2-5,male,active,1561.2,1600,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,male,active,1561.2,1600,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,male,active,1561.2,1600,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,male,active,1561.2,1600,Grain products & potatoes,(total),,range,7.0,8.0,7.5
+2-5,male,active,1561.2,1600,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+2-5,male,active,1561.2,1600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,male,active,1561.2,1600,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+2-5,male,active,1561.2,1600,Dairy products,(total),110,range,2.0,3.0,2.5
+2-5,male,active,1561.2,1600,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+2-5,male,active,1561.2,1600,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+2-5,male,active,1561.2,1600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+2-5,male,active,1561.2,1600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+2-5,male,active,1561.2,1600,"Fish, eggs & meat",(total),,exact,3.0,3.0,3.0
+2-5,male,active,1561.2,1600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+2-5,male,active,1561.2,1600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,male,active,1561.2,1600,"Fish, eggs & meat",Poultry,80,exact,0.7,0.7,0.7
+2-5,male,active,1561.2,1600,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+2-5,male,active,1561.2,1600,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+2-5,female,sedentary,1126.2,1200,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+2-5,female,sedentary,1126.2,1200,"Vegetables, fruits & berries",Vegetables,30,gte,2.0,,2.0
+2-5,female,sedentary,1126.2,1200,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,female,sedentary,1126.2,1200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,female,sedentary,1126.2,1200,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,female,sedentary,1126.2,1200,Grain products & potatoes,(total),,range,5.0,6.0,5.5
+2-5,female,sedentary,1126.2,1200,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+2-5,female,sedentary,1126.2,1200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,female,sedentary,1126.2,1200,Grain products & potatoes,"Potato, sweet potato",75,range,0.5,1.0,0.75
+2-5,female,sedentary,1126.2,1200,Dairy products,(total),110,range,1.0,2.0,1.5
+2-5,female,sedentary,1126.2,1200,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+2-5,female,sedentary,1126.2,1200,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+2-5,female,sedentary,1126.2,1200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+2-5,female,sedentary,1126.2,1200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+2-5,female,sedentary,1126.2,1200,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+2-5,female,sedentary,1126.2,1200,"Fish, eggs & meat",Fish & seafood,80,range,0.5,1.5,1.0
+2-5,female,sedentary,1126.2,1200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,female,sedentary,1126.2,1200,"Fish, eggs & meat",Poultry,80,exact,0.5,0.5,0.5
+2-5,female,sedentary,1126.2,1200,"Fish, eggs & meat",Red meat,80,exact,0.3,0.3,0.3
+2-5,female,sedentary,1126.2,1200,"Sweets, snacks & discretionary",(total),40,lte,,1.0,1.0
+2-5,female,moderate,1288.8,1200,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+2-5,female,moderate,1288.8,1200,"Vegetables, fruits & berries",Vegetables,30,gte,2.0,,2.0
+2-5,female,moderate,1288.8,1200,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,female,moderate,1288.8,1200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,female,moderate,1288.8,1200,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,female,moderate,1288.8,1200,Grain products & potatoes,(total),,range,5.0,6.0,5.5
+2-5,female,moderate,1288.8,1200,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+2-5,female,moderate,1288.8,1200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,female,moderate,1288.8,1200,Grain products & potatoes,"Potato, sweet potato",75,range,0.5,1.0,0.75
+2-5,female,moderate,1288.8,1200,Dairy products,(total),110,range,1.0,2.0,1.5
+2-5,female,moderate,1288.8,1200,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+2-5,female,moderate,1288.8,1200,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+2-5,female,moderate,1288.8,1200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+2-5,female,moderate,1288.8,1200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+2-5,female,moderate,1288.8,1200,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+2-5,female,moderate,1288.8,1200,"Fish, eggs & meat",Fish & seafood,80,range,0.5,1.5,1.0
+2-5,female,moderate,1288.8,1200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,female,moderate,1288.8,1200,"Fish, eggs & meat",Poultry,80,exact,0.5,0.5,0.5
+2-5,female,moderate,1288.8,1200,"Fish, eggs & meat",Red meat,80,exact,0.3,0.3,0.3
+2-5,female,moderate,1288.8,1200,"Sweets, snacks & discretionary",(total),40,lte,,1.0,1.0
+2-5,female,active,1448.8,1400,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+2-5,female,active,1448.8,1400,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+2-5,female,active,1448.8,1400,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+2-5,female,active,1448.8,1400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+2-5,female,active,1448.8,1400,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+2-5,female,active,1448.8,1400,Grain products & potatoes,(total),,range,6.0,7.0,6.5
+2-5,female,active,1448.8,1400,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+2-5,female,active,1448.8,1400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+2-5,female,active,1448.8,1400,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+2-5,female,active,1448.8,1400,Dairy products,(total),110,exact,2.0,2.0,2.0
+2-5,female,active,1448.8,1400,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+2-5,female,active,1448.8,1400,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+2-5,female,active,1448.8,1400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+2-5,female,active,1448.8,1400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+2-5,female,active,1448.8,1400,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+2-5,female,active,1448.8,1400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+2-5,female,active,1448.8,1400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+2-5,female,active,1448.8,1400,"Fish, eggs & meat",Poultry,80,exact,0.6,0.6,0.6
+2-5,female,active,1448.8,1400,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+2-5,female,active,1448.8,1400,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+6-9,male,sedentary,1550.0,1600,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+6-9,male,sedentary,1550.0,1600,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+6-9,male,sedentary,1550.0,1600,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+6-9,male,sedentary,1550.0,1600,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,male,sedentary,1550.0,1600,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+6-9,male,sedentary,1550.0,1600,Grain products & potatoes,(total),,range,7.0,8.0,7.5
+6-9,male,sedentary,1550.0,1600,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+6-9,male,sedentary,1550.0,1600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+6-9,male,sedentary,1550.0,1600,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+6-9,male,sedentary,1550.0,1600,Dairy products,(total),110,range,2.0,3.0,2.5
+6-9,male,sedentary,1550.0,1600,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+6-9,male,sedentary,1550.0,1600,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+6-9,male,sedentary,1550.0,1600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+6-9,male,sedentary,1550.0,1600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+6-9,male,sedentary,1550.0,1600,"Fish, eggs & meat",(total),,exact,3.0,3.0,3.0
+6-9,male,sedentary,1550.0,1600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+6-9,male,sedentary,1550.0,1600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,male,sedentary,1550.0,1600,"Fish, eggs & meat",Poultry,80,exact,0.7,0.7,0.7
+6-9,male,sedentary,1550.0,1600,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,male,sedentary,1550.0,1600,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+6-9,male,moderate,1772.5,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+6-9,male,moderate,1772.5,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+6-9,male,moderate,1772.5,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+6-9,male,moderate,1772.5,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,male,moderate,1772.5,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+6-9,male,moderate,1772.5,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+6-9,male,moderate,1772.5,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+6-9,male,moderate,1772.5,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+6-9,male,moderate,1772.5,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+6-9,male,moderate,1772.5,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+6-9,male,moderate,1772.5,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+6-9,male,moderate,1772.5,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+6-9,male,moderate,1772.5,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+6-9,male,moderate,1772.5,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+6-9,male,moderate,1772.5,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+6-9,male,moderate,1772.5,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+6-9,male,moderate,1772.5,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,male,moderate,1772.5,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+6-9,male,moderate,1772.5,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,male,moderate,1772.5,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+6-9,male,active,1995.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+6-9,male,active,1995.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+6-9,male,active,1995.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+6-9,male,active,1995.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,male,active,1995.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+6-9,male,active,1995.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+6-9,male,active,1995.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+6-9,male,active,1995.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+6-9,male,active,1995.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+6-9,male,active,1995.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+6-9,male,active,1995.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+6-9,male,active,1995.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+6-9,male,active,1995.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+6-9,male,active,1995.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+6-9,male,active,1995.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+6-9,male,active,1995.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+6-9,male,active,1995.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,male,active,1995.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+6-9,male,active,1995.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,male,active,1995.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+6-9,female,sedentary,1445.0,1400,"Vegetables, fruits & berries",(total),,gte,5.0,,5.0
+6-9,female,sedentary,1445.0,1400,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+6-9,female,sedentary,1445.0,1400,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+6-9,female,sedentary,1445.0,1400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,female,sedentary,1445.0,1400,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+6-9,female,sedentary,1445.0,1400,Grain products & potatoes,(total),,range,6.0,7.0,6.5
+6-9,female,sedentary,1445.0,1400,Grain products & potatoes,High-fibre bread/baked goods,75,range,2.0,3.0,2.5
+6-9,female,sedentary,1445.0,1400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+6-9,female,sedentary,1445.0,1400,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+6-9,female,sedentary,1445.0,1400,Dairy products,(total),110,exact,2.0,2.0,2.0
+6-9,female,sedentary,1445.0,1400,"Nuts, seeds, oils & fats",(total),,range,3.0,4.0,3.5
+6-9,female,sedentary,1445.0,1400,"Nuts, seeds, oils & fats",Nuts,90,range,0.5,1.0,0.75
+6-9,female,sedentary,1445.0,1400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.2,0.2,0.2
+6-9,female,sedentary,1445.0,1400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,2.0,3.0,2.5
+6-9,female,sedentary,1445.0,1400,"Fish, eggs & meat",(total),,range,2.0,3.0,2.5
+6-9,female,sedentary,1445.0,1400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+6-9,female,sedentary,1445.0,1400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,female,sedentary,1445.0,1400,"Fish, eggs & meat",Poultry,80,exact,0.6,0.6,0.6
+6-9,female,sedentary,1445.0,1400,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,female,sedentary,1445.0,1400,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+6-9,female,moderate,1647.5,1600,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+6-9,female,moderate,1647.5,1600,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+6-9,female,moderate,1647.5,1600,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+6-9,female,moderate,1647.5,1600,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,female,moderate,1647.5,1600,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+6-9,female,moderate,1647.5,1600,Grain products & potatoes,(total),,range,7.0,8.0,7.5
+6-9,female,moderate,1647.5,1600,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+6-9,female,moderate,1647.5,1600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+6-9,female,moderate,1647.5,1600,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+6-9,female,moderate,1647.5,1600,Dairy products,(total),110,range,2.0,3.0,2.5
+6-9,female,moderate,1647.5,1600,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+6-9,female,moderate,1647.5,1600,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+6-9,female,moderate,1647.5,1600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+6-9,female,moderate,1647.5,1600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+6-9,female,moderate,1647.5,1600,"Fish, eggs & meat",(total),,exact,3.0,3.0,3.0
+6-9,female,moderate,1647.5,1600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+6-9,female,moderate,1647.5,1600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,female,moderate,1647.5,1600,"Fish, eggs & meat",Poultry,80,exact,0.7,0.7,0.7
+6-9,female,moderate,1647.5,1600,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,female,moderate,1647.5,1600,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+6-9,female,active,1852.5,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+6-9,female,active,1852.5,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+6-9,female,active,1852.5,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+6-9,female,active,1852.5,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+6-9,female,active,1852.5,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+6-9,female,active,1852.5,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+6-9,female,active,1852.5,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+6-9,female,active,1852.5,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+6-9,female,active,1852.5,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+6-9,female,active,1852.5,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+6-9,female,active,1852.5,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+6-9,female,active,1852.5,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+6-9,female,active,1852.5,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+6-9,female,active,1852.5,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+6-9,female,active,1852.5,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+6-9,female,active,1852.5,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+6-9,female,active,1852.5,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+6-9,female,active,1852.5,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+6-9,female,active,1852.5,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+6-9,female,active,1852.5,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+10-13,male,sedentary,1775.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+10-13,male,sedentary,1775.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+10-13,male,sedentary,1775.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+10-13,male,sedentary,1775.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,male,sedentary,1775.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+10-13,male,sedentary,1775.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+10-13,male,sedentary,1775.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+10-13,male,sedentary,1775.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+10-13,male,sedentary,1775.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+10-13,male,sedentary,1775.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,male,sedentary,1775.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+10-13,male,sedentary,1775.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+10-13,male,sedentary,1775.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+10-13,male,sedentary,1775.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,male,sedentary,1775.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+10-13,male,sedentary,1775.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+10-13,male,sedentary,1775.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,male,sedentary,1775.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+10-13,male,sedentary,1775.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,male,sedentary,1775.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+10-13,male,moderate,2027.5,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+10-13,male,moderate,2027.5,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+10-13,male,moderate,2027.5,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+10-13,male,moderate,2027.5,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,male,moderate,2027.5,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+10-13,male,moderate,2027.5,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+10-13,male,moderate,2027.5,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+10-13,male,moderate,2027.5,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+10-13,male,moderate,2027.5,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+10-13,male,moderate,2027.5,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,male,moderate,2027.5,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+10-13,male,moderate,2027.5,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+10-13,male,moderate,2027.5,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+10-13,male,moderate,2027.5,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,male,moderate,2027.5,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+10-13,male,moderate,2027.5,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+10-13,male,moderate,2027.5,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,male,moderate,2027.5,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+10-13,male,moderate,2027.5,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,male,moderate,2027.5,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+10-13,male,active,2285.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+10-13,male,active,2285.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+10-13,male,active,2285.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+10-13,male,active,2285.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,male,active,2285.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+10-13,male,active,2285.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+10-13,male,active,2285.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+10-13,male,active,2285.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+10-13,male,active,2285.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+10-13,male,active,2285.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,male,active,2285.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+10-13,male,active,2285.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+10-13,male,active,2285.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+10-13,male,active,2285.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,male,active,2285.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+10-13,male,active,2285.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+10-13,male,active,2285.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,male,active,2285.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+10-13,male,active,2285.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,male,active,2285.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+10-13,female,sedentary,1660.0,1600,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+10-13,female,sedentary,1660.0,1600,"Vegetables, fruits & berries",Vegetables,30,gte,3.0,,3.0
+10-13,female,sedentary,1660.0,1600,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+10-13,female,sedentary,1660.0,1600,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,female,sedentary,1660.0,1600,"Vegetables, fruits & berries",Berries,50,gte,0.3,,0.3
+10-13,female,sedentary,1660.0,1600,Grain products & potatoes,(total),,range,7.0,8.0,7.5
+10-13,female,sedentary,1660.0,1600,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+10-13,female,sedentary,1660.0,1600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+10-13,female,sedentary,1660.0,1600,Grain products & potatoes,"Potato, sweet potato",75,exact,1.0,1.0,1.0
+10-13,female,sedentary,1660.0,1600,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,female,sedentary,1660.0,1600,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+10-13,female,sedentary,1660.0,1600,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+10-13,female,sedentary,1660.0,1600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+10-13,female,sedentary,1660.0,1600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,female,sedentary,1660.0,1600,"Fish, eggs & meat",(total),,exact,3.0,3.0,3.0
+10-13,female,sedentary,1660.0,1600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,1.5,1.25
+10-13,female,sedentary,1660.0,1600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,female,sedentary,1660.0,1600,"Fish, eggs & meat",Poultry,80,exact,0.7,0.7,0.7
+10-13,female,sedentary,1660.0,1600,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,female,sedentary,1660.0,1600,"Sweets, snacks & discretionary",(total),40,lte,,2.0,2.0
+10-13,female,moderate,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+10-13,female,moderate,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+10-13,female,moderate,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+10-13,female,moderate,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,female,moderate,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+10-13,female,moderate,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+10-13,female,moderate,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+10-13,female,moderate,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+10-13,female,moderate,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+10-13,female,moderate,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,female,moderate,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+10-13,female,moderate,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+10-13,female,moderate,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+10-13,female,moderate,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,female,moderate,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+10-13,female,moderate,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+10-13,female,moderate,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,female,moderate,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+10-13,female,moderate,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,female,moderate,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+10-13,female,active,2137.5,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+10-13,female,active,2137.5,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+10-13,female,active,2137.5,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+10-13,female,active,2137.5,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+10-13,female,active,2137.5,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+10-13,female,active,2137.5,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+10-13,female,active,2137.5,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+10-13,female,active,2137.5,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+10-13,female,active,2137.5,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+10-13,female,active,2137.5,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+10-13,female,active,2137.5,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+10-13,female,active,2137.5,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+10-13,female,active,2137.5,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+10-13,female,active,2137.5,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+10-13,female,active,2137.5,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+10-13,female,active,2137.5,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+10-13,female,active,2137.5,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+10-13,female,active,2137.5,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+10-13,female,active,2137.5,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+10-13,female,active,2137.5,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+14-17,male,sedentary,2222.5,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+14-17,male,sedentary,2222.5,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+14-17,male,sedentary,2222.5,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+14-17,male,sedentary,2222.5,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+14-17,male,sedentary,2222.5,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+14-17,male,sedentary,2222.5,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+14-17,male,sedentary,2222.5,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+14-17,male,sedentary,2222.5,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+14-17,male,sedentary,2222.5,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+14-17,male,sedentary,2222.5,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+14-17,male,sedentary,2222.5,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+14-17,male,sedentary,2222.5,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+14-17,male,sedentary,2222.5,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+14-17,male,sedentary,2222.5,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+14-17,male,sedentary,2222.5,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+14-17,male,sedentary,2222.5,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,male,sedentary,2222.5,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,male,sedentary,2222.5,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+14-17,male,sedentary,2222.5,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+14-17,male,sedentary,2222.5,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+14-17,male,moderate,2532.5,2600,"Vegetables, fruits & berries",(total),,gte,10.0,,10.0
+14-17,male,moderate,2532.5,2600,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+14-17,male,moderate,2532.5,2600,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+14-17,male,moderate,2532.5,2600,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+14-17,male,moderate,2532.5,2600,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+14-17,male,moderate,2532.5,2600,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+14-17,male,moderate,2532.5,2600,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+14-17,male,moderate,2532.5,2600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+14-17,male,moderate,2532.5,2600,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+14-17,male,moderate,2532.5,2600,Dairy products,(total),110,range,2.0,3.0,2.5
+14-17,male,moderate,2532.5,2600,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+14-17,male,moderate,2532.5,2600,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+14-17,male,moderate,2532.5,2600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+14-17,male,moderate,2532.5,2600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+14-17,male,moderate,2532.5,2600,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+14-17,male,moderate,2532.5,2600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,male,moderate,2532.5,2600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,male,moderate,2532.5,2600,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+14-17,male,moderate,2532.5,2600,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+14-17,male,moderate,2532.5,2600,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+14-17,male,active,2852.5,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+14-17,male,active,2852.5,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+14-17,male,active,2852.5,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+14-17,male,active,2852.5,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+14-17,male,active,2852.5,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+14-17,male,active,2852.5,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+14-17,male,active,2852.5,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+14-17,male,active,2852.5,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+14-17,male,active,2852.5,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+14-17,male,active,2852.5,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+14-17,male,active,2852.5,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+14-17,male,active,2852.5,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+14-17,male,active,2852.5,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+14-17,male,active,2852.5,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+14-17,male,active,2852.5,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+14-17,male,active,2852.5,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,male,active,2852.5,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,male,active,2852.5,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+14-17,male,active,2852.5,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+14-17,male,active,2852.5,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+14-17,female,sedentary,1885.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+14-17,female,sedentary,1885.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+14-17,female,sedentary,1885.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+14-17,female,sedentary,1885.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+14-17,female,sedentary,1885.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+14-17,female,sedentary,1885.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+14-17,female,sedentary,1885.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+14-17,female,sedentary,1885.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+14-17,female,sedentary,1885.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+14-17,female,sedentary,1885.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+14-17,female,sedentary,1885.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+14-17,female,sedentary,1885.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+14-17,female,sedentary,1885.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+14-17,female,sedentary,1885.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+14-17,female,sedentary,1885.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+14-17,female,sedentary,1885.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,female,sedentary,1885.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,female,sedentary,1885.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+14-17,female,sedentary,1885.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+14-17,female,sedentary,1885.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+14-17,female,moderate,2155.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+14-17,female,moderate,2155.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+14-17,female,moderate,2155.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+14-17,female,moderate,2155.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+14-17,female,moderate,2155.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+14-17,female,moderate,2155.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+14-17,female,moderate,2155.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+14-17,female,moderate,2155.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+14-17,female,moderate,2155.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+14-17,female,moderate,2155.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+14-17,female,moderate,2155.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+14-17,female,moderate,2155.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+14-17,female,moderate,2155.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+14-17,female,moderate,2155.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+14-17,female,moderate,2155.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+14-17,female,moderate,2155.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,female,moderate,2155.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,female,moderate,2155.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+14-17,female,moderate,2155.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+14-17,female,moderate,2155.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+14-17,female,active,2425.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+14-17,female,active,2425.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+14-17,female,active,2425.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+14-17,female,active,2425.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+14-17,female,active,2425.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+14-17,female,active,2425.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+14-17,female,active,2425.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+14-17,female,active,2425.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+14-17,female,active,2425.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+14-17,female,active,2425.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+14-17,female,active,2425.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+14-17,female,active,2425.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+14-17,female,active,2425.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+14-17,female,active,2425.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+14-17,female,active,2425.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+14-17,female,active,2425.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+14-17,female,active,2425.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+14-17,female,active,2425.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+14-17,female,active,2425.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+14-17,female,active,2425.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+18-24,male,sedentary,2500.0,2600,"Vegetables, fruits & berries",(total),,gte,10.0,,10.0
+18-24,male,sedentary,2500.0,2600,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+18-24,male,sedentary,2500.0,2600,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+18-24,male,sedentary,2500.0,2600,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+18-24,male,sedentary,2500.0,2600,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+18-24,male,sedentary,2500.0,2600,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+18-24,male,sedentary,2500.0,2600,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+18-24,male,sedentary,2500.0,2600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+18-24,male,sedentary,2500.0,2600,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+18-24,male,sedentary,2500.0,2600,Dairy products,(total),110,range,2.0,3.0,2.5
+18-24,male,sedentary,2500.0,2600,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+18-24,male,sedentary,2500.0,2600,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+18-24,male,sedentary,2500.0,2600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+18-24,male,sedentary,2500.0,2600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+18-24,male,sedentary,2500.0,2600,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+18-24,male,sedentary,2500.0,2600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,male,sedentary,2500.0,2600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,male,sedentary,2500.0,2600,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,male,sedentary,2500.0,2600,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+18-24,male,sedentary,2500.0,2600,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+18-24,male,moderate,2800.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+18-24,male,moderate,2800.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+18-24,male,moderate,2800.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+18-24,male,moderate,2800.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+18-24,male,moderate,2800.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+18-24,male,moderate,2800.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+18-24,male,moderate,2800.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+18-24,male,moderate,2800.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+18-24,male,moderate,2800.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+18-24,male,moderate,2800.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+18-24,male,moderate,2800.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+18-24,male,moderate,2800.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+18-24,male,moderate,2800.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+18-24,male,moderate,2800.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+18-24,male,moderate,2800.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+18-24,male,moderate,2800.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,male,moderate,2800.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,male,moderate,2800.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,male,moderate,2800.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+18-24,male,moderate,2800.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+18-24,male,active,3150.0,3200,"Vegetables, fruits & berries",(total),,gte,12.0,,12.0
+18-24,male,active,3150.0,3200,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+18-24,male,active,3150.0,3200,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+18-24,male,active,3150.0,3200,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+18-24,male,active,3150.0,3200,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+18-24,male,active,3150.0,3200,Grain products & potatoes,(total),,range,14.0,15.0,14.5
+18-24,male,active,3150.0,3200,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+18-24,male,active,3150.0,3200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+18-24,male,active,3150.0,3200,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+18-24,male,active,3150.0,3200,Dairy products,(total),110,range,3.0,4.0,3.5
+18-24,male,active,3150.0,3200,"Nuts, seeds, oils & fats",(total),,range,10.0,11.0,10.5
+18-24,male,active,3150.0,3200,"Nuts, seeds, oils & fats",Nuts,90,range,3.0,4.0,3.5
+18-24,male,active,3150.0,3200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+18-24,male,active,3150.0,3200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+18-24,male,active,3150.0,3200,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+18-24,male,active,3150.0,3200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,male,active,3150.0,3200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,male,active,3150.0,3200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,male,active,3150.0,3200,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+18-24,male,active,3150.0,3200,"Sweets, snacks & discretionary",(total),40,lte,,6.0,6.0
+18-24,female,sedentary,2000.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+18-24,female,sedentary,2000.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+18-24,female,sedentary,2000.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+18-24,female,sedentary,2000.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+18-24,female,sedentary,2000.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+18-24,female,sedentary,2000.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+18-24,female,sedentary,2000.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+18-24,female,sedentary,2000.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+18-24,female,sedentary,2000.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+18-24,female,sedentary,2000.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+18-24,female,sedentary,2000.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+18-24,female,sedentary,2000.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+18-24,female,sedentary,2000.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+18-24,female,sedentary,2000.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+18-24,female,sedentary,2000.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+18-24,female,sedentary,2000.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,female,sedentary,2000.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,female,sedentary,2000.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,female,sedentary,2000.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+18-24,female,sedentary,2000.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+18-24,female,moderate,2250.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+18-24,female,moderate,2250.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+18-24,female,moderate,2250.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+18-24,female,moderate,2250.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+18-24,female,moderate,2250.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+18-24,female,moderate,2250.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+18-24,female,moderate,2250.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+18-24,female,moderate,2250.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+18-24,female,moderate,2250.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+18-24,female,moderate,2250.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+18-24,female,moderate,2250.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+18-24,female,moderate,2250.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+18-24,female,moderate,2250.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+18-24,female,moderate,2250.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+18-24,female,moderate,2250.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+18-24,female,moderate,2250.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,female,moderate,2250.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,female,moderate,2250.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,female,moderate,2250.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+18-24,female,moderate,2250.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+18-24,female,active,2550.0,2600,"Vegetables, fruits & berries",(total),,gte,10.0,,10.0
+18-24,female,active,2550.0,2600,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+18-24,female,active,2550.0,2600,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+18-24,female,active,2550.0,2600,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+18-24,female,active,2550.0,2600,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+18-24,female,active,2550.0,2600,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+18-24,female,active,2550.0,2600,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+18-24,female,active,2550.0,2600,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+18-24,female,active,2550.0,2600,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+18-24,female,active,2550.0,2600,Dairy products,(total),110,range,2.0,3.0,2.5
+18-24,female,active,2550.0,2600,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+18-24,female,active,2550.0,2600,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+18-24,female,active,2550.0,2600,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+18-24,female,active,2550.0,2600,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+18-24,female,active,2550.0,2600,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+18-24,female,active,2550.0,2600,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+18-24,female,active,2550.0,2600,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+18-24,female,active,2550.0,2600,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+18-24,female,active,2550.0,2600,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+18-24,female,active,2550.0,2600,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+25-29,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+25-29,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+25-29,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+25-29,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+25-29,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+25-29,male,sedentary,2350.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+25-29,male,sedentary,2350.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+25-29,male,sedentary,2350.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+25-29,male,sedentary,2350.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+25-29,male,sedentary,2350.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+25-29,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+25-29,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+25-29,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+25-29,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+25-29,male,sedentary,2350.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+25-29,male,sedentary,2350.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,male,sedentary,2350.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,male,sedentary,2350.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,male,sedentary,2350.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+25-29,male,sedentary,2350.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+25-29,male,moderate,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+25-29,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+25-29,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+25-29,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+25-29,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+25-29,male,moderate,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+25-29,male,moderate,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+25-29,male,moderate,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+25-29,male,moderate,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+25-29,male,moderate,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+25-29,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+25-29,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+25-29,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+25-29,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+25-29,male,moderate,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+25-29,male,moderate,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,male,moderate,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,male,moderate,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,male,moderate,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+25-29,male,moderate,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+25-29,male,active,3050.0,3000,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+25-29,male,active,3050.0,3000,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+25-29,male,active,3050.0,3000,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+25-29,male,active,3050.0,3000,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+25-29,male,active,3050.0,3000,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+25-29,male,active,3050.0,3000,Grain products & potatoes,(total),,range,13.0,14.0,13.5
+25-29,male,active,3050.0,3000,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+25-29,male,active,3050.0,3000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+25-29,male,active,3050.0,3000,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+25-29,male,active,3050.0,3000,Dairy products,(total),110,range,3.0,4.0,3.5
+25-29,male,active,3050.0,3000,"Nuts, seeds, oils & fats",(total),,range,9.0,10.0,9.5
+25-29,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+25-29,male,active,3050.0,3000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+25-29,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+25-29,male,active,3050.0,3000,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+25-29,male,active,3050.0,3000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,male,active,3050.0,3000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,male,active,3050.0,3000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,male,active,3050.0,3000,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+25-29,male,active,3050.0,3000,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+25-29,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+25-29,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+25-29,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+25-29,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+25-29,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+25-29,female,sedentary,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+25-29,female,sedentary,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+25-29,female,sedentary,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+25-29,female,sedentary,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+25-29,female,sedentary,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+25-29,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+25-29,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+25-29,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+25-29,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+25-29,female,sedentary,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+25-29,female,sedentary,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,female,sedentary,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,female,sedentary,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,female,sedentary,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+25-29,female,sedentary,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+25-29,female,moderate,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+25-29,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+25-29,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+25-29,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+25-29,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+25-29,female,moderate,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+25-29,female,moderate,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+25-29,female,moderate,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+25-29,female,moderate,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+25-29,female,moderate,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+25-29,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+25-29,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+25-29,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+25-29,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+25-29,female,moderate,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+25-29,female,moderate,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,female,moderate,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,female,moderate,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,female,moderate,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+25-29,female,moderate,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+25-29,female,active,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+25-29,female,active,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+25-29,female,active,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+25-29,female,active,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+25-29,female,active,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+25-29,female,active,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+25-29,female,active,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+25-29,female,active,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+25-29,female,active,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+25-29,female,active,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+25-29,female,active,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+25-29,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+25-29,female,active,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+25-29,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+25-29,female,active,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+25-29,female,active,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+25-29,female,active,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+25-29,female,active,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+25-29,female,active,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+25-29,female,active,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+30-34,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+30-34,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+30-34,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+30-34,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+30-34,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+30-34,male,sedentary,2350.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+30-34,male,sedentary,2350.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+30-34,male,sedentary,2350.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+30-34,male,sedentary,2350.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+30-34,male,sedentary,2350.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+30-34,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+30-34,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+30-34,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+30-34,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+30-34,male,sedentary,2350.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+30-34,male,sedentary,2350.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,male,sedentary,2350.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,male,sedentary,2350.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,male,sedentary,2350.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+30-34,male,sedentary,2350.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+30-34,male,moderate,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+30-34,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+30-34,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+30-34,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+30-34,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+30-34,male,moderate,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+30-34,male,moderate,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+30-34,male,moderate,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+30-34,male,moderate,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+30-34,male,moderate,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+30-34,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+30-34,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+30-34,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+30-34,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+30-34,male,moderate,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+30-34,male,moderate,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,male,moderate,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,male,moderate,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,male,moderate,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+30-34,male,moderate,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+30-34,male,active,3050.0,3000,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+30-34,male,active,3050.0,3000,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+30-34,male,active,3050.0,3000,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+30-34,male,active,3050.0,3000,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+30-34,male,active,3050.0,3000,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+30-34,male,active,3050.0,3000,Grain products & potatoes,(total),,range,13.0,14.0,13.5
+30-34,male,active,3050.0,3000,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+30-34,male,active,3050.0,3000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+30-34,male,active,3050.0,3000,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+30-34,male,active,3050.0,3000,Dairy products,(total),110,range,3.0,4.0,3.5
+30-34,male,active,3050.0,3000,"Nuts, seeds, oils & fats",(total),,range,9.0,10.0,9.5
+30-34,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+30-34,male,active,3050.0,3000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+30-34,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+30-34,male,active,3050.0,3000,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+30-34,male,active,3050.0,3000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,male,active,3050.0,3000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,male,active,3050.0,3000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,male,active,3050.0,3000,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+30-34,male,active,3050.0,3000,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+30-34,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+30-34,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+30-34,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+30-34,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+30-34,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+30-34,female,sedentary,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+30-34,female,sedentary,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+30-34,female,sedentary,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+30-34,female,sedentary,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+30-34,female,sedentary,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+30-34,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+30-34,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+30-34,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+30-34,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+30-34,female,sedentary,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+30-34,female,sedentary,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,female,sedentary,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,female,sedentary,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,female,sedentary,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+30-34,female,sedentary,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+30-34,female,moderate,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+30-34,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+30-34,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+30-34,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+30-34,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+30-34,female,moderate,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+30-34,female,moderate,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+30-34,female,moderate,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+30-34,female,moderate,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+30-34,female,moderate,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+30-34,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+30-34,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+30-34,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+30-34,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+30-34,female,moderate,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+30-34,female,moderate,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,female,moderate,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,female,moderate,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,female,moderate,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+30-34,female,moderate,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+30-34,female,active,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+30-34,female,active,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+30-34,female,active,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+30-34,female,active,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+30-34,female,active,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+30-34,female,active,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+30-34,female,active,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+30-34,female,active,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+30-34,female,active,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+30-34,female,active,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+30-34,female,active,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+30-34,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+30-34,female,active,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+30-34,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+30-34,female,active,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+30-34,female,active,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+30-34,female,active,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+30-34,female,active,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+30-34,female,active,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+30-34,female,active,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+35-39,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+35-39,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+35-39,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+35-39,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+35-39,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+35-39,male,sedentary,2350.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+35-39,male,sedentary,2350.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+35-39,male,sedentary,2350.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+35-39,male,sedentary,2350.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+35-39,male,sedentary,2350.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+35-39,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+35-39,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+35-39,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+35-39,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+35-39,male,sedentary,2350.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+35-39,male,sedentary,2350.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,male,sedentary,2350.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,male,sedentary,2350.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,male,sedentary,2350.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+35-39,male,sedentary,2350.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+35-39,male,moderate,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+35-39,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+35-39,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+35-39,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+35-39,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+35-39,male,moderate,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+35-39,male,moderate,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+35-39,male,moderate,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+35-39,male,moderate,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+35-39,male,moderate,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+35-39,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+35-39,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+35-39,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+35-39,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+35-39,male,moderate,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+35-39,male,moderate,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,male,moderate,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,male,moderate,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,male,moderate,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+35-39,male,moderate,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+35-39,male,active,3050.0,3000,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+35-39,male,active,3050.0,3000,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+35-39,male,active,3050.0,3000,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+35-39,male,active,3050.0,3000,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+35-39,male,active,3050.0,3000,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+35-39,male,active,3050.0,3000,Grain products & potatoes,(total),,range,13.0,14.0,13.5
+35-39,male,active,3050.0,3000,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+35-39,male,active,3050.0,3000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+35-39,male,active,3050.0,3000,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+35-39,male,active,3050.0,3000,Dairy products,(total),110,range,3.0,4.0,3.5
+35-39,male,active,3050.0,3000,"Nuts, seeds, oils & fats",(total),,range,9.0,10.0,9.5
+35-39,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+35-39,male,active,3050.0,3000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+35-39,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+35-39,male,active,3050.0,3000,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+35-39,male,active,3050.0,3000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,male,active,3050.0,3000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,male,active,3050.0,3000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,male,active,3050.0,3000,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+35-39,male,active,3050.0,3000,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+35-39,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+35-39,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+35-39,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+35-39,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+35-39,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+35-39,female,sedentary,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+35-39,female,sedentary,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+35-39,female,sedentary,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+35-39,female,sedentary,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+35-39,female,sedentary,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+35-39,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+35-39,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+35-39,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+35-39,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+35-39,female,sedentary,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+35-39,female,sedentary,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,female,sedentary,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,female,sedentary,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,female,sedentary,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+35-39,female,sedentary,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+35-39,female,moderate,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+35-39,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+35-39,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+35-39,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+35-39,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+35-39,female,moderate,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+35-39,female,moderate,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+35-39,female,moderate,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+35-39,female,moderate,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+35-39,female,moderate,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+35-39,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+35-39,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+35-39,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+35-39,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+35-39,female,moderate,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+35-39,female,moderate,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,female,moderate,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,female,moderate,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,female,moderate,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+35-39,female,moderate,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+35-39,female,active,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+35-39,female,active,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+35-39,female,active,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+35-39,female,active,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+35-39,female,active,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+35-39,female,active,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+35-39,female,active,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+35-39,female,active,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+35-39,female,active,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+35-39,female,active,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+35-39,female,active,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+35-39,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+35-39,female,active,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+35-39,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+35-39,female,active,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+35-39,female,active,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+35-39,female,active,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+35-39,female,active,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+35-39,female,active,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+35-39,female,active,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+40-44,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+40-44,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+40-44,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+40-44,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+40-44,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+40-44,male,sedentary,2350.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+40-44,male,sedentary,2350.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+40-44,male,sedentary,2350.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+40-44,male,sedentary,2350.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+40-44,male,sedentary,2350.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+40-44,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+40-44,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+40-44,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+40-44,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+40-44,male,sedentary,2350.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+40-44,male,sedentary,2350.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,male,sedentary,2350.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,male,sedentary,2350.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,male,sedentary,2350.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+40-44,male,sedentary,2350.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+40-44,male,moderate,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+40-44,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+40-44,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+40-44,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+40-44,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+40-44,male,moderate,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+40-44,male,moderate,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+40-44,male,moderate,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+40-44,male,moderate,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+40-44,male,moderate,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+40-44,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+40-44,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+40-44,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+40-44,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+40-44,male,moderate,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+40-44,male,moderate,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,male,moderate,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,male,moderate,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,male,moderate,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+40-44,male,moderate,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+40-44,male,active,3050.0,3000,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+40-44,male,active,3050.0,3000,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+40-44,male,active,3050.0,3000,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+40-44,male,active,3050.0,3000,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+40-44,male,active,3050.0,3000,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+40-44,male,active,3050.0,3000,Grain products & potatoes,(total),,range,13.0,14.0,13.5
+40-44,male,active,3050.0,3000,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+40-44,male,active,3050.0,3000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+40-44,male,active,3050.0,3000,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+40-44,male,active,3050.0,3000,Dairy products,(total),110,range,3.0,4.0,3.5
+40-44,male,active,3050.0,3000,"Nuts, seeds, oils & fats",(total),,range,9.0,10.0,9.5
+40-44,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+40-44,male,active,3050.0,3000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+40-44,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+40-44,male,active,3050.0,3000,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+40-44,male,active,3050.0,3000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,male,active,3050.0,3000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,male,active,3050.0,3000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,male,active,3050.0,3000,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+40-44,male,active,3050.0,3000,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+40-44,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+40-44,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+40-44,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+40-44,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+40-44,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+40-44,female,sedentary,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+40-44,female,sedentary,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+40-44,female,sedentary,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+40-44,female,sedentary,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+40-44,female,sedentary,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+40-44,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+40-44,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+40-44,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+40-44,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+40-44,female,sedentary,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+40-44,female,sedentary,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,female,sedentary,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,female,sedentary,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,female,sedentary,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+40-44,female,sedentary,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+40-44,female,moderate,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+40-44,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+40-44,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+40-44,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+40-44,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+40-44,female,moderate,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+40-44,female,moderate,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+40-44,female,moderate,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+40-44,female,moderate,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+40-44,female,moderate,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+40-44,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+40-44,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+40-44,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+40-44,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+40-44,female,moderate,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+40-44,female,moderate,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,female,moderate,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,female,moderate,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,female,moderate,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+40-44,female,moderate,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+40-44,female,active,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+40-44,female,active,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+40-44,female,active,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+40-44,female,active,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+40-44,female,active,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+40-44,female,active,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+40-44,female,active,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+40-44,female,active,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+40-44,female,active,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+40-44,female,active,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+40-44,female,active,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+40-44,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+40-44,female,active,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+40-44,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+40-44,female,active,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+40-44,female,active,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+40-44,female,active,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+40-44,female,active,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+40-44,female,active,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+40-44,female,active,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+45-49,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+45-49,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+45-49,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+45-49,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+45-49,male,sedentary,2350.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+45-49,male,sedentary,2350.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+45-49,male,sedentary,2350.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+45-49,male,sedentary,2350.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+45-49,male,sedentary,2350.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+45-49,male,sedentary,2350.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+45-49,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+45-49,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+45-49,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+45-49,male,sedentary,2350.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+45-49,male,sedentary,2350.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+45-49,male,sedentary,2350.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,male,sedentary,2350.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,male,sedentary,2350.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,male,sedentary,2350.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+45-49,male,sedentary,2350.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+45-49,male,moderate,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+45-49,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+45-49,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+45-49,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+45-49,male,moderate,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+45-49,male,moderate,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+45-49,male,moderate,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+45-49,male,moderate,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+45-49,male,moderate,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+45-49,male,moderate,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+45-49,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+45-49,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+45-49,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+45-49,male,moderate,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+45-49,male,moderate,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+45-49,male,moderate,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,male,moderate,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,male,moderate,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,male,moderate,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+45-49,male,moderate,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+45-49,male,active,3050.0,3000,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+45-49,male,active,3050.0,3000,"Vegetables, fruits & berries",Vegetables,30,gte,7.0,,7.0
+45-49,male,active,3050.0,3000,"Vegetables, fruits & berries",Legumes,130,exact,0.8,0.8,0.8
+45-49,male,active,3050.0,3000,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+45-49,male,active,3050.0,3000,"Vegetables, fruits & berries",Berries,50,gte,0.6,,0.6
+45-49,male,active,3050.0,3000,Grain products & potatoes,(total),,range,13.0,14.0,13.5
+45-49,male,active,3050.0,3000,Grain products & potatoes,High-fibre bread/baked goods,75,range,6.0,7.0,6.5
+45-49,male,active,3050.0,3000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,5.0,6.0,5.5
+45-49,male,active,3050.0,3000,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+45-49,male,active,3050.0,3000,Dairy products,(total),110,range,3.0,4.0,3.5
+45-49,male,active,3050.0,3000,"Nuts, seeds, oils & fats",(total),,range,9.0,10.0,9.5
+45-49,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+45-49,male,active,3050.0,3000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.7,0.7,0.7
+45-49,male,active,3050.0,3000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,6.0,7.0,6.5
+45-49,male,active,3050.0,3000,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+45-49,male,active,3050.0,3000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,male,active,3050.0,3000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,male,active,3050.0,3000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,male,active,3050.0,3000,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+45-49,male,active,3050.0,3000,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+45-49,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+45-49,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+45-49,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+45-49,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+45-49,female,sedentary,1900.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+45-49,female,sedentary,1900.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+45-49,female,sedentary,1900.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+45-49,female,sedentary,1900.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+45-49,female,sedentary,1900.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+45-49,female,sedentary,1900.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+45-49,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+45-49,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+45-49,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+45-49,female,sedentary,1900.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+45-49,female,sedentary,1900.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+45-49,female,sedentary,1900.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,female,sedentary,1900.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,female,sedentary,1900.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,female,sedentary,1900.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+45-49,female,sedentary,1900.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+45-49,female,moderate,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+45-49,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+45-49,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+45-49,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+45-49,female,moderate,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+45-49,female,moderate,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+45-49,female,moderate,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+45-49,female,moderate,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+45-49,female,moderate,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+45-49,female,moderate,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+45-49,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+45-49,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+45-49,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+45-49,female,moderate,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+45-49,female,moderate,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+45-49,female,moderate,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,female,moderate,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,female,moderate,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,female,moderate,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+45-49,female,moderate,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+45-49,female,active,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+45-49,female,active,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+45-49,female,active,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+45-49,female,active,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+45-49,female,active,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+45-49,female,active,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+45-49,female,active,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+45-49,female,active,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+45-49,female,active,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+45-49,female,active,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+45-49,female,active,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+45-49,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+45-49,female,active,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+45-49,female,active,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+45-49,female,active,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+45-49,female,active,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+45-49,female,active,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+45-49,female,active,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+45-49,female,active,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+45-49,female,active,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+50-54,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+50-54,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+50-54,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+50-54,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+50-54,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+50-54,male,sedentary,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+50-54,male,sedentary,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+50-54,male,sedentary,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+50-54,male,sedentary,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+50-54,male,sedentary,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+50-54,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+50-54,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+50-54,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+50-54,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+50-54,male,sedentary,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+50-54,male,sedentary,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,male,sedentary,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,male,sedentary,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+50-54,male,sedentary,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+50-54,male,sedentary,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+50-54,male,moderate,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+50-54,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+50-54,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+50-54,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+50-54,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+50-54,male,moderate,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+50-54,male,moderate,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+50-54,male,moderate,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+50-54,male,moderate,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+50-54,male,moderate,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+50-54,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+50-54,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+50-54,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+50-54,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+50-54,male,moderate,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+50-54,male,moderate,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,male,moderate,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,male,moderate,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+50-54,male,moderate,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+50-54,male,moderate,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+50-54,male,active,2750.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+50-54,male,active,2750.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+50-54,male,active,2750.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+50-54,male,active,2750.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+50-54,male,active,2750.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+50-54,male,active,2750.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+50-54,male,active,2750.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+50-54,male,active,2750.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+50-54,male,active,2750.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+50-54,male,active,2750.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+50-54,male,active,2750.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+50-54,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+50-54,male,active,2750.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+50-54,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+50-54,male,active,2750.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+50-54,male,active,2750.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,male,active,2750.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,male,active,2750.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+50-54,male,active,2750.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+50-54,male,active,2750.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+50-54,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+50-54,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+50-54,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+50-54,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+50-54,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+50-54,female,sedentary,1750.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+50-54,female,sedentary,1750.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+50-54,female,sedentary,1750.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+50-54,female,sedentary,1750.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+50-54,female,sedentary,1750.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+50-54,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+50-54,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+50-54,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+50-54,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+50-54,female,sedentary,1750.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+50-54,female,sedentary,1750.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,female,sedentary,1750.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,female,sedentary,1750.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+50-54,female,sedentary,1750.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+50-54,female,sedentary,1750.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+50-54,female,moderate,2000.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+50-54,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+50-54,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+50-54,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+50-54,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+50-54,female,moderate,2000.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+50-54,female,moderate,2000.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+50-54,female,moderate,2000.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+50-54,female,moderate,2000.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+50-54,female,moderate,2000.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+50-54,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+50-54,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+50-54,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+50-54,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+50-54,female,moderate,2000.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+50-54,female,moderate,2000.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,female,moderate,2000.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,female,moderate,2000.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+50-54,female,moderate,2000.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+50-54,female,moderate,2000.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+50-54,female,active,2250.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+50-54,female,active,2250.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+50-54,female,active,2250.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+50-54,female,active,2250.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+50-54,female,active,2250.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+50-54,female,active,2250.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+50-54,female,active,2250.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+50-54,female,active,2250.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+50-54,female,active,2250.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+50-54,female,active,2250.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+50-54,female,active,2250.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+50-54,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+50-54,female,active,2250.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+50-54,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+50-54,female,active,2250.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+50-54,female,active,2250.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+50-54,female,active,2250.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+50-54,female,active,2250.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+50-54,female,active,2250.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+50-54,female,active,2250.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+55-59,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+55-59,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+55-59,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+55-59,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+55-59,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+55-59,male,sedentary,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+55-59,male,sedentary,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+55-59,male,sedentary,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+55-59,male,sedentary,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+55-59,male,sedentary,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+55-59,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+55-59,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+55-59,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+55-59,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+55-59,male,sedentary,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+55-59,male,sedentary,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,male,sedentary,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,male,sedentary,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+55-59,male,sedentary,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+55-59,male,sedentary,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+55-59,male,moderate,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+55-59,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+55-59,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+55-59,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+55-59,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+55-59,male,moderate,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+55-59,male,moderate,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+55-59,male,moderate,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+55-59,male,moderate,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+55-59,male,moderate,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+55-59,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+55-59,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+55-59,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+55-59,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+55-59,male,moderate,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+55-59,male,moderate,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,male,moderate,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,male,moderate,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+55-59,male,moderate,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+55-59,male,moderate,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+55-59,male,active,2750.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+55-59,male,active,2750.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+55-59,male,active,2750.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+55-59,male,active,2750.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+55-59,male,active,2750.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+55-59,male,active,2750.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+55-59,male,active,2750.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+55-59,male,active,2750.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+55-59,male,active,2750.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+55-59,male,active,2750.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+55-59,male,active,2750.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+55-59,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+55-59,male,active,2750.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+55-59,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+55-59,male,active,2750.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+55-59,male,active,2750.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,male,active,2750.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,male,active,2750.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+55-59,male,active,2750.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+55-59,male,active,2750.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+55-59,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+55-59,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+55-59,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+55-59,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+55-59,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+55-59,female,sedentary,1750.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+55-59,female,sedentary,1750.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+55-59,female,sedentary,1750.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+55-59,female,sedentary,1750.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+55-59,female,sedentary,1750.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+55-59,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+55-59,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+55-59,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+55-59,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+55-59,female,sedentary,1750.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+55-59,female,sedentary,1750.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,female,sedentary,1750.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,female,sedentary,1750.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+55-59,female,sedentary,1750.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+55-59,female,sedentary,1750.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+55-59,female,moderate,2000.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+55-59,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+55-59,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+55-59,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+55-59,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+55-59,female,moderate,2000.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+55-59,female,moderate,2000.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+55-59,female,moderate,2000.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+55-59,female,moderate,2000.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+55-59,female,moderate,2000.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+55-59,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+55-59,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+55-59,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+55-59,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+55-59,female,moderate,2000.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+55-59,female,moderate,2000.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,female,moderate,2000.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,female,moderate,2000.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+55-59,female,moderate,2000.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+55-59,female,moderate,2000.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+55-59,female,active,2250.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+55-59,female,active,2250.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+55-59,female,active,2250.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+55-59,female,active,2250.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+55-59,female,active,2250.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+55-59,female,active,2250.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+55-59,female,active,2250.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+55-59,female,active,2250.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+55-59,female,active,2250.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+55-59,female,active,2250.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+55-59,female,active,2250.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+55-59,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+55-59,female,active,2250.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+55-59,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+55-59,female,active,2250.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+55-59,female,active,2250.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+55-59,female,active,2250.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+55-59,female,active,2250.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+55-59,female,active,2250.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+55-59,female,active,2250.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+60-64,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+60-64,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+60-64,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+60-64,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+60-64,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+60-64,male,sedentary,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+60-64,male,sedentary,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+60-64,male,sedentary,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+60-64,male,sedentary,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+60-64,male,sedentary,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+60-64,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+60-64,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+60-64,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+60-64,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+60-64,male,sedentary,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+60-64,male,sedentary,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,male,sedentary,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,male,sedentary,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+60-64,male,sedentary,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+60-64,male,sedentary,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+60-64,male,moderate,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+60-64,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+60-64,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+60-64,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+60-64,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+60-64,male,moderate,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+60-64,male,moderate,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+60-64,male,moderate,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+60-64,male,moderate,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+60-64,male,moderate,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+60-64,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+60-64,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+60-64,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+60-64,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+60-64,male,moderate,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+60-64,male,moderate,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,male,moderate,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,male,moderate,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+60-64,male,moderate,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+60-64,male,moderate,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+60-64,male,active,2750.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+60-64,male,active,2750.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+60-64,male,active,2750.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+60-64,male,active,2750.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+60-64,male,active,2750.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+60-64,male,active,2750.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+60-64,male,active,2750.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+60-64,male,active,2750.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+60-64,male,active,2750.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+60-64,male,active,2750.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+60-64,male,active,2750.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+60-64,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+60-64,male,active,2750.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+60-64,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+60-64,male,active,2750.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+60-64,male,active,2750.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,male,active,2750.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,male,active,2750.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+60-64,male,active,2750.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+60-64,male,active,2750.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+60-64,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+60-64,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+60-64,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+60-64,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+60-64,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+60-64,female,sedentary,1750.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+60-64,female,sedentary,1750.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+60-64,female,sedentary,1750.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+60-64,female,sedentary,1750.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+60-64,female,sedentary,1750.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+60-64,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+60-64,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+60-64,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+60-64,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+60-64,female,sedentary,1750.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+60-64,female,sedentary,1750.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,female,sedentary,1750.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,female,sedentary,1750.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+60-64,female,sedentary,1750.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+60-64,female,sedentary,1750.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+60-64,female,moderate,2000.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+60-64,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+60-64,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+60-64,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+60-64,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+60-64,female,moderate,2000.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+60-64,female,moderate,2000.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+60-64,female,moderate,2000.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+60-64,female,moderate,2000.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+60-64,female,moderate,2000.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+60-64,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+60-64,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+60-64,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+60-64,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+60-64,female,moderate,2000.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+60-64,female,moderate,2000.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,female,moderate,2000.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,female,moderate,2000.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+60-64,female,moderate,2000.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+60-64,female,moderate,2000.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+60-64,female,active,2250.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+60-64,female,active,2250.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+60-64,female,active,2250.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+60-64,female,active,2250.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+60-64,female,active,2250.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+60-64,female,active,2250.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+60-64,female,active,2250.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+60-64,female,active,2250.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+60-64,female,active,2250.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+60-64,female,active,2250.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+60-64,female,active,2250.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+60-64,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+60-64,female,active,2250.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+60-64,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+60-64,female,active,2250.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+60-64,female,active,2250.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+60-64,female,active,2250.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+60-64,female,active,2250.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+60-64,female,active,2250.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+60-64,female,active,2250.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+65-69,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+65-69,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+65-69,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+65-69,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+65-69,male,sedentary,2150.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+65-69,male,sedentary,2150.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+65-69,male,sedentary,2150.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+65-69,male,sedentary,2150.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+65-69,male,sedentary,2150.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+65-69,male,sedentary,2150.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+65-69,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+65-69,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+65-69,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+65-69,male,sedentary,2150.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+65-69,male,sedentary,2150.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+65-69,male,sedentary,2150.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,male,sedentary,2150.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,male,sedentary,2150.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+65-69,male,sedentary,2150.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+65-69,male,sedentary,2150.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+65-69,male,moderate,2450.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+65-69,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+65-69,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+65-69,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+65-69,male,moderate,2450.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+65-69,male,moderate,2450.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+65-69,male,moderate,2450.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+65-69,male,moderate,2450.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+65-69,male,moderate,2450.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+65-69,male,moderate,2450.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+65-69,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+65-69,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+65-69,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+65-69,male,moderate,2450.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+65-69,male,moderate,2450.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+65-69,male,moderate,2450.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,male,moderate,2450.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,male,moderate,2450.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+65-69,male,moderate,2450.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+65-69,male,moderate,2450.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+65-69,male,active,2750.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+65-69,male,active,2750.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+65-69,male,active,2750.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+65-69,male,active,2750.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+65-69,male,active,2750.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+65-69,male,active,2750.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+65-69,male,active,2750.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+65-69,male,active,2750.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+65-69,male,active,2750.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+65-69,male,active,2750.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+65-69,male,active,2750.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+65-69,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+65-69,male,active,2750.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+65-69,male,active,2750.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+65-69,male,active,2750.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+65-69,male,active,2750.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,male,active,2750.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,male,active,2750.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+65-69,male,active,2750.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+65-69,male,active,2750.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+65-69,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+65-69,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+65-69,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+65-69,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+65-69,female,sedentary,1750.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+65-69,female,sedentary,1750.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+65-69,female,sedentary,1750.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+65-69,female,sedentary,1750.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+65-69,female,sedentary,1750.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+65-69,female,sedentary,1750.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+65-69,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+65-69,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+65-69,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+65-69,female,sedentary,1750.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+65-69,female,sedentary,1750.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+65-69,female,sedentary,1750.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,female,sedentary,1750.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,female,sedentary,1750.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+65-69,female,sedentary,1750.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+65-69,female,sedentary,1750.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+65-69,female,moderate,2000.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+65-69,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+65-69,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+65-69,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+65-69,female,moderate,2000.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+65-69,female,moderate,2000.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+65-69,female,moderate,2000.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+65-69,female,moderate,2000.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+65-69,female,moderate,2000.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+65-69,female,moderate,2000.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+65-69,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+65-69,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+65-69,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+65-69,female,moderate,2000.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+65-69,female,moderate,2000.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+65-69,female,moderate,2000.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,female,moderate,2000.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,female,moderate,2000.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+65-69,female,moderate,2000.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+65-69,female,moderate,2000.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+65-69,female,active,2250.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+65-69,female,active,2250.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+65-69,female,active,2250.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+65-69,female,active,2250.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+65-69,female,active,2250.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+65-69,female,active,2250.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+65-69,female,active,2250.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+65-69,female,active,2250.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+65-69,female,active,2250.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+65-69,female,active,2250.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+65-69,female,active,2250.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+65-69,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+65-69,female,active,2250.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+65-69,female,active,2250.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+65-69,female,active,2250.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+65-69,female,active,2250.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+65-69,female,active,2250.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+65-69,female,active,2250.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+65-69,female,active,2250.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+65-69,female,active,2250.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+70-74,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+70-74,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+70-74,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+70-74,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+70-74,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+70-74,male,sedentary,2100.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+70-74,male,sedentary,2100.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+70-74,male,sedentary,2100.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+70-74,male,sedentary,2100.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+70-74,male,sedentary,2100.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+70-74,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+70-74,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+70-74,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+70-74,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+70-74,male,sedentary,2100.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+70-74,male,sedentary,2100.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,male,sedentary,2100.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,male,sedentary,2100.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+70-74,male,sedentary,2100.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+70-74,male,sedentary,2100.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+70-74,male,moderate,2400.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+70-74,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+70-74,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+70-74,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+70-74,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+70-74,male,moderate,2400.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+70-74,male,moderate,2400.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+70-74,male,moderate,2400.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+70-74,male,moderate,2400.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+70-74,male,moderate,2400.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+70-74,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+70-74,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+70-74,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+70-74,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+70-74,male,moderate,2400.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+70-74,male,moderate,2400.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,male,moderate,2400.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,male,moderate,2400.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+70-74,male,moderate,2400.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+70-74,male,moderate,2400.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+70-74,male,active,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+70-74,male,active,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+70-74,male,active,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+70-74,male,active,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+70-74,male,active,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+70-74,male,active,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+70-74,male,active,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+70-74,male,active,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+70-74,male,active,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+70-74,male,active,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+70-74,male,active,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+70-74,male,active,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+70-74,male,active,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+70-74,male,active,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+70-74,male,active,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+70-74,male,active,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,male,active,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,male,active,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+70-74,male,active,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+70-74,male,active,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+70-74,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+70-74,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+70-74,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+70-74,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+70-74,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+70-74,female,sedentary,1700.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+70-74,female,sedentary,1700.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+70-74,female,sedentary,1700.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+70-74,female,sedentary,1700.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+70-74,female,sedentary,1700.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+70-74,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+70-74,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+70-74,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+70-74,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+70-74,female,sedentary,1700.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+70-74,female,sedentary,1700.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,female,sedentary,1700.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,female,sedentary,1700.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+70-74,female,sedentary,1700.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+70-74,female,sedentary,1700.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+70-74,female,moderate,1950.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+70-74,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+70-74,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+70-74,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+70-74,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+70-74,female,moderate,1950.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+70-74,female,moderate,1950.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+70-74,female,moderate,1950.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+70-74,female,moderate,1950.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+70-74,female,moderate,1950.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+70-74,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+70-74,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+70-74,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+70-74,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+70-74,female,moderate,1950.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+70-74,female,moderate,1950.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,female,moderate,1950.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,female,moderate,1950.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+70-74,female,moderate,1950.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+70-74,female,moderate,1950.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+70-74,female,active,2200.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+70-74,female,active,2200.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+70-74,female,active,2200.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+70-74,female,active,2200.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+70-74,female,active,2200.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+70-74,female,active,2200.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+70-74,female,active,2200.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+70-74,female,active,2200.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+70-74,female,active,2200.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+70-74,female,active,2200.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+70-74,female,active,2200.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+70-74,female,active,2200.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+70-74,female,active,2200.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+70-74,female,active,2200.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+70-74,female,active,2200.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+70-74,female,active,2200.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+70-74,female,active,2200.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+70-74,female,active,2200.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+70-74,female,active,2200.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+70-74,female,active,2200.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+75+,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+75+,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+75+,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+75+,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+75+,male,sedentary,2100.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+75+,male,sedentary,2100.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+75+,male,sedentary,2100.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+75+,male,sedentary,2100.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+75+,male,sedentary,2100.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+75+,male,sedentary,2100.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+75+,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+75+,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+75+,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+75+,male,sedentary,2100.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+75+,male,sedentary,2100.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+75+,male,sedentary,2100.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,male,sedentary,2100.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,male,sedentary,2100.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+75+,male,sedentary,2100.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+75+,male,sedentary,2100.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+75+,male,moderate,2400.0,2400,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+75+,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+75+,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+75+,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+75+,male,moderate,2400.0,2400,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+75+,male,moderate,2400.0,2400,Grain products & potatoes,(total),,range,11.0,12.0,11.5
+75+,male,moderate,2400.0,2400,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+75+,male,moderate,2400.0,2400,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,5.0,4.0
+75+,male,moderate,2400.0,2400,Grain products & potatoes,"Potato, sweet potato",75,exact,2.0,2.0,2.0
+75+,male,moderate,2400.0,2400,Dairy products,(total),110,range,2.0,3.0,2.5
+75+,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",(total),,range,7.0,8.0,7.5
+75+,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+75+,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+75+,male,moderate,2400.0,2400,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,4.0,5.0,4.5
+75+,male,moderate,2400.0,2400,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+75+,male,moderate,2400.0,2400,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,male,moderate,2400.0,2400,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,male,moderate,2400.0,2400,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+75+,male,moderate,2400.0,2400,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+75+,male,moderate,2400.0,2400,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+75+,male,active,2700.0,2800,"Vegetables, fruits & berries",(total),,gte,11.0,,11.0
+75+,male,active,2700.0,2800,"Vegetables, fruits & berries",Vegetables,30,gte,6.0,,6.0
+75+,male,active,2700.0,2800,"Vegetables, fruits & berries",Legumes,130,exact,0.7,0.7,0.7
+75+,male,active,2700.0,2800,"Vegetables, fruits & berries",Fruits,50,gte,3.0,,3.0
+75+,male,active,2700.0,2800,"Vegetables, fruits & berries",Berries,50,gte,0.5,,0.5
+75+,male,active,2700.0,2800,Grain products & potatoes,(total),,range,12.0,13.0,12.5
+75+,male,active,2700.0,2800,Grain products & potatoes,High-fibre bread/baked goods,75,range,5.0,6.0,5.5
+75+,male,active,2700.0,2800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,4.0,5.0,4.5
+75+,male,active,2700.0,2800,Grain products & potatoes,"Potato, sweet potato",75,range,2.0,3.0,2.5
+75+,male,active,2700.0,2800,Dairy products,(total),110,range,3.0,4.0,3.5
+75+,male,active,2700.0,2800,"Nuts, seeds, oils & fats",(total),,range,8.0,9.0,8.5
+75+,male,active,2700.0,2800,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+75+,male,active,2700.0,2800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.6,0.6,0.6
+75+,male,active,2700.0,2800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,5.0,6.0,5.5
+75+,male,active,2700.0,2800,"Fish, eggs & meat",(total),,range,4.0,5.0,4.5
+75+,male,active,2700.0,2800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,male,active,2700.0,2800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,male,active,2700.0,2800,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+75+,male,active,2700.0,2800,"Fish, eggs & meat",Red meat,80,lte,,0.6,0.6
+75+,male,active,2700.0,2800,"Sweets, snacks & discretionary",(total),40,lte,,5.0,5.0
+75+,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",(total),,gte,6.0,,6.0
+75+,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+75+,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Legumes,130,exact,0.3,0.3,0.3
+75+,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+75+,female,sedentary,1700.0,1800,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+75+,female,sedentary,1700.0,1800,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+75+,female,sedentary,1700.0,1800,Grain products & potatoes,High-fibre bread/baked goods,75,range,3.0,4.0,3.5
+75+,female,sedentary,1700.0,1800,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,2.0,3.0,2.5
+75+,female,sedentary,1700.0,1800,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+75+,female,sedentary,1700.0,1800,Dairy products,(total),110,range,2.0,3.0,2.5
+75+,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+75+,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+75+,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.3,0.3,0.3
+75+,female,sedentary,1700.0,1800,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+75+,female,sedentary,1700.0,1800,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+75+,female,sedentary,1700.0,1800,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,female,sedentary,1700.0,1800,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,female,sedentary,1700.0,1800,"Fish, eggs & meat",Poultry,80,exact,0.9,0.9,0.9
+75+,female,sedentary,1700.0,1800,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+75+,female,sedentary,1700.0,1800,"Sweets, snacks & discretionary",(total),40,lte,,3.0,3.0
+75+,female,moderate,1950.0,2000,"Vegetables, fruits & berries",(total),,gte,7.0,,7.0
+75+,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Vegetables,30,gte,4.0,,4.0
+75+,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Legumes,130,exact,0.5,0.5,0.5
+75+,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+75+,female,moderate,1950.0,2000,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+75+,female,moderate,1950.0,2000,Grain products & potatoes,(total),,range,9.0,10.0,9.5
+75+,female,moderate,1950.0,2000,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+75+,female,moderate,1950.0,2000,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+75+,female,moderate,1950.0,2000,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+75+,female,moderate,1950.0,2000,Dairy products,(total),110,range,2.0,3.0,2.5
+75+,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",(total),,range,5.0,6.0,5.5
+75+,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",Nuts,90,range,1.0,2.0,1.5
+75+,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+75+,female,moderate,1950.0,2000,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+75+,female,moderate,1950.0,2000,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+75+,female,moderate,1950.0,2000,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,female,moderate,1950.0,2000,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,female,moderate,1950.0,2000,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+75+,female,moderate,1950.0,2000,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+75+,female,moderate,1950.0,2000,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0
+75+,female,active,2200.0,2200,"Vegetables, fruits & berries",(total),,gte,8.0,,8.0
+75+,female,active,2200.0,2200,"Vegetables, fruits & berries",Vegetables,30,gte,5.0,,5.0
+75+,female,active,2200.0,2200,"Vegetables, fruits & berries",Legumes,130,exact,0.6,0.6,0.6
+75+,female,active,2200.0,2200,"Vegetables, fruits & berries",Fruits,50,gte,2.0,,2.0
+75+,female,active,2200.0,2200,"Vegetables, fruits & berries",Berries,50,gte,0.4,,0.4
+75+,female,active,2200.0,2200,Grain products & potatoes,(total),,range,8.0,11.0,9.5
+75+,female,active,2200.0,2200,Grain products & potatoes,High-fibre bread/baked goods,75,range,4.0,5.0,4.5
+75+,female,active,2200.0,2200,Grain products & potatoes,Porridges/pasta/rice/grain products,75,range,3.0,4.0,3.5
+75+,female,active,2200.0,2200,Grain products & potatoes,"Potato, sweet potato",75,range,1.0,2.0,1.5
+75+,female,active,2200.0,2200,Dairy products,(total),110,range,2.0,3.0,2.5
+75+,female,active,2200.0,2200,"Nuts, seeds, oils & fats",(total),,range,6.0,7.0,6.5
+75+,female,active,2200.0,2200,"Nuts, seeds, oils & fats",Nuts,90,range,2.0,3.0,2.5
+75+,female,active,2200.0,2200,"Nuts, seeds, oils & fats","Seeds, cocoa",50,exact,0.5,0.5,0.5
+75+,female,active,2200.0,2200,"Nuts, seeds, oils & fats",Oils/fats/spreads,50,range,3.0,4.0,3.5
+75+,female,active,2200.0,2200,"Fish, eggs & meat",(total),,range,3.0,4.0,3.5
+75+,female,active,2200.0,2200,"Fish, eggs & meat",Fish & seafood,80,range,1.0,2.0,1.5
+75+,female,active,2200.0,2200,"Fish, eggs & meat",Eggs,80,exact,0.5,0.5,0.5
+75+,female,active,2200.0,2200,"Fish, eggs & meat",Poultry,80,exact,1.0,1.0,1.0
+75+,female,active,2200.0,2200,"Fish, eggs & meat",Red meat,80,exact,0.5,0.5,0.5
+75+,female,active,2200.0,2200,"Sweets, snacks & discretionary",(total),40,lte,,4.0,4.0

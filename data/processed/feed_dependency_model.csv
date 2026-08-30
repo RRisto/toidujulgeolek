@@ -1,0 +1,13 @@
+species,production_2024_kt,generic_fcr_kg_feed_per_kg_product,implied_feed_demand_kt,note
+poultry,22.2,1.8,40.0,"Generic/illustrative FCR (widely-cited industry benchmark, not Estonia-specific)"
+pork,42.1,2.8,117.9,"Generic/illustrative FCR"
+beef,11.8,8.0,94.4,"Generic/illustrative FCR; cattle systems vary widely between grain-finished and pasture-based, which this single FCR cannot distinguish"
+sheep_goat,0.4,6.0,2.4,"Generic/illustrative FCR"
+eggs,11.8,2.2,26.0,"Generic/illustrative FCR"
+TOTAL,88.3,,280.6,"Sum across the 5 categories above. Excludes dairy cattle - dairy feed is predominantly grass/silage/forage, not captured in a simple feed-grain tonnage the way monogastric (pork/poultry) or egg-layer feed is, so dairy is deliberately left out of this tonnage comparison rather than forced into a misleading FCR figure."
+
+known_domestic_feed_supply_kt,,,,
+barley_used_as_feed,150.8,,,"PM20 2024 - the only cereal with a disclosed used_as_feed_t figure; wheat/rye/oats/other_cereals feed-use is blank in Statistikaamet's 2024 pull (not published, not necessarily zero)"
+rapeseed_meal_byproduct_estimate,79.9,,,"Estimated as ~59% of PM37's 135.5kt rapeseed crushed for industrial use (generic oilseed-crushing meal-yield assumption, not Estonia-specific)"
+TOTAL_known_domestic_feed,230.7,,,"Sum of the two lines above. This UNDERSTATES true domestic feed-grain supply since wheat/rye/oats feed-use is simply not disclosed in the source (blank, not zero) - so the 82% coverage ratio below is a conservative floor, not a precise figure"
+domestic_feed_coverage_pct,82.2,,,"known_domestic_feed_supply / implied_total_feed_demand. A rough, aggregate ENERGY-tonnage balance only - does NOT address feed protein quality, see below"
