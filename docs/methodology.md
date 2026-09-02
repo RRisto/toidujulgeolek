@@ -463,7 +463,7 @@ standalone hypothetical, kept deliberately separate from the headline model: it 
 The relevant number is simply Estonia's overall wheat self-sufficiency, since that is the wheat
 that would substitute for durum: PM20 2024 wheat production 744,748t / domestic use 212,912t =
 **349.8% self-sufficient** -- the same wheat, and the same yield-cancellation logic (Section 6),
-already used for the bread proxy. Two caveats apply:
+already used for the bread proxy. Three caveats apply:
 
 - *Quality*: durum's higher gluten strength and protein content is what gives pasta its
   characteristic firm, al dente texture and shape retention when boiled; common/soft-wheat pasta
@@ -472,6 +472,18 @@ already used for the bread proxy. Two caveats apply:
 - *Scale*: not resource-constrained. Estonia already exports 83% of its wheat production
   (619,130t exported of 744,748t produced, PM20 2024), so redirecting a pasta-sized share
   domestically would not measurably affect bread self-sufficiency.
+- *Denominator scope*: the 212,912t domestic-use figure is wheat's *existing* consumption (bread,
+  animal feed, seed, industrial use) and does not already include pasta, since current pasta relies
+  on imported durum wheat, which is not part of PM20's wheat balance sheet at all (Phase 13). If
+  common wheat were actually redirected into pasta manufacturing, that would add new demand on top
+  of the existing 212,912t, not draw from within it unchanged -- so 349.8% should be read as
+  "wheat's self-sufficiency before adding pasta-specific demand," not after. Bounding check: the
+  entire "Porridges/pasta/rice/grain products" survey category (61,589t/year nationally, porridge +
+  rice + pasta combined -- the finest breakdown available in the RTU011 source data) is an upper
+  bound on pasta's own share; adding all of it would give 744,748 / (212,912 + 61,589) = 271.4%.
+  Pasta alone is a modest fraction of that 61,589t, so the true adjusted figure sits somewhere
+  between 271.4% and 349.8% -- comfortably self-sufficient either way, but the 349.8% headline above
+  understates the denominator slightly rather than being exact.
 
 Not folded into the blended porridge/pasta/rice figure, since that would require a pasta-specific
 consumption weight (pasta is currently lumped with rice and porridge in the RTU011 survey category
