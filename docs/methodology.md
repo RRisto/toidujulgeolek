@@ -451,6 +451,33 @@ excluded it from the weighted blend) stands, now confirmed rather than assumed. 
 `critical_dependency_flags.csv` were updated to cite this sourcing and drop the earlier unverified
 PM20 claim. Full detail in `plans/PHASE13_NOTES.md`.
 
+**Illustrative aside: pasta made from domestic common wheat (ad hoc, not part of the headline
+figures)** -- a natural follow-up question to the finding above: if the durum-wheat constraint were
+relaxed and pasta were instead made from Estonia's own common/soft wheat -- technically possible,
+though a quality downgrade -- what would pasta's raw-material self-sufficiency be? This is a
+standalone hypothetical, kept deliberately separate from the headline model: it does not revise the
+~156.2% upper-bound figure for the "Porridges/pasta/rice/grain products" category, and none of
+`food_group_crosswalk.csv`, `self_sufficiency_model.csv`, `scenario_comparison.csv`, or
+`critical_dependency_flags.csv` were touched for it.
+
+The relevant number is simply Estonia's overall wheat self-sufficiency, since that is the wheat
+that would substitute for durum: PM20 2024 wheat production 744,748t / domestic use 212,912t =
+**349.8% self-sufficient** -- the same wheat, and the same yield-cancellation logic (Section 6),
+already used for the bread proxy. Two caveats apply:
+
+- *Quality*: durum's higher gluten strength and protein content is what gives pasta its
+  characteristic firm, al dente texture and shape retention when boiled; common/soft-wheat pasta
+  (a real, if less common, commercial product) tends to be softer and more prone to overcooking.
+  This is a "could be made, would cook and taste worse" scenario, not a like-for-like substitute.
+- *Scale*: not resource-constrained. Estonia already exports 83% of its wheat production
+  (619,130t exported of 744,748t produced, PM20 2024), so redirecting a pasta-sized share
+  domestically would not measurably affect bread self-sufficiency.
+
+Not folded into the blended porridge/pasta/rice figure, since that would require a pasta-specific
+consumption weight (pasta is currently lumped with rice and porridge in the RTU011 survey category
+"..pudrud, riis, makaronid") and because it represents a hypothetical substitution, not Estonia's
+actual food supply chain today.
+
 ## 9. Nutritional-adequacy check (5.8, Phase 8)
 
 The calorie-level check was already done in Phase 3 (two independent derivations within 2%). A
