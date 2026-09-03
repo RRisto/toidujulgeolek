@@ -649,6 +649,57 @@ nothing about a change in domestic honey supply.
 scenario toggle (self-sufficiency chart), scenario-comparison table, and diet-shift delta chart
 (section 05) all extended with a fourth/third option respectively. See `plans/PHASE14_NOTES.md`.
 
+### 10.3 Worked example: Vegetables under Scenario B (post-launch)
+
+Added after a user walkthrough asked for one concrete category traced end to end, since Sections 4
+and 10 above state the requirement-model and scenario-scaling methods abstractly without showing a
+single worked number. Vegetables ("Vegetables, fruits & berries" / "Vegetables") is used because
+it also has the largest Scenario A-to-B demand shift of any category.
+
+**Building the Scenario B demand tonnage (Section 4's method, concretely):**
+
+1. Fix PAL at "moderate" for every demographic cell (the project's single national default,
+   Section 3), and take each age-band x sex cell's kcal/day requirement from Table 4 (children) or
+   Table 5 (adults) -- e.g. a 2-5-year-old female comes out to 1,288.8 kcal/day.
+2. Round that to the *nearest* of Table 13's 200-kcal columns (ties round up): 1,288.8 -> 1200.
+3. At the matched 1200-kcal level, Table 13 gives Vegetables as an open-ended "at least 2 portions"
+   target. The point estimate used is the *low* bound of that range -- 2.0 portions -- a
+   deliberately conservative reading that doesn't assume more than the stated floor.
+4. Table 16.1 gives Vegetables one representative portion weight, 100g (edible/net weight,
+   "puhaskaal"), so this cell's target is 2.0 x 100g = 200g/day.
+5. Repeat for every age x sex cell, weight each by its share of the 1,339,785-person population
+   (`data/processed/population_canonical_grid.csv`), and sum: **479.39 g/capita/day**, i.e.
+   642,284.8 kg/day nationally.
+6. Annualize: 642,284.8 kg/day x 365 / 1000 = **234,433.97 t/year** -- exactly
+   `scenario_B_demand_tonnes_per_year` in `scenario_comparison.csv`.
+
+None of these six steps touch `consumption_model_national.csv` (the actual-eating figure, 66,335.04
+t/year) at all -- Scenario A and Scenario B are built by entirely separate paths from entirely
+separate sources (RTU011 survey vs. TAI Table 13/16), and only get compared after each is finished.
+
+**Rescaling self-sufficiency (Section 10's formula, concretely):**
+
+The model does *not* recompute self-sufficiency by dividing production directly by the new demand
+figure. Doing that would give 33,229t (PM33 2024 production) / 234,434t = 14.2% -- which is *not*
+the number in the CSV. Instead:
+
+```
+scenario_B_pct = scenario_A_pct x (demand_A / demand_B)
+              = 46.0 x (66,335 / 234,434)
+              = 46.0 x 0.283
+              = 13.0%
+```
+
+The 46.0 used here is Scenario A's *headline* figure -- the official strategy-document number
+(Section 6), preferred over the 29.0% PM33-derived figure because of their large divergence -- not
+a freshly computed production/demand_A ratio (33,229/66,335 would give 50.1%, a third, different
+number again). So the rescaling formula carries forward whichever baseline Section 6 already chose
+to trust for Scenario A, stretched by the demand ratio; production itself doesn't re-enter the
+arithmetic after Scenario A. This is why `scenario_B_self_sufficiency_pct` (13.0%) sits below what
+a direct production/demand_B division would give (14.2%): the two calculations start from different
+Scenario A anchors (46.0% official vs. 50.1% derived) and only one of them is what's actually in the
+pipeline.
+
 ## 11. Consolidated assumptions and limitations (stated up front, not buried)
 
 - Consumption baseline is a 2014 survey (RTU011) — the best available, cross-checked where
