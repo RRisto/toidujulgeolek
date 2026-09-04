@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toidujulgeolek (ET)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+:root{
+  color-scheme: light;
+  --paper:       #f3f4f1;
+  --surface:     #fcfcfb;
+  --surface-2:   #eceee9;
+  --ink:         #14181c;
+  --ink-soft:    #52514e;
+  --muted:       #898781;
+  --line:        #e1e0d9;
+  --border:      rgba(11,11,11,0.10);
+  --accent:      #1d4a73;
+  --accent-ink:  #ffffff;
+  --accent-soft: rgba(29,74,115,0.08);
+  --accent-soft-2: rgba(29,74,115,0.16);
+  --grain:       #93690f;
+  --grain-soft:  rgba(147,105,15,0.12);
+  --shadow: 0 1px 2px rgba(20,24,28,0.04), 0 6px 20px -8px rgba(20,24,28,0.10);
+
+  /* dataviz tokens: reserved, do not repurpose */
+  --dv-blue:      #2a78d6;
+  --dv-orange:    #eb6834;
+  --dv-good:      #0ca30c;
+  --dv-warning:   #c98200;
+  --dv-serious:   #d76a3f;
+  --dv-critical:  #d03b3b;
+  --dv-good-soft:     rgba(12,163,12,0.12);
+  --dv-warning-soft:  rgba(201,130,0,0.12);
+  --dv-serious-soft:  rgba(215,106,63,0.12);
+  --dv-critical-soft: rgba(208,59,59,0.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:       #101214;
+    --surface:     #1a1a19;
+    --surface-2:   #232322;
+    --ink:         #ffffff;
+    --ink-soft:    #c3c2b7;
+    --muted:       #94938c;
+    --line:        #2c2c2a;
+    --border:      rgba(255,255,255,0.12);
+    --accent:      #7db0e8;
+    --accent-ink:  #0b1622;
+    --accent-soft: rgba(125,176,232,0.14);
+    --accent-soft-2: rgba(125,176,232,0.22);
+    --grain:       #d9ab4a;
+    --grain-soft:  rgba(217,171,74,0.16);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -10px rgba(0,0,0,0.5);
+
+    --dv-blue:      #3987e5;
+    --dv-orange:    #d95926;
+    --dv-good:      #0ca30c;
+    --dv-warning:   #e0a530;
+    --dv-serious:   #e08a63;
+    --dv-critical:  #e66767;
+    --dv-good-soft:     rgba(12,163,12,0.18);
+    --dv-warning-soft:  rgba(224,165,48,0.18);
+    --dv-serious-soft:  rgba(224,138,99,0.18);
+    --dv-critical-soft: rgba(230,103,103,0.18);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:       #101214;
+  --surface:     #1a1a19;
+  --surface-2:   #232322;
+  --ink:         #ffffff;
+  --ink-soft:    #c3c2b7;
+  --muted:       #94938c;
+  --line:        #2c2c2a;
+  --border:      rgba(255,255,255,0.12);
+  --accent:      #7db0e8;
+  --accent-ink:  #0b1622;
+  --accent-soft: rgba(125,176,232,0.14);
+  --accent-soft-2: rgba(125,176,232,0.22);
+  --grain:       #d9ab4a;
+  --grain-soft:  rgba(217,171,74,0.16);
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -10px rgba(0,0,0,0.5);
+
+  --dv-blue:      #3987e5;
+  --dv-orange:    #d95926;
+  --dv-good:      #0ca30c;
+  --dv-warning:   #e0a530;
+  --dv-serious:   #e08a63;
+  --dv-critical:  #e66767;
+  --dv-good-soft:     rgba(12,163,12,0.18);
+  --dv-warning-soft:  rgba(224,165,48,0.18);
+  --dv-serious-soft:  rgba(224,138,99,0.18);
+  --dv-critical-soft: rgba(230,103,103,0.18);
+}
+
+*{ box-sizing: border-box; }
+::selection{ background: var(--accent-soft-2); }
+
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono{ font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.tnum{ font-variant-numeric: tabular-nums; }
+
+h1,h2,h3,h4{ font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 600; margin: 0; text-wrap: balance; color: var(--ink); }
+p{ margin: 0; }
+a{ color: var(--accent); }
+button{ font-family: inherit; }
+
+/* ==========================================================================
+   Shell
+   ========================================================================== */
+.shell{ max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+
+.topbar{
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner{
+  max-width: 1180px; margin: 0 auto; padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.topbar-title{ display: flex; align-items: baseline; gap: 10px; }
+.topbar-title .mark{ font-weight: 700; letter-spacing: -0.01em; font-size: 16px; }
+.topbar-title .sub{ color: var(--muted); font-size: 12.5px; }
+.topbar-nav{ display: flex; gap: 4px; }
+.topbar-nav a{
+  color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 6px 10px;
+  border-radius: 6px;
+}
+.topbar-nav a:hover{ background: var(--surface-2); color: var(--ink); }
+
+.hero{ padding: 44px 0 30px; }
+.hero .eyebrow{
+  color: var(--accent); font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 10px; display:block;
+}
+.hero h1{ font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; max-width: 18ch; }
+.hero .lede{ margin-top: 14px; max-width: 62ch; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+
+section{ margin-top: 56px; scroll-margin-top: 76px; }
+.section-head{ display:flex; align-items:flex-end; justify-content: space-between; gap: 20px; margin-bottom: 18px; flex-wrap: wrap;}
+.section-head h2{ font-size: 21px; }
+.section-head .section-num{ color: var(--muted); font-size: 13px; font-weight: 500; margin-bottom: 4px; display:block; }
+.section-desc{ color: var(--ink-soft); font-size: 14px; max-width: 68ch; margin-top: 6px; }
+
+.card{
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.card-pad{ padding: 22px 24px; }
+
+/* ==========================================================================
+   Scorecard / stat tiles
+   ========================================================================== */
+.scorecard{ display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.tile{ background: var(--surface); padding: 22px 22px; display:flex; flex-direction:column; gap: 8px; }
+.tile .tile-label{ color: var(--muted); font-size: 12.5px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+.tile .tile-value{ font-size: 32px; font-weight: 600; letter-spacing: -0.02em; }
+.tile .tile-note{ color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; }
+.tile.accent .tile-value{ color: var(--accent); }
+
+/* ==========================================================================
+   Filter row
+   ========================================================================== */
+.filter-row{ display:flex; align-items:center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+.filter-group{ display:flex; align-items:center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
+.filter-group button{
+  border: none; background: transparent; color: var(--ink-soft); font-size: 13px; padding: 7px 14px;
+  border-radius: 999px; cursor: pointer; transition: background .15s, color .15s;
+}
+.filter-group button:hover{ color: var(--ink); }
+.filter-group button[aria-pressed="true"]{ background: var(--accent); color: var(--accent-ink); font-weight: 500; }
+.filter-select{
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--ink);
+  border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; cursor:pointer;
+}
+.filter-hint{ color: var(--muted); font-size: 12.5px; margin-left: auto; }
+
+/* ==========================================================================
+   Charts (hand-built SVG)
+   ========================================================================== */
+.chart-wrap{ position: relative; }
+.hbar-row{ display:flex; align-items:center; gap: 14px; padding: 5px 0; }
+.hbar-label{ width: 230px; flex: 0 0 230px; font-size: 13px; color: var(--ink-soft); text-align:right; padding-right: 4px; line-height:1.3; }
+.hbar-label .grp{ display:block; color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing:.03em; margin-bottom:1px;}
+.hbar-track{ position: relative; flex: 1 1 auto; height: 24px; }
+.hbar-fill{ position: absolute; top: 0; height: 24px; border-radius: 4px; cursor: pointer; transition: filter .12s; z-index: 2; }
+.hbar-fill:hover, .hbar-fill:focus-visible{ filter: brightness(1.08); outline: none; }
+.hbar-fill:focus-visible{ box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
+.hbar-baseline{ position:absolute; top:-4px; bottom:-4px; width:1px; background: var(--muted); opacity:.5; }
+.hbar-tip{ position:absolute; top: 50%; transform: translateY(-50%); font-size:12px; font-weight:600; white-space:nowrap; }
+.hbar-marker{ position:absolute; top:-3px; width:2px; height:30px; border-radius:1px; z-index: 1; }
+.hbar-range{ position:absolute; top:8px; height:8px; border-radius:4px; background: rgba(120,120,120,.28); border:1px solid rgba(90,90,90,.45); z-index:1; }
+.hbar-range-cap{ position:absolute; top:2px; width:2px; height:20px; background: rgba(90,90,90,.7); border-radius:1px; z-index:1; }
+.hbar-legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 14px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color: var(--ink-soft); }
+.hbar-legend-item{ display:flex; align-items:center; gap:6px; }
+.swatch{ width:11px; height:11px; border-radius:3px; flex:none; }
+.swatch.line{ width:14px; height:2px; border-radius:0;}
+
+.tooltip{
+  position: fixed; pointer-events:none; z-index: 100; background: var(--ink); color: var(--paper);
+  padding: 8px 11px; border-radius: 8px; font-size: 12.5px; line-height:1.45; max-width: 280px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25); opacity:0; transition: opacity .1s;
+}
+:root[data-theme="dark"] .tooltip, @media (prefers-color-scheme:dark){ .tooltip{} }
+.tooltip.show{ opacity:1; }
+.tooltip .tt-title{ font-weight:600; margin-bottom:3px; }
+.tooltip .tt-row{ display:flex; justify-content:space-between; gap:14px; }
+.tooltip .tt-val{ font-weight: 600; }
+
+/* status pill */
+.pill{ display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600; padding: 3px 9px 3px 7px; border-radius:999px; line-height:1.4; white-space:nowrap;}
+.pill .dot{ width:6px; height:6px; border-radius:50%; flex:none; }
+.pill.good{ background: var(--dv-good-soft); color: var(--dv-good); }
+.pill.warning{ background: var(--dv-warning-soft); color: var(--dv-warning); }
+.pill.critical{ background: var(--dv-critical-soft); color: var(--dv-critical); }
+.pill.neutral{ background: var(--surface-2); color: var(--ink-soft); }
+.pill.pill-wrap{ white-space: normal; text-align: left; border-radius: 8px; line-height: 1.45; flex: 1 1 auto; min-width: 0; }
+:root[data-theme="dark"] .pill.good, @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .pill.good{ color:#5fd65f; } }
+
+/* table twin */
+.table-toggle{ display:flex; justify-content:flex-end; margin-top: 10px; }
+.text-btn{ background:none; border:none; color: var(--accent); font-size:12.5px; font-weight:500; cursor:pointer; padding: 4px 2px; }
+.text-btn:hover{ text-decoration: underline; }
+.data-table{ width:100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+.data-table th{ text-align:left; color: var(--muted); font-weight:500; font-size: 11.5px; text-transform:uppercase; letter-spacing:.03em; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.data-table td{ padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
+.data-table td.num, .data-table th.num{ text-align:right; font-variant-numeric: tabular-nums; }
+.data-table tr:last-child td{ border-bottom:none; }
+.data-table td.strong{ color: var(--ink); font-weight: 500; }
+.table-scroll{ overflow-x:auto; }
+[hidden]{ display:none !important; }
+
+/* callout cards */
+.callout-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 14px; }
+.callout{ background: var(--surface); border:1px solid var(--border); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); border-left: 3px solid var(--dv-critical); }
+.callout.warning-border{ border-left-color: var(--dv-warning); }
+.callout .callout-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px;}
+.callout h3{ font-size:14.5px; }
+.callout .callout-body{ color: var(--ink-soft); font-size: 13px; line-height:1.55; }
+.callout .callout-body b{ color: var(--ink); font-weight:600; }
+
+/* two-col layout */
+.two-col{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items:start; }
+@media (max-width: 860px){ .two-col{ grid-template-columns: 1fr; } }
+
+/* waste bars (stacked, part-to-whole) */
+.stack-track{ position:relative; height:24px; flex:1 1 auto; display:flex; border-radius:4px; overflow:hidden; background: var(--surface-2);}
+.stack-seg{ height:100%; cursor:pointer; }
+.stack-seg:hover{ filter:brightness(1.08); }
+
+/* methodology */
+.methodology{ }
+.meth-block{ margin-top: 22px; }
+.meth-block h3{ font-size: 15px; margin-bottom: 8px; }
+.meth-block p{ color: var(--ink-soft); font-size: 13.5px; line-height:1.65; max-width: 76ch; }
+.meth-block p + p{ margin-top:10px; }
+.source-table td, .source-table th{ font-size:12.5px; }
+.badge{ display:inline-block; background: var(--grain-soft); color: var(--grain); font-size: 11px; font-weight:600; padding: 2px 8px; border-radius:5px; }
+
+.chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+.chip{ font-size:12px; background:var(--surface-2); color:var(--ink-soft); padding:5px 10px; border-radius:7px; border:1px solid var(--border); }
+
+footer{ margin-top: 70px; padding-top: 26px; border-top:1px solid var(--line); color: var(--muted); font-size:12.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+details.appendix{ background: var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow: var(--shadow); overflow:hidden; }
+details.appendix summary{ list-style:none; cursor:pointer; padding: 18px 24px; display:flex; align-items:center; justify-content:space-between; font-weight:600; font-size:15px;}
+details.appendix summary::-webkit-details-marker{ display:none; }
+details.appendix summary .chevron{ color:var(--muted); transition: transform .15s; font-size: 13px;}
+details.appendix[open] summary .chevron{ transform: rotate(90deg); }
+details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid var(--line); }
+
+@media (max-width: 640px){
+  .hbar-label{ width: 130px; flex-basis:130px; font-size:12px; }
+  .hero h1{ font-size:27px; }
+  .shell{ padding: 0 16px 60px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-title">
+      <span class="mark">Toidujulgeolek</span>
+      <span class="sub">Eesti toidu isevarustatuse mudel</span>
+    </div>
+    <nav class="topbar-nav">
+      <a href="#scorecard">Ülevaade</a>
+      <a href="#self-sufficiency">Toidugruppide kaupa</a>
+      <a href="#consumption">Tarbimine</a>
+      <a href="#scenarios">Stsenaariumid</a>
+      <a href="#waste">Raiskamine</a>
+      <a href="#methodology">Metoodika</a>
+    </nav>
+  </div>
+</div>
+
+<div class="shell">
+
+  <div class="hero">
+    <span class="eyebrow">Üheksafaasiline andmeprojekt</span>
+    <h1>Kas Eesti suudaks end ise toita?</h1>
+    <p class="lede">Alt-üles mudel, mis võrdleb Eesti toitumisvajadust kodumaise tootmisega, toidugrupp toidugrupi haaval — kus riik suudab end mugavalt ise toita, kus ta sõltub impordist, ja mis muutuks, kui rahvastik sööks tegelikult nii, nagu soovitatakse.</p>
+  </div>
+
+  <section id="scorecard">
+    <div class="section-head">
+      <div><span class="section-num">01 — Peamine näitaja</span><h2>Kus asjad seisavad, kolme stsenaariumi lõikes</h2></div>
+    </div>
+    <div class="section-desc" style="margin-bottom:18px;">Tonnaažiga kaalutud keskmine toidugruppide vahel, millel on lahendatud isevarustatuse näitaja — mitte iga kategooria, vt kattuvuse märkust. Üksikud kategooriad erinevad palju rohkem, kui see üks number viitab; see erinevus ongi allolevate jaotiste mõte.</div>
+    <div id="scorecard-tiles" class="scorecard"></div>
+  </section>
+
+  <section id="self-sufficiency">
+    <div class="section-head">
+      <div>
+        <span class="section-num">02 — Tootmine vs. kasutus</span>
+        <h2>Isevarustatus toidugruppide kaupa</h2>
+        <p class="section-desc">Tootmine ÷ kodumaine kasutus, tänase väljundi juures. 100% on tasakaalupunkt: sellest paremal toodab Eesti rohkem, kui kasutab; sellest vasakul katab lünga import. Lülita tänase toitumise, täielikult TAI soovitatud toitumise ning kahe EAT-Lancet planeedi tervise dieedi väljaande (algne 2019. a dieet ja uuendatud 2025. a väljaanne) vahel — mõlemad rahvusvahelised võrdlusdieedid, skaleeritud Eesti enda rahvastiku energiavajadusele.</p>
+      </div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-group" id="scenario-toggle" role="group" aria-label="Stsenaarium">
+        <button data-scenario="A" aria-pressed="true">Stsenaarium A — praegune olukord</button>
+        <button data-scenario="B" aria-pressed="false">Stsenaarium B — TAI soovitatud toitumine</button>
+        <button data-scenario="C" aria-pressed="false">Stsenaarium C — EAT-Lancet 2019 dieet</button>
+        <button data-scenario="C2" aria-pressed="false">Stsenaarium C.2 — EAT-Lancet 2025 dieet</button>
+      </div>
+      <span class="filter-hint" id="scenario-hint"></span>
+    </div>
+    <div class="card card-pad">
+      <div class="chart-wrap" id="ss-chart"></div>
+      <div class="hbar-legend">
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>≥100% — netona isevarustatud</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>50–99% — impordisõltuv</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>&lt;50% — kriitiline sõltuvus</span>
+        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>söödaga kohandatud alampiir (kus arvutatud)</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>sõltumatu ristkontrolli vahemik (FAOSTAT vs. projekti hinnang, kus saadaval)</span>
+      </div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">Vaata tabelina</button></div>
+      <div class="table-scroll" id="ss-table" hidden></div>
+    </div>
+  </section>
+
+  <section id="critical">
+    <div class="section-head">
+      <div><span class="section-num">03 — Kus see kõige rohkem loeb</span><h2>Kriitilised sõltuvused</h2>
+      <p class="section-desc">Märgistatud, kus isevarustatus jääb täna alla 50%, kus söödaga kohandatud tundlikkus ulatub alla 50%, või kus usaldusväärset näitajat üldse ei eksisteeri. Lihtne 50% lävi, kontrollitud kolmel viisil — vt metoodikat. (Üleminek stsenaariumile B, C või C.2 võib luua täiendavaid, hüpoteetilisi sõltuvusi, mida täna ei eksisteeri — vt jaotist 05.)</p></div>
+    </div>
+    <div class="callout-grid" id="callout-grid"></div>
+  </section>
+
+  <section id="consumption">
+    <div class="section-head">
+      <div>
+        <span class="section-num">04 — Mida tegelikult süüakse</span>
+        <h2>Tegelik vs. soovitatud tarbimine</h2>
+        <p class="section-desc">Grammi elaniku kohta päevas, TAI soovitus RTU011 mõõdetud tegeliku tarbimise vastu (2014, uusim Eesti toitumisuuring). Filtreeri vanuserühma ja soo järgi — üle- ja alatarbimine ei jaotu rahvastikus ühtlaselt.</p>
+      </div>
+    </div>
+    <div class="filter-row">
+      <label class="filter-hint" for="segment-select" style="margin-right:2px;">Segment</label>
+      <select class="filter-select" id="segment-select"></select>
+      <span class="filter-hint" id="segment-hint"></span>
+    </div>
+    <div class="card card-pad">
+      <div class="chart-wrap" id="cons-chart"></div>
+      <div class="hbar-legend">
+        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>TAI soovitatud</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>tegelik tarbimine</span>
+      </div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="cons-table">Vaata tabelina</button></div>
+      <div class="table-scroll" id="cons-table" hidden></div>
+    </div>
+  </section>
+
+  <section id="scenarios">
+    <div class="section-head">
+      <div>
+        <span class="section-num">05 — Toitumise muutuse pinge</span>
+        <h2>Mida muudatus toitumises teeks isevarustatusega</h2>
+        <p class="section-desc">Protsendipunktiline muutus isevarustatuses vs. stsenaarium A (praegune olukord), tootmine muutumatuna. Lülita TAI soovitatud toitumise ja kummagi EAT-Lancet planeedi tervise dieedi väljaande vahel — kõik kolm suunavad nõudlust kategooriatele, mida Eesti ei suuda võrdselt varustada, kuid mitte samadele, seega "parem söömine" ei tähenda ühegi nende puhul ühtlaselt "rohkem isevarustatust".</p>
+      </div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-group" id="delta-toggle" role="group" aria-label="Võrdlus">
+        <button data-delta="B" aria-pressed="true">Stsenaarium B vs. A</button>
+        <button data-delta="C" aria-pressed="false">Stsenaarium C vs. A</button>
+        <button data-delta="C2" aria-pressed="false">Stsenaarium C.2 vs. A</button>
+      </div>
+      <span class="filter-hint" id="delta-hint"></span>
+    </div>
+    <div class="card card-pad">
+      <div class="chart-wrap" id="delta-chart"></div>
+      <div class="hbar-legend">
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>isevarustatus halveneb vs. stsenaarium A</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>isevarustatus paraneb vs. stsenaarium A</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="waste">
+    <div class="section-head">
+      <div>
+        <span class="section-num">06 — Mida kunagi ei sööda</span>
+        <h2>Toidu raiskamine, etapi ja grupi kaupa</h2>
+        <p class="section-desc">Eesti 2021. aasta riiklik raiskamisuuring (SEI), jaotatud püramiidi toidugruppidele. Kodumajapidamise raiskamine — suurim üksik osa — on puhas tõhususe hoob: selle vähendamine langetab, kui palju tuleb sama tulemuse jaoks toota, ilma midagi juurde kasvatamata.</p>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="card card-pad">
+        <div class="chart-wrap" id="waste-chart"></div>
+        <div class="hbar-legend">
+          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>kodumajapidamise raiskamine</span>
+          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>muud etapid (jaekaubandus, toidutööstus, esmatootmine, toitlustus)</span>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <h3 style="font-size:14.5px;margin-bottom:12px;">Kui kodumajapidamised vähendaksid raiskamist 25% / 50%</h3>
+        <p style="color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:14px;">Mõju isevarustatusele, tootmine muutumatuna — hoob, mitte tootmise kasv. Näidatud toidugruppide jaoks, millel on SEI etapipõhine detail.</p>
+        <div id="waste-lever-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methodology">
+    <div class="section-head">
+      <div><span class="section-num">07 — Kuidas see valmis</span><h2>Metoodika ja allikad</h2></div>
+    </div>
+    <details class="appendix" id="meth-appendix">
+      <summary>Täielik metoodika, andmeallikad ja sõltumatu valideerimine <span class="chevron">▸</span></summary>
+      <div class="appendix-body" id="meth-body"></div>
+    </details>
+  </section>
+
+  <footer>
+    <span id="footer-left"></span>
+    <span>Üheksafaasiline ehitus — andmete kogumisest töölauani, dokumenteeritud igal sammul.</span>
+  </footer>
+
+</div>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<script id="dashboard-data" type="application/json">
+__DASHBOARD_DATA__
+</script>
+<script>
+__APP_JS__
+</script>
+</body>
+</html>

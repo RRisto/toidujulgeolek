@@ -3,7 +3,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 6-9,male,Grain products & potatoes,Porridges/pasta/rice/grain products,175.0,169.0,0.97
 6-9,male,Grain products & potatoes,"Potato, sweet potato",150.0,95.0,0.63
 6-9,male,"Vegetables, fruits & berries",Vegetables,400.0,95.0,0.24
-6-9,male,Dairy products,(total),750.0,471.0,0.63
+6-9,male,Dairy products,(total),456.2,471.0,1.03
 6-9,male,"Fish, eggs & meat",Fish & seafood,80.6,13.0,0.16
 6-9,male,"Fish, eggs & meat",Eggs,30.0,17.0,0.57
 6-9,male,"Nuts, seeds, oils & fats",Oils/fats/spreads,17.5,13.0,0.74
@@ -16,7 +16,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 6-9,female,Grain products & potatoes,Porridges/pasta/rice/grain products,175.0,133.0,0.76
 6-9,female,Grain products & potatoes,"Potato, sweet potato",100.0,88.0,0.88
 6-9,female,"Vegetables, fruits & berries",Vegetables,300.0,99.0,0.33
-6-9,female,Dairy products,(total),750.0,376.0,0.5
+6-9,female,Dairy products,(total),456.2,376.0,0.82
 6-9,female,"Fish, eggs & meat",Fish & seafood,67.2,8.0,0.12
 6-9,female,"Fish, eggs & meat",Eggs,30.0,15.0,0.5
 6-9,female,"Nuts, seeds, oils & fats",Oils/fats/spreads,17.5,14.0,0.8
@@ -29,7 +29,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 30-34,male,Grain products & potatoes,Porridges/pasta/rice/grain products,315.0,115.0,0.37
 30-34,male,Grain products & potatoes,"Potato, sweet potato",250.0,122.0,0.49
 30-34,male,"Vegetables, fruits & berries",Vegetables,600.0,153.0,0.26
-30-34,male,Dairy products,(total),1050.0,318.0,0.3
+30-34,male,Dairy products,(total),638.8,318.0,0.5
 30-34,male,"Fish, eggs & meat",Fish & seafood,80.6,18.0,0.22
 30-34,male,"Fish, eggs & meat",Eggs,30.0,23.0,0.77
 30-34,male,"Nuts, seeds, oils & fats",Oils/fats/spreads,27.5,17.0,0.62
@@ -42,7 +42,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 30-34,female,Grain products & potatoes,Porridges/pasta/rice/grain products,245.0,151.0,0.62
 30-34,female,Grain products & potatoes,"Potato, sweet potato",150.0,77.0,0.51
 30-34,female,"Vegetables, fruits & berries",Vegetables,500.0,145.0,0.29
-30-34,female,Dairy products,(total),750.0,308.0,0.41
+30-34,female,Dairy products,(total),456.2,308.0,0.68
 30-34,female,"Fish, eggs & meat",Fish & seafood,80.6,21.0,0.26
 30-34,female,"Fish, eggs & meat",Eggs,30.0,20.0,0.67
 30-34,female,"Nuts, seeds, oils & fats",Oils/fats/spreads,17.5,22.0,1.26
@@ -55,7 +55,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 70-74,male,Grain products & potatoes,Porridges/pasta/rice/grain products,280.0,151.0,0.54
 70-74,male,Grain products & potatoes,"Potato, sweet potato",200.0,116.0,0.58
 70-74,male,"Vegetables, fruits & berries",Vegetables,500.0,127.0,0.25
-70-74,male,Dairy products,(total),750.0,285.0,0.38
+70-74,male,Dairy products,(total),456.2,285.0,0.62
 70-74,male,"Fish, eggs & meat",Fish & seafood,80.6,36.0,0.45
 70-74,male,"Fish, eggs & meat",Eggs,30.0,25.0,0.83
 70-74,male,"Nuts, seeds, oils & fats",Oils/fats/spreads,22.5,23.0,1.02
@@ -68,7 +68,7 @@ age_band,sex,pyramid_group,subitem,recommended_g_per_day,actual_g_per_day,ratio
 70-74,female,Grain products & potatoes,Porridges/pasta/rice/grain products,245.0,107.0,0.44
 70-74,female,Grain products & potatoes,"Potato, sweet potato",150.0,78.0,0.52
 70-74,female,"Vegetables, fruits & berries",Vegetables,400.0,134.0,0.34
-70-74,female,Dairy products,(total),750.0,245.0,0.33
+70-74,female,Dairy products,(total),456.2,245.0,0.54
 70-74,female,"Fish, eggs & meat",Fish & seafood,80.6,21.0,0.26
 70-74,female,"Fish, eggs & meat",Eggs,30.0,17.0,0.57
 70-74,female,"Nuts, seeds, oils & fats",Oils/fats/spreads,17.5,14.0,0.8

@@ -1,0 +1,46 @@
+<div class="meth-block">
+  <h3>Mis see mudel on</h3>
+  <p>Alt-üles võrdlus kahe asja vahel, toidugrupp toidugrupi haaval: kui palju peaks Eesti rahvastik sööma, et täita TAI (Tervise Arengu Instituut) toitumissoovitusi, ja kui palju sellest Eesti tegelikult toodab. Ehitatud üheksa faasi jooksul — andmete kogumine, taksonoomia ühtlustamine, demograafiline vajaduse mudel, tegeliku tarbimise mudel, tarnimise/isevarustatuse mudel, sööda- ja raiskamiskohandused, kahe stsenaariumi mootor, sõltumatu valideerimine ja see töölaud.</p>
+  <p>Ulatus: riiklik koondnäitaja, praegune tootmistase — see mõõdab isevarustatust <em>tänase väljundi juures</em>, mitte Eesti potentsiaalse väljundi juures. Puudub hooajalisuse, regionaalne või šokitaluvuse modelleerimine. Vanused 2+ (imikud välja arvatud — imikutoitmine ei sobitu toidupüramiidi raamistikku, millele see mudel on üles ehitatud).</p>
+</div>
+
+<div class="meth-block">
+  <h3>Andmeallikad</h3>
+  <div class="table-scroll">
+  <table class="data-table source-table">
+    <thead><tr><th>Allikas</th><th>Mida see annab</th><th>Aastakäik</th></tr></thead>
+    <tbody>
+      <tr><td class="strong">Statistikaamet RV021</td><td>Rahvastik vanuse ja soo järgi</td><td>2026</td></tr>
+      <tr><td class="strong">Statistikaamet PM-seeria</td><td>FAO-stiilis tootmise / impordi / ekspordi / sööda / kao bilansitabelid — teraviljad, kartul, köögiviljad, puuvili ja marjad, õliseemned, liha, munad, piimatooted</td><td>2024</td></tr>
+      <tr><td class="strong">TAI Tabelraamat 2025</td><td>Energiavajadused, makrotoitainete sihttasemed, toidugrupi portsjonijuhised</td><td>2025</td></tr>
+      <tr><td class="strong">TAI RTU011</td><td>Tegelik toidugruppide tarbimine vanuse ja soo järgi — Eesti uusim riiklik toitumisuuring</td><td>2013–2015 väliuuring</td></tr>
+      <tr><td class="strong">Eesti toidujulgeoleku strateegia</td><td>Ametlikud eelarvutatud isevarustatuse suhtarvud, kasutatud kalibreerimise ankruna</td><td>~2018–2022 (5a keskmine, tuletatud)</td></tr>
+      <tr><td class="strong">SEI Eesti toidu raiskamise uuring</td><td>Raiskamise tonnaaž tarneahela etapi järgi</td><td>2021</td></tr>
+      <tr><td class="strong">agri.ee kala tarbimise uuring</td><td>Kala tootmine vs. kodumaine tarbimine — lahendab "kõrge isevarustatus, valdavalt eksporditud" nüansi</td><td>2026</td></tr>
+      <tr><td class="strong">FAOSTAT toidubilansi tabelid</td><td>Sõltumatu rahvusvaheline ristkontroll, kaup kauba haaval</td><td>2022</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="meth-block">
+  <h3>Kuidas näitajad on üles ehitatud</h3>
+  <p><b>Vajaduse mudel (soovitatud nõudlus).</b> Rahvastik × vanuse/soo-spetsiifilised energiavajadused × TAI energiataseme-põhine portsjonijuhis = tonni/aastas, kui kõik sööksid täpselt nii, nagu soovitatud. Kehalise aktiivsuse taseme kohta puuduvad Eesti rahvastiku jaotuse andmed, seega kasutatakse riiklikult ühte "mõõduka" vaikeväärtust väljamõeldud jaotuse asemel.</p>
+  <p><b>Tarbimise mudel (tegelik nõudlus).</b> Sama demograafiline võrgustik, kaalutud RTU011 mõõdetud grammide/päevas järgi. RTU011 koondab kodulinnuliha punase liha ja rupsiga üheks näitajaks — jaotatud tootmispoole enda elaniku kohta tarbimise <i>osakaalude</i>, mitte absoluuttasemete järgi. Puuvilju ja marju ning pähkleid ja seemneid/kakaod saab igas kasutatud Eesti allikas mõõta ainult koos.</p>
+  <p><b>Isevarustatus (tootmine ÷ kodumaine kasutus).</b> Ehitatud alt-üles PM-seeria bilansitabelitest, kalibreeritud ametlike strateegiadokumendi näitajate vastu. Kui kaks erinevad rohkem kui mõne punkti võrra, kasutatakse peamise näitajana ametlikku (mitmeaastast) näitajat ja tuletatud näitaja säilitatakse läbipaistvuse huvides, mitte ei visata ära.</p>
+  <p><b>Sööda sõltuvus.</b> Loomsed tooted on isevarustatud vaid nii palju, kui palju on nende sööt kodumaine. Üldised, avaldatud sööda konversioonisuhte võrdlusnäitajad (mitte Eesti-spetsiifilised) tuntud kodumaise söödavaruga annavad kokku ligikaudu 82% koondsööda katvuse — koos olulise reservatsiooniga, et puudujääk koondub imporditud valgukontsentraatidesse, mitte koresöödasse, mida koondnäitaja üksinda varjab. Söödaga kohandatud alampiirid kasutavad illustratiivseid mahaarvamisi, esitatud tundlikkusanalüüsina, mitte kunagi mõõtmisena.</p>
+  <p><b>Raiskamine.</b> Eesti 2021. aasta riiklik raiskamisuuring, jaotatud toidugruppidele. Kaod enne kodumajapidamist suurendavad, kui palju tuleb toota antud koguse tegeliku söömise jaoks; kodumajapidamise raiskamist mudeldatakse spetsiifiliselt eraldi, vähendatava hoovana, mis vähendab vajadust ilma suuremat tootmist nõudmata.</p>
+  <p><b>Stsenaarium B.</b> Isevarustatus on ümberskaleeritud stsenaariumi A ja stsenaariumi B nõudluse suhte järgi, tootmine muutumatuna — lähendus, mis eeldab proportsionaalset kooskõla kahe nõudlusmudeli vahel, mitte täielikult sõltumatult ümbertuletatud bilansitabelit. Märgistatud igal pool, kus seda kasutatakse.</p>
+</div>
+
+<div class="meth-block">
+  <h3>Sõltumatu valideerimine FAOSTAT-i vastu</h3>
+  <p>Eesti 2022. aasta FAOSTAT toidubilansi tabelit (uusim aasta, mida FAOSTAT avaldab) ristkontrolliti kaup kauba haaval selle projekti näitajate vastu. Kuus kategooriat ühtisid tihedalt — nisu/rukis, kartul, puuvili, munad, kala ja sealiha — hoolimata erinevatest aastatest ja metoodikatest, mis on üldise lähenemise sisuline kinnitus. Neli lahknevust uuriti ja dokumenteeriti, mitte ei lahendatud vale kindlusega: köögiviljad (kolmas erimeelt olev andmepunkt juba märgistatud lünga kohta), veise- ja kodulinnuliha (usutavasti tõelised aasta-aastased nihked) ning — kõige sisulisemalt — rapsiõli, kus FAOSTAT kinnitas haprust, mida see projekt oli juba märgistanud: õli isevarustatuse jaoks kasutatud "saagi tühistamise" otsetee ei toimi, sest Eesti pressib ja re-ekspordib suure osa oma rapsiõlist otse, mis tähendab, et projekti 69,3% õlinäitaja tõenäoliselt <i>alahindab</i> tegelikku isevarustatust. Kaunviljade pikaajaline "teadmata" lünk vaadati läbi kahepooluseliseks leiuks: Eesti on suur põldherne netoeksportija (valdavalt sööda- ja ekspordikasutus), kuid peaaegu null-isevarustatud kuivade ubade ja läätsede osas, mida inimesed tegelikult söövad.</p>
+  <div class="table-scroll" id="faostat-table-host"></div>
+</div>
+
+<div class="meth-block">
+  <h3>Eeldused ja piirangud, otse öelduna</h3>
+  <p>Tarbimise baasjoon on 2014. aasta uuring — parim saadaolev, ristkontrollitud võimalusel värskemate signaalide vastu ja läbivalt märgistatud kui aegunud. Isevarustatuse suhtarvud toetuvad kalibreerimisel ametlikule eelarvutatud keskmisele, mitte täielikult sõltumatule ülesehitusele iga kategooria jaoks. Sööda konversiooni, sööda impordi osakaalu ja raiskamishoova näitajad on üldised, avaldatud võrdlusnäitajad, mitte Eesti-spetsiifilised mõõtmised — alati esitatud märgistatud tundlikkusanalüüsina. Tootmisvõimsuse ülempiiri modelleerimist ei ole: "isevarustatus" tähendab tänase väljundi juures, mitte Eesti potentsiaalse väljundi juures. Mikrotoitainete piisavus on kvalitatiivne märge, mitte kvantitatiivne mudel — köögiviljad, puuvili ja kala on üheaegselt nõrgimad isevarustatuse kategooriad ja ebaproportsionaalselt olulised C-vitamiini, foolhappe ja omega-3/joodi allikad, mis tugevdab, mitte ei eralda isevarustatuse lugu. Võrdlusaastad ei kattu allikate vahel täpselt (RTU011 2014, PM-seeria 2024, FAOSTAT 2022, SEI raiskamine 2021, ametlikud strateeganäitajad ~2018–2022) — see on tõeliselt osa põhjusest, miks mõned selle töölaua ristkontrollid näitavad neid lahknevusi, mida nad näitavad.</p>
+  <p>Kaks tõelist andmelünka esitati vahemikena või jäeti lahendamata, selle asemel et suruda need vale täpsusega punktideks: puder/pasta/riis/teraviljatooted (isevarustatus kuskil 0% ja 178%+ vahel, tarbimiskoosluse andmed puuduvad, et kaaluda otra riisi ja durumnisu pasta vastu) ning kaunviljad (kahepooluseline — vt eespool). Maiustuste ja suupistete isevarustatus on struktuurselt peaaegu null toorsuhkru osas (kodumaist rafineerimist ei ole) ning ei ole töödeldud kaupade puhul võrreldaval alusel hinnatav.</p>
+</div>

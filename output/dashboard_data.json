@@ -2,7 +2,7 @@
   "meta": {
     "project": "toidujulgeolek",
     "title": "Could Estonia feed itself?",
-    "generated": "2026-08-30",
+    "generated": "2026-09-04",
     "phases_complete": 9,
     "reference_years": {
       "population": "2026 (RV021)",
@@ -759,9 +759,9 @@
     {
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 805.7,
+      "recommended_g_per_day": 490.1,
       "actual_g_per_day": 296.4,
-      "ratio_actual_over_recommended": 0.37,
+      "ratio_actual_over_recommended": 0.6,
       "assessment": "under-consuming"
     },
     {
@@ -879,9 +879,9 @@
       "sex": "male",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 750.0,
+      "recommended_g_per_day": 456.2,
       "actual_g_per_day": 471.0,
-      "ratio": 0.63
+      "ratio": 1.03
     },
     {
       "age_band": "6-9",
@@ -996,9 +996,9 @@
       "sex": "female",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 750.0,
+      "recommended_g_per_day": 456.2,
       "actual_g_per_day": 376.0,
-      "ratio": 0.5
+      "ratio": 0.82
     },
     {
       "age_band": "6-9",
@@ -1113,9 +1113,9 @@
       "sex": "male",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 1050.0,
+      "recommended_g_per_day": 638.8,
       "actual_g_per_day": 318.0,
-      "ratio": 0.3
+      "ratio": 0.5
     },
     {
       "age_band": "30-34",
@@ -1230,9 +1230,9 @@
       "sex": "female",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 750.0,
+      "recommended_g_per_day": 456.2,
       "actual_g_per_day": 308.0,
-      "ratio": 0.41
+      "ratio": 0.68
     },
     {
       "age_band": "30-34",
@@ -1347,9 +1347,9 @@
       "sex": "male",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 750.0,
+      "recommended_g_per_day": 456.2,
       "actual_g_per_day": 285.0,
-      "ratio": 0.38
+      "ratio": 0.62
     },
     {
       "age_band": "70-74",
@@ -1464,9 +1464,9 @@
       "sex": "female",
       "pyramid_group": "Dairy products",
       "subitem": "(total)",
-      "recommended_g_per_day": 750.0,
+      "recommended_g_per_day": 456.2,
       "actual_g_per_day": 245.0,
-      "ratio": 0.33
+      "ratio": 0.54
     },
     {
       "age_band": "70-74",
