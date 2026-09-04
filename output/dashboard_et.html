@@ -2416,16 +2416,8 @@ function statusVar(status){
        : status === "critical" ? "var(--dv-critical)"
        : "var(--muted)";
 }
-var DATA_STATUS_ET = {
-  "derived": "tuletatud",
-  "derived+official_preferred": "tuletatud, eelistatud ametlik",
-  "derived+official_avg": "tuletatud+ametlik (keskmine)",
-  "derived_matches_official": "tuletatud, ühtib ametlikuga",
-  "derived+official_close": "tuletatud, lähedal ametlikule",
-  "derived_from_faostat (revised in Phase 8, was gap_assumed)": "tuletatud FAOSTAT-ist (uuendatud Faasis 8, oli eeldatud lünk)",
-  "gap_assumed": "eeldatud lünk",
-  "gap_range (narrowed, Phase 12)": "lünk-vahemik (kitsendatud Faasis 12)"
-};
+var DATA_STATUS_ET = {"derived": "tuletatud", "derived+official_preferred": "tuletatud, eelistatud ametlik", "derived+official_avg": "tuletatud+ametlik (keskmine)", "derived_matches_official": "tuletatud, ühtib ametlikuga", "derived+official_close": "tuletatud, lähedal ametlikule", "derived_from_faostat (revised in Phase 8, was gap_assumed)": "tuletatud FAOSTAT-ist (uuendatud Faasis 8, oli eeldatud lünk)", "gap_assumed": "eeldatud lünk", "gap_range (narrowed, Phase 12)": "lünk-vahemik (kitsendatud Faasis 12)"};
+var SEX_ET = {"female": "naine", "male": "mees"};
 function statusEt(code){ return DATA_STATUS_ET[code] || code; }
 function statusLabel(status){
   return status === "good" ? "Isevarustatud"
@@ -2483,7 +2475,7 @@ function wireTableToggle(btnSelector, tableId){
     {
       label: "Stsenaarium A — praegune olukord",
       value: fmtPct(h.scenario_A_weighted_pct, 0),
-      note: "Tonnaažiga kaalutud, katab " + h.scenario_A_coverage_pct_of_tonnage + "% riiklikust nõudlusest massi järgi. Kõrge, kuna piimatooted ja teravili — mõlemad tugevalt isevarustatud — domineerivad kaalumises; nõrgad kategooriad nagu köögi- ja puuviljad ei kao kuhugi, need lihtsalt jäävad siin varju. Vt jaotis 02.",
+      note: "Tonnaažiga kaalutud, katab {coverage}% riiklikust nõudlusest massi järgi. Kõrge, kuna piimatooted ja teravili — mõlemad tugevalt isevarustatud — domineerivad kaalumises; nõrgad kategooriad nagu köögi- ja puuviljad ei kao kuhugi, need lihtsalt jäävad siin varju. Vt jaotis 02.".replace("{coverage}", h.scenario_A_coverage_pct_of_tonnage),
       accent: true
     },
     {
@@ -2501,7 +2493,7 @@ function wireTableToggle(btnSelector, tableId){
     {
       label: "Stsenaarium C.2 — EAT-Lancet 2025 dieet",
       value: fmtPct(h.scenario_C2_weighted_pct, 0),
-      note: "Sama tootmine, sama kaalumisalus — nõudlus nihutatud EAT-Lancet komisjoni uuendatud 2025. aasta planeedi tervise dieedile, mis säilitab enamiku 2019. a sihttasemetest, kuid kärbib järsult lisatud suhkrut ja tõstab veidi loomse valgu kategooriaid. Peaaegu identne peamine näitaja stsenaariumiga C (" + fmtPct(h.scenario_C_weighted_pct, 0) + "), kuna kategooriad, mis muutusid kõige rohkem (suhkur, mesi), jäävad sellest kaalutud keskmisest välja. Vt jaotis 02.",
+      note: "Sama tootmine, sama kaalumisalus — nõudlus nihutatud EAT-Lancet komisjoni uuendatud 2025. aasta planeedi tervise dieedile, mis säilitab enamiku 2019. a sihttasemetest, kuid kärbib järsult lisatud suhkrut ja tõstab veidi loomse valgu kategooriaid. Peaaegu identne peamine näitaja stsenaariumiga C ({scenario_c_pct}), kuna kategooriad, mis muutusid kõige rohkem (suhkur, mesi), jäävad sellest kaalutud keskmisest välja. Vt jaotis 02.".replace("{scenario_c_pct}", fmtPct(h.scenario_C_weighted_pct, 0)),
       accent: false
     },
     {
@@ -2536,7 +2528,7 @@ var SCEN_KEYS = {
   C: { pct: "scenario_C_pct", disp: "scenario_C_pct_display" },
   C2: { pct: "scenario_C2_pct", disp: "scenario_C2_pct_display" }
 };
-var SCEN_LABEL = { A: "Stsenaarium A", B: "Stsenaarium B", C: "Stsenaarium C", C2: "Stsenaarium C.2" };
+var SCEN_LABEL = {"A": "Stsenaarium A", "B": "Stsenaarium B", "C": "Stsenaarium C", "C2": "Stsenaarium C.2"};
 function renderSSChart(){
   var container = document.getElementById('ss-chart');
   container.innerHTML = "";
@@ -2588,7 +2580,7 @@ function renderSSChart(){
         var ccRange = el('div','hbar-range');
         ccRange.style.left = ccLoPos + "%";
         ccRange.style.width = Math.max(ccHiPos - ccLoPos, 0.4) + "%";
-        ccRange.title = "Sõltumatu ristkontrolli vahemik: " + fmtPct(ccLo) + "\u2013" + fmtPct(ccHi);
+        ccRange.title = "Sõltumatu ristkontrolli vahemik: " + fmtPct(ccLo) + "–" + fmtPct(ccHi);
         track.appendChild(ccRange);
         var ccCapLo = el('div','hbar-range-cap'); ccCapLo.style.left = ccLoPos + "%"; track.appendChild(ccCapLo);
         var ccCapHi = el('div','hbar-range-cap'); ccCapHi.style.left = ccHiPos + "%"; track.appendChild(ccCapHi);
@@ -2616,10 +2608,10 @@ function renderSSChart(){
       var showTt = function(evt){
         var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
           + ttRow(SCEN_LABEL[currentScenario], fmtPct(pct))
-          + (r.feed_adjusted_low_bound_pct !== null ? ttRow('Söödaga kohandatud alampiir', fmtPct(r.feed_adjusted_low_bound_pct)) : '')
-          + (r.cross_check_low_pct !== null ? ttRow('Sõltumatu ristkontrolli vahemik', fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : '')
-          + ttRow('Staatus', statusLabel(status))
-          + ttRow('Andmete staatus', statusEt(r.data_status));
+          + (r.feed_adjusted_low_bound_pct !== null ? ttRow("Söödaga kohandatud alampiir", fmtPct(r.feed_adjusted_low_bound_pct)) : '')
+          + (r.cross_check_low_pct !== null ? ttRow("Sõltumatu ristkontrolli vahemik", fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '–' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : '')
+          + ttRow("Staatus", statusLabel(status))
+          + ttRow("Andmete staatus", statusEt(r.data_status));
         showTooltip(evt, html);
       };
       fill.addEventListener('mousemove', showTt);
@@ -2659,8 +2651,9 @@ function renderSSTable(rows, pctKey, dispKey){
   var table = el('table','data-table');
   var thead = el('thead');
   var htr = el('tr');
-  ["Toidugrupp","Kirje","Stsenaarium A","Stsenaarium B","Stsenaarium C","Stsenaarium C.2","Söödaga kohandatud piir","Ristkontrolli vahemik","Andmete staatus"].forEach(function(h){
-    htr.appendChild(el('th', h.indexOf("Stsenaarium")===0 || h==="Söödaga kohandatud piir" || h==="Ristkontrolli vahemik" ? 'num' : '', h));
+  var SS_TABLE_NUM_COLS = [false,false,true,true,true,true,true,true,false];
+  ["Toidugrupp", "Kirje", "Stsenaarium A", "Stsenaarium B", "Stsenaarium C", "Stsenaarium C.2", "Söödaga kohandatud piir", "Ristkontrolli vahemik", "Andmete staatus"].forEach(function(h, i){
+    htr.appendChild(el('th', SS_TABLE_NUM_COLS[i] ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');
@@ -2673,7 +2666,7 @@ function renderSSTable(rows, pctKey, dispKey){
     tr.appendChild(el('td','num tnum', r.scenario_C_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_C2_pct_display));
     tr.appendChild(el('td','num tnum', r.feed_adjusted_low_bound_pct !== null ? fmtPct(r.feed_adjusted_low_bound_pct) : "—"));
-    tr.appendChild(el('td','num tnum', r.cross_check_low_pct !== null ? (fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : "—"));
+    tr.appendChild(el('td','num tnum', r.cross_check_low_pct !== null ? (fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '–' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : "—"));
     tr.appendChild(el('td','', statusEt(r.data_status)));
     tbody.appendChild(tr);
   });
@@ -2708,7 +2701,7 @@ wireTableToggle(null,'ss-table');
     var pill = el('span','pill ' + severity);
     var dot = el('span','dot'); dot.style.background = severity === 'critical' ? 'var(--dv-critical)' : 'var(--dv-warning)';
     pill.appendChild(dot);
-    pill.appendChild(document.createTextNode(severity === 'critical' ? 'Kriitiline' : 'Andmelünk'));
+    pill.appendChild(document.createTextNode(severity === 'critical' ? "Kriitiline" : "Andmelünk"));
     head.appendChild(pill);
     card.appendChild(head);
     var body = el('div','callout-body');
@@ -2723,10 +2716,9 @@ wireTableToggle(null,'ss-table');
    --------------------------------------------------------------------- */
 var segSelect = document.getElementById('segment-select');
 (function initSegments(){
-  var optNat = el('option','', 'Riiklik (k\u00f5ik vanused)');
+  var optNat = el('option','', "Riiklik (kõik vanused)");
   optNat.value = "__national__";
   segSelect.appendChild(optNat);
-  var SEX_ET = { female: "naine", male: "mees" };
   DATA.segments_available.forEach(function(s){
     var parts = s.split(" ");
     var sex = parts.pop();
@@ -2751,7 +2743,7 @@ function renderConsChart(){
         assessment: r.assessment
       };
     });
-    document.getElementById('segment-hint').textContent = "Kogu rahvastik, kaalutud vanuse ja soo j\u00e4rgi.";
+    document.getElementById('segment-hint').textContent = "Kogu rahvastik, kaalutud vanuse ja soo järgi.";
   } else {
     var parts = sel.split(" ");
     var sex = parts.pop();
@@ -2760,8 +2752,7 @@ function renderConsChart(){
       .map(function(r){
         return { pyramid_group: r.pyramid_group, subitem: r.subitem, recommended: r.recommended_g_per_day, actual: r.actual_g_per_day, assessment: null };
       });
-    var SEX_ET2 = { female: "naine", male: "mees" };
-    document.getElementById('segment-hint').textContent = "Vanus " + ageBand + ", " + (SEX_ET2[sex] || sex) + ".";
+    document.getElementById('segment-hint').textContent = "Vanus " + ageBand + ", " + (SEX_ET[sex] || sex) + ".";
   }
   rows.sort(function(a,b){ return (b.recommended||0) - (a.recommended||0); });
 
@@ -2778,7 +2769,7 @@ function renderConsChart(){
     if(r.actual === null){
       track.style.display="flex"; track.style.alignItems="center";
       var badge = el('span','pill neutral pill-wrap');
-      badge.appendChild(document.createTextNode('m\u00f5\u00f5tmata — RTU011 andmed puuduvad'));
+      badge.appendChild(document.createTextNode("mõõtmata — RTU011 andmed puuduvad"));
       track.appendChild(badge);
     } else {
       var recPos = Math.min(r.recommended/maxVal*100, 100);
@@ -2821,8 +2812,9 @@ function renderConsTable(rows){
   box.innerHTML = "";
   var table = el('table','data-table');
   var thead = el('thead'); var htr = el('tr');
-  ["Toidugrupp","Kirje","Soovitatud (g/p\u00e4evas)","Tegelik (g/p\u00e4evas)","Suhe"].forEach(function(h){
-    htr.appendChild(el('th', h.indexOf('g/p\u00e4evas')>-1 || h==="Suhe" ? 'num' : '', h));
+  var CONS_TABLE_NUM_COLS = [false,false,true,true,true];
+  ["Toidugrupp", "Kirje", "Soovitatud (g/päevas)", "Tegelik (g/päevas)", "Suhe"].forEach(function(h, i){
+    htr.appendChild(el('th', CONS_TABLE_NUM_COLS[i] ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');
@@ -2831,7 +2823,7 @@ function renderConsTable(rows){
     tr.appendChild(el('td','strong', r.pyramid_group));
     tr.appendChild(el('td','', r.subitem));
     tr.appendChild(el('td','num tnum', r.recommended !== null ? r.recommended.toFixed(1) : "—"));
-    tr.appendChild(el('td','num tnum', r.actual !== null ? r.actual.toFixed(1) : "m\u00f5\u00f5tmata"));
+    tr.appendChild(el('td','num tnum', r.actual !== null ? r.actual.toFixed(1) : "mõõtmata"));
     tr.appendChild(el('td','num tnum', (r.actual !== null && r.recommended) ? (r.actual/r.recommended).toFixed(2) + "x" : "—"));
     tbody.appendChild(tr);
   });
@@ -2846,7 +2838,7 @@ wireTableToggle(null,'cons-table');
    05 — scenario delta (diverging bar)
    --------------------------------------------------------------------- */
 var currentDelta = "B";
-var DELTA_LABEL = { B: "Stsenaarium B", C: "Stsenaarium C", C2: "Stsenaarium C.2" };
+var DELTA_LABEL = {"B": "Stsenaarium B", "C": "Stsenaarium C", "C2": "Stsenaarium C.2"};
 var DELTA_PCT_KEY = { B: "scenario_B_pct", C: "scenario_C_pct", C2: "scenario_C2_pct" };
 function renderDeltaChart(){
   var container = document.getElementById('delta-chart');
@@ -2895,7 +2887,7 @@ function renderDeltaChart(){
 
     var fn = function(evt){
       var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
-        + ttRow('Stsenaarium A', fmtPct(r.a)) + ttRow(labelName, fmtPct(r.b)) + ttRow('Muutus', tipTxt);
+        + ttRow("Stsenaarium A", fmtPct(r.a)) + ttRow(labelName, fmtPct(r.b)) + ttRow("Muutus", tipTxt);
       showTooltip(evt, html);
     };
     fill.addEventListener('mousemove', fn);
@@ -2907,10 +2899,10 @@ function renderDeltaChart(){
   });
 
   document.getElementById('delta-hint').textContent = currentDelta === "B"
-    ? "TAI soovitab s\u00fc\u00fca rohkem mitmest kategooriast, mida Eestil on juba praegu k\u00f5ige raskem kodumaiselt varustada."
+    ? "TAI soovitab süüa rohkem mitmest kategooriast, mida Eestil on juba praegu kõige raskem kodumaiselt varustada."
     : currentDelta === "C"
-    ? "2019. a EAT-Lancet dieet v\u00e4hendab n\u00f5udlust enamiku loomsete toodete j\u00e4rele (t\u00f5stes isevarustatust), kuid t\u00f5stab j\u00e4rsult n\u00f5udlust \u00f5lide/rasvade j\u00e4rele — rapsi\u00f5li langeb 69,3%-lt 27,0%-le, uus kriitiline s\u00f5ltuvus, mida stsenaariumis A v\u00f5i B ei esine."
-    : "2025. a EAT-Lancet uuendus r\u00e4\u00e4gib sama lugu mis 2019. a — rapsi\u00f5li langeb endiselt 26,3%-le — kuid mee isevarustatuse n\u00e4itaja muutub \u00e4\u00e4rmuslikuks (~2795%) puhtalt sellep\u00e4rast, et uuendatud dieedi lisatud suhkru sihttase on nii palju v\u00e4iksem, mitte sellep\u00e4rast, et tootmine muutuks; loe seda \u00fchte n\u00e4itajat koos selle m\u00e4rkusega, mitte n\u00e4o v\u00e4\u00e4rtuses.";
+    ? "2019. a EAT-Lancet dieet vähendab nõudlust enamiku loomsete toodete järele (tõstes isevarustatust), kuid tõstab järsult nõudlust õlide/rasvade järele — rapsiõli langeb 69,3%-lt 27,0%-le, uus kriitiline sõltuvus, mida stsenaariumis A või B ei esine."
+    : "2025. a EAT-Lancet uuendus räägib sama lugu mis 2019. a — rapsiõli langeb endiselt 26,3%-le — kuid mee isevarustatuse näitaja muutub äärmuslikuks (~2795%) puhtalt sellepärast, et uuendatud dieedi lisatud suhkru sihttase on nii palju väiksem, mitte sellepärast, et tootmine muutuks; loe seda ühte näitajat koos selle märkusega, mitte näo väärtuses.";
 }
 
 document.querySelectorAll('#delta-toggle button').forEach(function(btn){
@@ -2934,7 +2926,7 @@ renderDeltaChart();
   rows.forEach(function(r){
     var row = el('div','hbar-row');
     var label = el('div','hbar-label');
-    label.appendChild(el('span','grp', r.pyramid_group === '(k\u00f5ik grupid)' ? 'Jaotamata' : r.pyramid_group));
+    label.appendChild(el('span','grp', r.pyramid_group === '(kõik grupid)' ? "Jaotamata" : r.pyramid_group));
     label.appendChild(document.createTextNode(r.subitem.length > 34 ? r.subitem.slice(0,32)+'…' : r.subitem));
     row.appendChild(label);
 
@@ -2950,21 +2942,21 @@ renderDeltaChart();
       var mkFn = function(name, val){
         return function(evt){
           var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
-            + ttRow('Raiskamine kokku', fmtT(r.waste_tonnes_year))
+            + ttRow("Raiskamine kokku", fmtT(r.waste_tonnes_year))
             + ttRow(name, val)
-            + ttRow('Kadumäär tarbimise suhtes', r.loss_rate_vs_consumption_pct !== null ? r.loss_rate_vs_consumption_pct + '%' : '—');
+            + ttRow("Kadumäär tarbimise suhtes", r.loss_rate_vs_consumption_pct !== null ? r.loss_rate_vs_consumption_pct + '%' : '—');
           showTooltip(evt, html);
         };
       };
-      segHH.addEventListener('mousemove', mkFn('Kodumajapidamise osa', hhShare.toFixed(0) + '% (' + fmtT(r.household_waste_tonnes_year) + ')'));
+      segHH.addEventListener('mousemove', mkFn("Kodumajapidamise osa", hhShare.toFixed(0) + '% (' + fmtT(r.household_waste_tonnes_year) + ')'));
       segHH.addEventListener('mouseleave', hideTooltip);
-      segOther.addEventListener('mousemove', mkFn('Muud etapid', (100-hhShare).toFixed(0) + '%'));
+      segOther.addEventListener('mousemove', mkFn("Muud etapid", (100-hhShare).toFixed(0) + '%'));
       segOther.addEventListener('mouseleave', hideTooltip);
       stack.appendChild(segHH); stack.appendChild(segOther);
     } else {
       var seg = el('div','stack-seg'); seg.style.width="100%"; seg.style.background="var(--muted)"; seg.style.opacity="0.55";
       seg.addEventListener('mousemove', function(evt){
-        showTooltip(evt, '<div class="tt-title">Jaotamata</div>' + ttRow('Kokku', fmtT(r.waste_tonnes_year)) + ttRow('M\u00e4rkus','Kategooriateülene j\u00e4\u00e4k, ei ole omistatud \u00fchele toidugrupile'));
+        showTooltip(evt, '<div class="tt-title">' + escapeHtml("Jaotamata") + '</div>' + ttRow("Kokku", fmtT(r.waste_tonnes_year)) + ttRow("Märkus","Kategooriateülene jääk, ei ole omistatud ühele toidugrupile"));
       });
       seg.addEventListener('mouseleave', hideTooltip);
       stack.appendChild(seg);
@@ -3001,7 +2993,7 @@ renderDeltaChart();
     wrap.appendChild(line);
   });
   var note = el('p'); note.style.color="var(--muted)"; note.style.fontSize="11.5px"; note.style.marginTop="12px";
-  note.textContent = "Vajaliku tootmise kordaja: kui palju rohkem peab toiduahelasse j\u00f5udma, kui tegelikult s\u00f6\u00f6akse — t\u00e4na → 25% kodumajapidamise raiskamise v\u00e4henduse juures → 50% v\u00e4henduse juures.";
+  note.textContent = "Vajaliku tootmise kordaja: kui palju rohkem peab toiduahelasse jõudma, kui tegelikult sööakse — täna → 25% kodumajapidamise raiskamise vähenduse juures → 50% vähenduse juures.";
   wrap.appendChild(note);
 })();
 
@@ -3013,8 +3005,9 @@ renderDeltaChart();
   if(!host) return;
   var table = el('table','data-table source-table');
   var thead = el('thead'); var htr = el('tr');
-  ["Toidugrupp","FAOSTAT kirje (2022)","FAOSTAT isevarustatus","Selle projekti n\u00e4itaja","M\u00e4rkus"].forEach(function(h){
-    htr.appendChild(el('th', h.indexOf('isevarustatus')>-1 || h.indexOf("n\u00e4itaja")>-1 ? 'num':'', h));
+  var FAOSTAT_TABLE_NUM_COLS = [false,false,true,true,false];
+  ["Toidugrupp", "FAOSTAT kirje (2022)", "FAOSTAT isevarustatus", "Selle projekti näitaja", "Märkus"].forEach(function(h, i){
+    htr.appendChild(el('th', FAOSTAT_TABLE_NUM_COLS[i] ? 'num':'', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');

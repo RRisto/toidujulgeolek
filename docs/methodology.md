@@ -806,6 +806,8 @@ pipeline.
 | `data/crosswalk/eatlancet2025_crosswalk.csv` | 14 | 2025 EAT-Lancet revision crosswalk, Scenario C.2 demand basis |
 | `data/processed/land_reallocation_scenario.csv` | 15 | Feed-grain/cropland freed by scenario (Tier 1) and illustrative vegetable-output sketch (Tier 2) |
 | `output/secondary_effects.html` | 15 | Standalone second page presenting the Phase 15 analysis |
+| `output/dashboard_et.html`, `output/dashboard_data_et.json` | post-launch | Full Estonian translation of the dashboard, built by `src/dashboard/build_dashboard_et.py` |
+| `src/dashboard/strings_et.json` | post-launch | Every editable Estonian UI string (headers, buttons, tooltips, hints) in one flat/nested JSON file -- edit this and re-run `build_dashboard_et.py` to update the Estonian dashboard's chrome text without touching `template_et.html` or `app_et.js` directly |
 
 ## 13. Secondary effects: land freed by lower meat demand (Phase 15, exploratory)
 

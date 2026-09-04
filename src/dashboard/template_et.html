@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toidujulgeolek (ET)</title>
+<title>{{meta.title}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -302,15 +302,15 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <div class="topbar-inner">
     <div class="topbar-title">
       <span class="mark">Toidujulgeolek</span>
-      <span class="sub">Eesti toidu isevarustatuse mudel</span>
+      <span class="sub">{{topbar.sub}}</span>
     </div>
     <nav class="topbar-nav">
-      <a href="#scorecard">Ülevaade</a>
-      <a href="#self-sufficiency">Toidugruppide kaupa</a>
-      <a href="#consumption">Tarbimine</a>
-      <a href="#scenarios">Stsenaariumid</a>
-      <a href="#waste">Raiskamine</a>
-      <a href="#methodology">Metoodika</a>
+      <a href="#scorecard">{{topbar.nav.overview}}</a>
+      <a href="#self-sufficiency">{{topbar.nav.by_food_group}}</a>
+      <a href="#consumption">{{topbar.nav.consumption}}</a>
+      <a href="#scenarios">{{topbar.nav.scenarios}}</a>
+      <a href="#waste">{{topbar.nav.waste}}</a>
+      <a href="#methodology">{{topbar.nav.methodology}}</a>
     </nav>
   </div>
 </div>
@@ -318,54 +318,54 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
 <div class="shell">
 
   <div class="hero">
-    <span class="eyebrow">Üheksafaasiline andmeprojekt</span>
-    <h1>Kas Eesti suudaks end ise toita?</h1>
-    <p class="lede">Alt-üles mudel, mis võrdleb Eesti toitumisvajadust kodumaise tootmisega, toidugrupp toidugrupi haaval — kus riik suudab end mugavalt ise toita, kus ta sõltub impordist, ja mis muutuks, kui rahvastik sööks tegelikult nii, nagu soovitatakse.</p>
+    <span class="eyebrow">{{hero.eyebrow}}</span>
+    <h1>{{hero.title}}</h1>
+    <p class="lede">{{hero.lede}}</p>
   </div>
 
   <section id="scorecard">
     <div class="section-head">
-      <div><span class="section-num">01 — Peamine näitaja</span><h2>Kus asjad seisavad, kolme stsenaariumi lõikes</h2></div>
+      <div><span class="section-num">{{s01.num}}</span><h2>{{s01.title}}</h2></div>
     </div>
-    <div class="section-desc" style="margin-bottom:18px;">Tonnaažiga kaalutud keskmine toidugruppide vahel, millel on lahendatud isevarustatuse näitaja — mitte iga kategooria, vt kattuvuse märkust. Üksikud kategooriad erinevad palju rohkem, kui see üks number viitab; see erinevus ongi allolevate jaotiste mõte.</div>
+    <div class="section-desc" style="margin-bottom:18px;">{{s01.desc}}</div>
     <div id="scorecard-tiles" class="scorecard"></div>
   </section>
 
   <section id="self-sufficiency">
     <div class="section-head">
       <div>
-        <span class="section-num">02 — Tootmine vs. kasutus</span>
-        <h2>Isevarustatus toidugruppide kaupa</h2>
-        <p class="section-desc">Tootmine ÷ kodumaine kasutus, tänase väljundi juures. 100% on tasakaalupunkt: sellest paremal toodab Eesti rohkem, kui kasutab; sellest vasakul katab lünga import. Lülita tänase toitumise, täielikult TAI soovitatud toitumise ning kahe EAT-Lancet planeedi tervise dieedi väljaande (algne 2019. a dieet ja uuendatud 2025. a väljaanne) vahel — mõlemad rahvusvahelised võrdlusdieedid, skaleeritud Eesti enda rahvastiku energiavajadusele.</p>
+        <span class="section-num">{{s02.num}}</span>
+        <h2>{{s02.title}}</h2>
+        <p class="section-desc">{{s02.desc}}</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="scenario-toggle" role="group" aria-label="Stsenaarium">
-        <button data-scenario="A" aria-pressed="true">Stsenaarium A — praegune olukord</button>
-        <button data-scenario="B" aria-pressed="false">Stsenaarium B — TAI soovitatud toitumine</button>
-        <button data-scenario="C" aria-pressed="false">Stsenaarium C — EAT-Lancet 2019 dieet</button>
-        <button data-scenario="C2" aria-pressed="false">Stsenaarium C.2 — EAT-Lancet 2025 dieet</button>
+        <button data-scenario="A" aria-pressed="true">{{s02.buttons.a}}</button>
+        <button data-scenario="B" aria-pressed="false">{{s02.buttons.b}}</button>
+        <button data-scenario="C" aria-pressed="false">{{s02.buttons.c}}</button>
+        <button data-scenario="C2" aria-pressed="false">{{s02.buttons.c2}}</button>
       </div>
       <span class="filter-hint" id="scenario-hint"></span>
     </div>
     <div class="card card-pad">
       <div class="chart-wrap" id="ss-chart"></div>
       <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>≥100% — netona isevarustatud</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>50–99% — impordisõltuv</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>&lt;50% — kriitiline sõltuvus</span>
-        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>söödaga kohandatud alampiir (kus arvutatud)</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>sõltumatu ristkontrolli vahemik (FAOSTAT vs. projekti hinnang, kus saadaval)</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{s02.legend.good}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>{{s02.legend.warning}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>{{s02.legend.critical}}</span>
+        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>{{s02.legend.feed}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>{{s02.legend.crosscheck}}</span>
       </div>
-      <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">Vaata tabelina</button></div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">{{common.view_as_table}}</button></div>
       <div class="table-scroll" id="ss-table" hidden></div>
     </div>
   </section>
 
   <section id="critical">
     <div class="section-head">
-      <div><span class="section-num">03 — Kus see kõige rohkem loeb</span><h2>Kriitilised sõltuvused</h2>
-      <p class="section-desc">Märgistatud, kus isevarustatus jääb täna alla 50%, kus söödaga kohandatud tundlikkus ulatub alla 50%, või kus usaldusväärset näitajat üldse ei eksisteeri. Lihtne 50% lävi, kontrollitud kolmel viisil — vt metoodikat. (Üleminek stsenaariumile B, C või C.2 võib luua täiendavaid, hüpoteetilisi sõltuvusi, mida täna ei eksisteeri — vt jaotist 05.)</p></div>
+      <div><span class="section-num">{{s03.num}}</span><h2>{{s03.title}}</h2>
+      <p class="section-desc">{{s03.desc}}</p></div>
     </div>
     <div class="callout-grid" id="callout-grid"></div>
   </section>
@@ -373,23 +373,23 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <section id="consumption">
     <div class="section-head">
       <div>
-        <span class="section-num">04 — Mida tegelikult süüakse</span>
-        <h2>Tegelik vs. soovitatud tarbimine</h2>
-        <p class="section-desc">Grammi elaniku kohta päevas, TAI soovitus RTU011 mõõdetud tegeliku tarbimise vastu (2014, uusim Eesti toitumisuuring). Filtreeri vanuserühma ja soo järgi — üle- ja alatarbimine ei jaotu rahvastikus ühtlaselt.</p>
+        <span class="section-num">{{s04.num}}</span>
+        <h2>{{s04.title}}</h2>
+        <p class="section-desc">{{s04.desc}}</p>
       </div>
     </div>
     <div class="filter-row">
-      <label class="filter-hint" for="segment-select" style="margin-right:2px;">Segment</label>
+      <label class="filter-hint" for="segment-select" style="margin-right:2px;">{{s04.segment_label}}</label>
       <select class="filter-select" id="segment-select"></select>
       <span class="filter-hint" id="segment-hint"></span>
     </div>
     <div class="card card-pad">
       <div class="chart-wrap" id="cons-chart"></div>
       <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>TAI soovitatud</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>tegelik tarbimine</span>
+        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>{{s04.legend.recommended}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>{{s04.legend.actual}}</span>
       </div>
-      <div class="table-toggle"><button class="text-btn" data-table-toggle="cons-table">Vaata tabelina</button></div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="cons-table">{{common.view_as_table}}</button></div>
       <div class="table-scroll" id="cons-table" hidden></div>
     </div>
   </section>
@@ -397,24 +397,24 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <section id="scenarios">
     <div class="section-head">
       <div>
-        <span class="section-num">05 — Toitumise muutuse pinge</span>
-        <h2>Mida muudatus toitumises teeks isevarustatusega</h2>
-        <p class="section-desc">Protsendipunktiline muutus isevarustatuses vs. stsenaarium A (praegune olukord), tootmine muutumatuna. Lülita TAI soovitatud toitumise ja kummagi EAT-Lancet planeedi tervise dieedi väljaande vahel — kõik kolm suunavad nõudlust kategooriatele, mida Eesti ei suuda võrdselt varustada, kuid mitte samadele, seega "parem söömine" ei tähenda ühegi nende puhul ühtlaselt "rohkem isevarustatust".</p>
+        <span class="section-num">{{s05.num}}</span>
+        <h2>{{s05.title}}</h2>
+        <p class="section-desc">{{s05.desc}}</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="delta-toggle" role="group" aria-label="Võrdlus">
-        <button data-delta="B" aria-pressed="true">Stsenaarium B vs. A</button>
-        <button data-delta="C" aria-pressed="false">Stsenaarium C vs. A</button>
-        <button data-delta="C2" aria-pressed="false">Stsenaarium C.2 vs. A</button>
+        <button data-delta="B" aria-pressed="true">{{s05.buttons.b}}</button>
+        <button data-delta="C" aria-pressed="false">{{s05.buttons.c}}</button>
+        <button data-delta="C2" aria-pressed="false">{{s05.buttons.c2}}</button>
       </div>
       <span class="filter-hint" id="delta-hint"></span>
     </div>
     <div class="card card-pad">
       <div class="chart-wrap" id="delta-chart"></div>
       <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>isevarustatus halveneb vs. stsenaarium A</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>isevarustatus paraneb vs. stsenaarium A</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>{{s05.legend.worse}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{s05.legend.better}}</span>
       </div>
     </div>
   </section>
@@ -422,22 +422,22 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
   <section id="waste">
     <div class="section-head">
       <div>
-        <span class="section-num">06 — Mida kunagi ei sööda</span>
-        <h2>Toidu raiskamine, etapi ja grupi kaupa</h2>
-        <p class="section-desc">Eesti 2021. aasta riiklik raiskamisuuring (SEI), jaotatud püramiidi toidugruppidele. Kodumajapidamise raiskamine — suurim üksik osa — on puhas tõhususe hoob: selle vähendamine langetab, kui palju tuleb sama tulemuse jaoks toota, ilma midagi juurde kasvatamata.</p>
+        <span class="section-num">{{s06.num}}</span>
+        <h2>{{s06.title}}</h2>
+        <p class="section-desc">{{s06.desc}}</p>
       </div>
     </div>
     <div class="two-col">
       <div class="card card-pad">
         <div class="chart-wrap" id="waste-chart"></div>
         <div class="hbar-legend">
-          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>kodumajapidamise raiskamine</span>
-          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>muud etapid (jaekaubandus, toidutööstus, esmatootmine, toitlustus)</span>
+          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>{{s06.legend.household}}</span>
+          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>{{s06.legend.other}}</span>
         </div>
       </div>
       <div class="card card-pad">
-        <h3 style="font-size:14.5px;margin-bottom:12px;">Kui kodumajapidamised vähendaksid raiskamist 25% / 50%</h3>
-        <p style="color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:14px;">Mõju isevarustatusele, tootmine muutumatuna — hoob, mitte tootmise kasv. Näidatud toidugruppide jaoks, millel on SEI etapipõhine detail.</p>
+        <h3 style="font-size:14.5px;margin-bottom:12px;">{{s06.lever_title}}</h3>
+        <p style="color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:14px;">{{s06.lever_desc}}</p>
         <div id="waste-lever-list"></div>
       </div>
     </div>
@@ -445,17 +445,17 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
 
   <section id="methodology">
     <div class="section-head">
-      <div><span class="section-num">07 — Kuidas see valmis</span><h2>Metoodika ja allikad</h2></div>
+      <div><span class="section-num">{{s07.num}}</span><h2>{{s07.title}}</h2></div>
     </div>
     <details class="appendix" id="meth-appendix">
-      <summary>Täielik metoodika, andmeallikad ja sõltumatu valideerimine <span class="chevron">▸</span></summary>
+      <summary>{{s07.summary}} <span class="chevron">▸</span></summary>
       <div class="appendix-body" id="meth-body"></div>
     </details>
   </section>
 
   <footer>
     <span id="footer-left"></span>
-    <span>Üheksafaasiline ehitus — andmete kogumisest töölauani, dokumenteeritud igal sammul.</span>
+    <span>{{footer.tagline}}</span>
   </footer>
 
 </div>

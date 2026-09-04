@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "title": "Toidujulgeolek (ET)"
+  },
+  "topbar": {
+    "sub": "Eesti toidu isevarustatuse mudel",
+    "nav": {
+      "overview": "Ülevaade",
+      "by_food_group": "Toidugruppide kaupa",
+      "consumption": "Tarbimine",
+      "scenarios": "Stsenaariumid",
+      "waste": "Raiskamine",
+      "methodology": "Metoodika"
+    }
+  },
+  "hero": {
+    "eyebrow": "Üheksafaasiline andmeprojekt",
+    "title": "Kas Eesti suudaks end ise toita?",
+    "lede": "Alt-üles mudel, mis võrdleb Eesti toitumisvajadust kodumaise tootmisega, toidugrupp toidugrupi haaval — kus riik suudab end mugavalt ise toita, kus ta sõltub impordist, ja mis muutuks, kui rahvastik sööks tegelikult nii, nagu soovitatakse."
+  },
+  "s01": {
+    "num": "01 — Peamine näitaja",
+    "title": "Kus asjad seisavad, kolme stsenaariumi lõikes",
+    "desc": "Tonnaažiga kaalutud keskmine toidugruppide vahel, millel on lahendatud isevarustatuse näitaja — mitte iga kategooria, vt kattuvuse märkust. Üksikud kategooriad erinevad palju rohkem, kui see üks number viitab; see erinevus ongi allolevate jaotiste mõte."
+  },
+  "s02": {
+    "num": "02 — Tootmine vs. kasutus",
+    "title": "Isevarustatus toidugruppide kaupa",
+    "desc": "Tootmine ÷ kodumaine kasutus, tänase väljundi juures. 100% on tasakaalupunkt: sellest paremal toodab Eesti rohkem, kui kasutab; sellest vasakul katab lünga import. Lülita tänase toitumise, täielikult TAI soovitatud toitumise ning kahe EAT-Lancet planeedi tervise dieedi väljaande (algne 2019. a dieet ja uuendatud 2025. a väljaanne) vahel — mõlemad rahvusvahelised võrdlusdieedid, skaleeritud Eesti enda rahvastiku energiavajadusele.",
+    "buttons": {
+      "a": "Stsenaarium A — praegune olukord",
+      "b": "Stsenaarium B — TAI soovitatud toitumine",
+      "c": "Stsenaarium C — EAT-Lancet 2019 dieet",
+      "c2": "Stsenaarium C.2 — EAT-Lancet 2025 dieet"
+    },
+    "legend": {
+      "good": "≥100% — netona isevarustatud",
+      "warning": "50–99% — impordisõltuv",
+      "critical": "&lt;50% — kriitiline sõltuvus",
+      "feed": "söödaga kohandatud alampiir (kus arvutatud)",
+      "crosscheck": "sõltumatu ristkontrolli vahemik (FAOSTAT vs. projekti hinnang, kus saadaval)"
+    }
+  },
+  "s03": {
+    "num": "03 — Kus see kõige rohkem loeb",
+    "title": "Kriitilised sõltuvused",
+    "desc": "Märgistatud, kus isevarustatus jääb täna alla 50%, kus söödaga kohandatud tundlikkus ulatub alla 50%, või kus usaldusväärset näitajat üldse ei eksisteeri. Lihtne 50% lävi, kontrollitud kolmel viisil — vt metoodikat. (Üleminek stsenaariumile B, C või C.2 võib luua täiendavaid, hüpoteetilisi sõltuvusi, mida täna ei eksisteeri — vt jaotist 05.)"
+  },
+  "s04": {
+    "num": "04 — Mida tegelikult süüakse",
+    "title": "Tegelik vs. soovitatud tarbimine",
+    "desc": "Grammi elaniku kohta päevas, TAI soovitus RTU011 mõõdetud tegeliku tarbimise vastu (2014, uusim Eesti toitumisuuring). Filtreeri vanuserühma ja soo järgi — üle- ja alatarbimine ei jaotu rahvastikus ühtlaselt.",
+    "segment_label": "Segment",
+    "legend": {
+      "recommended": "TAI soovitatud",
+      "actual": "tegelik tarbimine"
+    }
+  },
+  "s05": {
+    "num": "05 — Toitumise muutuse pinge",
+    "title": "Mida muudatus toitumises teeks isevarustatusega",
+    "desc": "Protsendipunktiline muutus isevarustatuses vs. stsenaarium A (praegune olukord), tootmine muutumatuna. Lülita TAI soovitatud toitumise ja kummagi EAT-Lancet planeedi tervise dieedi väljaande vahel — kõik kolm suunavad nõudlust kategooriatele, mida Eesti ei suuda võrdselt varustada, kuid mitte samadele, seega \"parem söömine\" ei tähenda ühegi nende puhul ühtlaselt \"rohkem isevarustatust\".",
+    "buttons": {
+      "b": "Stsenaarium B vs. A",
+      "c": "Stsenaarium C vs. A",
+      "c2": "Stsenaarium C.2 vs. A"
+    },
+    "legend": {
+      "worse": "isevarustatus halveneb vs. stsenaarium A",
+      "better": "isevarustatus paraneb vs. stsenaarium A"
+    }
+  },
+  "s06": {
+    "num": "06 — Mida kunagi ei sööda",
+    "title": "Toidu raiskamine, etapi ja grupi kaupa",
+    "desc": "Eesti 2021. aasta riiklik raiskamisuuring (SEI), jaotatud püramiidi toidugruppidele. Kodumajapidamise raiskamine — suurim üksik osa — on puhas tõhususe hoob: selle vähendamine langetab, kui palju tuleb sama tulemuse jaoks toota, ilma midagi juurde kasvatamata.",
+    "legend": {
+      "household": "kodumajapidamise raiskamine",
+      "other": "muud etapid (jaekaubandus, toidutööstus, esmatootmine, toitlustus)"
+    },
+    "lever_title": "Kui kodumajapidamised vähendaksid raiskamist 25% / 50%",
+    "lever_desc": "Mõju isevarustatusele, tootmine muutumatuna — hoob, mitte tootmise kasv. Näidatud toidugruppide jaoks, millel on SEI etapipõhine detail."
+  },
+  "s07": {
+    "num": "07 — Kuidas see valmis",
+    "title": "Metoodika ja allikad",
+    "summary": "Täielik metoodika, andmeallikad ja sõltumatu valideerimine"
+  },
+  "footer": {
+    "tagline": "Üheksafaasiline ehitus — andmete kogumisest töölauani, dokumenteeritud igal sammul."
+  },
+  "common": {
+    "view_as_table": "Vaata tabelina"
+  },
+  "js": {
+    "table_toggle": {
+      "hide": "Peida tabel",
+      "show": "Vaata tabelina"
+    },
+    "status_label": {
+      "good": "Isevarustatud",
+      "warning": "Impordisõltuv",
+      "critical": "Kriitiline sõltuvus",
+      "unresolved": "Lahendamata näitaja"
+    },
+    "tt": {
+      "scenario_a": "Stsenaarium A",
+      "change": "Muutus",
+      "feed_bound": "Söödaga kohandatud alampiir",
+      "crosscheck_range": "Sõltumatu ristkontrolli vahemik",
+      "status": "Staatus",
+      "data_status": "Andmete staatus",
+      "total_waste": "Raiskamine kokku",
+      "loss_rate": "Kadumäär tarbimise suhtes",
+      "household_share": "Kodumajapidamise osa",
+      "other_stages": "Muud etapid",
+      "total": "Kokku",
+      "note_label": "Märkus",
+      "tai_recommended": "TAI soovitatud",
+      "actual_consumption": "Tegelik tarbimine"
+    },
+    "marker_title": {
+      "feed_bound_prefix": "Söödaga kohandatud alampiir: ",
+      "crosscheck_prefix": "Sõltumatu ristkontrolli vahemik: "
+    },
+    "pill": {
+      "critical": "Kriitiline",
+      "data_gap": "Andmelünk"
+    },
+    "segment": {
+      "national_option": "Riiklik (kõik vanused)",
+      "national_hint": "Kogu rahvastik, kaalutud vanuse ja soo järgi.",
+      "age_prefix": "Vanus "
+    },
+    "consumption": {
+      "not_measured_badge": "mõõtmata — RTU011 andmed puuduvad",
+      "not_measured_short": "mõõtmata"
+    },
+    "waste": {
+      "unattributed_group": "Jaotamata",
+      "unattributed_note": "Kategooriateülene jääk, ei ole omistatud ühele toidugrupile",
+      "lever_note": "Vajaliku tootmise kordaja: kui palju rohkem peab toiduahelasse jõudma, kui tegelikult sööakse — täna → 25% kodumajapidamise raiskamise vähenduse juures → 50% vähenduse juures."
+    },
+    "footer": {
+      "generated_prefix": "Genereeritud ",
+      "population_sep": " · rahvastik ",
+      "production_sep": " · tootmine ",
+      "survey_sep": " · tarbimisuuring "
+    },
+    "headers": {
+      "ss_table": [
+        "Toidugrupp",
+        "Kirje",
+        "Stsenaarium A",
+        "Stsenaarium B",
+        "Stsenaarium C",
+        "Stsenaarium C.2",
+        "Söödaga kohandatud piir",
+        "Ristkontrolli vahemik",
+        "Andmete staatus"
+      ],
+      "cons_table": [
+        "Toidugrupp",
+        "Kirje",
+        "Soovitatud (g/päevas)",
+        "Tegelik (g/päevas)",
+        "Suhe"
+      ],
+      "faostat_table": [
+        "Toidugrupp",
+        "FAOSTAT kirje (2022)",
+        "FAOSTAT isevarustatus",
+        "Selle projekti näitaja",
+        "Märkus"
+      ]
+    },
+    "data_status_map": {
+      "derived": "tuletatud",
+      "derived+official_preferred": "tuletatud, eelistatud ametlik",
+      "derived+official_avg": "tuletatud+ametlik (keskmine)",
+      "derived_matches_official": "tuletatud, ühtib ametlikuga",
+      "derived+official_close": "tuletatud, lähedal ametlikule",
+      "derived_from_faostat (revised in Phase 8, was gap_assumed)": "tuletatud FAOSTAT-ist (uuendatud Faasis 8, oli eeldatud lünk)",
+      "gap_assumed": "eeldatud lünk",
+      "gap_range (narrowed, Phase 12)": "lünk-vahemik (kitsendatud Faasis 12)"
+    },
+    "sex_map": {
+      "female": "naine",
+      "male": "mees"
+    },
+    "scen_label": {
+      "A": "Stsenaarium A",
+      "B": "Stsenaarium B",
+      "C": "Stsenaarium C",
+      "C2": "Stsenaarium C.2"
+    },
+    "delta_label": {
+      "B": "Stsenaarium B",
+      "C": "Stsenaarium C",
+      "C2": "Stsenaarium C.2"
+    },
+    "no_single_figure_prefix": "üksikut näitajat pole — ",
+    "tiles": {
+      "a": {
+        "label": "Stsenaarium A — praegune olukord",
+        "note": "Tonnaažiga kaalutud, katab {coverage}% riiklikust nõudlusest massi järgi. Kõrge, kuna piimatooted ja teravili — mõlemad tugevalt isevarustatud — domineerivad kaalumises; nõrgad kategooriad nagu köögi- ja puuviljad ei kao kuhugi, need lihtsalt jäävad siin varju. Vt jaotis 02."
+      },
+      "b": {
+        "label": "Stsenaarium B — TAI soovitatud toitumine",
+        "note": "Sama tootmine, sama kaalumisalus — nõudlus nihutatud TAI soovitustele. Langus kajastab, et soovitatud tarbimine kasvab kõige kiiremini kategooriates, mida Eestil on juba praegu raske varustada. Vt jaotis 05."
+      },
+      "c": {
+        "label": "Stsenaarium C — EAT-Lancet 2019 dieet",
+        "note": "Sama tootmine, sama kaalumisalus — nõudlus nihutatud algsele (2019) EAT-Lancet planeedi tervise dieedile, rahvusvahelisele võrdlusdieedile, mis on skaleeritud Eesti rahvastiku energiavajadusele. Kõrgem kui stsenaarium A peamiselt sellepärast, et EAT-Lancet soovitab palju vähem piimatooteid ja liha, kui Eestis tegelikult süüakse. Vt jaotis 02."
+      },
+      "c2": {
+        "label": "Stsenaarium C.2 — EAT-Lancet 2025 dieet",
+        "note": "Sama tootmine, sama kaalumisalus — nõudlus nihutatud EAT-Lancet komisjoni uuendatud 2025. aasta planeedi tervise dieedile, mis säilitab enamiku 2019. a sihttasemetest, kuid kärbib järsult lisatud suhkrut ja tõstab veidi loomse valgu kategooriaid. Peaaegu identne peamine näitaja stsenaariumiga C ({scenario_c_pct}), kuna kategooriad, mis muutusid kõige rohkem (suhkur, mesi), jäävad sellest kaalutud keskmisest välja. Vt jaotis 02."
+      },
+      "waste25": {
+        "label": "25% väiksema kodumajapidamise raiskamisega",
+        "note": "Stsenaarium A, kui kodumajapidamised vähendaksid toidu raiskamist veerandi võrra — nõudluspoolne tõhususe hoob, mitte muutus tootmises."
+      },
+      "waste50": {
+        "label": "50% väiksema kodumajapidamise raiskamisega",
+        "note": "Stsenaarium A, kui kodumajapidamised vähendaksid toidu raiskamist poole võrra. Mõju on tagasihoidlik — raiskamise vähendamine leevendab olukorda, kuid ei lahenda struktuurseid lünki."
+      }
+    },
+    "scenario_hint": {
+      "a": "Tänane tegelik toitumine tänase tootmise vastu.",
+      "b": "Kui kõik sööksid täpselt nii, nagu TAI soovitab — tootmine muutumatu.",
+      "c": "Kui kõik sööksid algset (2019) EAT-Lancet planeedi tervise dieeti, skaleerituna Eesti rahvastiku energiavajadusele — tootmine muutumatu.",
+      "c2": "Kui kõik sööksid EAT-Lancet komisjoni uuendatud 2025. aasta planeedi tervise dieeti, skaleerituna Eesti rahvastiku energiavajadusele — tootmine muutumatu."
+    },
+    "delta_hint": {
+      "b": "TAI soovitab süüa rohkem mitmest kategooriast, mida Eestil on juba praegu kõige raskem kodumaiselt varustada.",
+      "c": "2019. a EAT-Lancet dieet vähendab nõudlust enamiku loomsete toodete järele (tõstes isevarustatust), kuid tõstab järsult nõudlust õlide/rasvade järele — rapsiõli langeb 69,3%-lt 27,0%-le, uus kriitiline sõltuvus, mida stsenaariumis A või B ei esine.",
+      "c2": "2025. a EAT-Lancet uuendus räägib sama lugu mis 2019. a — rapsiõli langeb endiselt 26,3%-le — kuid mee isevarustatuse näitaja muutub äärmuslikuks (~2795%) puhtalt sellepärast, et uuendatud dieedi lisatud suhkru sihttase on nii palju väiksem, mitte sellepärast, et tootmine muutuks; loe seda ühte näitajat koos selle märkusega, mitte näo väärtuses."
+    }
+  }
+}
