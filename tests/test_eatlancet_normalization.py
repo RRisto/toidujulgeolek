@@ -267,6 +267,28 @@ class EatLancetNormalizationTests(unittest.TestCase):
         self.assertNotIn("g/day", output)
         self.assertNotIn("grams per day", output)
 
+    def test_chart_uses_image_readable_type_scale(self):
+        from build_treemap.build_bar_chart import build_chart
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "build_treemap").mkdir()
+            (root / "output").mkdir()
+            for filename in ("bar_chart_template.html", "treemap_data_et.json"):
+                shutil.copyfile(
+                    ROOT / "build_treemap" / filename,
+                    root / "build_treemap" / filename,
+                )
+            output = build_chart(root, "et").read_text(encoding="utf-8")
+
+        self.assertRegex(output, r"body\{[^}]*font:18px/")
+        self.assertRegex(output, r"h1\{font-size:34px")
+        self.assertRegex(output, r"\.group-title\{font-size:20px")
+        self.assertRegex(output, r"\.ticks span\{[^}]*font-size:16px")
+        self.assertRegex(output, r"\.dot::after\{[^}]*font-size:16px")
+        self.assertRegex(output, r"\.plot\{height:46px")
+        self.assertRegex(output, r"\.dot\{[^}]*width:12px;height:12px")
+
     def test_estonian_treemap_builder_preserves_utf8_labels(self):
         from build_treemap.build_treemap_data_et import build_et_data
 

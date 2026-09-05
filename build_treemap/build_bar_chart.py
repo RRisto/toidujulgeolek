@@ -112,13 +112,13 @@ def build_chart(root: Path, language: str) -> Path:
         )
         lanes = "".join(
             f'<span class="diet-lane {scenario["key"].lower()}-lane" '
-            f'data-lane="diet" style="top:{8 + index * 7}px"></span>'
+            f'data-lane="diet" style="top:{8 + index * 10}px"></span>'
             for index, scenario in enumerate(data["scenarios"])
         )
         dots = "".join(
             f'<span class="dot {scenario["key"].lower()}" data-mark="dot" '
             f'style="left:{percentages[scenario["key"]] / scale_max * 100:.3f}%;'
-            f'top:{3 + index * 7}px" data-tip="{escape(scenario["label"])}: '
+            f'top:{2 + index * 10}px" data-tip="{escape(scenario["label"])}: '
             f'{percentages[scenario["key"]]:.1f}%"></span>'
             for index, scenario in enumerate(data["scenarios"])
         )
