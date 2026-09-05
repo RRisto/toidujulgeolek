@@ -308,21 +308,19 @@ git commit -m "build: refresh normalized diet outputs"
 - Documents: source versus normalized basis, formulas, source corrections, before/after totals, uncertainty, and all materially changed conclusions
 - Marks: historical superseded figures rather than silently erasing their context
 
-- [ ] **Step 1: Add documentation assertions**
+- [ ] **Step 1: Inventory every superseded statement**
 
-Add a test that reads the current methodology and phase notes and requires the phrases `dry weight`, `normalized edible-equivalent`, `30 g/day`, and `Honey` plus the regenerated C/C2 total values. It must reject the obsolete claim `31g -> 6g` unless immediately marked `superseded`.
+Search the listed documentation for the old direct-mass comparison, `31g -> 6g`, omitted-nuts rationale, old C/C2 totals, and dependent self-sufficiency and land values. Record every match in the task notes so none are missed during editing.
 
-- [ ] **Step 2: Run the documentation test and verify RED**
-
-Run: `python -m unittest tests.test_eatlancet_normalization.EatLancetNormalizationTests.test_documentation_records_normalized_basis -v`
-
-Expected: failure because current documentation still presents the old mass comparison and 6 g sugar value.
-
-- [ ] **Step 3: Update documentation and phase history**
+- [ ] **Step 2: Update documentation and phase history**
 
 Revise the current methodology and roadmap conclusions; add `PHASE21_NOTES.md` with the root cause, conversion contract, exact commands, before/after table, affected self-sufficiency/land results, verification evidence, and remaining limitations. Historical notes must clearly label old figures as superseded.
 
-- [ ] **Step 4: Run documentation and full unit tests**
+- [ ] **Step 3: Review documentation consistency manually**
+
+Read every edited section in context and confirm it says `dry weight`, `normalized edible-equivalent`, `30 g/day`, and that Honey is excluded from diet-mass totals. Search again for obsolete claims and ensure any retained historical occurrence is immediately identified as superseded.
+
+- [ ] **Step 4: Run full unit tests**
 
 Run: `python -m unittest discover -s tests -v`
 
