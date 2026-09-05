@@ -216,6 +216,38 @@ class EatLancetNormalizationTests(unittest.TestCase):
                 update_scenario(scenario_path, crosswalk, scenario)
                 self.assertEqual(scenario_path.read_bytes(), once)
 
+    def test_bar_chart_matrix_aligns_each_food_across_four_diets(self):
+        from build_treemap.build_bar_chart import build_comparison_matrix
+
+        data = build_comparison_matrix(ROOT, "en")
+        self.assertEqual([item["key"] for item in data["scenarios"]], ["A", "B", "C", "C2"])
+        self.assertNotIn("Honey", {row["item"] for row in data["rows"]})
+        dairy = next(row for row in data["rows"] if row["label"] == "Dairy products")
+        self.assertEqual(
+            dairy["percentages"],
+            {"A": 23.3, "B": 22.9, "C": 14.5, "C2": 13.4},
+        )
+        self.assertTrue(
+            all(set(row["percentages"]) == {"A", "B", "C", "C2"} for row in data["rows"])
+        )
+
+    def test_estonian_bar_chart_localizes_units_and_has_no_placeholders(self):
+        from build_treemap.build_bar_chart import build_chart
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "build_treemap").mkdir()
+            (root / "output").mkdir()
+            for filename in ("bar_chart_template.html", "treemap_data_et.json"):
+                shutil.copyfile(
+                    ROOT / "build_treemap" / filename,
+                    root / "build_treemap" / filename,
+                )
+            output = build_chart(root, "et").read_text(encoding="utf-8")
+
+        self.assertIn("g/päev", output)
+        self.assertNotRegex(output, r"__[A-Z_]+__")
+
 
 if __name__ == "__main__":
     unittest.main()
