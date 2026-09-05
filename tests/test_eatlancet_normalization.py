@@ -198,6 +198,24 @@ class EatLancetNormalizationTests(unittest.TestCase):
             )
             self.assertNotIn("Honey", {item["item"] for item in scenario["items"]})
 
+    def test_scenario_updates_are_idempotent(self):
+        from src.update_scenario_c import update_scenario
+
+        with tempfile.TemporaryDirectory() as directory:
+            scenario_path = Path(directory) / "scenario_comparison.csv"
+            shutil.copyfile(
+                ROOT / "data/processed/scenario_comparison.csv", scenario_path
+            )
+            for scenario, filename in (
+                ("C", "eatlancet_crosswalk.csv"),
+                ("C2", "eatlancet2025_crosswalk.csv"),
+            ):
+                crosswalk = ROOT / "data/crosswalk" / filename
+                update_scenario(scenario_path, crosswalk, scenario)
+                once = scenario_path.read_bytes()
+                update_scenario(scenario_path, crosswalk, scenario)
+                self.assertEqual(scenario_path.read_bytes(), once)
+
 
 if __name__ == "__main__":
     unittest.main()

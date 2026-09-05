@@ -104,6 +104,7 @@ def update_scenario(
             "(total)",
         ):
             prior = row.get("note", "").partition(" Phase 14:")[0]
+            prior = prior.partition(" Phase 21 correction:")[0]
             row["note"] = (
                 prior
                 + " Phase 21 correction: the 2025 EAT-Lancet added/free-sugar "
