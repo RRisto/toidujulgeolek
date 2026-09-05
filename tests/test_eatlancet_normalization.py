@@ -231,7 +231,7 @@ class EatLancetNormalizationTests(unittest.TestCase):
             all(set(row["percentages"]) == {"A", "B", "C", "C2"} for row in data["rows"])
         )
 
-    def test_estonian_bar_chart_localizes_units_and_has_no_placeholders(self):
+    def test_estonian_chart_has_no_units_or_placeholders(self):
         from build_treemap.build_bar_chart import build_chart
 
         with tempfile.TemporaryDirectory() as directory:
@@ -245,8 +245,26 @@ class EatLancetNormalizationTests(unittest.TestCase):
                 )
             output = build_chart(root, "et").read_text(encoding="utf-8")
 
-        self.assertIn("g/päev", output)
+        self.assertNotIn("g/päev", output)
         self.assertNotRegex(output, r"__[A-Z_]+__")
+
+    def test_compact_dot_chart_has_four_percentage_marks_per_food(self):
+        from build_treemap.build_bar_chart import build_chart
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "build_treemap").mkdir()
+            (root / "output").mkdir()
+            for filename in ("bar_chart_template.html", "treemap_data.json"):
+                shutil.copyfile(
+                    ROOT / "build_treemap" / filename,
+                    root / "build_treemap" / filename,
+                )
+            output = build_chart(root, "en").read_text(encoding="utf-8")
+
+        self.assertEqual(output.count('data-mark="dot"'), 14 * 4)
+        self.assertNotIn("g/day", output)
+        self.assertNotIn("grams per day", output)
 
 
 if __name__ == "__main__":
