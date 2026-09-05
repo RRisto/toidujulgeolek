@@ -1,5 +1,11 @@
 # Phase 14 notes — Scenario C.2, the 2025 EAT-Lancet revision
 
+> **Superseded in part by Phase 21.** The 2025 sugar value below was misread: **30 g/day** is the
+> added/free-sugar target; 6 g/day is palm/coconut oil. C2 now uses energy-based TAI
+> edible-equivalent mass, includes the known 50 g nuts value, and excludes Honey as a duplicate of
+> aggregate sweets. The corrected C2 total is 1,666.9 g/person/day and the weighted headline is
+> 129.4%. Historical 6 g/Honey figures below are retained only as a record of the superseded build.
+
 Post-launch addition, prompted by the user asking "what is EAT-Lancet diet?" after Scenario C came
 up in conversation, then explicitly asking to "build a Scenario C.2 using the 2025 targets" once
 research turned up that the EAT-Lancet Commission published a revised Planetary Health Diet in

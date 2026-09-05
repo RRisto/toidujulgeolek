@@ -1,5 +1,10 @@
 # Phase 10 notes — Scenario C: the EAT-Lancet Planetary Health Diet
 
+> **Superseded in part by Phase 21.** Phase 10 compared EAT-Lancet dry/source grams directly with
+> TAI edible/ready-to-eat grams. Scenario C now preserves source grams but uses an energy-based TAI
+> edible-equivalent mass for demand. The corrected C total is 1,568.7 g/person/day and the current
+> weighted self-sufficiency headline is 140.2%. See `PHASE21_NOTES.md`.
+
 Post-launch addition, requested by the user after the original nine-phase build closed out (see
 PHASE9_NOTES.md). Implements PLAN.md Section 7 item 10: build a third demand scenario benchmarked
 against the EAT-Lancet Planetary Health Diet, mirroring how Scenario B (TAI-recommended diet) was

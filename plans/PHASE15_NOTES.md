@@ -53,8 +53,11 @@ feed-cropland, with no Estonia-specific land-use-by-category data available to e
 | Scenario | Feed no longer needed | Cropland no longer needed | % of 2024 barley area | Illustrative veg. output | % of vegetable gap | Land needed to close entire gap |
 |---|---|---|---|---|---|---|
 | B (TAI) | 140.0 kt | 42,217 ha | 44.4% | 1,262,288 t | 1,557% | only 6.4% of freed land |
-| C (EAT-Lancet 2019) | 200.0 kt | 60,317 ha | 63.5% | 1,803,478 t | 2,225% | only 4.5% of freed land |
-| C.2 (EAT-Lancet 2025) | 190.5 kt | 57,437 ha | 60.4% | 1,717,366 t | 2,118% | only 4.7% of freed land |
+| C (EAT-Lancet 2019) | 196.9 kt | 59,367 ha | 62.5% | 1,775,073 t | 2,190% | only 4.6% of freed land |
+| C.2 (EAT-Lancet 2025) | 173.6 kt | 52,358 ha | 55.1% | 1,565,504 t | 1,931% | only 5.2% of freed land |
+
+The C/C2 rows were recalculated in Phase 21 after their demand masses were normalized from mixed
+EAT source weights to the TAI edible/ready-to-eat basis. Scenario B is unchanged.
 
 (Vegetable gap = 2024 domestic use minus production, both from PM33: 114,297t − 33,229t = 81,068t —
 computed directly from raw tonnages rather than any of the three disagreeing self-sufficiency
