@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eesti toidujulgeoleku visualiseeringud</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17302b;
+      background: #f2f6f3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+    }
+    main { width: min(920px, 100%); }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    p {
+      margin: 0 0 30px;
+      color: #52635f;
+      font-size: 1.1rem;
+    }
+    nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    a {
+      min-height: 150px;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      border: 1px solid #d8e2dd;
+      border-radius: 16px;
+      color: #17302b;
+      background: #fff;
+      box-shadow: 0 8px 30px rgb(23 48 43 / 7%);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    a:hover, a:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 34px rgb(23 48 43 / 13%);
+      outline: 3px solid #88b8a7;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Eesti toidujulgeoleku visualiseeringud</h1>
+    <p>Vali visualiseering, mida soovid avada.</p>
+    <nav aria-label="Visualiseeringud">
+      <a href="dashboard.html">Toidujulgeoleku armatuurlaud</a>
+      <a href="diet_bar_chart_et.html">Dieetide toidugruppide osakaalud</a>
+      <a href="diet_treemap_et.html">Dieetide puukaartide võrdlus</a>
+    </nav>
+  </main>
+</body>
+</html>
