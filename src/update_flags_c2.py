@@ -62,8 +62,14 @@ def main():
         else:
             row["flag_scenario_C2_worsens_dependency"] = "N/A"
 
+        if key == ("Sweets, snacks & discretionary", "Honey"):
+            row["reason"] = (
+                "Scenario A/B honey detail retained; C/C2 are not scored because "
+                "Honey is already included in the aggregate sweets/sugar mass."
+            )
+
     with open("data/processed/critical_dependency_flags.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=new_fieldnames)
+        w = csv.DictWriter(f, fieldnames=new_fieldnames, lineterminator="\n")
         w.writeheader()
         for row in rows:
             w.writerow(row)

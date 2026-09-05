@@ -25,6 +25,13 @@ def main():
         fieldnames = reader.fieldnames
         rows = list(reader)
 
+    c_cols = ["scenario_C_self_sufficiency_pct", "flag_below_50pct_scenario_C",
+              "flag_scenario_C_worsens_dependency"]
+    fieldnames = [field for field in fieldnames if field not in c_cols]
+    for row in rows:
+        for field in c_cols:
+            row.pop(field, None)
+
     idx = fieldnames.index("scenario_B_self_sufficiency_pct") + 1
     new_fieldnames = (fieldnames[:idx]
                        + ["scenario_C_self_sufficiency_pct"]
@@ -55,7 +62,7 @@ def main():
             row["flag_scenario_C_worsens_dependency"] = "N/A"
 
     with open("data/processed/critical_dependency_flags.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=new_fieldnames)
+        w = csv.DictWriter(f, fieldnames=new_fieldnames, lineterminator="\n")
         w.writeheader()
         for row in rows:
             w.writerow(row)

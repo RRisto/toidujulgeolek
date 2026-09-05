@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Phase 15 (post-launch, exploratory): if less meat/eggs were produced under a lower-demand
-scenario (B/C/C2), what happens to the feed grain and land behind that production?
+scenario (B/C/C2), what happens to the feed grain and land behind that production? Scenario C
+and C2 ratios use TAI-basis normalized edible-equivalent demand, not raw EAT source weights.
 
 User question: "if less meat is produced, some crops could go for food, maybe some land could be
 used to grow more stuff?" This script works through that chain in two explicitly separated
@@ -147,7 +148,7 @@ def main():
 
     fieldnames = list(rows[0].keys())
     with open("data/processed/land_reallocation_scenario.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 

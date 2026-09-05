@@ -1,112 +1,137 @@
 #!/usr/bin/env python3
-"""
-Phase 10 (post-launch): joins the Scenario C (EAT-Lancet) demand crosswalk onto
-scenario_comparison.csv and critical_dependency_flags.csv, computing Scenario C
-self-sufficiency the same way Scenario B was computed (Phase 7):
+"""Propagate normalized EAT-Lancet demand into the scenario comparison."""
 
-    scenario_C_pct = scenario_A_pct * (scenario_A_demand_tonnes / scenario_C_demand_tonnes)
+from __future__ import annotations
 
-Only applied where scenario_A_pct is a resolved single number and scenario_A_demand_tonnes
-exists -- rows with a range/bimodal/gap baseline (porridge, legumes, nuts+seeds, sweets/sugar)
-keep the same qualitative treatment Scenario B already uses, per the project's standing rule
-against forcing false precision onto an unresolved figure.
-"""
 import csv
+from pathlib import Path
 
-POPULATION = 1339785.0
 
-def load_crosswalk():
-    cw = {}
-    with open("data/crosswalk/eatlancet_crosswalk.csv", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            key = (row["pyramid_group"], row["subitem"])
-            g = row["scaled_g_per_day_estonia"]
-            cw[key] = {
-                "g_per_day": float(g) if g else None,
-                "note": row["note"],
-            }
-    return cw
+POPULATION = 1_339_785.0
+ROOT = Path(__file__).resolve().parents[1]
 
-def tonnes(g_per_day):
-    if g_per_day is None:
-        return None
-    return round(g_per_day * POPULATION * 365 / 1e6, 1)
 
-def to_float(s):
+def _to_float(value):
     try:
-        return float(s)
+        return float(value)
     except (TypeError, ValueError):
         return None
 
-def main():
-    cw = load_crosswalk()
 
-    with open("data/processed/scenario_comparison.csv", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames
+def _load_crosswalk(path: Path):
+    with path.open(encoding="utf-8", newline="") as handle:
+        return {
+            (row["pyramid_group"], row["subitem"]): float(
+                row["scaled_normalized_g_per_day_estonia"]
+            )
+            for row in csv.DictReader(handle)
+        }
+
+
+def update_scenario(
+    scenario_path: Path, crosswalk_path: Path, scenario: str
+) -> list[dict[str, str]]:
+    """Update Scenario C or C2 in-place using normalized edible-equivalent grams."""
+    if scenario not in {"C", "C2"}:
+        raise ValueError("scenario must be 'C' or 'C2'")
+
+    crosswalk = _load_crosswalk(Path(crosswalk_path))
+    with Path(scenario_path).open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        fieldnames = list(reader.fieldnames or [])
         rows = list(reader)
 
-    new_fieldnames = fieldnames[:4] + ["scenario_C_demand_tonnes_per_year",
-                                        "demand_change_ratio_C_over_A",
-                                        "scenario_C_self_sufficiency_pct"] + fieldnames[4:]
-    # insert scenario_C columns right after scenario_B_self_sufficiency_pct block for readability:
-    # actual desired order: ... demand_change_ratio_B_over_A, scenario_A_self_sufficiency_pct,
-    # scenario_B_self_sufficiency_pct, scenario_C_demand_tonnes_per_year,
-    # demand_change_ratio_C_over_A, scenario_C_self_sufficiency_pct, waste levers..., data_status, note
-    idx_after_B_pct = fieldnames.index("scenario_B_self_sufficiency_pct") + 1
-    new_fieldnames = (fieldnames[:idx_after_B_pct]
-                       + ["scenario_C_demand_tonnes_per_year", "demand_change_ratio_C_over_A",
-                          "scenario_C_self_sufficiency_pct"]
-                       + fieldnames[idx_after_B_pct:])
+    columns = [
+        f"scenario_{scenario}_demand_tonnes_per_year",
+        f"demand_change_ratio_{scenario}_over_A",
+        f"scenario_{scenario}_self_sufficiency_pct",
+    ]
+    fieldnames = [name for name in fieldnames if name not in columns]
+    for row in rows:
+        for name in columns:
+            row.pop(name, None)
+
+    preceding = (
+        "scenario_B_self_sufficiency_pct"
+        if scenario == "C"
+        else "scenario_C_self_sufficiency_pct"
+    )
+    insertion = fieldnames.index(preceding) + 1
+    output_fields = fieldnames[:insertion] + columns + fieldnames[insertion:]
 
     for row in rows:
         key = (row["pyramid_group"], row["subitem"])
-        entry = cw.get(key)
-        c_g = entry["g_per_day"] if entry else None
-        c_tonnes = tonnes(c_g)
-        a_tonnes = to_float(row["scenario_A_demand_tonnes_per_year"])
-        a_pct = to_float(row["scenario_A_self_sufficiency_pct"])
+        normalized_g = crosswalk.get(key)
+        demand = (
+            round(normalized_g * POPULATION * 365 / 1_000_000, 1)
+            if normalized_g is not None
+            else None
+        )
+        a_demand = _to_float(row.get("scenario_A_demand_tonnes_per_year"))
+        a_pct_text = row.get("scenario_A_self_sufficiency_pct", "")
+        a_pct = _to_float(a_pct_text)
 
-        row["scenario_C_demand_tonnes_per_year"] = c_tonnes if c_tonnes is not None else ""
+        row[columns[0]] = demand if demand is not None else ""
+        ratio = round(demand / a_demand, 4) if demand and a_demand else None
+        row[columns[1]] = ratio if ratio is not None else ""
 
-        if c_tonnes and a_tonnes:
-            ratio = round(c_tonnes / a_tonnes, 4)
-            row["demand_change_ratio_C_over_A"] = ratio
+        if a_pct is not None and demand and a_demand:
+            row[columns[2]] = round(a_pct * a_demand / demand, 1)
+        elif a_pct_text in {
+            "~0% assumed",
+            "~0% (raw sugar) / not scoreable (manufactured)",
+        }:
+            row[columns[2]] = a_pct_text
+        elif "bimodal" in str(a_pct_text):
+            row[columns[2]] = a_pct_text
+        elif "upper bound" in str(a_pct_text) or "wide, unresolved" in str(
+            a_pct_text
+        ):
+            row[columns[2]] = (
+                "proportionally different from the Scenario A bound "
+                f"(see {columns[1]}) -- not stated as a point estimate"
+            )
+        elif key in {
+            ("Nuts, seeds, oils & fats", "Oils/fats/spreads (sunflower, 0%)"),
+            ("Nuts, seeds, oils & fats", "Oils/fats/spreads (soy, 0%)"),
+        }:
+            row[columns[2]] = "0.0"
         else:
-            row["demand_change_ratio_C_over_A"] = ""
+            row[columns[2]] = ""
 
-        if a_pct is not None and c_tonnes and a_tonnes:
-            c_pct = round(a_pct * (a_tonnes / c_tonnes), 1)
-            row["scenario_C_self_sufficiency_pct"] = c_pct
-        elif row["scenario_A_self_sufficiency_pct"] in (
-                "~0% assumed",
-                "~0% (raw sugar) / not scoreable (manufactured)"):
-            # structural near-zero rows: stays ~0% regardless of demand scaling, same logic as B
-            row["scenario_C_self_sufficiency_pct"] = row["scenario_A_self_sufficiency_pct"]
-        elif "bimodal" in str(row["scenario_A_self_sufficiency_pct"]):
-            row["scenario_C_self_sufficiency_pct"] = row["scenario_A_self_sufficiency_pct"]
-        elif "wide, unresolved" in str(row["scenario_A_self_sufficiency_pct"]):
-            row["scenario_C_self_sufficiency_pct"] = (
-                "proportionally different from the Scenario A range (see demand_change_ratio_C_over_A) "
-                "-- not stated as a number since the Scenario A range itself has no resolved point estimate")
-        elif row["pyramid_group"] == "Nuts, seeds, oils & fats" and row["subitem"] == "Oils/fats/spreads (sunflower, 0%)":
-            row["scenario_C_self_sufficiency_pct"] = "0.0"
-        elif row["pyramid_group"] == "Nuts, seeds, oils & fats" and row["subitem"] == "Oils/fats/spreads (soy, 0%)":
-            row["scenario_C_self_sufficiency_pct"] = "0.0"
-        else:
-            row["scenario_C_self_sufficiency_pct"] = ""
+        if scenario == "C2" and key == (
+            "Sweets, snacks & discretionary",
+            "(total)",
+        ):
+            prior = row.get("note", "").partition(" Phase 14:")[0]
+            row["note"] = (
+                prior
+                + " Phase 21 correction: the 2025 EAT-Lancet added/free-sugar "
+                "target is 30 g/day (115 kcal), not 6 g/day. Scenario C2 demand "
+                "uses its energy-preserving TAI-basis normalized mass."
+            )
+        if key == ("Sweets, snacks & discretionary", "Honey"):
+            row["note"] = (
+                "PM29 reports 1,313 t production and 1,339 t human consumption "
+                "in 2024. Honey remains a useful Scenario A/B self-sufficiency "
+                "detail, but C/C2 demand is blank because EAT-Lancet sugar is "
+                "already represented by the aggregate sweets row; adding Honey "
+                "again would double-count diet mass."
+            )
 
-    with open("data/processed/scenario_comparison.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=new_fieldnames)
-        w.writeheader()
-        for row in rows:
-            w.writerow(row)
+    with Path(scenario_path).open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=output_fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    return rows
 
-    print("scenario_comparison.csv updated with Scenario C columns")
-    for row in rows:
-        print(f"  {row['pyramid_group']} / {row['subitem']}: A={row['scenario_A_self_sufficiency_pct']} "
-              f"B={row['scenario_B_self_sufficiency_pct']} C={row['scenario_C_self_sufficiency_pct']} "
-              f"(C demand={row['scenario_C_demand_tonnes_per_year']}t, ratio={row['demand_change_ratio_C_over_A']})")
+
+def main() -> None:
+    scenario_path = ROOT / "data/processed/scenario_comparison.csv"
+    crosswalk_path = ROOT / "data/crosswalk/eatlancet_crosswalk.csv"
+    rows = update_scenario(scenario_path, crosswalk_path, "C")
+    print(f"Updated Scenario C with normalized demand ({len(rows)} rows)")
+
 
 if __name__ == "__main__":
     main()
