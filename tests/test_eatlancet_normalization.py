@@ -185,6 +185,19 @@ class EatLancetNormalizationTests(unittest.TestCase):
         except (TypeError, ValueError):
             return None
 
+    def test_treemap_uses_canonical_population_and_excludes_honey(self):
+        from build_treemap.build_treemap_data import build_treemap_data
+
+        data = build_treemap_data(ROOT)
+        self.assertEqual(data["population"], 1_339_785)
+        for scenario in data["scenarios"]:
+            self.assertAlmostEqual(
+                scenario["total_g_per_day"],
+                sum(item["g_per_day"] for item in scenario["items"]),
+                places=6,
+            )
+            self.assertNotIn("Honey", {item["item"] for item in scenario["items"]})
+
 
 if __name__ == "__main__":
     unittest.main()
