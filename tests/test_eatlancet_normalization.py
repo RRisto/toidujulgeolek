@@ -230,6 +230,8 @@ class EatLancetNormalizationTests(unittest.TestCase):
         self.assertTrue(
             all(set(row["percentages"]) == {"A", "B", "C", "C2"} for row in data["rows"])
         )
+        legumes = next(row for row in data["rows"] if row["label"] == "Legumes")
+        self.assertIsNone(legumes["percentages"]["A"])
 
     def test_estonian_chart_has_no_units_or_placeholders(self):
         from build_treemap.build_bar_chart import build_chart
@@ -246,6 +248,7 @@ class EatLancetNormalizationTests(unittest.TestCase):
             output = build_chart(root, "et").read_text(encoding="utf-8")
 
         self.assertNotIn("g/päev", output)
+        self.assertIn("Andmed puuduvad", output)
         self.assertNotRegex(output, r"__[A-Z_]+__")
 
     def test_compact_dot_chart_has_four_percentage_marks_per_food(self):
@@ -262,7 +265,9 @@ class EatLancetNormalizationTests(unittest.TestCase):
                 )
             output = build_chart(root, "en").read_text(encoding="utf-8")
 
-        self.assertEqual(output.count('data-mark="dot"'), 14 * 4)
+        self.assertEqual(output.count('data-mark="dot"'), 14 * 4 - 1)
+        self.assertEqual(output.count('data-mark="missing"'), 1)
+        self.assertIn("Data unavailable", output)
         self.assertEqual(output.count('data-lane="diet"'), 14 * 4)
         self.assertNotIn("g/day", output)
         self.assertNotIn("grams per day", output)
@@ -286,7 +291,7 @@ class EatLancetNormalizationTests(unittest.TestCase):
         self.assertRegex(output, r"\.group-title\{font-size:20px")
         self.assertRegex(output, r"\.ticks span\{[^}]*font-size:16px")
         self.assertRegex(output, r"\.dot::after\{[^}]*font-size:16px")
-        self.assertRegex(output, r"\.plot\{height:46px")
+        self.assertRegex(output, r"\.plot\{height:34px")
         self.assertRegex(output, r"\.dot\{[^}]*width:12px;height:12px")
 
     def test_estonian_treemap_builder_preserves_utf8_labels(self):

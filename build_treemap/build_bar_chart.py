@@ -15,6 +15,7 @@ LANGUAGE = {
         "title": "Food share in each diet",
         "subtitle": "Each row compares the same food across four diets. Values are percentages of that diet's total daily mass.",
         "axis": "Share of diet mass (%)",
+        "missing": "Data unavailable",
     },
     "et": {
         "data": "treemap_data_et.json",
@@ -22,6 +23,7 @@ LANGUAGE = {
         "title": "Toidu osakaal igas dieedis",
         "subtitle": "Toiduainete kaalu osakaal erinevates dieetides",
         "axis": "Osakaal dieedi massist (%)",
+        "missing": "Andmed puuduvad",
     },
 }
 
@@ -48,8 +50,8 @@ def build_comparison_matrix(root: Path, language: str = "en") -> dict:
                     "group": item["group"],
                     "item": item["item"],
                     "label": item["label"],
-                    "percentages": {scenario_key: 0.0 for scenario_key in scenario_keys},
-                    "grams": {scenario_key: 0.0 for scenario_key in scenario_keys},
+                    "percentages": {scenario_key: None for scenario_key in scenario_keys},
+                    "grams": {scenario_key: None for scenario_key in scenario_keys},
                 },
             )
             row["percentages"][scenario["key"]] = item["pct"]
@@ -60,7 +62,11 @@ def build_comparison_matrix(root: Path, language: str = "en") -> dict:
         row_map.values(),
         key=lambda row: (
             group_index[row["group"]],
-            -max(row["percentages"].values()),
+            -max(
+                value
+                for value in row["percentages"].values()
+                if value is not None
+            ),
             row["label"],
         ),
     )
@@ -85,6 +91,7 @@ def build_chart(root: Path, language: str) -> Path:
         percentage
         for row in data["rows"]
         for percentage in row["percentages"].values()
+        if percentage is not None
     )
     scale_max = max(5, ((int(maximum) + 4) // 5) * 5)
 
@@ -107,19 +114,29 @@ def build_chart(root: Path, language: str) -> Path:
             )
         percentages = row["percentages"]
         aria = ", ".join(
-            f'{scenario["label"]} {percentages[scenario["key"]]:.1f}%'
+            (
+                f'{scenario["label"]} {percentages[scenario["key"]]:.1f}%'
+                if percentages[scenario["key"]] is not None
+                else f'{scenario["label"]} {copy["missing"]}'
+            )
             for scenario in data["scenarios"]
         )
         lanes = "".join(
             f'<span class="diet-lane {scenario["key"].lower()}-lane" '
-            f'data-lane="diet" style="top:{8 + index * 10}px"></span>'
+            f'data-lane="diet" style="top:{6 + index * 7}px"></span>'
             for index, scenario in enumerate(data["scenarios"])
         )
         dots = "".join(
-            f'<span class="dot {scenario["key"].lower()}" data-mark="dot" '
-            f'style="left:{percentages[scenario["key"]] / scale_max * 100:.3f}%;'
-            f'top:{2 + index * 10}px" data-tip="{escape(scenario["label"])}: '
-            f'{percentages[scenario["key"]]:.1f}%"></span>'
+            (
+                f'<span class="dot {scenario["key"].lower()}" data-mark="dot" '
+                f'style="left:{percentages[scenario["key"]] / scale_max * 100:.3f}%;'
+                f'top:{index * 7}px" data-tip="{escape(scenario["label"])}: '
+                f'{percentages[scenario["key"]]:.1f}%"></span>'
+                if percentages[scenario["key"]] is not None
+                else f'<span class="missing" data-mark="missing" '
+                f'style="top:{index * 7 - 4}px" data-tip="{escape(scenario["label"])}: '
+                f'{escape(copy["missing"])}">–</span>'
+            )
             for index, scenario in enumerate(data["scenarios"])
         )
         chart_parts.append(
