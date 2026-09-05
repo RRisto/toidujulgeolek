@@ -1,15 +1,15 @@
-pyramid_group,subitem,eatlancet_g_per_day_at_2500kcal,scaled_g_per_day_estonia,note
-Grain products & potatoes,High-fibre bread/baked goods,77.64,69.3882,"EAT-Lancet gives one combined 'whole grains' figure (232g); split using this project's own bread:porridge/rice/pasta ratio (33.5%/66.5%, from requirement_model_national.csv) since EAT-Lancet doesn't distinguish them. Documented assumption, not a measurement."
-Grain products & potatoes,Porridges/pasta/rice/grain products,154.36,137.9602,See bread row -- same combined-figure split.
-Grain products & potatoes,"Potato, sweet potato",50.0,44.6872,"EAT-Lancet 'starchy vegetables/tubers' (50g) used directly -- a much smaller allowance than TAI's Table 13, which treats potato as a dietary staple rather than a limited category."
-"Vegetables, fruits & berries",Vegetables,300.0,268.123,Direct match: EAT-Lancet 'vegetables' line.
-"Vegetables, fruits & berries",Fruits+Berries (combined),200.0,178.7486,"EAT-Lancet gives one 'fruits' figure (200g) with no separate berries line -- used as-is for the combined fruits+berries row (matching how RTU011 and this project's other scenarios also treat fruit+berries as combined-only). Likely a slight underestimate of the true combined figure if berries would sit on top of fruit rather than within it, but no EAT-Lancet-specific berries figure exists to add."
-"Vegetables, fruits & berries",Legumes,75.0,67.0307,Direct match: EAT-Lancet 'legumes' line.
-Dairy products,(total),250.0,223.4358,Direct match: EAT-Lancet 'dairy foods' line.
-"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",,,"EAT-Lancet's published reference gives nuts (50g) but no separate seeds/cocoa figure -- since this project's row is a combined nuts+seeds+cocoa quantity, reporting nuts alone as the 'combined' demand would understate it and invite a misleading ratio. Left as a gap rather than a partial number. Self-sufficiency is ~0% assumed regardless of demand scaling (Phase 5), so this gap doesn't affect the self-sufficiency figure, only the demand-tonnage/ratio columns."
-"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",51.8,46.2959,"EAT-Lancet's unsaturated oils (40g) + palm oil (6.8g) + lard/tallow (5g) = 51.8g, applied to the same combined oils/fats/spreads demand basis Scenario A/B use (no oil-type breakdown exists in any demand source, so this figure is assigned to the rapeseed representative row by the same convention as A/B; sunflower/soy rows stay at their fixed 0% self-sufficiency regardless of scenario)."
-"Fish, eggs & meat",Fish & seafood,28.0,25.0248,Direct match: EAT-Lancet 'fish' line.
-"Fish, eggs & meat",Eggs,13.0,11.6187,Direct match: EAT-Lancet 'eggs' line.
-"Fish, eggs & meat",Poultry,29.0,25.9186,Direct match: EAT-Lancet 'poultry' line.
-"Fish, eggs & meat",Red meat,14.0,12.5124,Direct match: EAT-Lancet 'beef/lamb/pork' line.
-"Sweets, snacks & discretionary",(total),31.0,27.706,"EAT-Lancet's 'added sugars' (31g) used as a proxy -- EAT-Lancet has no broader 'snacks' category, so this likely understates the true comparable figure (this project's category also includes salty snacks, not just sugar). Same category-boundary caveat already flagged for the RTU011 comparison of this row (Section 5.1)."
+pyramid_group,subitem,source_g_per_day,source_weight_basis,source_kcal_per_day,normalized_g_per_day_at_reference_kcal,scaled_normalized_g_per_day_estonia,normalization_method
+"Vegetables, fruits & berries",Vegetables,300.0,edible_source_weight,78.0,260.0,232.37323200000003,Source energy converted using the destination TAI representative g/kcal.
+"Vegetables, fruits & berries",Legumes,75.0,dry,284.0,218.46153846153848,195.2485144615385,Source energy converted using the destination TAI representative g/kcal.
+"Vegetables, fruits & berries",Fruits+Berries (combined),200.0,edible_source_weight,126.0,252.0,225.2232864,Source fruit energy converted using the TAI fruit/berry component mix.
+Grain products & potatoes,High-fibre bread/baked goods,130.2571104634794,dry,455.3384335598353,166.95742563860628,149.21706385401004,Source whole-grain mass and energy split by TAI bread/porridge energy shares; converted using the destination TAI g/kcal.
+Grain products & potatoes,Porridges/pasta/rice/grain products,101.7428895365206,dry,355.6615664401647,331.9507953441537,296.678766073429,Source whole-grain mass and energy split by TAI bread/porridge energy shares; converted using the destination TAI g/kcal.
+Grain products & potatoes,"Potato, sweet potato",50.0,edible_source_weight,39.0,52.0,46.474646400000005,Source energy converted using the destination TAI representative g/kcal.
+Dairy products,(total),250.0,milk_equivalent,153.0,253.8409090909091,226.8685863818182,Source energy converted using the destination TAI representative g/kcal.
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",50.0,edible_source_weight,291.0,51.33459172259507,45.87994227684563,Source nut energy converted using the TAI nuts/seeds component mix.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",51.8,edible_source_weight,450.0,45.0,40.218444000000005,Source energy converted using the destination TAI representative g/kcal.
+"Fish, eggs & meat",Fish & seafood,28.0,edible_source_weight,40.0,26.875,24.019348500000003,Source energy converted using the destination TAI representative g/kcal.
+"Fish, eggs & meat",Eggs,13.0,edible_source_weight,19.0,14.25,12.735840600000001,Source energy converted using the destination TAI representative g/kcal.
+"Fish, eggs & meat",Poultry,29.0,edible_source_weight,62.0,30.6125,27.35971371,Source energy converted using the destination TAI representative g/kcal.
+"Fish, eggs & meat",Red meat,14.0,edible_source_weight,30.0,14.0625,12.568263750000002,Source energy converted using the destination TAI representative g/kcal.
+"Sweets, snacks & discretionary",(total),31.0,edible_source_weight,120.0,37.8,33.78349296,Source energy converted using the destination TAI representative g/kcal.
