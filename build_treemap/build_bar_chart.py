@@ -21,7 +21,7 @@ LANGUAGE = {
         "data": "treemap_data_et.json",
         "output": "diet_bar_chart_et.html",
         "title": "Toidu osakaal igas dieedis",
-        "subtitle": "Toiduainete kaalu osakaal erinevates dieetides",
+        "subtitle": "Toidugruppide osakaal dieedi kogumassist",
         "axis": "Osakaal dieedi massist (%)",
         "missing": "Andmed puuduvad",
     },
