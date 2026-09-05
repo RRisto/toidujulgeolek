@@ -219,8 +219,6 @@ section{ margin-top: 56px; scroll-margin-top: 76px; }
 #ss-chart .hbar-label .grp{ font-size:12.5px; }
 #ss-chart .hbar-tip{ font-size:14px; }
 .hbar-marker{ position:absolute; top:-3px; width:2px; height:30px; border-radius:1px; z-index: 1; }
-.hbar-range{ position:absolute; top:8px; height:8px; border-radius:4px; background: rgba(120,120,120,.28); border:1px solid rgba(90,90,90,.45); z-index:1; }
-.hbar-range-cap{ position:absolute; top:2px; width:2px; height:20px; background: rgba(90,90,90,.7); border-radius:1px; z-index:1; }
 .hbar-legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 14px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color: var(--ink-soft); }
 .hbar-legend-item{ display:flex; align-items:center; gap:6px; }
 .footnotes{ margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.6; }
@@ -360,7 +358,7 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
       <div>
         <span class="section-num">02 — Tootmine ja kasutus</span>
         <h2>Isevarustatus toidugruppide kaupa</h2>
-        <p class="section-desc">Kodumaine tarbimine jagatud kodumaise tootmisega. 100% tähendab, et toodang katab tarbimise. Võrdle praegust ja kolme toitumisstsenaariumi. Vahemik näitab FAOSTATi (ÜRO toidu- ja põllumajandusandmete) ja projekti hinnangu erinevust, mitte statistilist usaldusvahemikku.</p>
+        <p class="section-desc">Kodumaine tarbimine jagatud kodumaise tootmisega. 100% tähendab, et toodang katab tarbimise. Võrdle praegust ja kolme toitumisstsenaariumi.</p>
       </div>
     </div>
     <div class="filter-row">
@@ -800,20 +798,6 @@ function renderSSChart(){
       baseline.style.left = baselinePos + "%";
       track.appendChild(baseline);
 
-      if(r.cross_check_low_pct !== null && r.cross_check_high_pct !== null){
-        var ccLo = Math.min(r.cross_check_low_pct, r.cross_check_high_pct);
-        var ccHi = Math.max(r.cross_check_low_pct, r.cross_check_high_pct);
-        var ccLoPos = Math.min(ccLo/maxPct*100, 100);
-        var ccHiPos = Math.min(ccHi/maxPct*100, 100);
-        var ccRange = el('div','hbar-range');
-        ccRange.style.left = ccLoPos + "%";
-        ccRange.style.width = Math.max(ccHiPos - ccLoPos, 0.4) + "%";
-        ccRange.title = "Sõltumatu ristkontrolli vahemik: " + fmtPct(ccLo) + "\u2013" + fmtPct(ccHi);
-        track.appendChild(ccRange);
-        var ccCapLo = el('div','hbar-range-cap'); ccCapLo.style.left = ccLoPos + "%"; track.appendChild(ccCapLo);
-        var ccCapHi = el('div','hbar-range-cap'); ccCapHi.style.left = ccHiPos + "%"; track.appendChild(ccCapHi);
-      }
-
       var status = statusOf(pct);
       var fill = el('div','hbar-fill');
       var widthPct = Math.max(pct/maxPct*100, 0.6);
@@ -838,7 +822,6 @@ function renderSSChart(){
           + ttRow(SCEN_LABEL[currentScenario], fmtPct(pct))
           + (r.feed_adjusted_low_bound_pct !== null ? ttRow("Söödaga kohandatud alampiir", fmtPct(r.feed_adjusted_low_bound_pct)) : '')
           + (r.waste_adjusted_pct !== null ? ttRow("Raiskamisega kohandatud (arvestades praegust raiskamist)", fmtPct(r.waste_adjusted_pct)) : '')
-          + (r.cross_check_low_pct !== null ? ttRow("Sõltumatu ristkontrolli vahemik", fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : '')
           + ttRow("Staatus", statusLabel(status))
           + ttRow("Andmete staatus", r.data_status);
         showTooltip(evt, html);
@@ -898,8 +881,8 @@ function renderSSTable(rows, pctKey, dispKey){
   var table = el('table','data-table');
   var thead = el('thead');
   var htr = el('tr');
-  var SS_TABLE_NUM_COLS = [false,false,true,true,true,true,true,true,true,false];
-  ["Toidugrupp", "Toiduaine", "Stsenaarium A", "Stsenaarium B", "Stsenaarium C", "Stsenaarium C.2", "Söödaga kohandatud piir", "Raiskamisega kohandatud", "Ristkontrolli vahemik", "Andmete staatus"].forEach(function(h, i){
+  var SS_TABLE_NUM_COLS = [false,false,true,true,true,true,true,true,false];
+  ["Toidugrupp", "Toiduaine", "Stsenaarium A", "Stsenaarium B", "Stsenaarium C", "Stsenaarium C.2", "Söödaga kohandatud piir", "Raiskamisega kohandatud", "Andmete staatus"].forEach(function(h, i){
     htr.appendChild(el('th', SS_TABLE_NUM_COLS[i] ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
@@ -914,7 +897,6 @@ function renderSSTable(rows, pctKey, dispKey){
     tr.appendChild(el('td','num tnum', r.scenario_C2_pct_display));
     tr.appendChild(el('td','num tnum', r.feed_adjusted_low_bound_pct !== null ? fmtPct(r.feed_adjusted_low_bound_pct) : "—"));
     tr.appendChild(el('td','num tnum', r.waste_adjusted_pct !== null ? fmtPct(r.waste_adjusted_pct) : "—"));
-    tr.appendChild(el('td','num tnum', r.cross_check_low_pct !== null ? (fmtPct(Math.min(r.cross_check_low_pct, r.cross_check_high_pct)) + '\u2013' + fmtPct(Math.max(r.cross_check_low_pct, r.cross_check_high_pct))) : "—"));
     tr.appendChild(el('td','', r.data_status));
     tbody.appendChild(tr);
   });

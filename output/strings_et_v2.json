@@ -37,7 +37,7 @@
   "s02": {
     "num": "02 — Tootmine ja kasutus",
     "title": "Isevarustatus toidugruppide kaupa",
-    "desc": "Kodumaine tarbimine jagatud kodumaise tootmisega. 100% tähendab, et toodang katab tarbimise. Võrdle praegust ja kolme toitumisstsenaariumi. Vahemik näitab FAOSTATi (ÜRO toidu- ja põllumajandusandmete) ja projekti hinnangu erinevust, mitte statistilist usaldusvahemikku.",
+    "desc": "Kodumaine tarbimine jagatud kodumaise tootmisega. 100% tähendab, et toodang katab tarbimise. Võrdle praegust ja kolme toitumisstsenaariumi.",
     "buttons": {
       "a": "Stsenaarium A — praegune olukord",
       "b": "Stsenaarium B — TAI soovitatud toitumine",
@@ -195,7 +195,6 @@
         "Stsenaarium C.2",
         "Söödaga kohandatud piir",
         "Raiskamisega kohandatud",
-        "Ristkontrolli vahemik",
         "Andmete staatus"
       ],
       "cons_table": [

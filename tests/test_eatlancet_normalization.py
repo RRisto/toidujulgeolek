@@ -322,6 +322,13 @@ class EatLancetNormalizationTests(unittest.TestCase):
             r"#ss-chart \.hbar-tip\{[^}]*font-size:14px",
         )
 
+    def test_self_sufficiency_chart_omits_crosscheck_ranges(self):
+        dashboard = (ROOT / "output/dashboard.html").read_text(encoding="utf-8")
+
+        self.assertNotIn("hbar-range", dashboard)
+        self.assertNotIn("Ristkontrolli vahemik", dashboard)
+        self.assertNotIn("Vahemik näitab FAOSTATi", dashboard)
+
 
 if __name__ == "__main__":
     unittest.main()
