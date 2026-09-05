@@ -110,6 +110,11 @@ def build_chart(root: Path, language: str) -> Path:
             f'{scenario["label"]} {percentages[scenario["key"]]:.1f}%'
             for scenario in data["scenarios"]
         )
+        lanes = "".join(
+            f'<span class="diet-lane {scenario["key"].lower()}-lane" '
+            f'data-lane="diet" style="top:{8 + index * 7}px"></span>'
+            for index, scenario in enumerate(data["scenarios"])
+        )
         dots = "".join(
             f'<span class="dot {scenario["key"].lower()}" data-mark="dot" '
             f'style="left:{percentages[scenario["key"]] / scale_max * 100:.3f}%;'
@@ -121,7 +126,7 @@ def build_chart(root: Path, language: str) -> Path:
             '<div class="food-row">'
             f'<div class="food-label">{escape(row["label"])}</div>'
             f'<div class="plot" role="img" aria-label="{escape(row["label"])}: {escape(aria)}">'
-            f'{dots}</div></div>'
+            f'{lanes}{dots}</div></div>'
         )
 
     template = (root / "build_treemap/bar_chart_template.html").read_text(

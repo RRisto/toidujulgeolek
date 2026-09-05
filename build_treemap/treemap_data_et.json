@@ -1,0 +1,418 @@
+{
+"population": 1339785,
+"scenarios": [
+{
+"key": "A",
+"label": "Praegune toitumine",
+"total_g_per_day": 1273.6,
+"items": [
+{
+"group": "Piimatooted",
+"item": "(kokku)",
+"g_per_day": 296.4,
+"pct": 23.3,
+"label": "Piimatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Puuviljad+marjad (kokku)",
+"g_per_day": 212.1,
+"pct": 16.7,
+"label": "Puuviljad+marjad (kokku)"
+},
+{
+"group": "Maiustused, suupisted ja muu",
+"item": "(kokku)",
+"g_per_day": 159.0,
+"pct": 12.5,
+"label": "Maiustused, suupisted ja muu"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Köögiviljad",
+"g_per_day": 135.6,
+"pct": 10.6,
+"label": "Köögiviljad"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Pudrud/pasta/riis/teraviljatooted",
+"g_per_day": 125.9,
+"pct": 9.9,
+"label": "Pudrud/pasta/riis/teraviljatooted"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kartul, bataat",
+"g_per_day": 97.8,
+"pct": 7.7,
+"label": "Kartul, bataat"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kiudainerikas leib/pagaritooted",
+"g_per_day": 73.7,
+"pct": 5.8,
+"label": "Kiudainerikas leib/pagaritooted"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Punane liha",
+"g_per_day": 70.7,
+"pct": 5.6,
+"label": "Punane liha"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Linnuliha",
+"g_per_day": 37.0,
+"pct": 2.9,
+"label": "Linnuliha"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Kala ja mereannid",
+"g_per_day": 23.5,
+"pct": 1.8,
+"label": "Kala ja mereannid"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Munad",
+"g_per_day": 20.6,
+"pct": 1.6,
+"label": "Munad"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)",
+"g_per_day": 18.0,
+"pct": 1.4,
+"label": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Pähklid+seemned, kakao (kokku)",
+"g_per_day": 3.3,
+"pct": 0.3,
+"label": "Pähklid+seemned, kakao (kokku)"
+}
+]
+},
+{
+"key": "B",
+"label": "TAI soovitatud toitumine",
+"total_g_per_day": 2141.9,
+"items": [
+{
+"group": "Piimatooted",
+"item": "(kokku)",
+"g_per_day": 490.1,
+"pct": 22.9,
+"label": "Piimatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Köögiviljad",
+"g_per_day": 479.4,
+"pct": 22.4,
+"label": "Köögiviljad"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Puuviljad+marjad (kokku)",
+"g_per_day": 265.6,
+"pct": 12.4,
+"label": "Puuviljad+marjad (kokku)"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Pudrud/pasta/riis/teraviljatooted",
+"g_per_day": 262.0,
+"pct": 12.2,
+"label": "Pudrud/pasta/riis/teraviljatooted"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kartul, bataat",
+"g_per_day": 177.8,
+"pct": 8.3,
+"label": "Kartul, bataat"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kiudainerikas leib/pagaritooted",
+"g_per_day": 131.8,
+"pct": 6.2,
+"label": "Kiudainerikas leib/pagaritooted"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Kala ja mereannid",
+"g_per_day": 79.6,
+"pct": 3.7,
+"label": "Kala ja mereannid"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Kaunviljad",
+"g_per_day": 57.1,
+"pct": 2.7,
+"label": "Kaunviljad"
+},
+{
+"group": "Maiustused, suupisted ja muu",
+"item": "(kokku)",
+"g_per_day": 51.4,
+"pct": 2.4,
+"label": "Maiustused, suupisted ja muu"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Linnuliha",
+"g_per_day": 38.5,
+"pct": 1.8,
+"label": "Linnuliha"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Pähklid+seemned, kakao (kokku)",
+"g_per_day": 37.8,
+"pct": 1.8,
+"label": "Pähklid+seemned, kakao (kokku)"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Munad",
+"g_per_day": 30.0,
+"pct": 1.4,
+"label": "Munad"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)",
+"g_per_day": 20.6,
+"pct": 1.0,
+"label": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Punane liha",
+"g_per_day": 20.2,
+"pct": 0.9,
+"label": "Punane liha"
+}
+]
+},
+{
+"key": "C",
+"label": "EAT-Lancet 2019",
+"total_g_per_day": 1568.7,
+"items": [
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Pudrud/pasta/riis/teraviljatooted",
+"g_per_day": 296.7,
+"pct": 18.9,
+"label": "Pudrud/pasta/riis/teraviljatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Köögiviljad",
+"g_per_day": 232.4,
+"pct": 14.8,
+"label": "Köögiviljad"
+},
+{
+"group": "Piimatooted",
+"item": "(kokku)",
+"g_per_day": 226.9,
+"pct": 14.5,
+"label": "Piimatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Puuviljad+marjad (kokku)",
+"g_per_day": 225.2,
+"pct": 14.4,
+"label": "Puuviljad+marjad (kokku)"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Kaunviljad",
+"g_per_day": 195.2,
+"pct": 12.4,
+"label": "Kaunviljad"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kiudainerikas leib/pagaritooted",
+"g_per_day": 149.2,
+"pct": 9.5,
+"label": "Kiudainerikas leib/pagaritooted"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kartul, bataat",
+"g_per_day": 46.5,
+"pct": 3.0,
+"label": "Kartul, bataat"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Pähklid+seemned, kakao (kokku)",
+"g_per_day": 45.9,
+"pct": 2.9,
+"label": "Pähklid+seemned, kakao (kokku)"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)",
+"g_per_day": 40.2,
+"pct": 2.6,
+"label": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)"
+},
+{
+"group": "Maiustused, suupisted ja muu",
+"item": "(kokku)",
+"g_per_day": 33.8,
+"pct": 2.2,
+"label": "Maiustused, suupisted ja muu"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Linnuliha",
+"g_per_day": 27.4,
+"pct": 1.7,
+"label": "Linnuliha"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Kala ja mereannid",
+"g_per_day": 24.0,
+"pct": 1.5,
+"label": "Kala ja mereannid"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Munad",
+"g_per_day": 12.7,
+"pct": 0.8,
+"label": "Munad"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Punane liha",
+"g_per_day": 12.6,
+"pct": 0.8,
+"label": "Punane liha"
+}
+]
+},
+{
+"key": "C2",
+"label": "EAT-Lancet 2025",
+"total_g_per_day": 1666.9,
+"items": [
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Köögiviljad",
+"g_per_day": 294.8,
+"pct": 17.7,
+"label": "Köögiviljad"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Pudrud/pasta/riis/teraviljatooted",
+"g_per_day": 280.1,
+"pct": 16.8,
+"label": "Pudrud/pasta/riis/teraviljatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Puuviljad+marjad (kokku)",
+"g_per_day": 270.0,
+"pct": 16.2,
+"label": "Puuviljad+marjad (kokku)"
+},
+{
+"group": "Piimatooted",
+"item": "(kokku)",
+"g_per_day": 224.0,
+"pct": 13.4,
+"label": "Piimatooted"
+},
+{
+"group": "Köögi- ja puuviljad, marjad",
+"item": "Kaunviljad",
+"g_per_day": 196.9,
+"pct": 11.8,
+"label": "Kaunviljad"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kiudainerikas leib/pagaritooted",
+"g_per_day": 140.9,
+"pct": 8.5,
+"label": "Kiudainerikas leib/pagaritooted"
+},
+{
+"group": "Teraviljatooted ja kartul",
+"item": "Kartul, bataat",
+"g_per_day": 62.1,
+"pct": 3.7,
+"label": "Kartul, bataat"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Pähklid+seemned, kakao (kokku)",
+"g_per_day": 45.2,
+"pct": 2.7,
+"label": "Pähklid+seemned, kakao (kokku)"
+},
+{
+"group": "Pähklid, seemned, õlid ja rasvad",
+"item": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)",
+"g_per_day": 42.4,
+"pct": 2.5,
+"label": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)"
+},
+{
+"group": "Maiustused, suupisted ja muu",
+"item": "(kokku)",
+"g_per_day": 33.7,
+"pct": 2.0,
+"label": "Maiustused, suupisted ja muu"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Linnuliha",
+"g_per_day": 27.6,
+"pct": 1.7,
+"label": "Linnuliha"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Punane liha",
+"g_per_day": 19.6,
+"pct": 1.2,
+"label": "Punane liha"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Kala ja mereannid",
+"g_per_day": 15.6,
+"pct": 0.9,
+"label": "Kala ja mereannid"
+},
+{
+"group": "Kala, munad ja liha",
+"item": "Munad",
+"g_per_day": 14.0,
+"pct": 0.8,
+"label": "Munad"
+}
+]
+}
+]
+}

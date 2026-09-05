@@ -263,8 +263,21 @@ class EatLancetNormalizationTests(unittest.TestCase):
             output = build_chart(root, "en").read_text(encoding="utf-8")
 
         self.assertEqual(output.count('data-mark="dot"'), 14 * 4)
+        self.assertEqual(output.count('data-lane="diet"'), 14 * 4)
         self.assertNotIn("g/day", output)
         self.assertNotIn("grams per day", output)
+
+    def test_estonian_treemap_builder_preserves_utf8_labels(self):
+        from build_treemap.build_treemap_data_et import build_et_data
+
+        data = build_et_data(ROOT)
+        groups = {
+            item["group"]
+            for scenario in data["scenarios"]
+            for item in scenario["items"]
+        }
+        self.assertIn("Köögi- ja puuviljad, marjad", groups)
+        self.assertIn("Pähklid, seemned, õlid ja rasvad", groups)
 
 
 if __name__ == "__main__":
