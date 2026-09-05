@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{meta.lang}}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toidujulgeolek</title>
+<title>{{meta.title}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -141,12 +141,18 @@ button{ font-family: inherit; }
 .topbar-title{ display: flex; align-items: baseline; gap: 10px; }
 .topbar-title .mark{ font-weight: 700; letter-spacing: -0.01em; font-size: 16px; }
 .topbar-title .sub{ color: var(--muted); font-size: 12.5px; }
-.topbar-nav{ display: flex; gap: 4px; }
+.topbar-nav{ display: flex; align-items: center; gap: 4px; }
 .topbar-nav a{
   color: var(--ink-soft); text-decoration: none; font-size: 13px; padding: 6px 10px;
   border-radius: 6px;
 }
 .topbar-nav a:hover{ background: var(--surface-2); color: var(--ink); }
+.lang-switch{
+  margin-left: 8px; padding: 5px 10px !important; border: 1px solid var(--line);
+  border-radius: 999px !important; font-size: 12px !important; font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.lang-switch:hover{ border-color: var(--accent); }
 
 .hero{ padding: 44px 0 30px; }
 .hero .eyebrow{
@@ -208,11 +214,19 @@ section{ margin-top: 56px; scroll-margin-top: 76px; }
 .hbar-fill:focus-visible{ box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
 .hbar-baseline{ position:absolute; top:-4px; bottom:-4px; width:1px; background: var(--muted); opacity:.5; }
 .hbar-tip{ position:absolute; top: 50%; transform: translateY(-50%); font-size:12px; font-weight:600; white-space:nowrap; }
+#ss-chart .hbar-row{ padding: 6px 0; }
+#ss-chart .hbar-label{ width: 270px; flex: 0 0 270px; font-size:16px; line-height:1.25; }
+#ss-chart .hbar-label .grp{ font-size:12.5px; }
+#ss-chart .hbar-tip{ font-size:14px; }
 .hbar-marker{ position:absolute; top:-3px; width:2px; height:30px; border-radius:1px; z-index: 1; }
 .hbar-range{ position:absolute; top:8px; height:8px; border-radius:4px; background: rgba(120,120,120,.28); border:1px solid rgba(90,90,90,.45); z-index:1; }
 .hbar-range-cap{ position:absolute; top:2px; width:2px; height:20px; background: rgba(90,90,90,.7); border-radius:1px; z-index:1; }
 .hbar-legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 14px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color: var(--ink-soft); }
 .hbar-legend-item{ display:flex; align-items:center; gap:6px; }
+.footnotes{ margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.footnotes .fn-item{ margin-bottom: 5px; }
+.footnotes .fn-item:last-child{ margin-bottom: 0; }
+.footnotes .fn-label{ font-weight: 600; color: var(--ink-soft); }
 .swatch{ width:11px; height:11px; border-radius:3px; flex:none; }
 .swatch.line{ width:14px; height:2px; border-radius:0;}
 
@@ -276,6 +290,10 @@ section{ margin-top: 56px; scroll-margin-top: 76px; }
 .meth-block p + p{ margin-top:10px; }
 .source-table td, .source-table th{ font-size:12.5px; }
 .badge{ display:inline-block; background: var(--grain-soft); color: var(--grain); font-size: 11px; font-weight:600; padding: 2px 8px; border-radius:5px; }
+.badge.solid{ background: var(--dv-good-soft); color: var(--dv-good); }
+.badge.sketch{ background: var(--dv-warning-soft); color: var(--dv-warning); }
+.card.sketch{ border: 1.5px dashed var(--dv-warning); background: var(--dv-warning-soft); }
+.assumption-note{ margin-top:14px; padding:12px 14px; border-radius:10px; background:var(--surface-2); font-size:13px; color:var(--ink-soft); }
 
 .chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
 .chip{ font-size:12px; background:var(--surface-2); color:var(--ink-soft); padding:5px 10px; border-radius:7px; border:1px solid var(--border); }
@@ -301,16 +319,16 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-title">
-      <span class="mark">Toidujulgeolek</span>
-      <span class="sub">Estonia food self-sufficiency model</span>
+      <span class="mark">{{meta.brand}}</span>
+      <span class="sub">{{topbar.sub}}</span>
     </div>
     <nav class="topbar-nav">
-      <a href="#scorecard">Overview</a>
-      <a href="#self-sufficiency">By food group</a>
-      <a href="#consumption">Consumption</a>
-      <a href="#scenarios">Scenarios</a>
-      <a href="#waste">Waste</a>
-      <a href="#methodology">Methodology</a>
+      <a href="#scorecard">{{topbar.nav.overview}}</a>
+      <a href="#self-sufficiency">{{topbar.nav.by_food_group}}</a>
+      <a href="#scenarios">{{topbar.nav.scenarios}}</a>
+      <a href="#secondary-effects">{{topbar.nav.secondary_effects}}</a>
+      <a href="#methodology">{{topbar.nav.methodology}}</a>
+      <a href="{{topbar.nav.lang_href}}" class="lang-switch" id="lang-switch">{{topbar.nav.lang_label}}</a>
     </nav>
   </div>
 </div>
@@ -318,144 +336,176 @@ details.appendix .appendix-body{ padding: 4px 24px 26px; border-top:1px solid va
 <div class="shell">
 
   <div class="hero">
-    <span class="eyebrow">A nine-phase data project</span>
-    <h1>Could Estonia feed itself?</h1>
-    <p class="lede">A bottom-up model of Estonian nutritional demand against domestic production, food group by food group — where the country comfortably feeds itself, where it depends on imports, and what changes if the population actually ate what's recommended.</p>
+    <span class="eyebrow">{{hero.eyebrow}}</span>
+    <h1>{{hero.title}}</h1>
+    <p class="lede">{{hero.lede}}</p>
   </div>
 
   <section id="scorecard">
     <div class="section-head">
-      <div><span class="section-num">01 — Headline</span><h2>Where things stand, in three scenarios</h2></div>
+      <div><span class="section-num">{{s01.num}}</span><h2>{{s01.title}}</h2></div>
     </div>
-    <div class="section-desc" style="margin-bottom:18px;">A tonnage-weighted average across food groups with a resolved self-sufficiency figure — not every category, see the coverage note. Individual categories vary far more than this single number suggests; that variation is the point of the sections below.</div>
-    <div id="scorecard-tiles" class="scorecard"></div>
+    <div class="section-desc" style="margin-bottom:18px;">{{s01.desc}}</div>
+    <div class="card card-pad">
+      <div class="chart-wrap" id="scorecard-chart"></div>
+      <div class="hbar-legend">
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{common.legend.good}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>{{common.legend.warning}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>{{common.legend.critical}}</span>
+      </div>
+    </div>
   </section>
 
   <section id="self-sufficiency">
     <div class="section-head">
       <div>
-        <span class="section-num">02 — Production vs. use</span>
-        <h2>Self-sufficiency by food group</h2>
-        <p class="section-desc">Production ÷ domestic use, at today's output. 100% is the break-even line: right of it, Estonia produces more than it uses; left of it, the gap is filled by imports. Toggle between today's diet, a fully TAI-recommended one, and two editions of the EAT-Lancet Planetary Health Diet (the original 2019 diet, and a revised 2025 edition) — both international reference diets, population-scaled to Estonia's own energy needs.</p>
+        <span class="section-num">{{s02.num}}</span>
+        <h2>{{s02.title}}</h2>
+        <p class="section-desc">{{s02.desc}}</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="scenario-toggle" role="group" aria-label="Scenario">
-        <button data-scenario="A" aria-pressed="true">Scenario A — status quo</button>
-        <button data-scenario="B" aria-pressed="false">Scenario B — TAI-recommended diet</button>
-        <button data-scenario="C" aria-pressed="false">Scenario C — EAT-Lancet 2019 diet</button>
-        <button data-scenario="C2" aria-pressed="false">Scenario C.2 — EAT-Lancet 2025 diet</button>
+        <button data-scenario="A" aria-pressed="true">{{s02.buttons.a}}</button>
+        <button data-scenario="B" aria-pressed="false">{{s02.buttons.b}}</button>
+        <button data-scenario="C" aria-pressed="false">{{s02.buttons.c}}</button>
+        <button data-scenario="C2" aria-pressed="false">{{s02.buttons.c2}}</button>
       </div>
       <span class="filter-hint" id="scenario-hint"></span>
     </div>
     <div class="card card-pad">
       <div class="chart-wrap" id="ss-chart"></div>
       <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>≥100% — net self-sufficient</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>50–99% — import-dependent</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>&lt;50% — critical dependency</span>
-        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>feed-adjusted lower bound (where computed)</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:rgba(120,120,120,.35); border:1px solid rgba(90,90,90,.6)"></span>independent cross-check range (FAOSTAT vs. project estimate, where available)</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{common.legend.good}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-warning)"></span>{{common.legend.warning}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>{{common.legend.critical}}</span>
       </div>
-      <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">View as table</button></div>
+      <div class="footnotes" id="ss-footnotes"></div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="ss-table">{{common.view_as_table}}</button></div>
       <div class="table-scroll" id="ss-table" hidden></div>
-    </div>
-  </section>
-
-  <section id="critical">
-    <div class="section-head">
-      <div><span class="section-num">03 — Where it matters most</span><h2>Critical dependencies</h2>
-      <p class="section-desc">Flagged where self-sufficiency falls below 50% today, where a feed-adjusted sensitivity extends below 50%, or where no reliable figure exists at all. A plain 50% threshold, checked three ways — see methodology. (Shifting to Scenario B, C, or C.2 can create additional, hypothetical dependencies of their own that don't exist today — see section 05.)</p></div>
-    </div>
-    <div class="callout-grid" id="callout-grid"></div>
-  </section>
-
-  <section id="consumption">
-    <div class="section-head">
-      <div>
-        <span class="section-num">04 — What's actually eaten</span>
-        <h2>Actual vs. recommended consumption</h2>
-        <p class="section-desc">Grams per capita per day, TAI's recommendation against RTU011's measured actual consumption (2014, the most recent Estonian dietary survey). Filter by age band and sex — over- and under-consumption are not distributed evenly across the population.</p>
-      </div>
-    </div>
-    <div class="filter-row">
-      <label class="filter-hint" for="segment-select" style="margin-right:2px;">Segment</label>
-      <select class="filter-select" id="segment-select"></select>
-      <span class="filter-hint" id="segment-hint"></span>
-    </div>
-    <div class="card card-pad">
-      <div class="chart-wrap" id="cons-chart"></div>
-      <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>TAI recommended</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>actual consumption</span>
-      </div>
-      <div class="table-toggle"><button class="text-btn" data-table-toggle="cons-table">View as table</button></div>
-      <div class="table-scroll" id="cons-table" hidden></div>
     </div>
   </section>
 
   <section id="scenarios">
     <div class="section-head">
       <div>
-        <span class="section-num">05 — The diet-shift tension</span>
-        <h2>What a shifted diet would do to self-sufficiency</h2>
-        <p class="section-desc">Percentage-point change in self-sufficiency vs. Scenario A (status quo), production held fixed. Toggle between the TAI-recommended diet and either edition of the EAT-Lancet Planetary Health Diet — all three push demand toward categories Estonia isn't equally equipped to supply, but not the same ones, so "eating better" doesn't uniformly mean "more self-sufficient" under any of them.</p>
+        <span class="section-num">{{s03.num}}</span>
+        <h2>{{s03.title}}</h2>
+        <p class="section-desc">{{s03.desc}}</p>
       </div>
     </div>
     <div class="filter-row">
       <div class="filter-group" id="delta-toggle" role="group" aria-label="Comparison">
-        <button data-delta="B" aria-pressed="true">Scenario B vs. A</button>
-        <button data-delta="C" aria-pressed="false">Scenario C vs. A</button>
-        <button data-delta="C2" aria-pressed="false">Scenario C.2 vs. A</button>
+        <button data-delta="B" aria-pressed="true">{{s03.buttons.b}}</button>
+        <button data-delta="C" aria-pressed="false">{{s03.buttons.c}}</button>
+        <button data-delta="C2" aria-pressed="false">{{s03.buttons.c2}}</button>
       </div>
       <span class="filter-hint" id="delta-hint"></span>
     </div>
     <div class="card card-pad">
       <div class="chart-wrap" id="delta-chart"></div>
       <div class="hbar-legend">
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>self-sufficiency worsens vs. Scenario A</span>
-        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>self-sufficiency improves vs. Scenario A</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-critical)"></span>{{s03.legend.worse}}</span>
+        <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{s03.legend.better}}</span>
       </div>
     </div>
   </section>
 
-  <section id="waste">
+  <section id="secondary-effects">
     <div class="section-head">
       <div>
-        <span class="section-num">06 — What never gets eaten</span>
-        <h2>Food waste, by stage and by group</h2>
-        <p class="section-desc">Estonia's 2021 national waste study (SEI), allocated to pyramid food groups. Household waste — the largest single share — is a pure efficiency lever: cutting it lowers how much needs to be produced for the same outcome, without growing anything more.</p>
+        <span class="section-num">{{sland.num}}</span>
+        <h2>{{sland.title}}</h2>
+        <p class="section-desc">{{sland.lede}}</p>
       </div>
     </div>
-    <div class="two-col">
-      <div class="card card-pad">
-        <div class="chart-wrap" id="waste-chart"></div>
-        <div class="hbar-legend">
-          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>household waste</span>
-          <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>other stages (retail, food industry, primary production, catering)</span>
-        </div>
-      </div>
-      <div class="card card-pad">
-        <h3 style="font-size:14.5px;margin-bottom:12px;">If households cut waste 25% / 50%</h3>
-        <p style="color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:14px;">Effect on self-sufficiency, holding production fixed — a lever, not a production increase. Shown for the food groups with SEI stage-level detail.</p>
-        <div id="waste-lever-list"></div>
-      </div>
+
+    <div class="card card-pad" style="margin-bottom:20px;">
+      <h3 style="font-size:14.5px;margin-bottom:4px;display:flex;align-items:center;gap:10px;">{{sland.tier1.heading}} <span class="badge solid">{{sland.tier1.badge}}</span></h3>
+      <p class="section-desc" style="margin-bottom:16px;">{{sland.tier1.desc}}</p>
+      <div class="chart-wrap" id="land-tier1-chart"></div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="land-tier1-table">{{common.view_as_table}}</button></div>
+      <div class="table-scroll" id="land-tier1-table" hidden></div>
+      <div class="assumption-note">{{sland.tier1.note}}</div>
+    </div>
+
+    <div class="card card-pad sketch">
+      <h3 style="font-size:14.5px;margin-bottom:4px;display:flex;align-items:center;gap:10px;">{{sland.tier2.heading}} <span class="badge sketch">{{sland.tier2.badge}}</span></h3>
+      <p class="section-desc" style="margin-bottom:16px;">{{sland.tier2.desc}}</p>
+      <div class="chart-wrap" id="land-tier2-chart"></div>
+      <div class="table-toggle"><button class="text-btn" data-table-toggle="land-tier2-table">{{common.view_as_table}}</button></div>
+      <div class="table-scroll" id="land-tier2-table" hidden></div>
+      <div class="assumption-note">{{sland.tier2.note}}</div>
+    </div>
+
+    <div class="callout" style="border-left-color:var(--accent);">
+      <div class="callout-body">{{sland.callout}}</div>
     </div>
   </section>
 
   <section id="methodology">
     <div class="section-head">
-      <div><span class="section-num">07 — How this was built</span><h2>Methodology &amp; sources</h2></div>
+      <div><span class="section-num">{{s05.num}}</span><h2>{{s05.title}}</h2></div>
     </div>
     <details class="appendix" id="meth-appendix">
-      <summary>Full methodology, data sources, and independent validation <span class="chevron">▸</span></summary>
-      <div class="appendix-body" id="meth-body"></div>
+      <summary>{{s05.summary}} <span class="chevron">▸</span></summary>
+      <div class="appendix-body">
+        <div class="meth-subsection" id="critical" style="margin-bottom:28px;">
+          <h3 style="font-size:15px;margin-bottom:8px;">{{meth.critical.title}}</h3>
+          <p class="section-desc" style="margin-bottom:16px;">{{meth.critical.desc}}</p>
+          <div class="callout-grid" id="callout-grid"></div>
+        </div>
+        <div class="meth-subsection" id="consumption" style="margin-bottom:28px;">
+          <h3 style="font-size:15px;margin-bottom:8px;">{{meth.consumption.title}}</h3>
+          <p class="section-desc" style="margin-bottom:16px;">{{meth.consumption.desc}}</p>
+          <div class="filter-row">
+            <label class="filter-hint" for="segment-select" style="margin-right:2px;">{{meth.consumption.segment_label}}</label>
+            <select class="filter-select" id="segment-select"></select>
+            <span class="filter-hint" id="segment-hint"></span>
+          </div>
+          <div class="card card-pad">
+            <div class="chart-wrap" id="cons-chart"></div>
+            <div class="hbar-legend">
+              <span class="hbar-legend-item"><span class="swatch line" style="background:var(--grain)"></span>{{meth.consumption.legend.recommended}}</span>
+              <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>{{meth.consumption.legend.actual}}</span>
+            </div>
+            <div class="table-toggle"><button class="text-btn" data-table-toggle="cons-table">{{common.view_as_table}}</button></div>
+            <div class="table-scroll" id="cons-table" hidden></div>
+          </div>
+        </div>
+        <div class="meth-subsection" id="waste" style="margin-bottom:28px;">
+          <h3 style="font-size:15px;margin-bottom:8px;">{{meth.waste.title}}</h3>
+          <p class="section-desc" style="margin-bottom:16px;">{{meth.waste.desc}}</p>
+          <div class="two-col">
+            <div class="card card-pad">
+              <div class="chart-wrap" id="waste-chart"></div>
+              <div class="hbar-legend">
+                <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>{{meth.waste.legend.household}}</span>
+                <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-blue)"></span>{{meth.waste.legend.other}}</span>
+              </div>
+            </div>
+            <div class="card card-pad">
+              <h3 style="font-size:14.5px;margin-bottom:12px;">{{meth.waste.lever_title}}</h3>
+              <p style="color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:14px;">{{meth.waste.lever_desc}}</p>
+              <div class="chart-wrap" id="waste-lever-chart"></div>
+              <div class="hbar-legend">
+                <span class="hbar-legend-item"><span class="swatch" style="background:var(--muted)"></span>{{meth.waste.lever_legend.today}}</span>
+                <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-orange)"></span>{{meth.waste.lever_legend.less25}}</span>
+                <span class="hbar-legend-item"><span class="swatch" style="background:var(--dv-good)"></span>{{meth.waste.lever_legend.less50}}</span>
+              </div>
+              <div class="table-toggle"><button class="text-btn" data-table-toggle="waste-lever-table">{{common.view_as_table}}</button></div>
+              <div class="table-scroll" id="waste-lever-table" hidden></div>
+            </div>
+          </div>
+        </div>
+        <div id="meth-body"></div>
+      </div>
     </details>
   </section>
 
   <footer>
     <span id="footer-left"></span>
-    <span>Nine-phase build — data acquisition through dashboard, documented at every step.</span>
+    <span>{{footer.tagline}}</span>
   </footer>
 
 </div>

@@ -306,6 +306,22 @@ class EatLancetNormalizationTests(unittest.TestCase):
         self.assertIn("Köögi- ja puuviljad, marjad", groups)
         self.assertIn("Pähklid, seemned, õlid ja rasvad", groups)
 
+    def test_self_sufficiency_chart_uses_larger_scoped_labels(self):
+        dashboard = (ROOT / "output/dashboard.html").read_text(encoding="utf-8")
+
+        self.assertRegex(
+            dashboard,
+            r"#ss-chart \.hbar-label\{[^}]*font-size:16px",
+        )
+        self.assertRegex(
+            dashboard,
+            r"#ss-chart \.hbar-label \.grp\{[^}]*font-size:12\.5px",
+        )
+        self.assertRegex(
+            dashboard,
+            r"#ss-chart \.hbar-tip\{[^}]*font-size:14px",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
