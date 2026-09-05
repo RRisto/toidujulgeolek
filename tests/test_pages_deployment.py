@@ -10,12 +10,28 @@ class LinkCollector(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links = []
+        self.frames = []
+        self._current_link = None
 
     def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
         if tag == "a":
-            href = dict(attrs).get("href")
+            href = attributes.get("href")
             if href:
-                self.links.append(href)
+                self._current_link = {"href": href, "text": ""}
+                self.links.append(self._current_link)
+        elif tag == "iframe":
+            src = attributes.get("src")
+            if src:
+                self.frames.append(src)
+
+    def handle_data(self, data):
+        if self._current_link is not None:
+            self._current_link["text"] += data
+
+    def handle_endtag(self, tag):
+        if tag == "a":
+            self._current_link = None
 
 
 class PagesDeploymentTests(unittest.TestCase):
@@ -24,12 +40,29 @@ class PagesDeploymentTests(unittest.TestCase):
         parser = LinkCollector()
         parser.feed((output / "index.html").read_text(encoding="utf-8"))
 
-        expected = {
-            "dashboard.html",
-            "diet_bar_chart_et.html",
-            "diet_treemap_et.html",
-        }
-        self.assertEqual(set(parser.links), expected)
+        expected = [
+            {
+                "href": "dashboard.html",
+                "text": "Toidujulgeoleku stsenaariumid",
+            },
+            {
+                "href": "diet_comparison_et.html",
+                "text": "Dieetide toidugruppide osakaalud",
+            },
+        ]
+        self.assertEqual(parser.links, expected)
+        for target in (link["href"] for link in expected):
+            self.assertTrue((output / target).is_file())
+
+    def test_combined_diet_page_contains_both_visualizations(self):
+        output = ROOT / "output"
+        parser = LinkCollector()
+        parser.feed(
+            (output / "diet_comparison_et.html").read_text(encoding="utf-8")
+        )
+
+        expected = ["diet_bar_chart_et.html", "diet_treemap_et.html"]
+        self.assertEqual(parser.frames, expected)
         for target in expected:
             self.assertTrue((output / target).is_file())
 

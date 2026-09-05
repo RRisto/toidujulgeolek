@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dieetide toidugruppide osakaalud</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17302b;
+      background: #f4f6f5;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px 28px 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8px 20px 32px;
+    }
+    section {
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid #d8e2dd;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgb(23 48 43 / 7%);
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: #fff;
+    }
+    #diet-share-chart { height: 980px; }
+    #diet-treemap { height: 1450px; }
+    @media (max-width: 700px) {
+      header { padding: 18px 14px 4px; }
+      main { padding: 4px 8px 20px; }
+      section { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dieetide toidugruppide osakaalud</h1>
+  </header>
+  <main>
+    <section aria-label="Toidugruppide osakaalude punktdiagramm">
+      <iframe
+        id="diet-share-chart"
+        src="diet_bar_chart_et.html"
+        title="Toidugruppide osakaalude punktdiagramm"
+        loading="eager"
+      ></iframe>
+    </section>
+    <section aria-label="Toidugruppide osakaalude puukaardid">
+      <iframe
+        id="diet-treemap"
+        src="diet_treemap_et.html"
+        title="Toidugruppide osakaalude puukaardid"
+        loading="lazy"
+      ></iframe>
+    </section>
+  </main>
+  <script>
+    const frames = [...document.querySelectorAll("iframe")];
+
+    function fitFrame(frame) {
+      const documentElement = frame.contentDocument?.documentElement;
+      if (documentElement) {
+        frame.style.height = `${documentElement.scrollHeight}px`;
+      }
+    }
+
+    for (const frame of frames) {
+      frame.addEventListener("load", () => fitFrame(frame));
+    }
+    window.addEventListener("resize", () => frames.forEach(fitFrame));
+  </script>
+</body>
+</html>
