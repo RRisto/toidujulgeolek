@@ -20,7 +20,7 @@ LANGUAGE = {
         "data": "treemap_data_et.json",
         "output": "diet_bar_chart_et.html",
         "title": "Toidu osakaal igas dieedis",
-        "subtitle": "Igal real võrreldakse sama toitu neljas dieedis. Väärtus näitab osakaalu selle dieedi päevasest kogumassist.",
+        "subtitle": "Toiduainete kaalu osakaal erinevates dieetides",
         "axis": "Osakaal dieedi massist (%)",
     },
 }
