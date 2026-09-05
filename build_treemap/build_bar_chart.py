@@ -153,7 +153,7 @@ def build_chart(root: Path, language: str) -> Path:
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
-    for language in LANGUAGE:
+    for language in ("et",):
         target = build_chart(root, language)
         print(f"Wrote {target}")
 

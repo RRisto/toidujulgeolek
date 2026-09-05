@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toitumisstsenaariumid — toidupuukaart</title>
+<style>
+  :root{
+    color-scheme: light;
+    --page:      #f9f9f7;
+    --surface-1: #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:  #e1e0d9;
+    --border:    rgba(11,11,11,0.10);
+    --box-stroke: #fcfcfb;
+
+    --g-dairy:   #2a78d6; /* slot 1 blue */
+    --g-fish:    #eb6834; /* slot 2 orange */
+    --g-grain:   #1baf7a; /* slot 3 aqua */
+    --g-nuts:    #eda100; /* slot 4 yellow */
+    --g-sweets:  #e87ba4; /* slot 5 magenta */
+    --g-veg:     #008300; /* slot 6 green */
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --page:      #0d0d0d;
+      --surface-1: #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:  #2c2c2a;
+      --border:    rgba(255,255,255,0.10);
+      --box-stroke: #1a1a19;
+
+      --g-dairy:   #3987e5;
+      --g-fish:    #d95926;
+      --g-grain:   #199e70;
+      --g-nuts:    #c98500;
+      --g-sweets:  #d55181;
+      --g-veg:     #008300;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --page:      #0d0d0d;
+    --surface-1: #1a1a19;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:  #2c2c2a;
+    --border:    rgba(255,255,255,0.10);
+    --box-stroke: #1a1a19;
+
+    --g-dairy:   #3987e5;
+    --g-fish:    #d95926;
+    --g-grain:   #199e70;
+    --g-nuts:    #c98500;
+    --g-sweets:  #d55181;
+    --g-veg:     #008300;
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 24px;
+  }
+  .wrap{ max-width: 1180px; margin: 0 auto; }
+
+  h1{ font-size: 20px; margin: 0 0 4px; }
+  .subtitle{ color: var(--text-secondary); font-size: 13.5px; max-width: 760px; line-height: 1.5; margin: 0 0 4px; }
+  .note{ color: var(--text-muted); font-size: 12px; max-width: 780px; line-height: 1.5; margin: 0 0 18px; }
+  .note code{ background: var(--gridline); padding: 1px 4px; border-radius: 3px; font-size: 11.5px; }
+
+  .toolbar{ display:flex; align-items:center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+
+  .legend{ display:flex; flex-wrap: wrap; gap: 6px 16px; }
+  .legend-item{ display:flex; align-items:center; gap: 6px; font-size: 12.5px; color: var(--text-secondary); }
+  .swatch{ width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+  button.toggle-btn{
+    font: inherit; font-size: 12.5px; font-weight: 600;
+    color: var(--text-primary); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 6px 14px; cursor: pointer;
+  }
+  button.toggle-btn:hover{ border-color: var(--text-secondary); }
+
+  .grid{
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 760px){ .grid{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 14px 10px;
+  }
+  .panel h2{ font-size: 14px; margin: 0 0 2px; }
+  .panel .panel-sub{ font-size: 11.5px; color: var(--text-muted); margin: 0 0 8px; }
+  .panel svg{ width: 100%; height: auto; display: block; }
+
+  rect.cell{ stroke: var(--box-stroke); stroke-width: 2px; rx: 4px; }
+  text.cell-label{
+    fill: #fff; font-size: 10.5px; pointer-events: none;
+    font-weight: 600; paint-order: stroke; stroke: rgba(0,0,0,0.35); stroke-width: 2.5px;
+  }
+  text.cell-value{
+    fill: #fff; font-size: 10px; pointer-events: none; opacity: 0.92;
+    paint-order: stroke; stroke: rgba(0,0,0,0.35); stroke-width: 2.5px;
+  }
+
+  #tooltip{
+    position: fixed; pointer-events: none; z-index: 50;
+    background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 12px; line-height: 1.5;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    max-width: 240px; display: none;
+  }
+  #tooltip .tt-group{ color: var(--text-muted); font-size: 11px; }
+  #tooltip .tt-item{ font-weight: 700; margin-bottom: 2px; }
+  #tooltip .tt-row{ display:flex; justify-content: space-between; gap: 12px; margin-top: 3px; }
+
+  table.data-table{ border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  table.data-table caption{ text-align:left; font-size: 12px; color: var(--text-muted); padding-bottom: 8px; }
+  table.data-table th, table.data-table td{
+    text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--gridline);
+    font-variant-numeric: tabular-nums;
+  }
+  table.data-table th:first-child, table.data-table td:first-child{ text-align:left; }
+  table.data-table th:nth-child(2), table.data-table td:nth-child(2){ text-align:left; }
+  table.data-table thead th{ color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--text-muted); }
+  table.data-table td.group-cell{ display:flex; align-items:center; gap:7px; }
+  table.data-table .row-swatch{ width:9px; height:9px; border-radius:2px; flex:none; }
+  table.data-table td.dash{ color: var(--text-muted); }
+
+  #tableWrap{ background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; overflow-x: auto; }
+
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Eesti toitumisstsenaariumid, toiduainete kaupa (puukaart)</h1>
+  <p class="subtitle">Iga kast on üks toiduaine; kasti pindala on selle toiduaine osakaal toidu kogumassist (%). Värv tähistab toiduainete gruppi.</p>
+  <p class="note">Osakaalud on arvutatud grammidest inimese kohta päevas, lähtudes iga stsenaariumi kogutarbimisest ja rahvaarvust 1 339 785.</p>
+
+  <div class="toolbar">
+    <div class="legend" id="legend"></div>
+    <button class="toggle-btn" id="toggleTable" type="button">Vaata tabelina</button>
+  </div>
+
+  <div class="grid" id="treemapGrid"></div>
+
+  <div id="tableWrap" hidden></div>
+</div>
+
+<div id="tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = {"population": 1339785, "scenarios": [{"key": "A", "label": "Praegune toitumine", "total_g_per_day": 1273.6, "items": [{"group": "Piimatooted", "item": "(kokku)", "g_per_day": 296.4, "pct": 23.3, "label": "Piimatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Puuviljad+marjad (kokku)", "g_per_day": 212.1, "pct": 16.7, "label": "Puuviljad+marjad (kokku)"}, {"group": "Maiustused, suupisted ja muu", "item": "(kokku)", "g_per_day": 159.0, "pct": 12.5, "label": "Maiustused, suupisted ja muu"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "KÃ¶Ã¶giviljad", "g_per_day": 135.6, "pct": 10.6, "label": "KÃ¶Ã¶giviljad"}, {"group": "Teraviljatooted ja kartul", "item": "Pudrud/pasta/riis/teraviljatooted", "g_per_day": 125.9, "pct": 9.9, "label": "Pudrud/pasta/riis/teraviljatooted"}, {"group": "Teraviljatooted ja kartul", "item": "Kartul, bataat", "g_per_day": 97.8, "pct": 7.7, "label": "Kartul, bataat"}, {"group": "Teraviljatooted ja kartul", "item": "Kiudainerikas leib/pagaritooted", "g_per_day": 73.7, "pct": 5.8, "label": "Kiudainerikas leib/pagaritooted"}, {"group": "Kala, munad ja liha", "item": "Punane liha", "g_per_day": 70.7, "pct": 5.6, "label": "Punane liha"}, {"group": "Kala, munad ja liha", "item": "Linnuliha", "g_per_day": 37.0, "pct": 2.9, "label": "Linnuliha"}, {"group": "Kala, munad ja liha", "item": "Kala ja mereannid", "g_per_day": 23.5, "pct": 1.8, "label": "Kala ja mereannid"}, {"group": "Kala, munad ja liha", "item": "Munad", "g_per_day": 20.6, "pct": 1.6, "label": "Munad"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)", "g_per_day": 18.0, "pct": 1.4, "label": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "PÃ¤hklid+seemned, kakao (kokku)", "g_per_day": 3.3, "pct": 0.3, "label": "PÃ¤hklid+seemned, kakao (kokku)"}]}, {"key": "B", "label": "TAI soovitatud toitumine", "total_g_per_day": 2141.9, "items": [{"group": "Piimatooted", "item": "(kokku)", "g_per_day": 490.1, "pct": 22.9, "label": "Piimatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "KÃ¶Ã¶giviljad", "g_per_day": 479.4, "pct": 22.4, "label": "KÃ¶Ã¶giviljad"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Puuviljad+marjad (kokku)", "g_per_day": 265.6, "pct": 12.4, "label": "Puuviljad+marjad (kokku)"}, {"group": "Teraviljatooted ja kartul", "item": "Pudrud/pasta/riis/teraviljatooted", "g_per_day": 262.0, "pct": 12.2, "label": "Pudrud/pasta/riis/teraviljatooted"}, {"group": "Teraviljatooted ja kartul", "item": "Kartul, bataat", "g_per_day": 177.8, "pct": 8.3, "label": "Kartul, bataat"}, {"group": "Teraviljatooted ja kartul", "item": "Kiudainerikas leib/pagaritooted", "g_per_day": 131.8, "pct": 6.2, "label": "Kiudainerikas leib/pagaritooted"}, {"group": "Kala, munad ja liha", "item": "Kala ja mereannid", "g_per_day": 79.6, "pct": 3.7, "label": "Kala ja mereannid"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Kaunviljad", "g_per_day": 57.1, "pct": 2.7, "label": "Kaunviljad"}, {"group": "Maiustused, suupisted ja muu", "item": "(kokku)", "g_per_day": 51.4, "pct": 2.4, "label": "Maiustused, suupisted ja muu"}, {"group": "Kala, munad ja liha", "item": "Linnuliha", "g_per_day": 38.5, "pct": 1.8, "label": "Linnuliha"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "PÃ¤hklid+seemned, kakao (kokku)", "g_per_day": 37.8, "pct": 1.8, "label": "PÃ¤hklid+seemned, kakao (kokku)"}, {"group": "Kala, munad ja liha", "item": "Munad", "g_per_day": 30.0, "pct": 1.4, "label": "Munad"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)", "g_per_day": 20.6, "pct": 1.0, "label": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)"}, {"group": "Kala, munad ja liha", "item": "Punane liha", "g_per_day": 20.2, "pct": 0.9, "label": "Punane liha"}]}, {"key": "C", "label": "EAT-Lancet 2019", "total_g_per_day": 1568.7, "items": [{"group": "Teraviljatooted ja kartul", "item": "Pudrud/pasta/riis/teraviljatooted", "g_per_day": 296.7, "pct": 18.9, "label": "Pudrud/pasta/riis/teraviljatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "KÃ¶Ã¶giviljad", "g_per_day": 232.4, "pct": 14.8, "label": "KÃ¶Ã¶giviljad"}, {"group": "Piimatooted", "item": "(kokku)", "g_per_day": 226.9, "pct": 14.5, "label": "Piimatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Puuviljad+marjad (kokku)", "g_per_day": 225.2, "pct": 14.4, "label": "Puuviljad+marjad (kokku)"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Kaunviljad", "g_per_day": 195.2, "pct": 12.4, "label": "Kaunviljad"}, {"group": "Teraviljatooted ja kartul", "item": "Kiudainerikas leib/pagaritooted", "g_per_day": 149.2, "pct": 9.5, "label": "Kiudainerikas leib/pagaritooted"}, {"group": "Teraviljatooted ja kartul", "item": "Kartul, bataat", "g_per_day": 46.5, "pct": 3.0, "label": "Kartul, bataat"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "PÃ¤hklid+seemned, kakao (kokku)", "g_per_day": 45.9, "pct": 2.9, "label": "PÃ¤hklid+seemned, kakao (kokku)"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)", "g_per_day": 40.2, "pct": 2.6, "label": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)"}, {"group": "Maiustused, suupisted ja muu", "item": "(kokku)", "g_per_day": 33.8, "pct": 2.2, "label": "Maiustused, suupisted ja muu"}, {"group": "Kala, munad ja liha", "item": "Linnuliha", "g_per_day": 27.4, "pct": 1.7, "label": "Linnuliha"}, {"group": "Kala, munad ja liha", "item": "Kala ja mereannid", "g_per_day": 24.0, "pct": 1.5, "label": "Kala ja mereannid"}, {"group": "Kala, munad ja liha", "item": "Munad", "g_per_day": 12.7, "pct": 0.8, "label": "Munad"}, {"group": "Kala, munad ja liha", "item": "Punane liha", "g_per_day": 12.6, "pct": 0.8, "label": "Punane liha"}]}, {"key": "C2", "label": "EAT-Lancet 2025", "total_g_per_day": 1666.9, "items": [{"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "KÃ¶Ã¶giviljad", "g_per_day": 294.8, "pct": 17.7, "label": "KÃ¶Ã¶giviljad"}, {"group": "Teraviljatooted ja kartul", "item": "Pudrud/pasta/riis/teraviljatooted", "g_per_day": 280.1, "pct": 16.8, "label": "Pudrud/pasta/riis/teraviljatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Puuviljad+marjad (kokku)", "g_per_day": 270.0, "pct": 16.2, "label": "Puuviljad+marjad (kokku)"}, {"group": "Piimatooted", "item": "(kokku)", "g_per_day": 224.0, "pct": 13.4, "label": "Piimatooted"}, {"group": "KÃ¶Ã¶gi- ja puuviljad, marjad", "item": "Kaunviljad", "g_per_day": 196.9, "pct": 11.8, "label": "Kaunviljad"}, {"group": "Teraviljatooted ja kartul", "item": "Kiudainerikas leib/pagaritooted", "g_per_day": 140.9, "pct": 8.5, "label": "Kiudainerikas leib/pagaritooted"}, {"group": "Teraviljatooted ja kartul", "item": "Kartul, bataat", "g_per_day": 62.1, "pct": 3.7, "label": "Kartul, bataat"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "PÃ¤hklid+seemned, kakao (kokku)", "g_per_day": 45.2, "pct": 2.7, "label": "PÃ¤hklid+seemned, kakao (kokku)"}, {"group": "PÃ¤hklid, seemned, Ãµlid ja rasvad", "item": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)", "g_per_day": 42.4, "pct": 2.5, "label": "Ã•lid/rasvad/vÃµided (rapsiÃµli, esindusnÃ¤itaja)"}, {"group": "Maiustused, suupisted ja muu", "item": "(kokku)", "g_per_day": 33.7, "pct": 2.0, "label": "Maiustused, suupisted ja muu"}, {"group": "Kala, munad ja liha", "item": "Linnuliha", "g_per_day": 27.6, "pct": 1.7, "label": "Linnuliha"}, {"group": "Kala, munad ja liha", "item": "Punane liha", "g_per_day": 19.6, "pct": 1.2, "label": "Punane liha"}, {"group": "Kala, munad ja liha", "item": "Kala ja mereannid", "g_per_day": 15.6, "pct": 0.9, "label": "Kala ja mereannid"}, {"group": "Kala, munad ja liha", "item": "Munad", "g_per_day": 14.0, "pct": 0.8, "label": "Munad"}]}]};
+
+  var GROUP_ORDER = [
+    "Piimatooted",
+    "Kala, munad ja liha",
+    "Teraviljatooted ja kartul",
+    "Pähklid, seemned, õlid ja rasvad",
+    "Maiustused, suupisted ja muu",
+    "Köögi- ja puuviljad, marjad"
+  ];
+  var GROUP_VAR = {
+    "Piimatooted": "--g-dairy",
+    "Kala, munad ja liha": "--g-fish",
+    "Teraviljatooted ja kartul": "--g-grain",
+    "Pähklid, seemned, õlid ja rasvad": "--g-nuts",
+    "Maiustused, suupisted ja muu": "--g-sweets",
+    "Köögi- ja puuviljad, marjad": "--g-veg"
+  };
+  var rootStyle = getComputedStyle(document.documentElement);
+  function groupColor(g){
+    return rootStyle.getPropertyValue(GROUP_VAR[g]).trim() || "#999";
+  }
+
+  // ---- legend (shared, colors are fixed across all panels) ----
+  var legend = document.getElementById('legend');
+  GROUP_ORDER.forEach(function(g){
+    var item = document.createElement('div');
+    item.className = 'legend-item';
+    var sw = document.createElement('span');
+    sw.className = 'swatch';
+    sw.style.background = groupColor(g);
+    item.appendChild(sw);
+    item.appendChild(document.createTextNode(g));
+    legend.appendChild(item);
+  });
+
+  // ---- tooltip ----
+  var tooltip = document.getElementById('tooltip');
+  function showTooltip(evt, d){
+    tooltip.innerHTML =
+      '<div class="tt-group">' + d.group + '</div>' +
+      '<div class="tt-item">' + d.label + '</div>' +
+      '<div class="tt-row"><span>Osakaal sellest dieedist</span><strong>' + d.pct.toFixed(1) + '%</strong></div>';
+    tooltip.style.display = 'block';
+    moveTooltip(evt);
+  }
+  function moveTooltip(evt){
+    var pad = 14;
+    var x = evt.clientX + pad, y = evt.clientY + pad;
+    var tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+    if(x + tw > window.innerWidth - 8) x = evt.clientX - tw - pad;
+    if(y + th > window.innerHeight - 8) y = evt.clientY - th - pad;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+  }
+  function hideTooltip(){ tooltip.style.display = 'none'; }
+
+  // ---- treemap panels ----
+  var VW = 600, VH = 380;
+  var grid = document.getElementById('treemapGrid');
+
+  DATA.scenarios.forEach(function(scn){
+    var panel = document.createElement('div');
+    panel.className = 'panel';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = scn.label;
+    panel.appendChild(h2);
+
+    var sub = document.createElement('p');
+    sub.className = 'panel-sub';
+    sub.textContent = scn.items.length + ' toiduainet — iga kast on % selle dieedi kogumassist';
+    panel.appendChild(sub);
+
+    var svg = d3.select(panel).append('svg')
+      .attr('viewBox', '0 0 ' + VW + ' ' + VH)
+      .attr('role', 'img')
+      .attr('aria-label', 'Puukaart: ' + scn.label + ', toiduainete kaupa, suurus protsentuaalse osakaaluna dieedi kogumassist');
+
+    var hierData = { name: scn.key, children: [] };
+    var byGroup = {};
+    scn.items.forEach(function(it){
+      if(!byGroup[it.group]) byGroup[it.group] = { name: it.group, children: [] };
+      byGroup[it.group].children.push(it);
+    });
+    GROUP_ORDER.forEach(function(g){ if(byGroup[g]) hierData.children.push(byGroup[g]); });
+
+    var root = d3.hierarchy(hierData)
+      .sum(function(d){ return d.pct || 0; })
+      .sort(function(a,b){ return b.value - a.value; });
+
+    d3.treemap()
+      .size([VW, VH])
+      .paddingInner(2)
+      .paddingOuter(2)
+      .round(true)
+      (root);
+
+    var leaves = root.leaves();
+
+    var cell = svg.selectAll('g.cell')
+      .data(leaves)
+      .join('g')
+      .attr('class', 'cell')
+      .attr('transform', function(d){ return 'translate(' + d.x0 + ',' + d.y0 + ')'; });
+
+    cell.append('rect')
+      .attr('class', 'cell')
+      .attr('width', function(d){ return Math.max(0, d.x1 - d.x0); })
+      .attr('height', function(d){ return Math.max(0, d.y1 - d.y0); })
+      .attr('fill', function(d){ return groupColor(d.data.group); })
+      .on('mousemove', function(evt, d){ moveTooltip(evt); })
+      .on('mouseenter', function(evt, d){ showTooltip(evt, d.data); })
+      .on('mouseleave', hideTooltip);
+
+    cell.each(function(d){
+      var w = d.x1 - d.x0, h = d.y1 - d.y0;
+      if(w < 42 || h < 22) return; // too small for a legible label
+      var g = d3.select(this);
+      var maxChars = Math.max(4, Math.floor((w - 8) / 6.1));
+      var label = d.data.label.length > maxChars ? d.data.label.slice(0, maxChars - 1) + '…' : d.data.label;
+      g.append('text')
+        .attr('class', 'cell-label')
+        .attr('x', 5).attr('y', 14)
+        .text(label);
+      if(h >= 36){
+        g.append('text')
+          .attr('class', 'cell-value')
+          .attr('x', 5).attr('y', 27)
+          .text(d.data.pct.toFixed(1) + '%');
+      }
+    });
+
+    grid.appendChild(panel);
+  });
+
+  // ---- table view (accessibility fallback) ----
+  function buildTable(){
+    var rows = {};
+    var order = [];
+    DATA.scenarios.forEach(function(scn){
+      scn.items.forEach(function(it){
+        var key = it.group + '||' + it.label;
+        if(!rows[key]){ rows[key] = { group: it.group, label: it.label, vals: {} }; order.push(key); }
+        rows[key].vals[scn.key] = it.pct;
+      });
+    });
+    order.sort(function(a, b){
+      var ra = rows[a], rb = rows[b];
+      var gi = GROUP_ORDER.indexOf(ra.group) - GROUP_ORDER.indexOf(rb.group);
+      if(gi !== 0) return gi;
+      return (rows[b].vals.A || 0) - (rows[a].vals.A || 0);
+    });
+
+    var html = '<table class="data-table"><caption>Päevase dieedi massi osakaal (%), toiduaine ja stsenaariumi kaupa — iga stsenaariumi veerg summeerub 100%-ni</caption><thead><tr>' +
+      '<th></th><th>Toiduaine</th>' +
+      DATA.scenarios.map(function(s){ return '<th>' + s.label + '</th>'; }).join('') +
+      '</tr></thead><tbody>';
+
+    order.forEach(function(key){
+      var r = rows[key];
+      html += '<tr><td><span class="row-swatch" style="background:' + groupColor(r.group) + '"></span></td>' +
+        '<td>' + r.label + ' <span style="color:var(--text-muted)">— ' + r.group + '</span></td>';
+      DATA.scenarios.forEach(function(s){
+        var v = r.vals[s.key];
+        html += v == null ? '<td class="dash">—</td>' : '<td>' + v.toFixed(1) + '%</td>';
+      });
+      html += '</tr>';
+    });
+
+    html += '</tbody></table>';
+    return html;
+  }
+
+  var tableWrap = document.getElementById('tableWrap');
+  var toggleBtn = document.getElementById('toggleTable');
+  var built = false;
+  toggleBtn.addEventListener('click', function(){
+    var showingTable = !tableWrap.hidden;
+    if(showingTable){
+      tableWrap.hidden = true;
+      grid.hidden = false;
+      toggleBtn.textContent = 'Vaata tabelina';
+    } else {
+      if(!built){ tableWrap.innerHTML = buildTable(); built = true; }
+      tableWrap.hidden = false;
+      grid.hidden = true;
+      toggleBtn.textContent = 'Vaata puukaardina';
+    }
+  });
+})();
+</script>
+</body>
+</html>

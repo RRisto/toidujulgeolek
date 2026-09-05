@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Build build_treemap/treemap_data_et.json — the Estonian counterpart of
 treemap_data.json: same numbers, group/item names translated using the
-existing dashboard_data_et.json (index-aligned with dashboard_data.json,
+existing dashboard_data_et.json (index-aligned with scenario_comparison.csv,
 already reviewed/shipped Estonian translations), scenario labels translated
 to match the wording already used in strings_et.json / strings_et_v2.json.
 """
+import csv
 import json
 from pathlib import Path
 
@@ -19,9 +20,10 @@ SCENARIO_LABELS_ET = {
 
 def build_et_data(root: Path) -> dict:
     """Return Estonian treemap data while preserving the UTF-8 wording."""
-    d_en = json.loads(
-        (root / "output/dashboard_data.json").read_text(encoding="utf-8")
-    )["food_groups"]
+    with (root / "data/processed/scenario_comparison.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as handle:
+        d_en = list(csv.DictReader(handle))
     d_et = json.loads(
         (root / "output/dashboard_data_et.json").read_text(encoding="utf-8")
     )["food_groups"]

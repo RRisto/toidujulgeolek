@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 
@@ -17,16 +18,17 @@ SCENARIO_LABELS = {
 
 
 def build_treemap_data(root: Path) -> dict:
-    dashboard = json.loads(
-        (root / "output/dashboard_data.json").read_text(encoding="utf-8")
-    )
+    with (root / "data/processed/scenario_comparison.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as handle:
+        food_groups = list(csv.DictReader(handle))
     scenarios = []
     for key, label in SCENARIO_LABELS.items():
         items = []
-        demand_field = f"demand_{key}_tonnes"
-        for row in dashboard["food_groups"]:
+        demand_field = f"scenario_{key}_demand_tonnes_per_year"
+        for row in food_groups:
             tonnes = row.get(demand_field)
-            if not tonnes or row["subitem"] == "Honey":
+            if not tonnes or tonnes == "NA" or row["subitem"] == "Honey":
                 continue
             grams = round(float(tonnes) * 1_000_000 / (POPULATION * 365), 1)
             if grams <= 0:

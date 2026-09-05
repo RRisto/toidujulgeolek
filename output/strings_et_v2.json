@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "title": "Toidujulgeolek",
+    "brand": "Toidujulgeolek",
+    "lang": "et"
+  },
+  "topbar": {
+    "sub": "Eesti toidu isevarustatuse mudel",
+    "nav": {
+      "overview": "Ülevaade",
+      "by_food_group": "Toidugruppide kaupa",
+      "scenarios": "Stsenaariumid",
+      "secondary_effects": "Kõrvalmõjud",
+      "methodology": "Metoodika",
+      "lang_href": "dashboard.html",
+      "lang_label": "EN"
+    }
+  },
+  "hero": {
+    "eyebrow": "",
+    "title": "Kas Eesti suudaks end ise toita?",
+    "lede": "Mudel võrdleb Eesti toidu tarbimist kodumaise tootmisega. Millistes toidugruppides piisab oma toodangust, kus sõltume impordist ja mis muutuks menüü muutmise korral?"
+  },
+  "s01": {
+    "num": "01 — Üldine näitaja",
+    "title": "Isevarustatus erinevates stsenaariumides",
+    "desc": "Kaalutud keskmine kaal toidugruppide lõikes. NB! üksikud kategooriad erinevad palju rohkem, kui see üks number näitab."
+  },
+  "common": {
+    "legend": {
+      "good": "≥100% — netona isevarustatud",
+      "warning": "50–99% — impordist sõltuv",
+      "critical": "&lt;50% — kriitiline sõltuvus"
+    },
+    "view_as_table": "Vaata tabelina"
+  },
+  "s02": {
+    "num": "02 — Tootmine ja kasutus",
+    "title": "Isevarustatus toidugruppide kaupa",
+    "desc": "Kodumaine tarbimine jagatud kodumaise tootmisega. 100% tähendab, et toodang katab tarbimise. Võrdle praegust ja kolme toitumisstsenaariumi. Vahemik näitab FAOSTATi (ÜRO toidu- ja põllumajandusandmete) ja projekti hinnangu erinevust, mitte statistilist usaldusvahemikku.",
+    "buttons": {
+      "a": "Stsenaarium A — praegune olukord",
+      "b": "Stsenaarium B — TAI soovitatud toitumine",
+      "c": "Stsenaarium C — EAT-Lancet 2019 dieet",
+      "c2": "Stsenaarium C.2 — EAT-Lancet 2025 dieet"
+    }
+  },
+  "s03": {
+    "num": "03 — Toitumise mõju",
+    "title": "Kuidas toitumine mõjutab isevarustatust",
+    "desc": "Muutus protsendipunktides võrreldes praeguse olukorraga, kui tootmine ei muutu.",
+    "buttons": {
+      "b": "B võrreldes A-ga",
+      "c": "C võrreldes A-ga",
+      "c2": "C.2 võrreldes A-ga"
+    },
+    "legend": {
+      "worse": "isevarustatus väheneb võrreldes A-ga",
+      "better": "isevarustatus suureneb võrreldes A-ga"
+    }
+  },
+  "sland": {
+    "num": "04 — Mida väiksem liha tootmine võimaldaks",
+    "title": "Kui palju maad vabaneks tänu väiksemale lihatootmisele?",
+    "lede": "Kui tootmine väheneks koos liha nõudlusega, vabaneks sööda- ja põllumaad. Siin on hinnatud, kui palju sellest maast võiks aidata katta Eesti köögiviljapuudujääki.",
+    "tier1": {
+      "heading": "1. osa — vabanev sööt ja põllumaa",
+      "badge": "Kindel arvutus",
+      "desc": "Arvutus kasutab projekti söödamudelit, nõudluse muutust ja 2024. aasta odrasaaki. Eeldus: punase liha tootmine väheneb nõudlusega samas suhtes.",
+      "note": "Eesti toodab otra juba ekspordiks. Söödateravilja ümberjagamine isevarustatust ei muuda; kasu tekiks siis, kui vabanenud maal kasvatataks näiteks köögivilju."
+    },
+    "tier2": {
+      "heading": "2. osa — köögiviljad vabanenud maal",
+      "badge": "Illustratiivne visand",
+      "desc": "Hinnang kasutab ELi keskmist köögiviljasaaki. Arvesse ei ole võetud mulla sobivust, kuivendust, investeeringuid, tööjõudu, ladustamist ega turgu.",
+      "note": "Köögiviljakasvatus vajab rohkem tööjõudu ja kapitali kui söödaodra kasvatamine. Eesti tegelik saak võib jääda ELi keskmisest väiksemaks."
+    },
+    "callout": "<b>Tulemus.</b> Praeguse köögiviljapuudujäägi (81 068 t aastas) katmiseks piisaks hinnanguliselt väikesest osast vabanevast maast. Arvutus näitab maa suurusjärku, kuid ei arvesta sobivust, kulusid, tööjõudu ega üleminekuaega. <a href=\"../plans/PHASE15_NOTES.md\">Täielik kirjeldus</a>."
+  },
+  "s05": {
+    "num": "05 — Kuidas see valmis",
+    "title": "Metoodika ja allikad",
+    "summary": "Kriitilised sõltuvused, tarbimise ja raiskamise detailid, täielik metoodika ja allikad"
+  },
+  "meth": {
+    "critical": {
+      "title": "Kriitilised sõltuvused",
+      "desc": "Märgitud on alla 50% isevarustatus, alla 50% ulatuv söödatundlikkus ja usaldusväärse näitaja puudumine."
+    },
+    "consumption": {
+      "title": "Mida tegelikult süüakse",
+      "desc": "TAI soovitus ja 2014. aasta tegelik tarbimine grammides päevas. Filtreeri vanuse ja soo järgi.",
+      "segment_label": "Segment",
+      "legend": {
+        "recommended": "TAI soovitatud",
+        "actual": "tegelik tarbimine"
+      }
+    },
+    "waste": {
+      "title": "Toidu raiskamine, etapi ja grupi kaupa",
+      "desc": "Eesti 2021. aasta raiskamisuuring (SEI). Väiksem kodune raiskamine vähendab vajalikku tootmist.",
+      "legend": {
+        "household": "kodumajapidamise raiskamine",
+        "other": "muud etapid (jaekaubandus, toidutööstus, esmatootmine, toitlustus)"
+      },
+      "lever_title": "Kui kodumajapidamised vähendaksid raiskamist 25% / 50%",
+      "lever_desc": "Mõju isevarustatusele, kui kodumajapidamised vähendaksid raiskamist, tootmine muutumatuna.",
+      "lever_legend": {
+        "today": "täna (Stsenaarium A)",
+        "less25": "25% vähem kodumajapidamise raiskamist",
+        "less50": "50% vähem kodumajapidamise raiskamist"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Andmeallikad, arvutused ja eeldused on dokumenteeritud."
+  },
+  "js": {
+    "status_label": {
+      "good": "Isevarustatud",
+      "warning": "Impordisõltuv",
+      "critical": "Kriitiline sõltuvus",
+      "unresolved": "Lahendamata näitaja"
+    },
+    "table_toggle": {
+      "hide": "Peida tabel",
+      "show": "Vaata tabelina"
+    },
+    "tiles": {
+      "a": {
+        "label": "Stsenaarium A — praegune olukord",
+        "note": "Tonnaažiga kaalutud näitaja katab {coverage}% nõudlusest. Tulemust tõstavad suure kaaluga piimatooted ja teravili; nõrgemad rühmad on näha jaotises 02."
+      },
+      "b": {
+        "label": "Stsenaarium B — TAI soovitatud toitumine",
+        "note": "Tootmine ei muutu, kuid nõudlus vastab TAI soovitustele. Isevarustatus väheneb rühmades, kus soovitatud tarbimine kasvab kõige rohkem."
+      },
+      "c": {
+        "label": "Stsenaarium C — EAT-Lancet 2019 dieet",
+        "note": "Tootmine ei muutu. 2019. aasta EAT-Lanceti dieet suurendab näitajat peamiselt väiksema piima- ja lihatarbimise tõttu."
+      },
+      "c2": {
+        "label": "Stsenaarium C.2 — EAT-Lancet 2025 dieet",
+        "note": "Tootmine ei muutu. 2025. aasta EAT-Lanceti näitaja on peaaegu sama mis 2019. aasta variandil ({scenario_c_pct}); suurimad muutused jäävad kaalutud keskmisest välja."
+      },
+      "waste25": {
+        "label": "25% vähem kodust raiskamist",
+        "note": "Stsenaarium A, kui kodumajapidamised vähendavad toidu raiskamist veerandi võrra. Tootmine ei muutu."
+      },
+      "waste50": {
+        "label": "50% vähem kodust raiskamist",
+        "note": "Stsenaarium A, kui kodumajapidamised vähendavad toidu raiskamist poole võrra. Mõju on väike ega kõrvalda püsivaid puudujääke."
+      }
+    },
+    "tt": {
+      "self_sufficiency": "Isevarustatus",
+      "feed_bound": "Söödaga kohandatud alampiir",
+      "waste_adjusted": "Raiskamisega kohandatud (arvestades praegust raiskamist)",
+      "crosscheck_range": "Sõltumatu ristkontrolli vahemik",
+      "status": "Staatus",
+      "data_status": "Andmete staatus",
+      "tai_recommended": "TAI soovitatud",
+      "actual_consumption": "Tegelik tarbimine",
+      "scenario_a": "Stsenaarium A",
+      "change": "Muutus",
+      "total_waste": "Raiskamine kokku",
+      "loss_rate": "Kadu tarbimisest",
+      "household_share": "Kodumajapidamise osa",
+      "other_stages": "Muud etapid",
+      "total": "Kokku",
+      "note_label": "Märkus",
+      "waste_lever_today": "Täna (Stsenaarium A)",
+      "waste_lever_25": "25% vähem kodumajapidamise raiskamist",
+      "waste_lever_50": "50% vähem kodumajapidamise raiskamist"
+    },
+    "no_single_figure": "üksikut näitajat pole *",
+    "marker_title": {
+      "feed_bound_prefix": "Söödaga kohandatud alampiir: ",
+      "crosscheck_prefix": "Sõltumatu ristkontrolli vahemik: ",
+      "waste_adjusted_prefix": "Raiskamisega kohandatud (arvestades praegust raiskamist): "
+    },
+    "scenario_hint": {
+      "a": "Praegune tarbimine ja tootmine.",
+      "b": "Kui kõik sööksid täpselt nii, nagu TAI soovitab — tootmine muutumatu.",
+      "c": "2019. aasta EAT-Lanceti dieet Eesti energiavajaduse järgi; tootmine ei muutu.",
+      "c2": "2025. aasta EAT-Lanceti dieet Eesti energiavajaduse järgi; tootmine ei muutu."
+    },
+    "headers": {
+      "ss_table": [
+        "Toidugrupp",
+        "Toiduaine",
+        "Stsenaarium A",
+        "Stsenaarium B",
+        "Stsenaarium C",
+        "Stsenaarium C.2",
+        "Söödaga kohandatud piir",
+        "Raiskamisega kohandatud",
+        "Ristkontrolli vahemik",
+        "Andmete staatus"
+      ],
+      "cons_table": [
+        "Toidugrupp",
+        "Toiduaine",
+        "Soovitatud (g/päevas)",
+        "Tegelik (g/päevas)",
+        "Suhe"
+      ],
+      "waste_lever_table": [
+        "Toidugrupp",
+        "Toiduaine",
+        "Täna",
+        "25% vähem raiskamist",
+        "50% vähem raiskamist"
+      ],
+      "faostat_table": [
+        "Toidugrupp",
+        "FAOSTATi toiduaine (2022)",
+        "FAOSTAT isevarustatus",
+        "Selle projekti näitaja",
+        "Märkus"
+      ]
+    },
+    "pill": {
+      "critical": "Kriitiline",
+      "data_gap": "Andmelünk"
+    },
+    "segment": {
+      "national_option": "Riiklik (kõik vanused)",
+      "national_hint": "Kogu rahvastik, kaalutud vanuse ja soo järgi.",
+      "age_prefix": "Vanus "
+    },
+    "consumption": {
+      "not_measured_badge": "mõõtmata — RTU011 andmed puuduvad",
+      "not_measured_short": "mõõtmata"
+    },
+    "delta_hint": {
+      "b": "TAI soovitab süüa rohkem mitmest kategooriast, mida Eestil on juba praegu kõige raskem kodumaiselt varustada.",
+      "c": "2019. a EAT-Lancet dieet vähendab nõudlust enamiku loomsete toodete järele (tõstes isevarustatust), kuid tõstab järsult nõudlust õlide/rasvade järele — rapsiõli langeb 69,3%-lt 27,0%-le, uus kriitiline sõltuvus, mida stsenaariumis A või B ei esine.",
+      "c2": "2025. aasta EAT-Lanceti dieet annab sarnase tulemuse: rapsiõli langeb 26,3%-le. Mee väga suur näitaja (~2795%) tuleneb väiksemast suhkrukogusest, mitte tootmise kasvust."
+    },
+    "waste": {
+      "unattributed_group": "Jaotamata",
+      "unattributed_note": "Kategooriateülene jääk, ei ole omistatud ühele toidugrupile"
+    },
+    "land": {
+      "tt": {
+        "cropland_freed": "Vabanev põllumaa",
+        "pct_barley": "% 2024. aasta odrapinnast",
+        "pct_ag": "% põllumajandusmaast",
+        "net_feed": "Vabanev netosööt",
+        "share_needed": "Vajalik osa lõhe sulgemiseks",
+        "veg_output": "Illustratiivne köögiviljasaak",
+        "pct_veg_gap": "% praegusest lõhest",
+        "cropland_available": "Saadaolev põllumaa"
+      },
+      "headers": {
+        "tier1": [
+          "Stsenaarium",
+          "Kodulinnusööt",
+          "Munasööt",
+          "Punase liha sööt",
+          "Vabanev netosööt",
+          "Vabanev põllumaa",
+          "% odrapinnast",
+          "% põllumajandusmaast"
+        ],
+        "tier2": [
+          "Stsenaarium",
+          "Saadaolev põllumaa",
+          "Illustratiivne köögiviljasaak",
+          "% praegusest lõhest",
+          "Maad vaja kogu lõhe sulgemiseks"
+        ]
+      },
+      "bar_only_prefix": "ainult ",
+      "freed_land_suffix": " vabanevast maast"
+    },
+    "footer": {
+      "generated_prefix": "Genereeritud ",
+      "population_sep": " · rahvastik ",
+      "production_sep": " · tootmine ",
+      "survey_sep": " · tarbimisuuring "
+    },
+    "scen_label": {
+      "A": "Stsenaarium A",
+      "B": "Stsenaarium B",
+      "C": "Stsenaarium C",
+      "C2": "Stsenaarium C.2"
+    },
+    "delta_label": {
+      "B": "Stsenaarium B",
+      "C": "Stsenaarium C",
+      "C2": "Stsenaarium C.2"
+    },
+    "sex_map": {
+      "female": "naine",
+      "male": "mees"
+    },
+    "units": {
+      "g_day": " g/päevas",
+      "g": " g",
+      "t": " t",
+      "ha": " ha",
+      "kt": " kt",
+      "pp": " protsendipunkti"
+    }
+  },
+  "methodology": {
+    "text_001": "Mis see mudel on",
+    "text_002": "Mudel võrdleb toidugruppide kaupa TAI soovitustele vastavat toiduvajadust Eesti toodanguga. Arvesse lähevad rahvastiku koosseis, tegelik tarbimine, sööt ja toidukadu. Tulemusi kontrollitakse sõltumatute andmetega.",
+    "text_003": "Ulatus: kogu Eesti ja praegune tootmistase. Mudel mõõdab isevarustatust ",
+    "text_004": "tänase väljundi juures",
+    "text_005": ", mitte võimalikku tootmisvõimet. Mudel ei käsitle hooajalisust, piirkondlikke erinevusi ega kriisitaluvust. Hõlmatud on vähemalt kaheaastased elanikud.",
+    "text_006": "Andmeallikad",
+    "text_007": "Allikas",
+    "text_008": "Mida see annab",
+    "text_009": "Aastakäik",
+    "text_010": "Statistikaamet RV021",
+    "text_011": "Rahvastik vanuse ja soo järgi",
+    "text_012": "Statistikaamet PM-seeria",
+    "text_013": "Tootmise, impordi, ekspordi, sööda ja kao bilansid toidugruppide kaupa",
+    "text_014": "TAI Tabelraamat 2025",
+    "text_015": "Energiavajadus, toitainete sihttasemed ja portsjonisoovitused",
+    "text_016": "TAI RTU011",
+    "text_017": "Tegelik toidugruppide tarbimine vanuse ja soo järgi — Eesti uusim riiklik toitumisuuring",
+    "text_018": "2013–2015 väliuuring",
+    "text_019": "Eesti toidujulgeoleku strateegia",
+    "text_020": "Ametlikud isevarustatuse näitajad kalibreerimiseks",
+    "text_021": "u 2018–2022 (viie aasta keskmine)",
+    "text_022": "SEI Eesti toidu raiskamise uuring",
+    "text_023": "Raiskamise tonnaaž tarneahela etapi järgi",
+    "text_024": "agri.ee kala tarbimise uuring",
+    "text_025": "Kala tootmise ja kodumaise tarbimise võrdlus",
+    "text_026": "FAOSTAT toidubilansi tabelid",
+    "text_027": "Sõltumatu rahvusvaheline kontroll toiduainete kaupa",
+    "text_028": "Kuidas näitajad on üles ehitatud",
+    "text_029": "Vajaduse mudel (soovitatud nõudlus).",
+    "text_030": " Rahvastik × vanuse ja soo energiavajadus × TAI portsjonisoovitus = soovituslik kogus tonnides aastas. Kehalise aktiivsuse jaotuse puudumise tõttu kasutatakse mõõdukat aktiivsust.",
+    "text_031": "Tarbimise mudel (tegelik nõudlus).",
+    "text_032": " Sama rahvastikujaotus, kaalutud RTU011 mõõdetud päevase tarbimise järgi. RTU011 koondab linnuliha, punase liha ja rupsi; need on jaotatud tootmisandmete tarbimis",
+    "text_033": "osakaalude",
+    "text_034": " järgi. Puuvilju ja marju ning pähkleid, seemneid ja kakaod saab kasutatud Eesti allikates mõõta ainult koos.",
+    "text_035": "Isevarustatus (tootmine ÷ kodumaine kasutus).",
+    "text_036": " Arvutatud PM-seeria bilanssidest ja võrreldud ametlike näitajatega. Suure erinevuse korral kasutatakse põhinäitajana ametlikku mitme aasta näitajat ning arvutatud väärtus jääb võrdluseks alles.",
+    "text_037": "Sööda sõltuvus.",
+    "text_038": " Loomsete toodete isevarustatus sõltub ka sööda päritolust. Avaldatud sööda teisendustegurid ja Eesti söödavaru annavad koondsööda katvuseks ligikaudu 82%. Puudujääk koondub imporditud valgurikkasse sööta. Söödaga kohandatud alampiirid on tundlikkusanalüüs, mitte mõõtmine.",
+    "text_039": "Raiskamine.",
+    "text_040": " Eesti 2021. aasta uuringu andmed on jaotatud toidugruppidele. Tarneahela kaod suurendavad vajalikku tootmist; kodumajapidamiste raiskamist käsitletakse eraldi vähendatava osana. Fail ",
+    "text_041": "self_sufficiency_waste_adjusted.csv",
+    "text_042": " näitab kaoga kohandatud isevarustatust: tootmine jagatakse vajaliku tootmise, mitte söödud kogusega. Põhinäitajat see ei muuda.",
+    "text_043": "Stsenaarium B.",
+    "text_044": " Isevarustatus arvutatakse A ja B nõudluse suhte järgi, tootmist muutmata. See on ligikaudne hinnang, mitte uus sõltumatu bilanss.",
+    "text_045": "Sõltumatu kontroll FAOSTATi andmetega",
+    "text_046": "Projekti näitajaid võrreldi FAOSTATi 2022. aasta toidubilansiga. Nisu ja rukis, kartul, puuvili, munad, kala ning sealiha andsid sarnase tulemuse. Köögiviljade, veise- ja linnuliha ning rapsiõli erinevused jäid dokumenteeritud ebakindluseks. Rapsiõli puhul näitab FAOSTAT, et toorseemnel põhinev 69,3% näitaja tõenäoliselt ",
+    "text_047": "alahindab",
+    "text_048": " tegelikku isevarustatust. Kaunviljade pilt on kaheosaline: Eesti ekspordib põldhernest, kuid inimtoiduks kasutatavate kuivade ubade ja läätsede isevarustatus on peaaegu null.",
+    "text_049": "Eeldused ja piirangud",
+    "text_050": "Tarbimise lähteandmed pärinevad 2014. aasta uuringust. Isevarustatuse näitajaid kalibreeritakse ametlike mitme aasta keskmistega. Sööda ja raiskamise hinnangud põhinevad üldistel võrdlusnäitajatel ning on esitatud tundlikkusanalüüsina. Mudel käsitleb praegust toodangut, mitte võimalikku tootmisvõimet. Allikate võrdlusaastad erinevad.",
+    "text_051": "Lahendamata näitajaid ei esitata eksitavalt täpse arvuna. Teraviljasegude puhul puuduvad tarbimisosakaalud; kaunviljade tulemus erineb sööda- ja inimtoidu liikide vahel. Toorsuhkru isevarustatus on peaaegu null, kuid töödeldud maiustusi ei saa samal alusel hinnata."
+  },
+  "data_text": {
+    "population_001": {
+      "source": "2026 (RV021)",
+      "text": "2026 (RV021)"
+    },
+    "production_supply_002": {
+      "source": "2024 (Statistikaamet PM-series)",
+      "text": "2024 (Statistikaamet PM-series)"
+    },
+    "consumption_survey_003": {
+      "source": "2014 (RTU011, TAI)",
+      "text": "2014 (RTU011, TAI)"
+    },
+    "pyramid_group_004": {
+      "source": "Teraviljatooted ja kartul",
+      "text": "Teraviljatooted ja kartul"
+    },
+    "subitem_005": {
+      "source": "Kiudainerikas leib/pagaritooted",
+      "text": "Kiudainerikas leib/pagaritooted"
+    },
+    "cross_check_basis_006": {
+      "source": "Nisu+rukis kokku (leiva asendusnäitaja) (FAOSTAT 2022: 322.1%)",
+      "text": "Nisu+rukis kokku (leiva asendusnäitaja) (FAOSTAT 2022: 322.1%)"
+    },
+    "data_status_007": {
+      "source": "derived",
+      "text": "tuletatud"
+    },
+    "note_008": {
+      "source": "Otsene vaste vajaduse/tarbimise/isevarustatuse tabelite vahel. TAI soovitab rohkem täisteraleiba, kui praegu süüakse (nõudlus kasvab stsenaariumis B), kuid teravilja isevarustatus algab nii kõrgelt (332,5%), et isegi ~1,8-kordne nõudluse kasv jätab selle mugavalt isevarustavaks.",
+      "text": "TAI soovitab praegusest rohkem täisteraleiba. Isegi ligikaudu 1,8 korda suurema nõudluse korral püsiks teravilja isevarustatus üle 100%."
+    },
+    "flag_reason_009": {
+      "source": "Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks."
+    },
+    "subitem_010": {
+      "source": "Pudrud/pasta/riis/teraviljatooted",
+      "text": "Pudrud/pasta/riis/teraviljatooted"
+    },
+    "scenario_A_pct_display_011": {
+      "source": "≤156,2% ülempiir (puderteraviljad 210,4% x 74,2% kaal + riis 0% x 25,8% kaal; pasta ~0% eeldatud, kaalumata -- vt märkust)",
+      "text": "≤156,2% ülempiir (puderteraviljad 210,4% x 74,2% kaal + riis 0% x 25,8% kaal; pasta ~0% eeldatud, kaalumata -- vt märkust)"
+    },
+    "scenario_B_pct_display_012": {
+      "source": "proportsionaalselt madalam kui stsenaarium A ülempiir (nõudlus kasvab 2,08x) -- endiselt mitte ühe numbrina, kuna stsenaarium A ise on ülempiir, mitte punktnäitaja",
+      "text": "proportsionaalselt madalam kui stsenaarium A ülempiir (nõudlus kasvab 2,08x) -- endiselt mitte ühe numbrina, kuna stsenaarium A ise on ülempiir, mitte punktnäitaja"
+    },
+    "scenario_C_pct_display_013": {
+      "source": "proportsionaalselt erinev stsenaarium A ülempiirist (vt demand_change_ratio_C_over_A) -- endiselt mitte ühe numbrina samal põhjusel",
+      "text": "proportsionaalselt erinev stsenaarium A ülempiirist (vt demand_change_ratio_C_over_A) -- endiselt mitte ühe numbrina samal põhjusel"
+    },
+    "scenario_C2_pct_display_014": {
+      "source": "proportsionaalselt erinev stsenaarium A ülempiirist (vt demand_change_ratio_C2_over_A) -- endiselt mitte ühe numbrina samal põhjusel",
+      "text": "proportsionaalselt erinev stsenaarium A ülempiirist (vt demand_change_ratio_C2_over_A) -- endiselt mitte ühe numbrina samal põhjusel"
+    },
+    "cross_check_basis_015": {
+      "source": "Oder ja odratooted (FAOSTAT 2022: 205.5%); Riis ja riisitooted (FAOSTAT 2022: 0.0%)",
+      "text": "Oder ja odratooted (FAOSTAT 2022: 205.5%); Riis ja riisitooted (FAOSTAT 2022: 0.0%)"
+    },
+    "data_status_016": {
+      "source": "gap_range (narrowed, Phase 12)",
+      "text": "lünk-vahemik (kitsendatud Faasis 12)"
+    },
+    "note_017": {
+      "source": "Faasi 12 uuendus: FAOSTAT 2022 täitis kaera-lünga (238,1% isevarustatud, varem tühi) ja andis tegelikud inimtoiduks kasutamise kaalud (kg/elaniku kohta/aastas: riis 4,77, oder 7,78, kaer 5,97), et jaotada see RTU011 kategooria tarbimisosakaalu järgi -- riis 25,8%, kaer+oder \"puderteraviljad\" 74,2% -- sama osakaalupõhine jaotusvõte, mida on juba kasutatud RTU011 linnuliha/punase liha jaotuses (Faas 3). Nende kahe osa kaalutud keskmine: ~156,2%, esitatud ÜLEMPIIRINA (mitte lahendatud kategooria näitajana), sest pasta (durumnisu, ~0% isevarustatud vastavalt PM20 0%-le durumtootmisele) on siiani välja jäetud tarbimiskaalu puudumise tõttu -- FAOSTAT ei erista durumit leivanisust. Kuna pasta on väga tõenäoliselt samuti ligi 0%, saaks selle lisamine tegelikku näitajat ainult langetada, mitte kunagi sellest ülemplirist kõrgemale tõsta. Kitsendatud varasemalt 0%-178%+ vahemikult (128 punkti lai, sisuliselt informatiivsuseta) üheplulise 156,2% laeni, mille taga on tegelik, näidatud kaalumine. Vt PHASE12_NOTES.md. Faasi 13 kontroll: kasutaja osutas õigesti, et Eesti toodab pastat kodumaal (Tartu Mill) ja kasvatab oma nisu -- see on tõsi (Tartu Mill enda tootenimekirjas on spagettide koostisosadeks durumnisujahu ja vesi; Vikipeedia kinnitab, et Tartu Mill jahvatab nisu-/rukkijahu, mannat, pastat ja sööta). Kuid nisu, mida Eesti suures ülejäägis kasvatab, on tavaline pehme nisu (leiva- ja söödanisu), mitte pastaks vajalik durumnisu -- vastavalt PIKK.ee põllumajanduse nõuandeteenistuse juhendile \"Eesti kasvatab pehme nisu sorte, sest durum vajab kuivemat, mandrilisemat kliimat\" kui Eestis on, ning ERR/Novaator (2024) järgi katsetatakse durumit alles eksperimentaalselt ühe talu poolt (Põlgaste, artikli seisuga kaks kasvuperioodi), mida kirjeldatakse selgesõnaliselt ebakindla katsena, mis sõltub ostja leidmisest -- mitte jälgitava kaubanduskultuurina. Seega pasta VALMISTAMINE on tõepoolest kodumaine (kinnitab kasutaja punkti), kuid see töötab imporditud durumnisu/manna baasil, samamoodi nagu riik võib röstida imporditud kohvi või töödelda imporditud kakaod kodumaal, olemata seejuures toorainena isevarustatud. See asendab varasema, kontrollimata väite PM20 0%-durumtootmise kohta (PM20 ei jälgi durumit eraldi) allikapõhise kinnitusega, et pasta tooraine isevarustatus on tõepoolest ~0%, mistõttu 156,2% jääb kehtivaks ülempiiriks. Vt PHASE13_NOTES.md. Faas 14: stsenaariumi C.2 (2025. a EAT-Lancet, täisteravili 210 g/päevas vs 232 g/päevas 2019. a versioonis) nõudlus on arvutatud ja lisatud suhtena; isevarustatus jääb samal põhjusel lahendamata kui stsenaariumis C (puudub lahendatud stsenaariumi A punktnäitaja, mida skaleerida).",
+      "text": "FAOSTATi tarbimisandmete järgi moodustavad riis 25,8% ning kaer ja oder 74,2% sellest rühmast. Nende kaalutud isevarustatus on kuni 156,2%. Pasta osakaal puudub ning selle durumnisu on peamiselt imporditud, seega saab tegelik näitaja olla ainult madalam."
+    },
+    "flag_reason_018": {
+      "source": "Faas 12 kitsendas selle lahendamata 0%-178%+ vahemikust ~156,2% ülempiirile (riis 0% + puderteraviljad 210,4%, FAOSTAT-kaalutud; pasta on endiselt välja jäetud, kaalumata) -- endiselt mitte üks lahendatud punktnäitaja, seega endiselt märgitud andmelüngana, kuid oluliselt kitsamana. Faas 13 kinnitas (mitte ei eeldanud), et pasta tooraine, durumnisu, ei kasvatata Eestis kaubanduslikult (ainult pehme nisu, vastavalt PIKK.ee-le; durum on ainult eksperimentaalne vastavalt ERR/Novaator 2024-le), kuigi pastat toodetakse kodumaal Tartu Mill-is imporditud durumist. Vt PHASE12_NOTES.md ja PHASE13_NOTES.md.",
+      "text": "Kuni 156,2% on ülempiir, mitte täpne näitaja: riisi, kaera ja odra osakaalud on teada, pasta osakaal puudub. Eestis valmistatud pasta kasutab peamiselt imporditud durumnisu."
+    },
+    "subitem_019": {
+      "source": "Kartul, bataat",
+      "text": "Kartul, bataat"
+    },
+    "cross_check_basis_020": {
+      "source": "Kartul ja kartulitooted (FAOSTAT 2022: 65.8%)",
+      "text": "Kartul ja kartulitooted (FAOSTAT 2022: 65.8%)"
+    },
+    "data_status_021": {
+      "source": "derived+official_avg",
+      "text": "tuletatud+ametlik (keskmine)"
+    },
+    "note_022": {
+      "source": "Otsene vaste. TAI soovitab oluliselt rohkem kartulit, kui praegu süüakse (nõudlus +82%), mis langetab isevarustatuse mugavalt 66,9%-lt palju pingelisemale ~37%-le -- kriitilise sõltuvuse signaal, mis ei ole hetkeseisu näitajast üksi nähtav.",
+      "text": "Otsene vaste. TAI soovitab oluliselt rohkem kartulit, kui praegu süüakse (nõudlus +82%), mis langetab isevarustatuse mugavalt 66,9%-lt palju pingelisemale ~37%-le -- kriitilise sõltuvuse signaal, mis ei ole hetkeseisu näitajast üksi nähtav."
+    },
+    "flag_reason_023": {
+      "source": "Stsenaarium A on piirmäärast kõrgemal (66.9%), kuid stsenaarium B (TAI soovitatud toitumine) langeb sellest allapoole (36.8%) -- sõltuvus, mis ilmneb alles siis, kui toitumine nihkub TAI soovituste suunas. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Isevarustatus on praegu 66,9%, kuid langeb TAI soovituste korral 36,8%-le, kui tootmine ei muutu."
+    },
+    "pyramid_group_024": {
+      "source": "Köögi- ja puuviljad, marjad",
+      "text": "Köögi- ja puuviljad, marjad"
+    },
+    "subitem_025": {
+      "source": "Köögiviljad",
+      "text": "Köögiviljad"
+    },
+    "cross_check_basis_026": {
+      "source": "Köögiviljad (koond: tomatid+sibulad+muu) (FAOSTAT 2022: 9.2%)",
+      "text": "Köögiviljad (koond: tomatid+sibulad+muu) (FAOSTAT 2022: 9.2%)"
+    },
+    "data_status_027": {
+      "source": "derived+official_preferred",
+      "text": "tuletatud, eelistatud ametlik"
+    },
+    "note_028": {
+      "source": "Otsene vaste. See on kavas ennustatud peamine pinge: TAI soovitab ~3,5x praegusest köögiviljatarbimisest rohkem, ja köögiviljad on juba niigi kõige nõrgem suurem kategooria (46% isevarustatud ametliku näitaja alusel) -- stsenaarium B lükkaks ressursipõhise näitaja madalale, ligi kümnetesse protsentidesse.",
+      "text": "TAI soovitab süüa ligikaudu 3,5 korda rohkem köögivilju. Praeguse 46% isevarustatuse juures suurendaks see impordivajadust märgatavalt."
+    },
+    "flag_reason_029": {
+      "source": "Stsenaarium A (praegune olukord) isevarustatuse tase 46.0% on alla 50% piirmäära. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Stsenaarium A (praegune olukord) isevarustatuse tase 46.0% on alla 50% piirmäära. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks."
+    },
+    "subitem_030": {
+      "source": "Puuviljad+marjad (kokku)",
+      "text": "Puuviljad+marjad (kokku)"
+    },
+    "cross_check_basis_031": {
+      "source": "Puuviljad - v.a vein (marjadeta) (FAOSTAT 2022: 6.5%)",
+      "text": "Puuviljad - v.a vein (marjadeta) (FAOSTAT 2022: 6.5%)"
+    },
+    "data_status_032": {
+      "source": "derived_matches_official",
+      "text": "tuletatud, ühtib ametlikuga"
+    },
+    "note_033": {
+      "source": "Vajaduse-poolne kogus on puu- ja marjatoodang liidetud eraldi püramiidiridadest (TAI portsjonid annavad puuviljad ja marjad eraldi; tarbimis- ja isevarustatuse andmed on olemas ainult koos). Juba praegu kõige impordisõltuvam kategooria (8%); soovitatud nõudlus on ainult ~25% kõrgem tegelikust, mistõttu stsenaarium B suurendab survet edasi, kuid mitte nii dramaatiliselt kui köögiviljade puhul.",
+      "text": "Puuviljad ja marjad on liidetud, sest tarbimis- ja tootmisandmed eraldi puuduvad. Praegune isevarustatus on 8%; TAI soovitus suurendaks nõudlust ligikaudu 25%."
+    },
+    "flag_reason_034": {
+      "source": "Stsenaarium A (praegune olukord) isevarustatuse tase 8.0% on alla 50% piirmäära. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Stsenaarium A (praegune olukord) isevarustatuse tase 8.0% on alla 50% piirmäära. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks."
+    },
+    "subitem_035": {
+      "source": "Kaunviljad",
+      "text": "Kaunviljad"
+    },
+    "scenario_A_pct_display_036": {
+      "source": "kahetipuline -- vt märkust (Faasi 8 FAOSTAT uuendus)",
+      "text": "kahetipuline -- vt märkust (Faasi 8 FAOSTAT uuendus)"
+    },
+    "data_status_037": {
+      "source": "derived_from_faostat (revised in Phase 8, was gap_assumed)",
+      "text": "tuletatud FAOSTAT-ist (uuendatud Faasis 8, oli eeldatud lünk)"
+    },
+    "note_038": {
+      "source": "Faasi 8 uuendus (vt self_sufficiency_model.csv ja faostat_cross_check.csv): FAOSTAT 2022 näitab, et Eesti kaunviljade koondnäitaja on 332% isevarustatud (netoeksportija), kuid selle taga on peamiselt söödaks/ekspordiks kasvatatavad põlduba -- FAOSTAT kuivadeoa rida (mis on lähemal inimtoiduks kasutatavale kaunviljale) on 0% kodumaiselt toodetud. RTU011 \"kaunviljade\" tarbimiskategooria jaoks ei ole ühte usaldusväärset isevarustatuse punktnäitajat, mistõttu ei ole ka siin stsenaariumipõhist näitajat antud -- endiselt andmelünk stsenaariumide jaoks, kuid paremini mõistetud kui varasem \"teadmata - eeldatavalt madal\".",
+      "text": "Eesti ekspordib palju põldhernest ja -uba, mida kasutatakse peamiselt söödaks. Inimtoiduks kasutatavate kuivade ubade ja läätsede kodumaine tootmine on aga peaaegu null. Seetõttu ei saa rühmale anda üht usaldusväärset näitajat."
+    },
+    "flag_reason_039": {
+      "source": "Faasi 8 FAOSTAT ristkontroll muutis selle näitajast „teadmata - eeldatavalt madal“ kahetipuliseks tulemuseks: Eesti on suur põlduba netoeksportija (sööda-/eksporditarbeks), kuid ~0% isevarustatud kuivade ubade/läätsede osas (taldrikule lähedasem kaunviljatüüp). Endiselt märgitud lahendamata andmelüngana stsenaariumi/piirmäära eesmärgil -- ühtki üksikprotsenti ei ole 50% piirmääraga võrdlemiseks -- kuid ei ole enam märgitud „eeldatavalt madalaks“ ilma tõenditeta.",
+      "text": "Tulemus erineb kasutuse järgi: sööda- ja ekspordikaunvilju toodetakse palju, kuid kuivade ubade ja läätsede isevarustatus on peaaegu 0%. Üht koondprotsenti ei saa usaldusväärselt arvutada."
+    },
+    "pyramid_group_040": {
+      "source": "Piimatooted",
+      "text": "Piimatooted"
+    },
+    "subitem_041": {
+      "source": "(kokku)",
+      "text": "(kokku)"
+    },
+    "cross_check_basis_042": {
+      "source": "Piim - v.a või (FAOSTAT 2022: 139.0%)",
+      "text": "Piim - v.a või (FAOSTAT 2022: 139.0%)"
+    },
+    "note_043": {
+      "source": "Otsene vaste. TAI piimatoodete soovitus on helde (soovitatud tarbimine on ~1,65x praegusest keskmisest tarbimisest, vastavalt requirement_model_national.csv g/päevas näitajale, mis parandati pärast avaldamist -- vt docs/methodology.md jaotis 4.2) -- isevarustatus langeb väga mugavalt 166%-liselt ülejäägilt umbes 100%-le täieliku TAI-le vastavuse korral, endiselt kava peamise pinge selge näide (soovitatud muutus vähendab varu praegu tugevas kategoorias), kuigi vähem tõsine kui algselt arvutatud.",
+      "text": "TAI soovitus suurendaks piimatoodete tarbimist ligikaudu 1,65 korda. Muutumatu tootmise korral langeks isevarustatus 166%-lt umbes 100%-le."
+    },
+    "flag_reason_044": {
+      "source": "Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks. (Näitaja parandatud pärast avaldamist varasemalt 61,1%-lt -- algne piima portsjoni-grammi teisendus kasutas ainult piima rida Tabelist 16.3; parandatud kõigi kuue piimatoote alamtüübi keskmiseks, vt methodology.md jaotis 4.2.)",
+      "text": "TAI soovitustele vastav suurem tarbimine vähendaks piimatoodete isevarustatust. Arvutus kasutab kuue piimatoote keskmist portsjonikaalu."
+    },
+    "pyramid_group_045": {
+      "source": "Pähklid, seemned, õlid ja rasvad",
+      "text": "Pähklid, seemned, õlid ja rasvad"
+    },
+    "subitem_046": {
+      "source": "Pähklid+seemned, kakao (kokku)",
+      "text": "Pähklid+seemned, kakao (kokku)"
+    },
+    "cross_check_basis_047": {
+      "source": "Pähklid ja pähklitooted (FAOSTAT 2022: 0.0%)",
+      "text": "Pähklid ja pähklitooted (FAOSTAT 2022: 0.0%)"
+    },
+    "note_048": {
+      "source": "Faas 1 märkis selle täpse eelduse Faasi 3 topeltkontrolli jaoks kaubandusandmete vastu, mida tehti alles Faasis 12. FAOSTAT 2022 (Eesti, \"Pähklid ja pähklitooted\"): 0 t tootmist vs ~32 kt kodumaist pakkumist = täpselt 0%, iga stsenaariumi puhul, kuna 0% mistahes nõudlussuhtega skaleerituna on ikka 0%. See kinnitab, mitte ei muuda, varasemat eeldust -- väikesemahuline/aiapidamise sarapuupähkli kasvatus Eestis on tõeline (kasutaja tagasiside põhjal), kuid ei kajastu riikliku statistika täpsuses. Uuendatud tekstisildilt lahendatud arvuks, kuna see on nüüd kinnitatud, mitte ainult eeldatud. Vt PHASE12_NOTES.md. Faas 14: stsenaarium C.2 (2025. a EAT-Lancet) annab ka puupähklitele 0% -- tootmine on struktuurselt 0 t sõltumata nõudlusstsenaariumist, mistõttu jääb see ka C.2 puhul 0,0%-ks.",
+      "text": "FAOSTAT ei näita Eestis registreeritud pähklitootmist, kuid kodumaine pakkumine on ligikaudu 32 000 tonni. Väikekasvatus statistikas ei kajastu, mistõttu on kõigi stsenaariumide näitaja 0%."
+    },
+    "flag_reason_049": {
+      "source": "Nüüd kinnitatud (FAOSTAT 2022) 0% isevarustatus igas stsenaariumis, mitte lahendamata eeldus -- tõeline kriitiline sõltuvus (täielikult impordist sõltuv), lihtsalt enam mitte andmelünk. Faasi 12 uuendus; vt PHASE12_NOTES.md.",
+      "text": "Nüüd kinnitatud (FAOSTAT 2022) 0% isevarustatus igas stsenaariumis, mitte lahendamata eeldus -- tõeline kriitiline sõltuvus (täielikult impordist sõltuv), lihtsalt enam mitte andmelünk. Faasi 12 uuendus; vt PHASE12_NOTES.md."
+    },
+    "subitem_050": {
+      "source": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)",
+      "text": "Õlid/rasvad/võided (rapsiõli, esindusnäitaja)"
+    },
+    "cross_check_basis_051": {
+      "source": "Raps ja sinep (toorseeme) (FAOSTAT 2022: 141.3%); Raps- ja sinepiõli (rafineeritud) (FAOSTAT 2022: 265.2%)",
+      "text": "Raps ja sinep (toorseeme) (FAOSTAT 2022: 141.3%); Raps- ja sinepiõli (rafineeritud) (FAOSTAT 2022: 265.2%)"
+    },
+    "note_052": {
+      "source": "Vajaduse/tarbimise kogused on õlide/rasvade/võiete koondkategooria (kummaski allikas ei ole õlitüübi järgi jaotust). Isevarustatus kasutab rapsiõli 69,3% näitajat (Eesti ainus tegelik kodumaine õlikultuur) illustratiivse esindusnäitajana -- päevalille- ja sojaõli on mõlemad 0% kodumaiselt toodetud ja jäävad iga stsenaariumi puhul 0%-ks, mistõttu tegelik tarbimiskaalutud segunäitaja oleks madalam kui siin näidatud ainult-rapsiõli näitaja. Käsitle scenario_B_self_sufficiency_pct ülempiiri illustratsioonina, mitte segatud punktnäitajana.",
+      "text": "Tarbimisandmed hõlmavad kõiki õlisid ja rasvu koos. Näidatud 69,3% põhineb rapsiõlil; päevalille- ja sojaõli kodumaine tootmine on 0%. Seetõttu on tegelik tarbimisega kaalutud näitaja tõenäoliselt madalam."
+    },
+    "flag_reason_053": {
+      "source": "Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks. Stsenaarium C (EAT-Lancet planeedi tervise dieet) vähendab seda veelgi, 27,0%-ni -- langeb esmakordselt alla 50% piirmäära. See on sõltuvus, mida ei esine üldse stsenaariumis A (69,3%) ega B (60,8%); see tekib alles siis, kui nõudlus nihkub EAT-Lancet palju kõrgema soovitatud õlide/rasvade tarbimise suunas (51,8 g/päevas vs projekti enda ristviite näitaja), kui tootmine jääb muutumatuks.",
+      "text": "Suurem soovituslik õlitarbimine vähendab näitajat: A-s 69,3%, B-s 60,8% ja C-s 27,0%. Alla 50% langus tekib EAT-Lanceti stsenaariumis."
+    },
+    "subitem_054": {
+      "source": "Õlid/rasvad/võided (päevalilleõli, 0%)",
+      "text": "Õlid/rasvad/võided (päevalilleõli, 0%)"
+    },
+    "cross_check_basis_055": {
+      "source": "Päevalilleõli (FAOSTAT 2022: 25.0%)",
+      "text": "Päevalilleõli (FAOSTAT 2022: 25.0%)"
+    },
+    "note_056": {
+      "source": "0 t kodumaist tootmist (PM37 2024); täielikult imporditud iga tarbimisstsenaariumi puhul.",
+      "text": "0 t kodumaist tootmist (PM37 2024); täielikult imporditud iga tarbimisstsenaariumi puhul."
+    },
+    "flag_reason_057": {
+      "source": "Stsenaarium A (praegune olukord) isevarustatuse tase 0.0% on alla 50% piirmäära.",
+      "text": "Stsenaarium A (praegune olukord) isevarustatuse tase 0.0% on alla 50% piirmäära."
+    },
+    "subitem_058": {
+      "source": "Õlid/rasvad/võided (sojaõli, 0%)",
+      "text": "Õlid/rasvad/võided (sojaõli, 0%)"
+    },
+    "pyramid_group_059": {
+      "source": "Kala, munad ja liha",
+      "text": "Kala, munad ja liha"
+    },
+    "subitem_060": {
+      "source": "Kala ja mereannid",
+      "text": "Kala ja mereannid"
+    },
+    "cross_check_basis_061": {
+      "source": "Kala, mereannid (FAOSTAT 2022: 303.4%)",
+      "text": "Kala, mereannid (FAOSTAT 2022: 303.4%)"
+    },
+    "data_status_062": {
+      "source": "derived+official_close",
+      "text": "tuletatud, lähedal ametlikule"
+    },
+    "note_063": {
+      "source": "Otsene vaste. Faasidest 2/5 kaasa võetud kriitiline tõlgendusreservatsioon: ainult ~15% Eesti kala tootmisest/püügist jääb tänapäeval kodumaale (ülejäänu eksporditakse), mistõttu 300% peamine näitaja on ressursipõhine, mitte kajastus sellest, mida tegelikult kodumaal süüakse. TAI soovitab ~3,4x praegusest kalatarbimisest rohkem -- stsenaariumi B langus ~89%-le näitab, et see on põhimõtteliselt *ümberjaotamise* küsimus (olemasoleva saagi suunamine kodumaisele turule), mitte tootmispuudujäägi küsimus nagu köögi- ja puuviljade puhul.",
+      "text": "Eestisse jääb ligikaudu 15% püütud ja toodetud kalast, ülejäänu eksporditakse. TAI soovituse korral langeks näitaja umbes 89%-le; küsimus on eelkõige olemasoleva kala suunamises koduturule."
+    },
+    "flag_reason_064": {
+      "source": "Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks. Stsenaarium C vähendab seda veelgi, 281,8%-ni -- endiselt palju üle 50% piirmäära; kala jääb mugavalt isevarustatuks kõigis kolmes stsenaariumis, hoolimata EAT-Lancet kõrgemast soovitatud kalatarbimisest.",
+      "text": "Suurem soovituslik kalatarbimine vähendab näitajat, kuid ressursipõhine isevarustatus püsib kõigis stsenaariumides üle 50%."
+    },
+    "subitem_065": {
+      "source": "Munad",
+      "text": "Munad"
+    },
+    "cross_check_basis_066": {
+      "source": "Munad (FAOSTAT 2022: 57.9%)",
+      "text": "Munad (FAOSTAT 2022: 57.9%)"
+    },
+    "note_067": {
+      "source": "Otsene vaste. Söödaga kohandatud alampiir (Faas 6, illustratiivne): 37,5%.",
+      "text": "Otsene vaste. Söödaga kohandatud alampiir (Faas 6, illustratiivne): 37,5%."
+    },
+    "flag_reason_068": {
+      "source": "Stsenaarium A on piirmäärast kõrgemal (53.6%), kuid stsenaarium B (TAI soovitatud toitumine) langeb sellest allapoole (36.8%) -- sõltuvus, mis ilmneb alles siis, kui toitumine nihkub TAI soovituste suunas. Peamine isevarustatuse näitaja on piirmäärast kõrgemal, kuid illustratiivne söödaga kohandatud alampiir (37.5%) langeb sellest allapoole -- märgitud tundlikkusanalüüsina, mitte kinnitatud mõõtmisena. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Munade isevarustatus on praegu 53,6%, kuid TAI soovituste korral 36,8%. Söödaga kohandatud hinnanguline alampiir on 37,5%."
+    },
+    "subitem_069": {
+      "source": "Linnuliha",
+      "text": "Linnuliha"
+    },
+    "cross_check_basis_070": {
+      "source": "Linnuliha (FAOSTAT 2022: 79.3%)",
+      "text": "Linnuliha (FAOSTAT 2022: 79.3%)"
+    },
+    "note_071": {
+      "source": "Otsene vaste. Tegelik linnuliha tarbimine on juba lähedal TAI soovitatud tasemele, mistõttu stsenaarium B muudab näitajat vaid vähe. Söödaga kohandatud alampiir (Faas 6, illustratiivne): 40,4%.",
+      "text": "Otsene vaste. Tegelik linnuliha tarbimine on juba lähedal TAI soovitatud tasemele, mistõttu stsenaarium B muudab näitajat vaid vähe. Söödaga kohandatud alampiir (Faas 6, illustratiivne): 40,4%."
+    },
+    "flag_reason_072": {
+      "source": "Peamine isevarustatuse näitaja on piirmäärast kõrgemal, kuid illustratiivne söödaga kohandatud alampiir (40.4%) langeb sellest allapoole -- märgitud tundlikkusanalüüsina, mitte kinnitatud mõõtmisena. Stsenaarium B (TAI soovitatud toitumine) vähendab isevarustatust võrreldes stsenaariumiga A -- soovitatud toitumisele üleminek suurendab selles kategoorias impordisõltuvust, kui tootmine jääb muutumatuks.",
+      "text": "Põhinäitaja ületab 50%, kuid söödaga kohandatud hinnanguline alampiir on 40,4%. TAI soovitustele vastav suurem tarbimine vähendaks näitajat veelgi."
+    },
+    "subitem_073": {
+      "source": "Punane liha",
+      "text": "Punane liha"
+    },
+    "cross_check_basis_074": {
+      "source": "Veiseliha (FAOSTAT 2022: 75.0%); Sealiha (FAOSTAT 2022: 78.2%); Rups (FAOSTAT 2022: 100.0%)",
+      "text": "Veiseliha (FAOSTAT 2022: 75.0%); Sealiha (FAOSTAT 2022: 78.2%); Rups (FAOSTAT 2022: 100.0%)"
+    },
+    "note_075": {
+      "source": "Otsene vaste. Punast liha tarbitakse praegu ~3,5x rohkem kui TAI soovitab (peaaegu täpselt vastab Faasi 4 sõltumatult tuletatud 3,5x näitajale, hea faasidevaheline järjepidevuse kontroll) -- stsenaarium B *parandab* isevarustatust järsult (~274%-ni), kuna soovitatud tasemele kärpimine vajab palju vähem liha kokku. Söödaga kohandatud alampiirid on olemas komponentide kaupa Faasis 6 (sealiha 50,4%, veiseliha 92,7%, lamba-kitseliha 68,0%), kuid neid ei ole siin ühte koondnäitajasse liidetud, et vältida väära täpsuse muljet.",
+      "text": "Punast liha tarbitakse ligikaudu 3,5 korda rohkem kui TAI soovitab. Soovitatud tasemel tõuseks isevarustatus umbes 274%-ni. Söödaga kohandatud alampiirid on lihaliikide kaupa ja neid ei ole eksitava täpsuse vältimiseks liidetud."
+    },
+    "flag_reason_076": {
+      "source": "Ei ole märgitud: isevarustatus püsib mugavalt üle piirmäära mõlemas stsenaariumis, ilma söödaga kohandatud või andmelünga muredeta.",
+      "text": "Ei ole märgitud: isevarustatus püsib mugavalt üle piirmäära mõlemas stsenaariumis, ilma söödaga kohandatud või andmelünga muredeta."
+    },
+    "pyramid_group_077": {
+      "source": "Maiustused, suupisted ja muu",
+      "text": "Maiustused, suupisted ja muu"
+    },
+    "scenario_A_pct_display_078": {
+      "source": "~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted)",
+      "text": "~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted)"
+    },
+    "scenario_B_pct_display_079": {
+      "source": "~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted) -- laadilt muutumatu, kuna Eesti nullist kodumaine suhkru rafineerimine on struktuurne, mitte tarbitava koguse funktsioon",
+      "text": "~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted) -- laadilt muutumatu, kuna Eesti nullist kodumaine suhkru rafineerimine on struktuurne, mitte tarbitava koguse funktsioon"
+    },
+    "data_status_080": {
+      "source": "gap_assumed",
+      "text": "eeldatud lünk"
+    },
+    "note_081": {
+      "source": "Maiustusi/suupisteid tarbitakse praegu ~3,1x rohkem kui TAI soovitab (vastab Faasi 4 sõltumatult tuletatud 3,1x näitajale, veel üks faasidevaheline järjepidevuse kontroll). Soovitatud tasemele üleminek vähendaks impordimahtu absoluutarvudes umbes kahe kolmandiku võrra (0,323x nõudlus), kuid isevarustatuse *protsent* jääb mõlemal juhul ligi nullile kinnitatuks -- Eestil ei ole üldse kodumaist suhkru rafineerimisvõimekust, mistõttu on tegemist struktuurse, mitte koostisest tuleneva sõltuvusega. Faas 14: stsenaarium C.2 (2025. a EAT-Lancet) nõudlus on arvutatud uuendatud lisatud suhkru sihttaseme põhjal (6 g/päevas, varasema 2019. a dieedi 31 g/päevas asemel) -- isevarustatuse protsent jääb samal põhjusel kui B/C puhul samale struktuursele ligi-nullile.",
+      "text": "Maiustusi ja suupisteid tarbitakse ligikaudu 3,1 korda rohkem kui TAI soovitab. Väiksem tarbimine vähendaks importi, kuid isevarustatus püsiks nulli lähedal, sest Eestis suhkrut ei rafineerita."
+    },
+    "flag_reason_082": {
+      "source": "Isevarustatus ei ole selle kirje jaoks lahendatud arvuline näitaja („~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted)“) -- märgitud andmelünga/eeldusena vastavalt ristviite match_quality tavale, mitte mõõdetud sõltuvusena.",
+      "text": "Isevarustatus ei ole selle kirje jaoks lahendatud arvuline näitaja („~0% (toorsuhkur) / hinnatamatu (tööstuslikud tooted)“) -- märgitud andmelünga/eeldusena vastavalt ristviite match_quality tavale, mitte mõõdetud sõltuvusena."
+    },
+    "subitem_083": {
+      "source": "Mesi",
+      "text": "Mesi"
+    },
+    "note_084": {
+      "source": "Statistikaameti PM29 mee bilanss (tootmine 1313 t, inimtoiduks tarbimine 1339 t, 2024) seisis kasutamata failis data/raw/statistikaamet/ alates Faasist 1 -- võeti esmakordselt kasutusele Faasis 12. TAI Tabel 13 ei anna meele eraldi soovitatud portsjonite arvu (see on vaid üks viiest võrdselt kaalutud kirjest Tabel 16 maiustuste esindusliku grammikaalu juures), mistõttu stsenaariumi B/C mee nõudlus on ekstrapoleeritud kogu \"Maiustused, suupisted ja muu (kokku)\" kategooria enda nõudlusmuutuse suhete alusel (0,323x B jaoks, 0,1743x C jaoks) -- selgesõnaline eeldus, et mee tarbimisosakaal liigub proportsionaalselt teiste maiustustega, mitte TAI-spetsiifiline meenäitaja. Tootmine on fikseeritud (tootmisvõimekuse ülempiiri ei modelleerita, kooskõlas kõigi teiste alamkirjetega). Netomõju: soovitatud (madalama) maiustuste tarbimise suunas liikumine jätab Eesti veelgi mugavamalt meega isevarustatuks (>300% stsenaariumis B), kuna väiksem tarbimine fikseeritud tootmise juures aitab ainult. Vt PHASE12_NOTES.md. Faas 14: stsenaarium C.2 (2025. a EAT-Lancet) kärbib lisatud suhkrut palju järsemalt kui 2019. a dieet (6 g/päevas vs 31 g/päevas), mistõttu sama proportsionaalne ekstrapoleerimismeetod, mida kasutati B/C puhul, tõstab mee C.2 isevarustatuse silmatorkavale ~2795%-le -- mitte sellepärast, et mee tootmine muutuks, vaid sellepärast, et 2025. a dieedi palju väiksem suhkrulubatis kahandab nimetajat järsult. Loe seda kui \"dieet, mis sööks nii vähe suhkrut, leiaks Eesti olemasoleva meetoodangu triviaalselt piisavana kogu (palju väiksema) maiustuste jaoks\", mitte väitena, et mesi ise paraneb.",
+      "text": "2024. aastal toodeti Eestis 1313 tonni ja tarbiti 1339 tonni mett. Kuna TAI ei anna meele eraldi soovitust, muutub nõudlus koos maiustuste rühmaga. C.2 väga suur näitaja (~2795%) tuleneb väikesest suhkrusoovitusest, mitte meetoodangu kasvust."
+    },
+    "flag_reason_085": {
+      "source": "Selgelt üle iga isevarustatuse piirmäära igas stsenaariumis; tootmine on fikseeritud ja soovitatud (madalam) maiustuste tarbimine ainult tugevdab seda veelgi. Kriitilist sõltuvust ei ole. Faasi 12 lisandus; vt PHASE12_NOTES.md.",
+      "text": "Selgelt üle iga isevarustatuse piirmäära igas stsenaariumis; tootmine on fikseeritud ja soovitatud (madalam) maiustuste tarbimine ainult tugevdab seda veelgi. Kriitilist sõltuvust ei ole. Faasi 12 lisandus; vt PHASE12_NOTES.md."
+    },
+    "assessment_086": {
+      "source": "alatarbitakse",
+      "text": "alatarbitakse"
+    },
+    "subitem_087": {
+      "source": "Õlid/rasvad/võided",
+      "text": "Õlid/rasvad/võided"
+    },
+    "assessment_088": {
+      "source": "ületarbitakse",
+      "text": "ületarbitakse"
+    },
+    "assessment_089": {
+      "source": "ligikaudu sihttasemel",
+      "text": "ligikaudu sihttasemel"
+    },
+    "assessment_090": {
+      "source": "MÕÕTMATA - kaunviljade kohta RTU011 tarbimisandmed puuduvad",
+      "text": "MÕÕTMATA - kaunviljade kohta RTU011 tarbimisandmed puuduvad"
+    },
+    "pyramid_group_091": {
+      "source": "(kõik grupid)",
+      "text": "(kõik grupid)"
+    },
+    "subitem_092": {
+      "source": "Segatoidud/valmistoidud - ei ole ühele toidugrupile omistatavad",
+      "text": "Segatoidud/valmistoidud - ei ole ühele toidugrupile omistatavad"
+    },
+    "faostat_item_093": {
+      "source": "Nisu ja nisutooted",
+      "text": "Nisu ja nisutooted"
+    },
+    "faostat_item_094": {
+      "source": "Rukis ja rukkitooted",
+      "text": "Rukis ja rukkitooted"
+    },
+    "faostat_item_095": {
+      "source": "Nisu+rukis kokku (leiva asendusnäitaja)",
+      "text": "Nisu+rukis kokku (leiva asendusnäitaja)"
+    },
+    "note_096": {
+      "source": "Lähedane vaste: FAOSTAT 2022 toornisu+rukki suhe (322%) jääb ~3 protsendipunkti kaugusele PM20-2024 põhisest leiva asendusnäitajast (332,5%), hoolimata erinevatest aastatest ja täpsest kirje ulatusest (FAOSTAT jälgib toorvilja, mitte leiba). Tugevdab usaldust saagiste-tühistumise argumendi vastu just teravilja puhul.",
+      "text": "FAOSTATi nisu ja rukki näitaja on 322% ning projekti leiva asendusnäitaja 332,5%. Erinevast aastast ja ulatusest hoolimata on tulemused lähedased."
+    },
+    "faostat_item_097": {
+      "source": "Oder ja odratooted",
+      "text": "Oder ja odratooted"
+    },
+    "note_098": {
+      "source": "Sama suurusjärk (205% FAOSTAT 2022 vs 178% PM20 2024) -- mõlemad mugavalt >100%, toetades kvalitatiivset punkti, et oder on pudru/pasta/riisi vahemiku tugev ots, kuigi vahemik ise jääb lahendamata.",
+      "text": "Sama suurusjärk (205% FAOSTAT 2022 vs 178% PM20 2024) -- mõlemad mugavalt >100%, toetades kvalitatiivset punkti, et oder on pudru/pasta/riisi vahemiku tugev ots, kuigi vahemik ise jääb lahendamata."
+    },
+    "faostat_item_099": {
+      "source": "Kartul ja kartulitooted",
+      "text": "Kartul ja kartulitooted"
+    },
+    "note_100": {
+      "source": "Lähedane vaste: FAOSTAT 2022 (65,8%) asub peaaegu täpselt projekti peamise näitaja juures (66,9%, mis ise on 63,7% tuletatud / 70% ametliku näitaja keskmine). Hea sõltumatu kinnitus.",
+      "text": "Lähedane vaste: FAOSTAT 2022 (65,8%) asub peaaegu täpselt projekti peamise näitaja juures (66,9%, mis ise on 63,7% tuletatud / 70% ametliku näitaja keskmine). Hea sõltumatu kinnitus."
+    },
+    "faostat_item_101": {
+      "source": "Köögiviljad (koond: tomatid+sibulad+muu)",
+      "text": "Köögiviljad (koond: tomatid+sibulad+muu)"
+    },
+    "note_102": {
+      "source": "OLULINE LAHKNEVUS, märgitud, kuid lahendamata: FAOSTAT 2022 näitab vaid 9,2% -- palju madalam kui nii projekti tuletatud (29%) kui ka peamine/ametlik (46%) näitaja. Võimalikud põhjused: FAOSTAT rahvusvaheline kaubaklassifikatsioon \"Köögiviljad, muud\" võib olla kitsam kui Statistikaameti PM33 kategooria; väikeriikide väiksemate kultuuride tootmise rahvusvaheline aruandlus võib jääda maha või alahinnata võrreldes riikliku statistikaameti enda näitajatega; 2022 võis olla ka nõrgem köögiviljakasvatusaasta kui ametliku 5-aastase keskmise aluseks olevad aastad. See on sama köögivilja/puuvilja lahknevus, mis on juba märgitud projekti suurima seletamatu erinevusena alates Faasist 1 -- FAOSTAT lisab KOLMANDA andmepunkti, mis ei ühti kummagagi olemasolevast, mitte ei lahenda erinevust. Käsitletud avatud, dokumenteeritud ebakindlusena.",
+      "text": "FAOSTATi näitaja on 9,2%, projekti arvutus 29% ja ametlik näitaja 46%. Erinevus võib tuleneda kategooriate ulatusest, aruandlusest või võrdlusaastast ning jääb lahendamata ebakindluseks."
+    },
+    "faostat_item_103": {
+      "source": "Puuviljad - v.a vein (marjadeta)",
+      "text": "Puuviljad - v.a vein (marjadeta)"
+    },
+    "note_104": {
+      "source": "Lähedane vaste: FAOSTAT 2022 ainult-puuvilja näitaja (6,5%) on lähedal projekti puuvili+marjad koondnäitajale 8% -- kooskõlas sellega, et FAOSTAT kirjete loend siin ei näi eraldi eristavat Eesti metsikuid/kasvatatud marju (teadaolev FAOSTAT piirang väiksemate kultuuride puhul).",
+      "text": "Lähedane vaste: FAOSTAT 2022 ainult-puuvilja näitaja (6,5%) on lähedal projekti puuvili+marjad koondnäitajale 8% -- kooskõlas sellega, et FAOSTAT kirjete loend siin ei näi eraldi eristavat Eesti metsikuid/kasvatatud marju (teadaolev FAOSTAT piirang väiksemate kultuuride puhul)."
+    },
+    "faostat_item_105": {
+      "source": "Liha kokku (sh linnuliha)",
+      "text": "Liha kokku (sh linnuliha)"
+    },
+    "faostat_item_106": {
+      "source": "Veiseliha",
+      "text": "Veiseliha"
+    },
+    "note_107": {
+      "source": "Märkimisväärne lahknevus: FAOSTAT 2022 (75%) vs PM42 2024 (109%) -- erinevad aastad sektoris (veised), kus karjasuurus ja tapamaht võivad aastati oluliselt kõikuda; võimalikud ka rümbakaalu või kaubandusarvestuse tava erinevused. Märgitud, kuid lahendamata.",
+      "text": "Märkimisväärne lahknevus: FAOSTAT 2022 (75%) vs PM42 2024 (109%) -- erinevad aastad sektoris (veised), kus karjasuurus ja tapamaht võivad aastati oluliselt kõikuda; võimalikud ka rümbakaalu või kaubandusarvestuse tava erinevused. Märgitud, kuid lahendamata."
+    },
+    "faostat_item_108": {
+      "source": "Sealiha",
+      "text": "Sealiha"
+    },
+    "note_109": {
+      "source": "Üsna lähedane: FAOSTAT 2022 (78,2%) vs PM42 2024 (72%), ~6 punkti piires.",
+      "text": "Üsna lähedane: FAOSTAT 2022 (78,2%) vs PM42 2024 (72%), ~6 punkti piires."
+    },
+    "note_110": {
+      "source": "Märkimisväärne lahknevus: FAOSTAT 2022 (79,3%) on palju kõrgem kui PM42 2024 peamine näitaja (57,7%). Kaks aastat vahet sektoris, kus Baltikumis on toimunud reaalseid investeeringu-/mahumuutusi, on usutav põhjus; võimalik ka mõistemääratluse erinevus selles, mis loetakse \"linnulihaks\" (ainult broiler vs kaasa arvatud kalkun/part). Märgitud, kuid lahendamata -- see pigem tugevdab kui õõnestab Faaside 6/7 ettevaatlikkust käsitleda linnuliha söödaga kohandatud ja stsenaarium B näitajaid tundlikkusanalüüsina, mitte täpsete punktidena.",
+      "text": "FAOSTATi 2022. aasta näitaja on 79,3% ja PM42 2024 näitaja 57,7%. Erinevus võib tuleneda aastast või linnuliha määratlusest ning jääb lahendamata."
+    },
+    "faostat_item_111": {
+      "source": "Rups",
+      "text": "Rups"
+    },
+    "note_112": {
+      "source": "Lähedane, arvestades väikeseid absoluutmahte (paar kt kumbagi suunda muudab suhet palju); ei ole selles mastaabis sisuline täpsustest.",
+      "text": "Lähedane, arvestades väikeseid absoluutmahte (paar kt kumbagi suunda muudab suhet palju); ei ole selles mastaabis sisuline täpsustest."
+    },
+    "note_113": {
+      "source": "Lähedane vaste: FAOSTAT 2022 (57,9%) ~4 punkti kaugusel PM45 2024 peamisest näitajast (53,6%). Hea sõltumatu kinnitus.",
+      "text": "Lähedane vaste: FAOSTAT 2022 (57,9%) ~4 punkti kaugusel PM45 2024 peamisest näitajast (53,6%). Hea sõltumatu kinnitus."
+    },
+    "faostat_item_114": {
+      "source": "Piim - v.a või",
+      "text": "Piim - v.a või"
+    },
+    "note_115": {
+      "source": "Huvitav: FAOSTAT 2022 (139,0%) langeb peaaegu täpselt projekti enda TULETATUD piimaekvivalendi näitajale (134,9%), mitte ametlikule peamisele näitajale (166%). See on sõltumatu andmepunkt, mis toetab selle kategooria puhul tuletatud alt-üles ehitust ametliku strateegiadokumendi näitaja asemel -- väärib märkimist, kuna nihutab veidi usaldust võrreldes Faasi 5 algse vaikimisi reegliga \"eelista ametlikku, kui need lahknevad\".",
+      "text": "FAOSTATi näitaja 139,0% on lähedal projekti arvutusele 134,9%, kuid madalam ametlikust 166% näitajast. See toetab projekti arvutatud väärtust."
+    },
+    "faostat_item_116": {
+      "source": "Kala, mereannid",
+      "text": "Kala, mereannid"
+    },
+    "note_117": {
+      "source": "Peaaegu täpne vaste: FAOSTAT 2022 (303%) kinnitab sisuliselt ametlikku 300% ressursipõhist näitajat. Kinnitab sõltumatult ka ekspordirohket reservatsiooni: FAOSTAT enda Toidu (inimtarbimise) rida kala jaoks on 17 kt 88 kt tootmise vastu -- ~19%, lähedal juba Faasist 2 kaasa võetud ~15% \"jääb kodumaale\" näitajale.",
+      "text": "FAOSTATi 303% tulemus kinnitab ametlikku 300% ressursipõhist näitajat. Inimtoiduks jääb ligikaudu 19% toodangust, mis on lähedal projekti 15% hinnangule."
+    },
+    "faostat_item_118": {
+      "source": "Raps ja sinep (toorseeme)",
+      "text": "Raps ja sinep (toorseeme)"
+    },
+    "note_119": {
+      "source": "OLULINE LAHKNEVUS, märgitud, kuid lahendamata: FAOSTAT 2022 toorrapsi isevarustatus on 141,3%, ligikaudu kaks korda kõrgem kui PM37-2024 põhine näitaja (69,3%), millele projekti õlinäitaja tugineb. Kaks usutavat, kinnitamata põhjust: (1) 2022 oli Balti/Musta mere piirkonna õlikultuuride kaubanduse jaoks erakorraline aasta pärast Venemaa sissetungi Ukrainasse, mis muutis piirkondlikke teravilja-/õlikultuuride vooge -- ajutine, mitte tingimata mõistemääratluslik mõju; (2) FAOSTAT SUA/FBS arvestus võib käsitleda kodumaal õli tootmiseks pressitud seemet erinevalt Statistikaameti PM37 \"kodumaise kasutuse\" näitajast, eriti kui saadud õli hiljem eksporditakse. Lahendamata -- esitatud avatud ebakindlusena.",
+      "text": "FAOSTATi toorrapsi näitaja on 141,3% ja PM37 põhine näitaja 69,3%. Erinevus võib tuleneda 2022. aasta erakorralisest kaubandusest või pressimiseks kasutatud seemne arvestusest."
+    },
+    "faostat_item_120": {
+      "source": "Raps- ja sinepiõli (rafineeritud)",
+      "text": "Raps- ja sinepiõli (rafineeritud)"
+    },
+    "note_121": {
+      "source": "KINNITAB MÄRGITUD PIIRANGUT: FAOSTAT 2022 rafineeritud õli isevarustatus on 265%, palju kõrgem kui 69,3% saagiste-tühistumise asendusnäitaja. Faasi 5 enda metoodikamärkus juba hoiatas, et saagiste-tühistumise argument \"variseb kokku, kui märkimisväärne osa Eesti toiduõli kaubandusest on juba rafineeritud kujul, mitte toorseemnena\" -- täpselt seda FAOSTAT näitabki: Eesti toodab palju rohkem rafineeritud rapsiõli (61 kt), kui ta kodumaal tarbib (23 kt pakkumist), mis tähendab, et suur osa pressitud õlist eksporditakse otse õlina, mitte toorseemnena. Tegelik õli isevarustatus on väga tõenäoliselt palju kõrgem kui 69,3% toorseemne asendusnäitaja, Eesti kasuks (st projekti olemasolev õlinäitaja ALAHINDAB isevarustatust, mitte ei ülehinda) -- kuid täpne suurus jääb ebakindlaks eespool nimetatud toorseemne taseme lahknevuse tõttu.",
+      "text": "FAOSTATi rafineeritud rapsiõli näitaja on 265%, võrreldes projekti toorseemnel põhineva 69,3%-ga. Eesti ekspordib palju pressitud õli, seega alahindab projekti asendusnäitaja tõenäoliselt tegelikku isevarustatust."
+    },
+    "faostat_item_122": {
+      "source": "Päevalilleõli",
+      "text": "Päevalilleõli"
+    },
+    "note_123": {
+      "source": "Väike lahknevus, absoluutarvudes tähtsusetu: FAOSTAT näitab väikest 1 kt kodumaist päevalilleõli tootmist/töötlemist 2022. aastal vs PM37 2024 0 t. Mõlemad viitavad selle õlitüübi puhul peaaegu täielikule impordisõltuvusele, sõltumata täpsest lugemisest.",
+      "text": "Väike lahknevus, absoluutarvudes tähtsusetu: FAOSTAT näitab väikest 1 kt kodumaist päevalilleõli tootmist/töötlemist 2022. aastal vs PM37 2024 0 t. Mõlemad viitavad selle õlitüübi puhul peaaegu täielikule impordisõltuvusele, sõltumata täpsest lugemisest."
+    },
+    "faostat_item_124": {
+      "source": "Riis ja riisitooted",
+      "text": "Riis ja riisitooted"
+    },
+    "note_125": {
+      "source": "Täpne vaste: mõlemad allikad kinnitavad 0% kodumaist riisitootmist, kooskõlas projekti olemasoleva eeldusega.",
+      "text": "Täpne vaste: mõlemad allikad kinnitavad 0% kodumaist riisitootmist, kooskõlas projekti olemasoleva eeldusega."
+    },
+    "faostat_item_126": {
+      "source": "Pähklid ja pähklitooted",
+      "text": "Pähklid ja pähklitooted"
+    },
+    "note_127": {
+      "source": "KINNITAB olemasolevat eeldust, mitte ei muuda seda: FAOSTAT 2022 näitab null registreeritud puupähklitootmist ~32 kt kodumaise pakkumise vastu, st täpselt 0% -- Eesti väikesemahuline/aiapidamise sarapuupähkli kasvatus (tõeline, kasutaja tagasiside põhjal) ei kajastu riikliku statistika täpsuses. Faasi 1 ristviide oli selgesõnaliselt märkinud, et see vajab Faasi 3 topeltkontrolli kaubandusandmete vastu, mida tehti alles Faasis 12; nüüd kinnitatud, mitte ainult eeldatud.",
+      "text": "FAOSTAT ei näita Eestis registreeritud puupähklitootmist, kuid kodumaine pakkumine on ligikaudu 32 000 tonni. Väikekasvatus riiklikus statistikas ei kajastu."
+    },
+    "faostat_item_128": {
+      "source": "Kaer",
+      "text": "Kaer"
+    },
+    "note_129": {
+      "source": "Täidab tõelise andmelünga, mitte ei kontrolli olemasolevat näitajat: Faasi 1 Statistikaameti PM20 väljavõttes oli kaera tootmine 2024. aasta kohta tühi (seda aastat ei avaldatud), mistõttu ei olnud projektil üldse kaera isevarustatuse näitajat enne seda FAOSTAT väljavõtet. Võetud otse kasutusele projekti enda kaeranäitajana (238,1%, isegi tugevam kui odra 205,5%) Eesti allika alternatiivi puudumisel. Vt PHASE12_NOTES.md, kuidas see koos odra ja riisiga kombineeriti.",
+      "text": "Statistikaameti 2024. aasta kaeratoodang puudus, seega kasutatakse FAOSTATi 2022. aasta näitajat 238,1%. See on kõrgem kui odra 205,5%."
+    },
+    "scenario_130": {
+      "source": "Stsenaarium B — TAI soovitatud toitumine",
+      "text": "Stsenaarium B — TAI soovitatud toitumine"
+    },
+    "scenario_131": {
+      "source": "Stsenaarium C — EAT-Lancet 2019 dieet",
+      "text": "Stsenaarium C — EAT-Lancet 2019 dieet"
+    },
+    "scenario_132": {
+      "source": "Stsenaarium C.2 — EAT-Lancet 2025 dieet",
+      "text": "Stsenaarium C.2 — EAT-Lancet 2025 dieet"
+    },
+    "requirement_model_133": {
+      "source": "TAI Tabelraamat 2025",
+      "text": "TAI Tabelraamat 2025"
+    },
+    "waste_study_134": {
+      "source": "2021 (SEI)",
+      "text": "2021 (SEI)"
+    },
+    "faostat_cross_check_135": {
+      "source": "2022",
+      "text": "2022"
+    },
+    "official_strategy_figures_136": {
+      "source": "~2018-2022 (5yr avg, inferred)",
+      "text": "u 2018–2022 (tuletatud viie aasta keskmine)"
+    },
+    "method_note_137": {
+      "source": "Toidugruppide kaalutud keskmine scenario_A_pct (või scenario_B_pct) näitajast, mille jaoks on olemas lahendatud arvuline isevarustatuse näitaja, kaalutud iga grupi stsenaarium A soovitatud nõudluse tonnaaziga. Välja jäetud grupid, millel puudub üks selge punktnäitaja (kaunviljad, pudrud/pasta/riis/teraviljatooted, maiustused ja muu) -- coverage_pct_of_tonnage näitab, kui suure osa kogu riiklikust toidugrupi nõudlusest see keskmine tegelikult esindab, nii et peamist näitajat ei esitata kunagi täielikumana, kui see on. Veel 3 kirjel (kaunviljad ja kaks ligi-nulli üksikut õlitüüpi) puudub stsenaarium A nõudluse tonnaaž üldse, mistõttu neid ei saagi isegi nähtavalt-välja-jätta -- need lihtsalt ei kanna selles arvutuses kaalu; kaunviljad on eriti tõeline, eraldi märgitud lünk. Stsenaarium C (EAT-Lancet planeedi tervise dieet) kasutab sama kaalumisalust ja sama väljajätmisloogikat -- vt scenario_C_excluded_from_average selle enda loendi jaoks, mis erineb veidi A/B-st, kuna EAT-Lancet jätab lahendamata teistsuguse kategooriate alamhulga. Stsenaarium C.2 (2025. a EAT-Lancet komisjoni uuendatud planeedi tervise dieet, Faas 14) kasutab jälle sama kaalumisalust ja väljajätmisloogikat -- vt scenario_C2_excluded_from_average.",
+      "text": "Toidugruppide tonnaažiga kaalutud keskmine hõlmab ainult rühmi, mille isevarustatus on arvuliselt määratud. Katvuse protsent näitab, kui suurt osa kogu nõudlusest keskmine esindab. Kõik stsenaariumid kasutavad sama kaalumis- ja väljajätmisloogikat."
+    }
+  }
+}
