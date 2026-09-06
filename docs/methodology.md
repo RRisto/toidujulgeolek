@@ -88,6 +88,10 @@ day) — see `SANITY_CHECK_phase3.md`.
 
 ### 4.1 Post-launch plausibility check: per-category and total gram values
 
+> **Phase 21 correction:** the direct TAI-versus-EAT mass comparison in this subsection mixed TAI
+> edible/ready-to-eat weights with EAT dry/source weights. Retained as investigation history; use
+> the normalized totals and conclusions in Section 10.3.
+
 Added post-launch, prompted by a question about whether individual food-group gram figures might
 be implausibly large or small -- a check the project had not explicitly run before. Phase 3's own
 validation (above) confirms the *aggregate calorie total* is sound (two independent derivations
@@ -395,6 +399,22 @@ mismatch already flagged in Phase 1.
 **Output**: `data/processed/feed_dependency_model.csv`, `self_sufficiency_feed_adjusted.csv`,
 `waste_model.csv`.
 
+**Post-launch addition (Phase 16)**: every headline self-sufficiency figure in this project
+(Scenario A/B/C/C2) is production divided by what's actually *eaten* -- it does not net out
+today's waste at all, so on its own it reads more optimistically than a resource-accounting
+view would. `data/processed/self_sufficiency_waste_adjusted.csv` adds a companion column,
+`waste_adjusted_pct` = `headline_self_sufficiency_pct` / `required_production_inflator`, i.e.
+production divided by *required* production (eaten consumption plus everything already lost
+getting there), for the subset of items with both a resolved Scenario A figure and SEI waste
+data (8 of 17 items, the same coverage constraint as the feed-adjustment file). This is a
+measured adjustment (this project's own SEI-2021-derived loss rate), not an illustrative
+sensitivity like the feed haircuts -- and unlike the dashboard's existing 25%/50%
+household-waste-cut scorecard tiles (which compare a *future* cut against today's eaten-only
+baseline), this column answers a different, narrower question: what does self-sufficiency look
+like *today*, once today's waste is also counted. The two are not meant to be combined into one
+number -- see PHASE16_NOTES.md for why a single figure that's consistent on both axes at once
+was deliberately not built this round, and what such a change would require.
+
 ## 8. Validation against FAOSTAT (Phase 8)
 
 FAOSTAT's Food Balance Sheet for Estonia, 2022 (the latest year available — FAOSTAT typically lags
@@ -576,6 +596,9 @@ cross-check against Phase 4's over/under-consumption figures to within rounding.
 
 ### 10.1 Scenario C: EAT-Lancet Planetary Health Diet (post-launch)
 
+> **Phase 21 correction:** the original direct-gram crosswalk described below is superseded by the
+> energy-based TAI edible-equivalent normalization in Section 10.3.
+
 A third demand scenario, added after the initial nine-phase build at the user's request, benchmarking
 domestic production against an international reference diet rather than a national dietary guideline.
 The EAT-Lancet Commission's Planetary Health Diet (Willett et al., 2019) publishes reference gram/day
@@ -643,6 +666,10 @@ fruit+berries, the two structurally-zero oil types) was already flagged under Sc
 
 ### 10.2 Scenario C.2: the 2025 EAT-Lancet revision (Phase 14, post-launch)
 
+> **Phase 21 correction:** added/free sugar is 30 g/day, not 6 g/day, and the direct-mass method,
+> omitted-nuts treatment, Honey extrapolation, and derived figures below are superseded by Section
+> 10.3. The text remains as a record of the earlier build.
+
 A fourth demand scenario, added after a user question asked whether the EAT-Lancet diet used for
 Scenario C was still current. It wasn't the only version: the EAT-Lancet Commission published a
 Summary Report in 2025 that revises the Planetary Health Diet's own reference targets, not merely
@@ -696,7 +723,82 @@ nothing about a change in domestic honey supply.
 scenario toggle (self-sufficiency chart), scenario-comparison table, and diet-shift delta chart
 (section 05) all extended with a fourth/third option respectively. See `plans/PHASE14_NOTES.md`.
 
-### 10.3 Worked example: Vegetables under Scenario B (post-launch)
+### 10.3 Correction: normalize EAT-Lancet mass to the TAI food basis (Phase 21)
+
+The earlier C/C2 implementation scaled published EAT-Lancet grams directly. That was not a valid
+mass comparison: TAI Table 16 uses edible/ready-to-eat portion weights, while EAT-Lancet expresses
+important categories such as whole grains and legumes as dry/uncooked weights. The old totals
+(about 1,139 g/day for C and 1,147 g/day for C2 in the treemap) therefore mixed preparation bases.
+
+The corrected crosswalk preserves each published source mass and its basis, but computes the
+comparison and demand mass from energy:
+
+`normalized g at source reference kcal = EAT source kcal × TAI representative g per portion / TAI kcal per portion`
+
+That normalized mass is then scaled from 2,500 kcal (2019) or 2,400 kcal (2025) to Estonia's
+2,234.358 kcal reference. Whole-grain energy is split between bread and porridge using their TAI
+implied-energy shares; combined fruit/berries and nuts/seeds use the corresponding TAI component
+mix. This produces edible-equivalent totals of **1,568.7 g/day (C)** and **1,666.9 g/day (C2)**,
+versus **2,141.9 g/day (B)** and **1,273.6 g/day (A)**. These are now comparable masses, although
+they are still modeled representative equivalents rather than primary-commodity weights.
+
+The source audit also corrected EAT-Lancet 2025 added/free sugar to **30 g/day (115 kcal)**; the
+previous 6 g value belongs to palm/coconut oil. The known 50 g nuts value is retained instead of
+leaving the combined row blank (seeds/cocoa remain unspecified). Honey is not added to C/C2 because
+it is already included in the aggregate sweets/sugar row. Sections 4.1, 10.1, and 10.2 retain the
+historical reasoning but their direct raw-gram comparisons and derived C/C2 figures are superseded
+by this correction.
+
+### 10.4 EAT-Lancet 2025 conversion sensitivity (post-launch)
+
+The energy-based normalization in Section 10.3 still requires a representative TAI food form for
+each destination category. Equal energy can correspond to very different edible masses: milk and
+cheese, or lean and fatty fish, have different grams per kilocalorie. A standalone sensitivity
+analysis tests how strongly Scenario C.2 results depend on that conversion choice.
+
+This is a **deterministic one-at-a-time sensitivity analysis**, not a Monte Carlo simulation. Its
+candidate catalogue contains 91 rows: 14 current baselines, 73 alternatives traceable to a named
+row and published value in TAI Table 16, and four explicit 0%/100% endpoints for allocating
+whole-grain energy between bread and porridge. Candidates are restricted to credible members of
+the destination category. For example, the fresh-red-meat test excludes processed meats and
+organs, while the sweets test excludes beverages whose water mass would change the question.
+
+For each variant, exactly one conversion input changes and the complete 2025 crosswalk is rebuilt.
+The analysis holds fixed the EAT-Lancet 2025 energy targets, Estonia's 2,234.358 kcal reference,
+population (1,339,785), Scenario A inputs, domestic production, taxonomy, and direct mappings.
+The row calculations are:
+
+```
+normalized grams = EAT source kcal × TAI representative grams per kcal
+Estonia grams = normalized grams × 2,234.358 / 2,400
+annual demand tonnes = Estonia grams × population × 365 / 1,000,000
+variant self-sufficiency = baseline C2 self-sufficiency × baseline C2 demand / variant demand
+```
+
+Every row's reported minimum and maximum include its current baseline. If Scenario C.2 has no
+resolved self-sufficiency point estimate, the sensitivity bounds remain unresolved rather than
+inventing a value. The all-grain-to-porridge endpoint gives bread zero modeled demand; its
+self-sufficiency percentage is therefore left undefined rather than written as infinity, while
+the threshold flag records the positive-production limit as demand approaches zero.
+
+The output covers all 14 Scenario C.2 destination rows. The largest mass sensitivity occurs for
+oils/fats/spreads, whose tested forms span 42.4–338.9 g/day. The largest finite
+self-sufficiency movement occurs for fish (303.0–969.6%, from a 451.0% baseline). Across all
+tested variants, potato, dairy, fish, and red meat remain above 100%; fruit/berries and oils/fats
+remain below 50%. These are conditional conclusions about the documented conversion choices,
+not probabilities. The range does not cover uncertainty in EAT-Lancet targets, energy needs,
+production, losses, or trade behavior.
+
+**Inputs and outputs:**
+
+- candidate catalogue: `data/crosswalk/eatlancet2025_sensitivity_candidates.csv`;
+- calculation and validation: `src/eatlancet2025_sensitivity.py`;
+- row-level output: `data/processed/eatlancet2025_conversion_sensitivity.csv`;
+- generated findings: `docs/eatlancet2025_conversion_sensitivity_et.md`;
+- compact standalone graph: `output/eatlancet2025_sensitivity_et.html`, generated by
+  `python -m build_treemap.build_sensitivity_chart`.
+
+### 10.5 Worked example: Vegetables under Scenario B (post-launch)
 
 Added after a user walkthrough asked for one concrete category traced end to end, since Sections 4
 and 10 above state the requirement-model and scenario-scaling methods abstractly without showing a
@@ -778,6 +880,9 @@ pipeline.
   carries the same category of documented assumption already used for Scenario B (a combined-figure
   split reusing this project's own derived ratio, one gap left blank rather than understated), plus
   one entirely new gap (nuts vs. nuts+seeds+cocoa) not present in the Scenario B crosswalk.
+- The EAT-Lancet 2025 conversion sensitivity in Section 10.4 varies documented conversion choices
+  one at a time. Its extrema are conditional bounds over that candidate catalogue, not a joint
+  worst case, Monte Carlo distribution, confidence interval, or statement of probability.
 - Six taxonomy mismatches are carried from Phase 2's crosswalk and touch every phase downstream:
   the legume gap (partially resolved in Phase 8, still bimodal/unresolved for the human-food
   slice), fruit/berry inseparability, RTU011's poultry/red-meat/offal bundling, the missing
@@ -798,16 +903,25 @@ pipeline.
 | `data/processed/self_sufficiency_model.csv` | 5 (revised 8) | Self-sufficiency ratio per pyramid sub-item |
 | `data/processed/feed_dependency_model.csv`, `self_sufficiency_feed_adjusted.csv` | 6 | Feed balance, feed-adjusted lower bounds |
 | `data/processed/waste_model.csv` | 6 | Loss rates, required-production inflators, waste-lever scenarios |
+| `data/processed/self_sufficiency_waste_adjusted.csv` | 16 | Companion "net of today's measured waste" self-sufficiency figure per item, alongside (not replacing) the headline |
 | `data/processed/scenario_comparison.csv`, `critical_dependency_flags.csv` | 7 (revised 8) | Scenario A/B comparison, 50%-threshold flags |
 | `data/processed/faostat_cross_check.csv` | 8 | FAOSTAT 2022 independent validation |
 | `data/processed/rtu011_topline_cross_check.csv` | post-launch | RTU011 raw-topline validation of the Phase 4 consumption model, all 16 categories |
 | `data/crosswalk/eatlancet_crosswalk.csv` | post-launch | EAT-Lancet Planetary Health Diet crosswalk to project taxonomy, Scenario C demand basis |
 | `docs/methodology.md` | 8 (revised post-launch, Scenario C added post-launch) | This file |
 | `data/crosswalk/eatlancet2025_crosswalk.csv` | 14 | 2025 EAT-Lancet revision crosswalk, Scenario C.2 demand basis |
+| `data/crosswalk/eatlancet2025_sensitivity_candidates.csv` | post-launch | Auditable baseline, TAI Table 16, and grain-allocation variants for the 2025 conversion sensitivity |
+| `data/processed/eatlancet2025_conversion_sensitivity.csv` | post-launch | Baseline/minimum/maximum grams, annual demand, self-sufficiency, extrema labels, and threshold crossings for all 14 C.2 rows |
+| `docs/eatlancet2025_conversion_sensitivity_et.md` | post-launch | Generated Estonian findings, stable classifications, and interpretation limits |
+| `output/eatlancet2025_sensitivity_et.html` | post-launch | Compact standalone HTML graph of daily-mass and self-sufficiency ranges; not part of the dashboard |
 | `data/processed/land_reallocation_scenario.csv` | 15 | Feed-grain/cropland freed by scenario (Tier 1) and illustrative vegetable-output sketch (Tier 2) |
-| `output/secondary_effects.html` | 15 | Standalone second page presenting the Phase 15 analysis |
+| `output/secondary_effects.html` | 15, 17 | Superseded standalone page (Phase 15); Phase 17 merged its charts into `dashboard.html#secondary-effects` and left a "moved" banner here |
 | `output/dashboard_et.html`, `output/dashboard_data_et.json` | post-launch | Full Estonian translation of the dashboard, built by `src/dashboard/build_dashboard_et.py` |
 | `src/dashboard/strings_et.json` | post-launch | Every editable Estonian UI string (headers, buttons, tooltips, hints) in one flat/nested JSON file -- edit this and re-run `build_dashboard_et.py` to update the Estonian dashboard's chrome text without touching `template_et.html` or `app_et.js` directly |
+| `src/dashboard/strings_en.json` | 18 | Every editable English UI string, same setup as `strings_et.json` above -- edit this and re-run `build_dashboard.py` to update the English dashboard's chrome text without touching `template.html` or `app.js` directly. See `plans/PHASE18_NOTES.md`. |
+| `output/dashboard_et_v2.html`, `src/dashboard/strings_et_v2.json` | 19 | A third dashboard build: the English template/app.js structure (interactive scorecard and waste-lever charts, merged secondary-effects section) rendered in Estonian, using `dashboard_data_et.json`'s already-translated data. Additive -- does not replace or touch `dashboard_et.html` or its source files. See `plans/PHASE19_NOTES.md`. |
+| `output/diet_treemap.html`, `build_treemap/` | 20 | Standalone D3 treemap comparing all four diet scenarios by food item, grams/person/day as box area, food-pyramid group as box color. Not part of the main dashboard build. See `plans/PHASE20_NOTES.md`. |
+| `output/diet_treemap_et.html` | 20 | Estonian translation of the diet treemap -- same data, group/item names reused from `dashboard_data_et.json`, UI text translated fresh. See addendum in `plans/PHASE20_NOTES.md`. |
 
 ## 13. Secondary effects: land freed by lower meat demand (Phase 15, exploratory)
 
@@ -836,6 +950,10 @@ plausibly are, none of which this sketch models. Full detail, including why this
 framed as "feed grain redirected to human food" (Estonia's barley is already a large net export
 crop), in `plans/PHASE15_NOTES.md`.
 
-**Output**: `data/processed/land_reallocation_scenario.csv`; `output/secondary_effects.html` (a
-genuinely separate second page, not merged into the main dashboard, with the two tiers visually
-distinguished -- solid card styling for Tier 1, a dashed-border amber-tinted card for Tier 2).
+**Output**: `data/processed/land_reallocation_scenario.csv`. Originally shipped as a genuinely
+separate second page (`output/secondary_effects.html`); Phase 17 gave both tiers bar-chart
+visualizations and folded the whole section into the main dashboard itself
+(`dashboard.html#secondary-effects` / `dashboard_et.html`), at the user's request ("I want one
+page!"), with the two tiers still visually distinguished -- solid card styling for Tier 1, a
+dashed-border amber-tinted card for Tier 2. `output/secondary_effects.html` still exists with a
+"this page has moved" banner, kept only so the old link doesn't break.
