@@ -73,6 +73,23 @@ def remove_ss_crosscheck_ranges(app_js: str) -> str:
     return app_js
 
 
+def remove_scorecard_waste_metrics(app_js: str) -> str:
+    """Keep household-waste sensitivities out of the headline chart."""
+    waste_metrics = """    },
+    {
+      label: "@@js.tiles.waste25.label@@",
+      value: h.scenario_A_waste25_weighted_pct,
+      note: "@@js.tiles.waste25.note@@"
+    },
+    {
+      label: "@@js.tiles.waste50.label@@",
+      value: h.scenario_A_waste50_weighted_pct,
+      note: "@@js.tiles.waste50.note@@"
+"""
+    assert waste_metrics in app_js, "headline waste metrics not found"
+    return app_js.replace(waste_metrics, "", 1)
+
+
 def overlay_strings(base, edits):
     """Overlay user-edited strings without dropping newly added fallback keys."""
     merged = dict(base)
@@ -100,6 +117,7 @@ def main():
     app_js = remove_ss_crosscheck_ranges(
         (SRC / "app.js").read_text(encoding="utf-8")
     )
+    app_js = remove_scorecard_waste_metrics(app_js)
     app_js = apply_scenario_markers(app_js)
     meth_body = (SRC / "methodology_body_et.html").read_text(encoding="utf-8")
     data_json = (OUT / "dashboard_data_et.json").read_text(encoding="utf-8")
