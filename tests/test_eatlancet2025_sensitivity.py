@@ -220,6 +220,29 @@ class EatLancet2025SensitivityTests(unittest.TestCase):
         self.assertIn("tootmist", report)
         self.assertIn("kaubanduskäitumist", report)
 
+    def test_report_retains_finite_self_sufficiency_endpoint_at_zero_demand(self):
+        bread = next(
+            row for row in analyze(ROOT)
+            if row.subitem == "High-fibre bread/baked goods"
+        )
+        report = render_report(analyze(ROOT))
+        self.assertIn(f"{bread.min_self_sufficiency_pct:.1f}%", report)
+        self.assertIn("määramata nullnõudluse piir", report)
+        self.assertIn(
+            f"lähtetase {bread.baseline_self_sufficiency_pct:.1f}%", report
+        )
+
+    def test_report_uses_composite_identity_for_every_listed_row(self):
+        rows = analyze(ROOT)
+        report = render_report(rows)
+        listed = [
+            *sorted(rows, key=lambda row: row.max_relative_change_pct, reverse=True)[:5],
+            *(row for row in rows if row.crosses_50pct or row.crosses_100pct),
+            *(row for row in rows if row.min_g_per_day == row.max_g_per_day),
+        ]
+        for row in listed:
+            self.assertIn(f"{row.pyramid_group} — {row.subitem}", report)
+
     def test_report_output_is_idempotent(self):
         rows = analyze(ROOT)
         target = write_report(ROOT, rows)

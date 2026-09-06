@@ -318,10 +318,28 @@ def _format_range(low: float, high: float, unit: str) -> str:
     return f"{low:.1f}–{high:.1f} {unit}"
 
 
-def _format_self_sufficiency(low: float | None, high: float | None) -> str:
-    if low is None or high is None:
+def _format_self_sufficiency(
+    low: float | None, high: float | None, baseline: float | None
+) -> str:
+    """Show a finite endpoint even when zero demand makes the other undefined."""
+    if low is None and high is None:
         return "isevarustuskindluse punktihinnang puudub"
+    if low is None:
+        return (
+            "määramata nullnõudluse piir–"
+            f"{high:.1f}% (lähtetase {baseline:.1f}%)"
+        )
+    if high is None:
+        return (
+            f"{low:.1f}%–määramata nullnõudluse piir "
+            f"(lähtetase {baseline:.1f}%)"
+        )
     return _format_range(low, high, "%")
+
+
+def _row_identity(row: SensitivityResult) -> str:
+    """Return the unambiguous report label for a sensitivity row."""
+    return f"{row.pyramid_group} — {row.subitem}"
 
 
 def render_report(rows: list[SensitivityResult]) -> str:
@@ -353,11 +371,11 @@ def render_report(rows: list[SensitivityResult]) -> str:
     ]
     for row in largest:
         lines.append(
-            f"- **{row.subitem}**: {_format_range(row.min_g_per_day, row.max_g_per_day, 'g/päev')} "
+            f"- **{_row_identity(row)}**: {_format_range(row.min_g_per_day, row.max_g_per_day, 'g/päev')} "
             f"(lähtetase {row.baseline_g_per_day:.1f} g/päev; suurim muutus "
             f"{row.max_relative_change_pct:.1f}%). Nõudlus: "
             f"{_format_range(row.min_demand_tonnes, row.max_demand_tonnes, 't/a')}; "
-            f"isevarustuskindlus: {_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct)}."
+            f"isevarustuskindlus: {_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct, row.baseline_self_sufficiency_pct)}."
         )
 
     lines.extend(["", "## Lävendite ületamised", ""])
@@ -369,8 +387,8 @@ def render_report(rows: list[SensitivityResult]) -> str:
             if row.crosses_100pct:
                 thresholds.append("100%")
             lines.append(
-                f"- **{row.subitem}** ületab vahemikus "
-                f"{_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct)} "
+                f"- **{_row_identity(row)}** ületab vahemikus "
+                f"{_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct, row.baseline_self_sufficiency_pct)} "
                 f"lävendi/lävendid {', '.join(thresholds)}."
             )
     else:
@@ -378,7 +396,7 @@ def render_report(rows: list[SensitivityResult]) -> str:
 
     lines.extend(["", "## Millised järeldused püsivad", ""])
     if unchanged:
-        names = ", ".join(f"**{row.subitem}**" for row in unchanged)
+        names = ", ".join(f"**{_row_identity(row)}**" for row in unchanged)
         lines.append(
             f"- Muutumatute eeldustega read on {names}; nende min- ja max-kogus on sama."
         )
