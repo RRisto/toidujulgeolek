@@ -34,6 +34,7 @@ import json
 import pathlib
 import re
 from src.dashboard.localize_content import localize_content
+from src.dashboard.scenario_markers import apply_scenario_markers
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SRC = ROOT / "src" / "dashboard"
@@ -99,6 +100,7 @@ def main():
     app_js = remove_ss_crosscheck_ranges(
         (SRC / "app.js").read_text(encoding="utf-8")
     )
+    app_js = apply_scenario_markers(app_js)
     meth_body = (SRC / "methodology_body_et.html").read_text(encoding="utf-8")
     data_json = (OUT / "dashboard_data_et.json").read_text(encoding="utf-8")
 

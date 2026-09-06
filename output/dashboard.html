@@ -746,6 +746,13 @@ var SCEN_KEYS = {
   C2: { pct: "scenario_C2_pct", disp: "scenario_C2_pct_display" }
 };
 var SCEN_LABEL = {"A": "Stsenaarium A", "B": "Stsenaarium B", "C": "Stsenaarium C", "C2": "Stsenaarium C.2"};
+function scenarioAdjustedPct(row, field, scenarioPct){
+  var baseline = row.scenario_A_pct;
+  var adjusted = row[field];
+  if(!Number.isFinite(baseline) || baseline <= 0 ||
+     !Number.isFinite(adjusted) || !Number.isFinite(scenarioPct)) return null;
+  return adjusted * scenarioPct / baseline;
+}
 function renderSSChart(){
   var container = document.getElementById('ss-chart');
   container.innerHTML = "";
@@ -774,6 +781,8 @@ function renderSSChart(){
 
     var track = el('div','hbar-track');
     var pct = r[pctKey];
+    var wastePct = scenarioAdjustedPct(r, 'waste_adjusted_pct', pct);
+    var feedPct = scenarioAdjustedPct(r, 'feed_adjusted_low_bound_pct', pct);
 
     if(pct === null){
       var badge = el('span','pill neutral pill-wrap');
@@ -820,8 +829,8 @@ function renderSSChart(){
       var showTt = function(evt){
         var html = '<div class="tt-title">' + escapeHtml(r.pyramid_group) + ' — ' + escapeHtml(r.subitem) + '</div>'
           + ttRow(SCEN_LABEL[currentScenario], fmtPct(pct))
-          + (r.feed_adjusted_low_bound_pct !== null ? ttRow("Söödaga kohandatud alampiir", fmtPct(r.feed_adjusted_low_bound_pct)) : '')
-          + (r.waste_adjusted_pct !== null ? ttRow("Raiskamisega kohandatud (arvestades praegust raiskamist)", fmtPct(r.waste_adjusted_pct)) : '')
+          + (feedPct !== null ? ttRow("Söödaga kohandatud alampiir", fmtPct(feedPct)) : '')
+          + (wastePct !== null ? ttRow("Raiskamisega kohandatud (arvestades praegust raiskamist)", fmtPct(wastePct)) : '')
           + ttRow("Staatus", statusLabel(status))
           + ttRow("Andmete staatus", r.data_status);
         showTooltip(evt, html);
@@ -835,18 +844,18 @@ function renderSSChart(){
       });
       fill.addEventListener('blur', hideTooltip);
 
-      if(r.feed_adjusted_low_bound_pct !== null){
+      if(feedPct !== null){
         var marker = el('div','hbar-marker');
-        marker.style.left = Math.min(r.feed_adjusted_low_bound_pct/maxPct*100, 100) + "%";
+        marker.style.left = Math.min(feedPct/maxPct*100, 100) + "%";
         marker.style.background = "var(--grain)";
-        marker.title = "Söödaga kohandatud alampiir: " + fmtPct(r.feed_adjusted_low_bound_pct);
+        marker.title = "Söödaga kohandatud alampiir: " + fmtPct(feedPct);
         track.appendChild(marker);
       }
-      if(r.waste_adjusted_pct !== null){
+      if(wastePct !== null){
         var wasteMarker = el('div','hbar-marker');
-        wasteMarker.style.left = Math.min(r.waste_adjusted_pct/maxPct*100, 100) + "%";
+        wasteMarker.style.left = Math.min(wastePct/maxPct*100, 100) + "%";
         wasteMarker.style.background = "var(--dv-orange)";
-        wasteMarker.title = "Raiskamisega kohandatud (arvestades praegust raiskamist): " + fmtPct(r.waste_adjusted_pct);
+        wasteMarker.title = "Raiskamisega kohandatud (arvestades praegust raiskamist): " + fmtPct(wastePct);
         track.appendChild(wasteMarker);
       }
     }
@@ -883,20 +892,23 @@ function renderSSTable(rows, pctKey, dispKey){
   var htr = el('tr');
   var SS_TABLE_NUM_COLS = [false,false,true,true,true,true,true,true,false];
   ["Toidugrupp", "Toiduaine", "Stsenaarium A", "Stsenaarium B", "Stsenaarium C", "Stsenaarium C.2", "Söödaga kohandatud piir", "Raiskamisega kohandatud", "Andmete staatus"].forEach(function(h, i){
+    if(i === 6 || i === 7) h += ' — ' + SCEN_LABEL[currentScenario];
     htr.appendChild(el('th', SS_TABLE_NUM_COLS[i] ? 'num' : '', h));
   });
   thead.appendChild(htr); table.appendChild(thead);
   var tbody = el('tbody');
   rows.forEach(function(r){
     var tr = el('tr');
+    var wastePct = scenarioAdjustedPct(r, 'waste_adjusted_pct', r[pctKey]);
+    var feedPct = scenarioAdjustedPct(r, 'feed_adjusted_low_bound_pct', r[pctKey]);
     tr.appendChild(el('td','strong', r.pyramid_group));
     tr.appendChild(el('td','', r.subitem));
     tr.appendChild(el('td','num tnum', r.scenario_A_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_B_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_C_pct_display));
     tr.appendChild(el('td','num tnum', r.scenario_C2_pct_display));
-    tr.appendChild(el('td','num tnum', r.feed_adjusted_low_bound_pct !== null ? fmtPct(r.feed_adjusted_low_bound_pct) : "—"));
-    tr.appendChild(el('td','num tnum', r.waste_adjusted_pct !== null ? fmtPct(r.waste_adjusted_pct) : "—"));
+    tr.appendChild(el('td','num tnum', feedPct !== null ? fmtPct(feedPct) : "—"));
+    tr.appendChild(el('td','num tnum', wastePct !== null ? fmtPct(wastePct) : "—"));
     tr.appendChild(el('td','', r.data_status));
     tbody.appendChild(tr);
   });
