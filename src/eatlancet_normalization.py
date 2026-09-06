@@ -9,11 +9,14 @@ intake used by this project.
 from __future__ import annotations
 
 import csv
+import math
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 
 ESTONIA_REFERENCE_KCAL = 2234.358
+FoodKey = tuple[str, str]
 
 
 @dataclass(frozen=True)
@@ -136,7 +139,13 @@ def _density(
     return total_g / total_kcal
 
 
-def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
+def build_crosswalk(
+    edition: str,
+    root: Path,
+    *,
+    density_overrides: Mapping[FoodKey, float] | None = None,
+    whole_grain_bread_share: float | None = None,
+) -> list[NormalizedRow]:
     if edition not in EDITIONS:
         raise ValueError(f"Unsupported EAT-Lancet edition: {edition}")
 
@@ -145,6 +154,15 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
     reference_kcal = float(config["reference_kcal"])
     energy_scale = ESTONIA_REFERENCE_KCAL / reference_kcal
     portions, calories, requirements = _tai_density_inputs(root)
+    overrides = dict(density_overrides or {})
+    if (
+        whole_grain_bread_share is not None
+        and (
+            not math.isfinite(whole_grain_bread_share)
+            or not 0 <= whole_grain_bread_share <= 1
+        )
+    ):
+        raise ValueError("whole_grain_bread_share must be between 0 and 1")
 
     densities: dict[tuple[str, str], float] = {
         key: portions[key] / calories[key] for key in portions
@@ -172,6 +190,12 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
             )
         )
 
+    def selected_density(destination: FoodKey, baseline: float) -> float:
+        value = overrides.get(destination, baseline)
+        if not math.isfinite(value) or value <= 0:
+            raise ValueError(f"Density must be positive for {destination}: {value}")
+        return value
+
     grain = categories["whole_grains"]
     bread_key = ("Grain products & potatoes", "High-fibre bread/baked goods")
     porridge_key = (
@@ -183,6 +207,8 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
         requirements[porridge_key] / portions[porridge_key] * calories[porridge_key]
     )
     bread_share = bread_tai_kcal / (bread_tai_kcal + porridge_tai_kcal)
+    if whole_grain_bread_share is not None:
+        bread_share = whole_grain_bread_share
     for key, share in ((bread_key, bread_share), (porridge_key, 1 - bread_share)):
         add(
             key,
@@ -191,7 +217,7 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
                 grain.source_kcal * share,
                 grain.weight_basis,
             ),
-            densities[key],
+            selected_density(key, densities[key]),
             "Source whole-grain mass and energy split by TAI bread/porridge "
             "energy shares; converted using the destination TAI g/kcal.",
         )
@@ -203,7 +229,7 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
         add(
             destination,
             categories[category],
-            densities[lookup_key],
+            selected_density(destination, densities[lookup_key]),
             "Source energy converted using the destination TAI representative g/kcal.",
         )
 
@@ -214,7 +240,10 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
     add(
         ("Vegetables, fruits & berries", "Fruits+Berries (combined)"),
         categories["fruit"],
-        _density(fruit_keys, portions, calories, requirements),
+        selected_density(
+            ("Vegetables, fruits & berries", "Fruits+Berries (combined)"),
+            _density(fruit_keys, portions, calories, requirements),
+        ),
         "Source fruit energy converted using the TAI fruit/berry component mix.",
     )
 
@@ -225,7 +254,10 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
     add(
         ("Nuts, seeds, oils & fats", "Nuts+Seeds,cocoa (combined)"),
         categories["nuts"],
-        _density(nut_keys, portions, calories, requirements),
+        selected_density(
+            ("Nuts, seeds, oils & fats", "Nuts+Seeds,cocoa (combined)"),
+            _density(nut_keys, portions, calories, requirements),
+        ),
         "Source nut energy converted using the TAI nuts/seeds component mix.",
     )
 
@@ -250,6 +282,13 @@ def build_crosswalk(edition: str, root: Path) -> list[NormalizedRow]:
             ]
         )
     }
+    unknown = set(overrides) - {
+        (row.pyramid_group, row.subitem) for row in output
+    }
+    if unknown:
+        raise ValueError(
+            f"Unknown density override destinations: {sorted(unknown)}"
+        )
     return sorted(output, key=lambda row: order[(row.pyramid_group, row.subitem)])
 
 

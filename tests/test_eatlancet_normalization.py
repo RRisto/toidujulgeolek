@@ -3,6 +3,7 @@ import csv
 import shutil
 import tempfile
 import unittest
+from dataclasses import asdict
 
 from src.eatlancet_normalization import build_crosswalk
 
@@ -16,6 +17,48 @@ class EatLancetNormalizationTests(unittest.TestCase):
             (row.pyramid_group, row.subitem): row
             for row in build_crosswalk(edition, ROOT)
         }
+
+    def test_default_crosswalk_is_unchanged_when_overrides_are_omitted(self):
+        implicit = [asdict(row) for row in build_crosswalk("2025", ROOT)]
+        explicit = [
+            asdict(row)
+            for row in build_crosswalk(
+                "2025",
+                ROOT,
+                density_overrides={},
+                whole_grain_bread_share=None,
+            )
+        ]
+        self.assertEqual(explicit, implicit)
+
+    def test_density_override_changes_only_its_destination(self):
+        key = ("Fish, eggs & meat", "Fish & seafood")
+        baseline = self.rows_by_key("2025")
+        changed = {
+            (row.pyramid_group, row.subitem): row
+            for row in build_crosswalk(
+                "2025", ROOT, density_overrides={key: 77.5 / 80.0}
+            )
+        }
+        self.assertAlmostEqual(
+            changed[key].normalized_g_per_day_at_reference_kcal,
+            25.0 * 77.5 / 80.0,
+        )
+        for row_key in baseline.keys() - {key}:
+            self.assertEqual(asdict(changed[row_key]), asdict(baseline[row_key]))
+
+    def test_whole_grain_share_must_be_between_zero_and_one(self):
+        with self.assertRaisesRegex(ValueError, "whole_grain_bread_share"):
+            build_crosswalk("2025", ROOT, whole_grain_bread_share=1.01)
+
+    def test_whole_grain_share_must_be_finite(self):
+        with self.assertRaisesRegex(ValueError, "whole_grain_bread_share"):
+            build_crosswalk("2025", ROOT, whole_grain_bread_share=float("nan"))
+
+    def test_density_override_must_be_finite(self):
+        key = ("Fish, eggs & meat", "Fish & seafood")
+        with self.assertRaisesRegex(ValueError, "Density must be positive"):
+            build_crosswalk("2025", ROOT, density_overrides={key: float("nan")})
 
     def test_2025_source_values_match_published_table(self):
         rows = self.rows_by_key("2025")
