@@ -8,7 +8,9 @@ from src.eatlancet2025_sensitivity import (
     _parse_point_estimate,
     analyze,
     load_candidates,
+    render_report,
     write_csv,
+    write_report,
 )
 from src.eatlancet_normalization import build_crosswalk
 
@@ -194,3 +196,45 @@ class EatLancet2025SensitivityTests(unittest.TestCase):
         self.assertEqual(bread["min_demand_tonnes"], "0.0")
         self.assertEqual(bread["max_self_sufficiency_pct"], "")
         self.assertEqual(bread["crosses_100pct"], "True")
+
+    def test_report_numbers_come_from_analysis(self):
+        rows = analyze(ROOT)
+        report = render_report(rows)
+        largest = max(rows, key=lambda row: row.max_relative_change_pct)
+        self.assertIn(largest.subitem, report)
+        self.assertIn(f"{largest.min_g_per_day:.1f}", report)
+        self.assertIn(f"{largest.max_g_per_day:.1f}", report)
+        self.assertIn("deterministlik tundlikkusvahemik", report)
+        self.assertIn("ei ole usaldusvahemik", report.lower())
+
+    def test_report_lists_all_threshold_crossings_and_zero_spread_rows(self):
+        rows = analyze(ROOT)
+        report = render_report(rows)
+        for row in rows:
+            if row.crosses_50pct or row.crosses_100pct:
+                self.assertIn(row.subitem, report)
+            if row.min_g_per_day == row.max_g_per_day:
+                self.assertIn(row.subitem, report)
+        self.assertIn("EAT-Lancet'i energia", report)
+        self.assertIn("rahvastiku energiavajadust", report)
+        self.assertIn("tootmist", report)
+        self.assertIn("kaubanduskäitumist", report)
+
+    def test_report_output_is_idempotent(self):
+        rows = analyze(ROOT)
+        target = write_report(ROOT, rows)
+        first = target.read_bytes()
+        self.assertEqual(target, ROOT / "docs/eatlancet2025_conversion_sensitivity_et.md")
+        write_report(ROOT, rows)
+        self.assertEqual(target.read_bytes(), first)
+
+    def test_analysis_does_not_modify_c2_or_dashboard_outputs(self):
+        protected = [
+            ROOT / "data/processed/scenario_comparison.csv",
+            ROOT / "data/crosswalk/eatlancet2025_crosswalk.csv",
+            ROOT / "output/dashboard_data_et.json",
+            ROOT / "output/dashboard.html",
+        ]
+        before = {path: path.read_bytes() for path in protected}
+        analyze(ROOT)
+        self.assertEqual(before, {path: path.read_bytes() for path in protected})

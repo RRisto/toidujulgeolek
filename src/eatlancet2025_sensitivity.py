@@ -313,10 +313,108 @@ def write_csv(root: Path, rows: list[SensitivityResult]) -> Path:
     return target
 
 
+def _format_range(low: float, high: float, unit: str) -> str:
+    """Format a reported interval with a single, consistent precision."""
+    return f"{low:.1f}–{high:.1f} {unit}"
+
+
+def _format_self_sufficiency(low: float | None, high: float | None) -> str:
+    if low is None or high is None:
+        return "isevarustuskindluse punktihinnang puudub"
+    return _format_range(low, high, "%")
+
+
+def render_report(rows: list[SensitivityResult]) -> str:
+    """Render the Estonian findings report solely from sensitivity results."""
+    largest = sorted(
+        rows, key=lambda row: row.max_relative_change_pct, reverse=True
+    )[:5]
+    crossings = [
+        row for row in rows if row.crosses_50pct or row.crosses_100pct
+    ]
+    unchanged = [
+        row for row in rows if row.min_g_per_day == row.max_g_per_day
+    ]
+
+    lines = [
+        "# EAT–Lancet 2025 → TAI teisenduse tundlikkus",
+        "",
+        "## Mida testiti",
+        "",
+        "Analüüs on dokumenteeritud TAI esindusportsjonite ja täistera "
+        "leiva-pudru jaotuse ühekaupa muutmise deterministlik "
+        "tundlikkusvahemik. Iga vahemik sisaldab lähtetaset ning saadakse "
+        "tundlikkusarvutuse tulemusobjektidest.",
+        "",
+        "## Suurima mõjuga toidugrupid",
+        "",
+        "Viis suurimat suhtelist liikumist teisendatud koguses:",
+        "",
+    ]
+    for row in largest:
+        lines.append(
+            f"- **{row.subitem}**: {_format_range(row.min_g_per_day, row.max_g_per_day, 'g/päev')} "
+            f"(lähtetase {row.baseline_g_per_day:.1f} g/päev; suurim muutus "
+            f"{row.max_relative_change_pct:.1f}%). Nõudlus: "
+            f"{_format_range(row.min_demand_tonnes, row.max_demand_tonnes, 't/a')}; "
+            f"isevarustuskindlus: {_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct)}."
+        )
+
+    lines.extend(["", "## Lävendite ületamised", ""])
+    if crossings:
+        for row in crossings:
+            thresholds = []
+            if row.crosses_50pct:
+                thresholds.append("50%")
+            if row.crosses_100pct:
+                thresholds.append("100%")
+            lines.append(
+                f"- **{row.subitem}** ületab vahemikus "
+                f"{_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct)} "
+                f"lävendi/lävendid {', '.join(thresholds)}."
+            )
+    else:
+        lines.append("- Ükski rida ei ületa testitud vahemikus 50% ega 100% lävendit.")
+
+    lines.extend(["", "## Millised järeldused püsivad", ""])
+    if unchanged:
+        names = ", ".join(f"**{row.subitem}**" for row in unchanged)
+        lines.append(
+            f"- Muutumatute eeldustega read on {names}; nende min- ja max-kogus on sama."
+        )
+    lines.extend(
+        [
+            "- Kõigi ridade vahemikud on tingitud ainult teisendusvalikutest; "
+            "tootmist ja kaubanduskäitumist ei muudetud.",
+            "- EAT-Lancet'i energia ja rahvastiku energiavajadust ei muudetud; "
+            "seega ei kirjelda tulemused nende eelduste mõju.",
+            "",
+            "## Tõlgendamise piirid",
+            "",
+            "See deterministlik tundlikkusvahemik ei ole usaldusvahemik ega "
+            "tõenäosusjaotus. See ei anna tõenäosust ühelegi tulemusele ja ei kata "
+            "EAT-Lancet'i sihtide, energiavajaduse, tootmise, kadude ega "
+            "kaubanduskäitumise ebakindlust.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def write_report(root: Path, rows: list[SensitivityResult]) -> Path:
+    """Write the deterministic Estonian report next to project documentation."""
+    target = root / "docs/eatlancet2025_conversion_sensitivity_et.md"
+    target.write_text(render_report(rows), encoding="utf-8", newline="\n")
+    return target
+
+
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
-    target = write_csv(root, analyze(root))
-    print(f"Wrote {target}")
+    rows = analyze(root)
+    csv_target = write_csv(root, rows)
+    report_target = write_report(root, rows)
+    print(f"Wrote {csv_target}")
+    print(f"Wrote {report_target}")
 
 
 if __name__ == "__main__":
