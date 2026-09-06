@@ -49,9 +49,19 @@ class ConversionVariant:
 def load_candidates(root: Path) -> dict[FoodKey, list[ConversionVariant]]:
     """Load validated, traceable conversion candidates grouped by destination."""
     path = root / "data/crosswalk/eatlancet2025_sensitivity_candidates.csv"
-    expected = {
-        (row.pyramid_group, row.subitem)
+    baseline_rows = {
+        (row.pyramid_group, row.subitem): row
         for row in build_crosswalk("2025", root)
+    }
+    expected = set(baseline_rows)
+    table16: dict[str, list[dict[str, str]]] = {}
+    source_path = root / "data/raw/tai/tabelraamat_table16_portion_grams.csv"
+    with source_path.open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            table16.setdefault(row["item_et"], []).append(row)
+    grain_keys = {
+        ("Grain products & potatoes", "High-fibre bread/baked goods"),
+        ("Grain products & potatoes", "Porridges/pasta/rice/grain products"),
     }
     result: dict[FoodKey, list[ConversionVariant]] = {key: [] for key in expected}
     seen: set[tuple[FoodKey, str]] = set()
@@ -65,6 +75,9 @@ def load_candidates(root: Path) -> dict[FoodKey, list[ConversionVariant]]:
             if identity in seen:
                 raise ValueError(f"Duplicate sensitivity variant: {identity}")
             seen.add(identity)
+            kind = source["source_kind"]
+            if kind not in {"baseline", "tai_table16", "grain_allocation"}:
+                raise ValueError(f"Invalid sensitivity source kind: {identity}: {kind}")
 
             portion = float(source["portion_g"]) if source["portion_g"] else None
             kcal = (
@@ -74,16 +87,43 @@ def load_candidates(root: Path) -> dict[FoodKey, list[ConversionVariant]]:
             )
             if (portion is None) != (kcal is None):
                 raise ValueError(f"Incomplete portion energy pair: {identity}")
-            if portion is not None and (portion <= 0 or kcal <= 0):
-                raise ValueError(f"Non-positive portion energy pair: {identity}")
+            if portion is not None and (
+                not math.isfinite(portion) or not math.isfinite(kcal)
+                or portion <= 0 or kcal <= 0
+            ):
+                raise ValueError(f"Non-finite or non-positive portion energy pair: {identity}")
 
             share = (
                 float(source["whole_grain_bread_share"])
                 if source["whole_grain_bread_share"]
                 else None
             )
-            if share is not None and not 0 <= share <= 1:
-                raise ValueError(f"Invalid grain allocation: {identity}")
+            if kind == "grain_allocation":
+                if portion is not None or share not in {0.0, 1.0} or destination not in grain_keys:
+                    raise ValueError(f"Invalid grain allocation: {identity}")
+            else:
+                if share is not None:
+                    raise ValueError(f"Allocation is exclusive to grain-allocation rows: {identity}")
+                if kind == "tai_table16":
+                    if portion is None:
+                        raise ValueError(f"Missing TAI portion energy pair: {identity}")
+                    matches = table16.get(source["source_label"], [])
+                    if len(matches) != 1:
+                        raise ValueError(f"Missing or ambiguous Table 16 source: {identity}")
+                    published = matches[0]
+                    allowed_portions = {
+                        float(published[field])
+                        for field in ("portion_g", "portion_g_range_low", "portion_g_range_high")
+                        if published[field]
+                    }
+                    if portion not in allowed_portions or kcal != float(published["kcal_per_portion"]):
+                        raise ValueError(f"Unsupported Table 16 portion energy pair: {identity}")
+                elif portion is not None:
+                    baseline = baseline_rows[destination]
+                    # Compare the original forward calculation exactly: dividing
+                    # normalized grams back into a density adds rounding noise.
+                    if baseline.source_kcal_per_day * (portion / kcal) != baseline.normalized_g_per_day_at_reference_kcal:
+                        raise ValueError(f"Baseline pair changes the default conversion: {identity}")
 
             result[destination].append(
                 ConversionVariant(
@@ -91,7 +131,7 @@ def load_candidates(root: Path) -> dict[FoodKey, list[ConversionVariant]]:
                     name=source["variant_name"],
                     grams_per_kcal=(portion / kcal if portion is not None else None),
                     whole_grain_bread_share=share,
-                    source_kind=source["source_kind"],
+                    source_kind=kind,
                     source_label=source["source_label"],
                 )
             )
@@ -353,6 +393,19 @@ def render_report(rows: list[SensitivityResult]) -> str:
     unchanged = [
         row for row in rows if row.min_g_per_day == row.max_g_per_day
     ]
+    movements = []
+    for row in rows:
+        baseline = row.baseline_self_sufficiency_pct
+        if baseline is None or not math.isfinite(baseline):
+            continue
+        changes = [
+            abs(endpoint - baseline)
+            for endpoint in (row.min_self_sufficiency_pct, row.max_self_sufficiency_pct)
+            if endpoint is not None and math.isfinite(endpoint)
+        ]
+        if changes and max(changes) > 0:
+            movements.append((max(changes), row))
+    movements.sort(key=lambda item: item[0], reverse=True)
 
     lines = [
         "# EAT–Lancet 2025 → TAI teisenduse tundlikkus",
@@ -378,6 +431,22 @@ def render_report(rows: list[SensitivityResult]) -> str:
             f"isevarustuskindlus: {_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct, row.baseline_self_sufficiency_pct)}."
         )
 
+    lines.extend([
+        "", "## Suurimad isevarustuskindluse muutused", "",
+        "Kuni viis suurimat lõplikku absoluutset muutust lähtetasemest "
+        "protsendipunktides. Nullnõudluse määramata otspunkti ei järjestata; "
+        "sama rea lõplik otspunkt jääb võrdlusse.", "",
+    ])
+    for change, row in movements[:5]:
+        lines.append(
+            f"- **{_row_identity(row)}**: "
+            f"{_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct, row.baseline_self_sufficiency_pct)} "
+            f"(lähtetase {row.baseline_self_sufficiency_pct:.1f}%; "
+            f"suurim lõplik muutus {change:.1f} protsendipunkti)."
+        )
+    if not movements:
+        lines.append("- Lõplikud isevarustuskindluse muutused puuduvad.")
+
     lines.extend(["", "## Lävendite ületamised", ""])
     if crossings:
         for row in crossings:
@@ -395,6 +464,41 @@ def render_report(rows: list[SensitivityResult]) -> str:
         lines.append("- Ükski rida ei ületa testitud vahemikus 50% ega 100% lävendit.")
 
     lines.extend(["", "## Millised järeldused püsivad", ""])
+    stable: dict[str, list[str]] = {"üle 100%": [], "alla 50%": [], "50–100%": []}
+    unresolved = []
+    zero_demand = []
+    for row in rows:
+        if row.baseline_self_sufficiency_pct is None:
+            unresolved.append(f"**{_row_identity(row)}**")
+            continue
+        if row.min_demand_tonnes == 0:
+            zero_demand.append(
+                f"**{_row_identity(row)}** "
+                f"({_format_self_sufficiency(row.min_self_sufficiency_pct, row.max_self_sufficiency_pct, row.baseline_self_sufficiency_pct)})"
+            )
+            continue
+        low, high = row.min_self_sufficiency_pct, row.max_self_sufficiency_pct
+        if low is None or high is None or not all(map(math.isfinite, (low, high))):
+            continue
+        category = (
+            "üle 100%" if low > 100 else
+            "alla 50%" if high < 50 else
+            "50–100%" if low >= 50 and high <= 100 else None
+        )
+        if category is not None:
+            stable[category].append(
+                f"**{_row_identity(row)}** ({_format_range(low, high, '%')})"
+            )
+    for category, names in stable.items():
+        if names:
+            lines.append(f"- Kõigis testitud variantides püsivad {category}: {', '.join(names)}.")
+    if unresolved:
+        lines.append(f"- Isevarustuskindluse punktihinnang puudub: {', '.join(unresolved)}.")
+    if zero_demand:
+        lines.append(
+            f"- Määramata nullnõudluse piir: {', '.join(zero_demand)}. "
+            "Neile ei omistata kõiki variante hõlmavat lõplikku klassifikatsiooni."
+        )
     if unchanged:
         names = ", ".join(f"**{_row_identity(row)}**" for row in unchanged)
         lines.append(
