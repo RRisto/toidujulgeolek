@@ -154,6 +154,25 @@ def _crosses(low: float | None, high: float | None, threshold: float) -> bool | 
     return low < threshold <= high
 
 
+def _crosses_with_zero_demand_limit(
+    low: float | None,
+    high: float | None,
+    minimum_demand: float,
+    baseline_self_sufficiency: float | None,
+    baseline_demand: float,
+    threshold: float,
+) -> bool | None:
+    """Preserve threshold information when a zero-demand endpoint is undefined."""
+    if minimum_demand != 0:
+        return _crosses(low, high, threshold)
+    if baseline_self_sufficiency is None:
+        return None
+    production = baseline_self_sufficiency * baseline_demand
+    if production <= 0 or low is None:
+        return False
+    return low < threshold
+
+
 def _extreme(observations: list[tuple[str, float]], *, highest: bool) -> tuple[str, float]:
     values = [value for _, value in observations]
     target = max(values) if highest else min(values)
@@ -218,12 +237,8 @@ def analyze(root: Path) -> list[SensitivityResult]:
             else None
         )
         max_self_sufficiency = (
-            (
-                baseline_self_sufficiency * baseline_demand / min_demand
-                if min_demand
-                else math.inf
-            )
-            if baseline_self_sufficiency is not None
+            baseline_self_sufficiency * baseline_demand / min_demand
+            if min_demand and baseline_self_sufficiency is not None
             else None
         )
         max_abs_change = max(abs(min_g - baseline_g), abs(max_g - baseline_g))
@@ -244,8 +259,22 @@ def analyze(root: Path) -> list[SensitivityResult]:
                 max_relative_change_pct=100 * max_abs_change / baseline_g,
                 min_variant=min_variant,
                 max_variant=max_variant,
-                crosses_50pct=_crosses(min_self_sufficiency, max_self_sufficiency, 50),
-                crosses_100pct=_crosses(min_self_sufficiency, max_self_sufficiency, 100),
+                crosses_50pct=_crosses_with_zero_demand_limit(
+                    min_self_sufficiency,
+                    max_self_sufficiency,
+                    min_demand,
+                    baseline_self_sufficiency,
+                    baseline_demand,
+                    50,
+                ),
+                crosses_100pct=_crosses_with_zero_demand_limit(
+                    min_self_sufficiency,
+                    max_self_sufficiency,
+                    min_demand,
+                    baseline_self_sufficiency,
+                    baseline_demand,
+                    100,
+                ),
                 method_note=(
                     "Scenario C.2 demand is ratio-scaled from the checked-in "
                     "baseline; conversion variants recompute the 2025 crosswalk."
