@@ -1,17 +1,17 @@
 pyramid_group,item_et,portion_g,portion_g_range_low,portion_g_range_high,kcal_per_portion,household_measure,notes
-"Vegetables, fruits & berries",Köögiviljad (vegetables, general),100,,,30,,"Standard portion; puhaskaal (edible/net weight)"
+"Vegetables, fruits & berries","Köögiviljad (vegetables, general)",100,,,30,,"Standard portion; puhaskaal (edible/net weight)"
 "Vegetables, fruits & berries",Võrsed ehk pisirohe (sprouts/microgreens),220,,,30,1 dl hakitult = 40g,
 "Vegetables, fruits & berries",Kaunviljad söödaval kujul (cooked legumes),100,,,130,1dl=70-80g,
 "Vegetables, fruits & berries",Kaunviljad kuivatatult (dried legumes),40,,,130,kaunviljajahu 1dl=50-60g,
 "Vegetables, fruits & berries",Hernekröbuskid vm (pea snacks),50,,,130,1dl=10g,"snack form, not raw legumes"
-"Vegetables, fruits & berries",Puuviljad (fruit, general - apples/pears etc),100,,,50,1/2 klaasi=100g,
+"Vegetables, fruits & berries","Puuviljad (fruit, general - apples/pears etc)",100,,,50,1/2 klaasi=100g,
 "Vegetables, fruits & berries",Viinamarjad/paradiisiõunad (grapes),70,,,50,,
 "Vegetables, fruits & berries",Banaan/passioon/granadill,50,,,50,,
 "Vegetables, fruits & berries",Värsked datlid (fresh dates),40,,,50,,
 "Vegetables, fruits & berries",Tamarind,20,,,50,,
 "Vegetables, fruits & berries",Puuviljamahlad/-hoidised (juice/preserves),100,,,50,1/2 klaas=100g,"footnote: add 0.5 sweets-portion if sugar added"
 "Vegetables, fruits & berries",Kuivatatud puuvili (dried fruit),17.5,15,20,50,1spl=10g,
-"Vegetables, fruits & berries",Marjad (berries, general),100,,,50,100g=2dl,
+"Vegetables, fruits & berries","Marjad (berries, general)",100,,,50,100g=2dl,
 "Vegetables, fruits & berries",Musta leedri ja kibuvitsamarjad,70,,,50,,"elderberry/rosehip - lower portion due to concentration"
 "Vegetables, fruits & berries",Marjamahl/-hoidised,100,,,50,1/2 klaas=100g,
 "Vegetables, fruits & berries",Kuivatatud marjad,17.5,15,20,50,1spl=10-15g,
@@ -27,6 +27,10 @@ Grain products & potatoes,Bataadid/magusk. (sweet potato),60,,,75,1tk=u350g raw;
 Dairy products,"Piim/vedelad piimatooted (milk, unsweetened)",300,220,340,110,1dl=100g,"R (fat) ~2.5%"
 Dairy products,"Jogurt vms (yogurt), 2.5% fat",200,,,110,,
 Dairy products,"Jogurt vms, alla 0.5% fat",170,,,110,,
+Dairy products,Kodujuust (cottage cheese),140,,,110,,Table 16.3 dairy subtype
+Dairy products,Juust (cheese),55,,,110,,Table 16.3 dairy subtype
+Dairy products,Koor (cream),100,,,110,,Table 16.3 dairy subtype
+Dairy products,Magustatud piimatooted (flavoured dairy),300,,,110,,Table 16.3 dairy subtype
 "Nuts, seeds, oils & fats","Pähklid, kookoshelbed, >=99% pähklivõie (nuts)",15,,,90,1kuhjaga spl=15-20g; 1parapähkel=3-5g,
 "Nuts, seeds, oils & fats","Seemned, magustamata kakaopulber (seeds/cocoa)",10,,,50,1spl seemneid=10-15g,
 "Nuts, seeds, oils & fats",Kakaopulber,15,,,50,1spl=6g,

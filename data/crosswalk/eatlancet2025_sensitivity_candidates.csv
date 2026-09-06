@@ -1,0 +1,92 @@
+pyramid_group,subitem,variant_name,source_kind,source_label,portion_g,kcal_per_portion,whole_grain_bread_share,include_reason
+"Vegetables, fruits & berries",Vegetables,baseline,baseline,Current crosswalk baseline,100,30,,Current representative conversion.
+"Vegetables, fruits & berries",Vegetables,general_vegetables,tai_table16,"Köögiviljad (vegetables, general)",100,30,,General vegetables are the mapped output form.
+"Vegetables, fruits & berries",Legumes,baseline,baseline,Current crosswalk baseline,100,130,,Current representative conversion.
+"Vegetables, fruits & berries",Legumes,cooked_legumes,tai_table16,Kaunviljad söödaval kujul (cooked legumes),100,130,,Ready-to-eat edible basis.
+"Vegetables, fruits & berries",Fruits+Berries (combined),baseline,baseline,Current crosswalk baseline,100,50,,Current fruit and berry conversion.
+"Vegetables, fruits & berries",Fruits+Berries (combined),general_fruit,tai_table16,"Puuviljad (fruit, general - apples/pears etc)",100,50,,General fruit endpoint.
+"Vegetables, fruits & berries",Fruits+Berries (combined),general_berries,tai_table16,"Marjad (berries, general)",100,50,,General berry endpoint.
+"Vegetables, fruits & berries",Fruits+Berries (combined),dried_fruit_low,tai_table16,Kuivatatud puuvili (dried fruit),15,50,,Published low endpoint.
+"Vegetables, fruits & berries",Fruits+Berries (combined),dried_fruit_high,tai_table16,Kuivatatud puuvili (dried fruit),20,50,,Published high endpoint.
+"Vegetables, fruits & berries",Fruits+Berries (combined),dried_berries_low,tai_table16,Kuivatatud marjad,15,50,,Published low endpoint.
+"Vegetables, fruits & berries",Fruits+Berries (combined),dried_berries_high,tai_table16,Kuivatatud marjad,20,50,,Published high endpoint.
+Grain products & potatoes,High-fibre bread/baked goods,baseline,baseline,Current crosswalk baseline,27.5,75,,Current representative conversion.
+Grain products & potatoes,High-fibre bread/baked goods,bread_low,tai_table16,"Leiva-/saiatooted (bread, high-fibre)",25,75,,Published low endpoint.
+Grain products & potatoes,High-fibre bread/baked goods,bread_high,tai_table16,"Leiva-/saiatooted (bread, high-fibre)",30,75,,Published high endpoint.
+Grain products & potatoes,High-fibre bread/baked goods,crispbread,tai_table16,Näkileivad või galetid,20,75,,Alternative bread form.
+Grain products & potatoes,High-fibre bread/baked goods,all_grain_to_porridge,grain_allocation,Complete grain crosswalk,,,0,Explicit allocation endpoint.
+Grain products & potatoes,High-fibre bread/baked goods,all_grain_to_bread,grain_allocation,Complete grain crosswalk,,,1,Explicit allocation endpoint.
+Grain products & potatoes,Porridges/pasta/rice/grain products,baseline,baseline,Current crosswalk baseline,70,75,,Current representative conversion.
+Grain products & potatoes,Porridges/pasta/rice/grain products,cooked_porridge,tai_table16,"Helbed/kruubid/tangud, pudruna (cooked porridge)",100,75,,Cooked form matches output basis.
+Grain products & potatoes,Porridges/pasta/rice/grain products,quinoa_amaranth,tai_table16,Keedetud kinoa või amarant,70,75,,Cooked grain alternative.
+Grain products & potatoes,Porridges/pasta/rice/grain products,couscous,tai_table16,Keedetud kuskuss,60,75,,Cooked grain alternative.
+Grain products & potatoes,Porridges/pasta/rice/grain products,cooked_pasta_rice,tai_table16,Keedetud pasta või riis,50,75,,Cooked grain alternative.
+Grain products & potatoes,Porridges/pasta/rice/grain products,all_grain_to_porridge,grain_allocation,Complete grain crosswalk,,,0,Explicit allocation endpoint.
+Grain products & potatoes,Porridges/pasta/rice/grain products,all_grain_to_bread,grain_allocation,Complete grain crosswalk,,,1,Explicit allocation endpoint.
+Grain products & potatoes,"Potato, sweet potato",baseline,baseline,Current crosswalk baseline,100,75,,Current representative conversion.
+Grain products & potatoes,"Potato, sweet potato",cooked_potato,tai_table16,Kartulid (cooked potato),100,75,,Cooked potato endpoint.
+Grain products & potatoes,"Potato, sweet potato",sweet_potato,tai_table16,Bataadid/magusk. (sweet potato),60,75,,Sweet potato alternative.
+Dairy products,(total),baseline,baseline,Current crosswalk baseline,182.5,110,,Current six-subtype average.
+Dairy products,(total),milk_low,tai_table16,"Piim/vedelad piimatooted (milk, unsweetened)",220,110,,Published low endpoint.
+Dairy products,(total),milk_high,tai_table16,"Piim/vedelad piimatooted (milk, unsweetened)",340,110,,Published high endpoint.
+Dairy products,(total),cottage_cheese,tai_table16,Kodujuust (cottage cheese),140,110,,Baseline dairy subtype.
+Dairy products,(total),yogurt_2_5_percent,tai_table16,"Jogurt vms (yogurt), 2.5% fat",200,110,,Baseline dairy subtype.
+Dairy products,(total),cheese,tai_table16,Juust (cheese),55,110,,Baseline dairy subtype.
+Dairy products,(total),cream,tai_table16,Koor (cream),100,110,,Baseline dairy subtype.
+Dairy products,(total),flavoured_dairy,tai_table16,Magustatud piimatooted (flavoured dairy),300,110,,Baseline dairy subtype.
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",baseline,baseline,Current crosswalk baseline,48.51207121551081,275,,Current component-mix conversion.
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",nuts,tai_table16,"Pähklid, kookoshelbed, >=99% pähklivõie (nuts)",15,90,,Nut endpoint.
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",seeds,tai_table16,"Seemned, magustamata kakaopulber (seeds/cocoa)",10,50,,Seed endpoint.
+"Nuts, seeds, oils & fats","Nuts+Seeds,cocoa (combined)",cocoa,tai_table16,Kakaopulber,15,50,,Cocoa endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",baseline,baseline,Current crosswalk baseline,5,50,,Current representative conversion.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",high_fat_oil_spread,tai_table16,"Õli/või/rasvavõie, >50% rasva (oil/butter, high-fat)",5,50,,High-fat reference endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",low_fat_spread_low,tai_table16,"Rasvavõie/taimne või, kuni 50% rasva (low-fat spread)",10,50,,Published low endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",low_fat_spread_high,tai_table16,"Rasvavõie/taimne või, kuni 50% rasva (low-fat spread)",15,50,,Published high endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",pesto_low,tai_table16,Pesto,10,50,,Published low endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",pesto_high,tai_table16,Pesto,15,50,,Published high endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",avocado,tai_table16,Avokaado,25,50,,Alternative fat source.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",olives_low,tai_table16,Oliivid soolvees,35,50,,Published low endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",olives_high,tai_table16,Oliivid soolvees,40,50,,Published high endpoint.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",drained_olive_oil,tai_table16,Oliiviõli (nõrutatult),30,50,,Alternative fat source.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",hummus,tai_table16,Hummus,25,50,,Alternative fat source.
+"Nuts, seeds, oils & fats","Oils/fats/spreads (rapeseed, representative)",coconut_palm_lard,tai_table16,"Kookos-/palmi-/searasv, seapekk",5,50,,Alternative fat source.
+"Fish, eggs & meat",Fish & seafood,baseline,baseline,Current crosswalk baseline,53.75,80,,Current four-tier average.
+"Fish, eggs & meat",Fish & seafood,lean_fish_low,tai_table16,"Lahjat kala (lean fish: haug, koha, luts, merlang, ahven, saida)",75,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,lean_fish_high,tai_table16,"Lahjat kala (lean fish: haug, koha, luts, merlang, ahven, saida)",80,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,medium_fat_fish_low,tai_table16,"Keskmise rasvasisaldusega kala (medium-fat fish: pangaasius, lest, angersäga, meriforell, tuur)",65,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,medium_fat_fish_high,tai_table16,"Keskmise rasvasisaldusega kala (medium-fat fish: pangaasius, lest, angersäga, meriforell, tuur)",70,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,fatty_fish_low,tai_table16,"Rasvast kala (fatty fish: karpkala, räim, vikerforell, latikas, säga)",40,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,fatty_fish_high,tai_table16,"Rasvast kala (fatty fish: karpkala, räim, vikerforell, latikas, säga)",45,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,very_fatty_fish_low,tai_table16,"Väga rasvast kala (very fatty: lõhe, heeringas, skumbria)",25,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,very_fatty_fish_high,tai_table16,"Väga rasvast kala (very fatty: lõhe, heeringas, skumbria)",30,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,other_seafood_low,tai_table16,"Muud mereannid (other seafood: krevetid, krabid, karbid, teod)",60,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,other_seafood_high,tai_table16,"Muud mereannid (other seafood: krevetid, krabid, karbid, teod)",70,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,surimi,tai_table16,Surimitooted (nt makra),70,80,,Numeric fish/seafood row.
+"Fish, eggs & meat",Fish & seafood,canned_fish_water_low,tai_table16,Kalakonserv vees/tomatikastmes,55,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,canned_fish_water_high,tai_table16,Kalakonserv vees/tomatikastmes,60,80,,Published high endpoint.
+"Fish, eggs & meat",Fish & seafood,smoked_salted_fish,tai_table16,Suitsu- ja soolakala,45,80,,Numeric fish/seafood row.
+"Fish, eggs & meat",Fish & seafood,fish_sticks,tai_table16,Kalapulgad,40,80,,Numeric fish/seafood row.
+"Fish, eggs & meat",Fish & seafood,canned_fish_oil_low,tai_table16,Vürtsikilu/kalakonserv õlis/soolaheeringas,30,80,,Published low endpoint.
+"Fish, eggs & meat",Fish & seafood,canned_fish_oil_high,tai_table16,Vürtsikilu/kalakonserv õlis/soolaheeringas,40,80,,Published high endpoint.
+"Fish, eggs & meat",Eggs,baseline,baseline,Current crosswalk baseline,60,80,,Current representative conversion.
+"Fish, eggs & meat",Eggs,chicken_egg,tai_table16,Kanamuna/munamass (chicken egg),60,80,,Mapped egg form.
+"Fish, eggs & meat",Poultry,baseline,baseline,Current crosswalk baseline,39.5,80,,Current five-cut average.
+"Fish, eggs & meat",Poultry,skinless_chicken,tai_table16,Nahata kanafilee (skinless chicken fillet),55,80,,Baseline poultry cut.
+"Fish, eggs & meat",Poultry,skinless_turkey_duck_pheasant,tai_table16,"Nahata kalkuni-/pardi-/faasaniliha",50,80,,Baseline poultry cut.
+"Fish, eggs & meat",Poultry,skin_on_chicken_turkey_quail_pheasant,tai_table16,"Nahaga kana-/kalkuni-/vuti-/faasaniliha",35,80,,Baseline poultry cut.
+"Fish, eggs & meat",Poultry,skinless_goose_snow_goose,tai_table16,Nahata hane-/lumekanaliha,40,80,,Baseline poultry cut.
+"Fish, eggs & meat",Poultry,skin_on_goose_duck,tai_table16,Nahaga hane-/pardiliha,17.5,80,,Baseline poultry cut.
+"Fish, eggs & meat",Red meat,baseline,baseline,Current crosswalk baseline,37.5,80,,Current fresh-cut conversion.
+"Fish, eggs & meat",Red meat,fresh_meat_low,tai_table16,"Sea-/veise-/lamba-/vasikaliha (pork/beef/lamb/veal)",35,80,,Published low endpoint.
+"Fish, eggs & meat",Red meat,fresh_meat_high,tai_table16,"Sea-/veise-/lamba-/vasikaliha (pork/beef/lamb/veal)",40,80,,Published high endpoint.
+"Fish, eggs & meat",Red meat,low_fat_mince_low,tai_table16,"Hakkliha, R alla 10% (mince, low fat)",35,80,,Published low endpoint.
+"Fish, eggs & meat",Red meat,low_fat_mince_high,tai_table16,"Hakkliha, R alla 10% (mince, low fat)",40,80,,Published high endpoint.
+"Sweets, snacks & discretionary",(total),baseline,baseline,Current crosswalk baseline,12.6,40,,Current solid-sweets average.
+"Sweets, snacks & discretionary",(total),sugar,tai_table16,Suhkur (sugar),10,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),honey,tai_table16,Mesi (honey),10,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),syrup,tai_table16,Siirup (syrup),15,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),jam,tai_table16,Moos (jam),20,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),chocolate_candy,tai_table16,Šokolaad/kommid,8,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),coated_nuts_fruit,tai_table16,Magusa kattega pähklid/kuivatatud puuvili,10,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),hematogen,tai_table16,Hematogeen,10,40,,Solid sweet endpoint.
+"Sweets, snacks & discretionary",(total),sweetened_muesli_bars,tai_table16,Magustatud müslibatoonid,10,40,,Solid sweet endpoint.
