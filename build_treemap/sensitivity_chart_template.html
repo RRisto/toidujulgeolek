@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EAT–Lancet 2025 teisenduse tundlikkus</title>
+<style>
+  :root{
+    color-scheme:light;
+    --page:#f9f9f7; --surface:#fcfcfb; --text:#0b0b0b; --secondary:#52514e;
+    --muted:#898781; --grid:#e1e0d9; --border:rgba(11,11,11,.10);
+    --dairy:#2a78d6; --fish:#eb6834; --grain:#1baf7a;
+    --nuts:#eda100; --sweets:#e87ba4; --veg:#008300;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{color-scheme:dark;--page:#0d0d0d;--surface:#1a1a19;--text:#fff;
+      --secondary:#c3c2b7;--muted:#99978f;--grid:#343431;--border:rgba(255,255,255,.12);
+      --dairy:#3987e5;--fish:#e16a39;--grain:#20b984;--nuts:#d89a17;--sweets:#db6791;--veg:#22a447;}
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--page);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;padding:18px}
+  .wrap{max-width:1280px;margin:0 auto}
+  h1{font-size:22px;font-weight:600;margin:0 0 5px}
+  .subtitle{max-width:900px;color:var(--secondary);font-size:13px;line-height:1.4;margin:0 0 5px}
+  .note{max-width:940px;color:var(--muted);font-size:11px;line-height:1.35;margin:0 0 10px}
+  .legend{display:flex;gap:7px 18px;flex-wrap:wrap;margin:0 0 10px;color:var(--secondary);font-size:11px}
+  .legend span{display:flex;align-items:center;gap:7px}
+  .legend .line{width:28px;height:3px;background:var(--secondary);display:inline-block}
+  .legend .dot{width:9px;height:9px;border-radius:50%;background:var(--text);display:inline-block}
+  .legend .limits{width:28px;display:inline-flex;justify-content:space-between;color:var(--secondary);font-weight:600}
+  .chart-shell{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px 12px}
+  .chart-head,.chart-row{display:grid;grid-template-columns:minmax(205px,1.1fr) minmax(300px,2fr) minmax(300px,2fr);column-gap:26px}
+  .chart-head{align-items:end;padding-bottom:3px;border-bottom:1px solid var(--border)}
+  .panel-title{font-size:12px;font-weight:600;margin-bottom:5px}
+  .axis{height:23px;position:relative;border-top:1px solid var(--grid)}
+  .axis-tick{position:absolute;top:-1px;transform:translateX(-50%);white-space:nowrap;color:var(--muted);font-size:10px;font-weight:400}
+  .axis-tick:first-child{transform:none}.axis-tick:last-of-type{transform:translateX(-100%)}
+  .axis-tick i{display:block;width:1px;height:6px;background:var(--grid);margin:0 auto 2px}
+  .axis-tick b{font-weight:400}
+  .axis-unit{position:absolute;right:0;top:15px;color:var(--muted);font-size:9px}
+  .chart-body{position:relative}
+  .chart-row{min-height:44px;align-items:center;border-bottom:1px solid var(--border)}
+  .chart-row:last-child{border-bottom:0}
+  .row-label small{display:block;color:var(--muted);font-size:9px;line-height:1.1;min-height:10px;margin-bottom:1px}
+  .row-label strong{font-size:11px;font-weight:500;line-height:1.15;display:block}
+  .plot-cell{position:relative}
+  .range-plot{height:32px;position:relative;background:linear-gradient(to right,var(--grid) 1px,transparent 1px);background-size:20% 100%}
+  .range-line{position:absolute;top:11px;height:3px;min-width:1px;background:currentColor}
+  .range-cap{position:absolute;top:6px;width:2px;height:13px;background:currentColor;transform:translateX(-1px)}
+  .baseline-dot{position:absolute;top:7px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:3px solid currentColor;transform:translateX(-50%);z-index:2}
+  .range-arrow{position:absolute;top:-2px;font-size:25px;font-weight:500;transform:translateX(-70%);color:currentColor}
+  .range-value{position:absolute;left:0;bottom:-1px;color:var(--secondary);font-size:9px;font-variant-numeric:tabular-nums}
+  .is-missing{display:flex;align-items:center;background:repeating-linear-gradient(135deg,transparent,transparent 7px,var(--grid) 7px,var(--grid) 8px)}
+  .missing-label{color:var(--muted);font-size:11px;background:var(--surface);padding-right:6px}
+  .self-sufficiency::before,.self-sufficiency::after{content:"";position:absolute;top:0;bottom:0;width:1px;z-index:1;pointer-events:none}
+  .self-sufficiency::before{left:__THRESHOLD_50__%;background:var(--muted)}
+  .self-sufficiency::after{left:__THRESHOLD_100__%;background:var(--text)}
+  .threshold-labels{position:absolute;left:calc(205px + 26px + (100% - 205px - 52px)/2);right:0;top:0;bottom:0;pointer-events:none;display:none}
+  .veg{color:var(--veg)}.grain{color:var(--grain)}.dairy{color:var(--dairy)}
+  .nuts{color:var(--nuts)}.fish{color:var(--fish)}.sweets{color:var(--sweets)}
+  .threshold-legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--secondary);font-size:10px;margin-top:7px}
+  .threshold-legend i{height:12px;width:1px;background:var(--muted);display:inline-block;margin-right:5px;vertical-align:-2px}
+  .threshold-legend span:last-child i{background:var(--text)}
+  @media (max-width:800px){
+    body{padding:14px}.chart-shell{padding:12px}.chart-head{display:none}
+    .chart-row{display:block;padding:14px 0;min-height:0}.row-label{margin-bottom:10px}
+    .plot-cell{margin:0 0 18px}.plot-cell:last-child{margin-bottom:0}
+    .plot-cell::before{content:attr(data-panel);display:block;color:var(--muted);font-size:10px;margin-bottom:4px}
+    .range-plot{height:41px}.self-sufficiency::before,.self-sufficiency::after{top:18px}
+  }
+  @media print{body{background:#fff;padding:0}.chart-shell{border:0;padding:0}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>EAT–Lancet 2025 teisenduse tundlikkus</h1>
+  <p class="subtitle">Kuidas TAI esindusportsjoni valik muudab arvutatud päevast kogust ja Eesti isevarustatuse hinnangut.</p>
+  <p class="note">Joon näitab testitud miinimumi ja maksimumi, ring senist lähtetaset. Päevase koguse telg on lineaarne; isevarustatuse telg on logaritmiline, et näidata samal graafikul nii alla 50% kui ka väga kõrgeid väärtusi. Tegemist ei ole usaldusvahemikuga.</p>
+  <div class="legend" aria-label="Legend">
+    <span><i class="line"></i>testitud vahemik</span>
+    <span><i class="dot"></i>lähtetase</span>
+    <span><i class="limits">|›</i>avatud nullnõudluse piir</span>
+  </div>
+  <section class="chart-shell" aria-label="Tundlikkusvahemikud toidugruppide kaupa">
+    <div class="chart-head">
+      <div></div>
+      <div><div class="panel-title">Päevane kogus (g/päev)</div>__DEMAND_AXIS__</div>
+      <div><div class="panel-title">Isevarustatus (%)</div>__SELF_SUFFICIENCY_AXIS__</div>
+    </div>
+    <div class="chart-body">__CHART_ROWS__</div>
+    <div class="threshold-legend">
+      <span data-threshold="50"><i></i>50% lävend</span><span data-threshold="100"><i></i>100% lävend</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>
